@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="738px" height="208px" viewBox="0 0 738 208" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>Sholes Keyboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FBFBF2" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path id="path-2" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-4" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-6" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-8" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-10" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-12" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-14" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-16" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-18" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-20" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-22" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-24" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-26" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-28" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-30" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-32" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-34" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+        <path id="path-36" d="M10.8125,80.1719177 C10.8125,75.2952388 0,81.4695512 0,75.2952388 L6.53549038e-17,7.99512025 C2.92603871e-17,3.57953726 3.58463172,0 8.00254308,0 L32.9974569,0 C37.4171394,0 41,3.58369795 41,8.00240668 L41,75.2952388 C41,80.173882 30.4765625,75.2952388 30.4765625,80.1719177 L30.4765625,200 L10.8125,200 L10.8125,80.1719177 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="key-m" transform="translate(697.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-2"></use>
+            </g>
+            <text id="m" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="12.046798" y="184.35468">m</tspan>
+            </text>
+        </g>
+        <g id="key-l" transform="translate(656.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-4"></use>
+            </g>
+            <text id="l" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="15.2743842" y="184.35468">l</tspan>
+            </text>
+        </g>
+        <g id="key-k" transform="translate(615.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-7" fill="white">
+                    <use xlink:href="#path-6"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-6"></use>
+            </g>
+            <text id="k" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.0802956" y="184.35468">k</tspan>
+            </text>
+        </g>
+        <g id="key-j" transform="translate(574.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-9" fill="white">
+                    <use xlink:href="#path-8"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-8"></use>
+            </g>
+            <text id="j" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="17.0477833" y="184.35468">j</tspan>
+            </text>
+        </g>
+        <g id="key-i" transform="translate(533.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-11" fill="white">
+                    <use xlink:href="#path-10"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-10"></use>
+            </g>
+            <text id="i" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.0769231" font-weight="normal" fill="#000000">
+                <tspan x="16.8192308" y="183.85468">i</tspan>
+            </text>
+        </g>
+        <g id="key-h" transform="translate(492.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-13" fill="white">
+                    <use xlink:href="#path-12"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-12"></use>
+            </g>
+            <text id="h" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="12.9453202" y="184.35468">h</tspan>
+            </text>
+        </g>
+        <g id="key-g" transform="translate(451.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-15" fill="white">
+                    <use xlink:href="#path-14"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-14"></use>
+            </g>
+            <text id="g" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="13.8083744" y="184.35468">g</tspan>
+            </text>
+        </g>
+        <g id="key-f" transform="translate(410.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-17" fill="white">
+                    <use xlink:href="#path-16"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-16"></use>
+            </g>
+            <text id="f" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="15.2270936" y="184.35468">f</tspan>
+            </text>
+        </g>
+        <g id="key-e" transform="translate(369.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-19" fill="white">
+                    <use xlink:href="#path-18"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-18"></use>
+            </g>
+            <text id="e" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.4940887" y="184.35468">e</tspan>
+            </text>
+        </g>
+        <g id="key-d" transform="translate(328.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-21" fill="white">
+                    <use xlink:href="#path-20"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-20"></use>
+            </g>
+            <text id="d" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="13.4536946" y="184.35468">d</tspan>
+            </text>
+        </g>
+        <g id="key-c" transform="translate(287.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-23" fill="white">
+                    <use xlink:href="#path-22"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-22"></use>
+            </g>
+            <text id="c" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.1630542" y="184.35468">c</tspan>
+            </text>
+        </g>
+        <g id="key-b" transform="translate(246.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-25" fill="white">
+                    <use xlink:href="#path-24"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-24"></use>
+            </g>
+            <text id="b" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.3758621" y="184.35468">b</tspan>
+            </text>
+        </g>
+        <g id="key-a" transform="translate(205.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-27" fill="white">
+                    <use xlink:href="#path-26"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-26"></use>
+            </g>
+            <text id="a" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.517734" y="184.35468">a</tspan>
+            </text>
+        </g>
+        <g id="key-period" transform="translate(164.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-29" fill="white">
+                    <use xlink:href="#path-28"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-28"></use>
+            </g>
+            <text id="." font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="17.6862069" y="184.591133">.</tspan>
+            </text>
+        </g>
+        <g id="key-8" transform="translate(123.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-31" fill="white">
+                    <use xlink:href="#path-30"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-30"></use>
+            </g>
+            <text id="8" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.7660099" y="184.35468">8</tspan>
+            </text>
+        </g>
+        <g id="key-6" transform="translate(82.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-33" fill="white">
+                    <use xlink:href="#path-32"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-32"></use>
+            </g>
+            <text id="6" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="15.1206897" y="184.35468">6</tspan>
+            </text>
+        </g>
+        <g id="key-4" transform="translate(41.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-35" fill="white">
+                    <use xlink:href="#path-34"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-34"></use>
+            </g>
+            <text id="4" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="15.2152709" y="184.35468">4</tspan>
+            </text>
+        </g>
+        <g id="key-2" transform="translate(0.000000, 3.000000)">
+            <g id="Ivory">
+                <mask id="mask-37" fill="white">
+                    <use xlink:href="#path-36"></use>
+                </mask>
+                <use stroke="#000000" fill="url(#linearGradient-1)" transform="translate(20.500000, 100.000000) scale(1, -1) translate(-20.500000, -100.000000) " xlink:href="#path-36"></use>
+            </g>
+            <text id="2" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="23.6453202" font-weight="normal" fill="#000000">
+                <tspan x="14.8842365" y="184.35468">2</tspan>
+            </text>
+        </g>
+        <g id="key-z" transform="translate(685.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="z" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.12" y="106">z</tspan>
+            </text>
+        </g>
+        <g id="key-y" transform="translate(644.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="y" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.3" y="106">y</tspan>
+            </text>
+        </g>
+        <g id="key-x" transform="translate(603.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="x" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="5.208" y="106">x</tspan>
+            </text>
+        </g>
+        <g id="key-w" transform="translate(562.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="w" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="2.484" y="106">w</tspan>
+            </text>
+        </g>
+        <g id="key-v" transform="translate(521.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="v" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="5.7" y="106">v</tspan>
+            </text>
+        </g>
+        <g id="key-u" transform="translate(480.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="u" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="5.1" y="106">u</tspan>
+            </text>
+        </g>
+        <g id="key-t" transform="translate(439.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="t" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.312" y="106">t</tspan>
+            </text>
+        </g>
+        <g id="key-s" transform="translate(398.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="s" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.492" y="106">s</tspan>
+            </text>
+        </g>
+        <g id="key-r" transform="translate(357.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="r" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="5.652" y="106">r</tspan>
+            </text>
+        </g>
+        <g id="key-q" transform="translate(316.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="q" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="4.92" y="106">q</tspan>
+            </text>
+        </g>
+        <g id="key-p" transform="translate(275.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="p" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.252" y="106">p</tspan>
+            </text>
+        </g>
+        <g id="key-o" transform="translate(234.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="o" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="4.98" y="106">o</tspan>
+            </text>
+        </g>
+        <g id="key-n" transform="translate(193.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="n" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="4.632" y="106">n</tspan>
+            </text>
+        </g>
+        <g id="key-9" transform="translate(152.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="9" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.54" y="106">9</tspan>
+            </text>
+        </g>
+        <g id="key-7" transform="translate(111.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="7" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.96" y="106">7</tspan>
+            </text>
+        </g>
+        <g id="key-5" transform="translate(70.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="5" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="6.84" y="106">5</tspan>
+            </text>
+        </g>
+        <g id="key-3" transform="translate(29.000000, 3.000000)">
+            <g id="Ebony" stroke="#000000" fill="#000000">
+                <rect x="0" y="0" width="24" height="126" rx="3"></rect>
+            </g>
+            <text id="3" font-family="AlegreyaSC-Regular, Alegreya SC" font-size="24" font-weight="normal" fill="#C0C0C0">
+                <tspan x="7.02" y="106">3</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

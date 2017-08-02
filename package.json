@@ -1,0 +1,28 @@
+{
+  "name": "goblindegook.com",
+  "version": "1.0.0",
+  "repository": "git@gitlab.com:goblindegook/static.goblindegook.com.git",
+  "author": "Luis Rodrigues <hello@goblindegook.com>",
+  "license": "CC-BY-NC-4.0",
+  "scripts": {
+    "postinstall": "cd themes/goblindegook && yarn",
+    "prebuild": "concurrently 'yarn build-theme' 'yarn build-images' 'yarn build-index'",
+    "build": "hugo",
+    "build-images": "gulp images",
+    "build-index": "echo 'TODO: build-index'",
+    "build-theme": "cd themes/goblindegook && yarn build",
+    "build-preview": "yarn build -- --buildDrafts --buildFuture",
+    "serve": "hugo serve -t goblindegook",
+    "sync": "git pull origin master && git push origin master"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-responsive": "^2.7.1",
+    "hugo-lunr": "^0.0.4",
+    "imagemin-pngquant": "^5.0.1"
+  }
+}

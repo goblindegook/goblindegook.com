@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 7 ]><html class="ie7 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 8 ]><html class="ie8 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link type="text/css" media="all" href="/css/styles.css" rel="stylesheet" />
+	<noscript><link rel="stylesheet" type="text/css" media="all" href="/fonts/fonts.css"></noscript>
+  <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.Description }}"/>
+  <link rel="canonical" href="{{ .Site.BaseURL }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ .Site.Title }}" />
+  <meta property="og:description" content="{{ .Site.Params.Description }}" />
+  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}icon/goblindegook.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="{{ .Site.Params.Description }}" />
+  <meta name="twitter:title" content="{{ .Site.Title }}" />
+  <meta name="twitter:site" content="{{ .Site.Params.Twitter }}" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}icon/goblindegook.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "http:\/\/schema.org",
+      "@type": "WebSite",
+      "@id": "#website",
+      "url": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}",
+      "name": "{{ .Site.Title }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http:\/\/schema.org",
+      "@type": "Person",
+      "url": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}",
+      "sameAs": [
+        "https:\/\/www.instagram.com\/goblindegook\/",
+        "https:\/\/www.linkedin.com\/in\/luispedrorodrigues",
+        "https:\/\/twitter.com\/goblindegook"
+      ],
+      "@id": "#person",
+      "name": "{{ .Site.Params.Author }}"
+    }
+  </script>
+  <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Feed" href="{{ .Site.BaseURL }}feed">
+  <!--[if lt IE 9]><script type='text/javascript' src='/js/html5shiv.js?ver=3.7.3'></script><![endif]-->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="192x192" href="/icon/goblindegook-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/icon/goblindegook-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/icon/goblindegook-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/icon/goblindegook-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/goblindegook-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/goblindegook-16.png">
+	<link rel="apple-touch-icon" href="/icon/goblindegook-57.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icon/goblindegook-180.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/icon/goblindegook-152.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/icon/goblindegook-144.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/icon/goblindegook-120.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/icon/goblindegook-114.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/icon/goblindegook-76.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/icon/goblindegook-72.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/icon/goblindegook-60.png">
+	<meta name="msapplication-TileColor" content="#BE9D31">
+	<meta name="msapplication-TileImage" content="/icon/goblindegook-144.png">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+</head>
+<body class="" itemscope itemtype="https://schema.org/WebPage">
+  {{ partial "icons.svg" }}
+
+  <a href="#content" class="screen-reader">Skip to content</a>
+
+  {{ if eq .Type "post" }}
+    <progress class="reading-progress" id="reading-progress" value="0" max="100"></progress>
+    <button class="button-furthest-read" title="Scroll to furthest place read">Resume reading</button>
+  {{ end }}
+
+  <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1 class="site-title" itemprop="headline">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </h1>
+    <div class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</div>
+  </header>
+
+  <div class="animated site-breadcrumbs site-breadcrumbs-initial" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+    {{ if .IsHome }}
+      <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+    {{ else }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+  </div>

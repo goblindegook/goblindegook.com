@@ -1,0 +1,51 @@
+progress {
+  appearance: none;
+  background-color: transparent;
+  color: var(--active-color);
+
+  &::-moz-progress-bar {
+    background-color: var(--active-color);
+  }
+
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--active-color);
+  }
+}
+
+.reading-progress {
+  border: 0;
+  height: 2px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.button-furthest-read {
+  background-color: var(--widget-background-color);
+  border: 0;
+  bottom: 1rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  color: var(--widget-text-color);
+  float: none;
+  font-family: var(--widget-font-family);
+  font-size: var(--ms0);
+  height: 2rem;
+  margin: auto;
+  padding: 0 1rem;
+  position: fixed;
+  right: 1rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+
+  &:--enter {
+    background-color: var(--widget-active-background-color);
+    color: var(--widget-text-color);
+  }
+}

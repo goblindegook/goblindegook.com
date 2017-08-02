@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="/icon/goblindegook-70.png"/>
+      <square150x150logo src="/icon/goblindegook-150.png"/>
+      <square310x310logo src="/icon/goblindegook-310.png"/>
+      <TileColor>#BE9D31</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>

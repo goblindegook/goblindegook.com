@@ -1,0 +1,36 @@
+:root {
+  /* Layout */
+  --body-max-width: 720px;
+  --masonry-column-width: 47.05882%;
+  --masonry-gutter-width: 5.60748%;
+
+  /* Colour */
+  --body-background-color: #fafafa;
+  --body-color: #333;
+  --link-color: #be9d31;
+  --highlight-color: #be9d31;
+  --active-color: #d2b450;
+  --widget-text-color: #fafafa;
+  --widget-background-color: #444;
+  --widget-active-background-color: #be9d31;
+  --widget-overlay-background-color: rgba(51, 51, 51, 0.5);
+  --body-background-alt-color: #f0f0f0;
+  --divider-color: #ddd;
+
+  /* Typography */
+  --body-font-family: Alegreya, serif;
+  --small-caps-font-family: "Alegreya SC", serif;
+  --widget-font-family: "Fira Sans", Helvetica, sans-serif;
+  --code-font-family: monospace;
+
+  /* Modular Scale */
+  --ms-base: 1rem;
+	--ms-ratio: var(--fourth);
+}
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+@custom-selector :--enter :hover, :focus, :active;
+
+@custom-media --narrow-viewport (width < 768px);
+@custom-media --medium-viewport (width >= 768px) and (width < 1024px);
+@custom-media --wide-viewport (width >= 1024px);

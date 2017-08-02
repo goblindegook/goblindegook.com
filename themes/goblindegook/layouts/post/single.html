@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+
+<main id="content" class="content-single">
+	<article class="single-entry">
+    <header class="single-entry-header">
+      <time class="single-entry-date">{{ .Date.Format "January 2, 2006" }}</time>
+      <h1 class="single-entry-title">{{ .Title | markdownify }}</h1>
+      {{ if .Params.Image.Src }}
+        {{ partial "featured-image.html" . }}
+      {{ end }}
+    </header>
+		<div class="single-entry-body">
+			{{ .Content }}
+		</div>
+		<footer class="single-entry-footer">
+      {{ if .Params.categories }}
+      <svg class="single-entry-categories-icon" title="Filed Under" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-folder"></use></svg>
+			<ul class="single-entry-categories">
+        {{ range .Params.categories }}
+				<li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+				{{ end }}
+      </ul>
+      {{ end }}
+		</footer>
+	</article>
+</main>
+
+{{ partial "footer.html" . }}

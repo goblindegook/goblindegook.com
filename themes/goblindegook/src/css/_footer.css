@@ -1,0 +1,16 @@
+.site-footer {
+  box-shadow: inset 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.2);
+  font-family: var(--widget-font-family);
+  font-size: var(--ms-1);
+  left: 50%;
+  margin: 0 -50vw;
+  padding: 1rem 0;
+  position: relative;
+  right: 50%;
+  text-align: center;
+  width: 100vw;
+
+  & p {
+    margin: 0;
+  }
+}

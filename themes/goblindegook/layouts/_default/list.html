@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+<main id="content" class="content-archive">
+  <div class="content-list">
+    <div class="masonry-gutter"></div>
+    <div class="masonry-column"></div>
+
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+    {{ range $paginator.Pages }}
+      {{ partial "summary.html" . }}
+    {{ end }}
+  </div>
+
+	{{ partial "pagination.html" . }}
+</main>
+
+{{ partial "footer.html" . }}

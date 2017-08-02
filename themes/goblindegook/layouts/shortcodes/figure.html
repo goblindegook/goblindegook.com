@@ -1,0 +1,44 @@
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+  {{ if .Get "link" }}<a href="{{ . }}">{{ end }}
+    <img class="lazy"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      sizes="
+        (max-width: 340px) 340px,
+        100%
+      "
+      data-original="{{ .Get "src" }}"
+      data-original-set="
+        {{ delimit (split (.Get "src") ".") "." "-340w." }} 340w,
+        {{ delimit (split (.Get "src") ".") "." "-340w@2x." }} 680w,
+        {{ delimit (split (.Get "src") ".") "." "@2x." }} 2x
+      "
+      {{ if or (.Get "alt") (.Get "caption") }}
+        alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
+      {{ end }}
+      {{ with .Get "width" }}
+        width="{{ . }}"
+      {{ end }}
+    >
+    <noscript>
+      <img src="{{ .Get "src" }}"
+        {{ if or (.Get "alt") (.Get "caption") }}
+          alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
+        {{ end }}
+        {{ with .Get "width" }}
+          width="{{ . }}"
+        {{ end }}
+      >
+    </noscript>
+  {{ if .Get "link" }}</a>{{ end }}
+  {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+  <figcaption>
+    {{ if .Get "title" }}<h4>{{ .Get "title" }}</h4>{{ end }}
+    {{ if or (.Get "caption") (.Get "attr")}}<p>
+    {{ .Get "caption" }}
+    {{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
+        {{ .Get "attr" }}
+    {{ if .Get "attrlink" }}</a> {{ end }}
+    </p> {{ end }}
+  </figcaption>
+  {{ end }}
+</figure>

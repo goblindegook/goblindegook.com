@@ -1,0 +1,19 @@
+.pull-quote-center,
+.pull-quote-left,
+.pull-quote-right {
+  color: var(--highlight-color);
+  display: center;
+  font-size: var(--ms2);
+  font-style: italic;
+  margin: 4rem 3rem;
+}
+
+.pull-quote-center {
+  text-align: center;
+}
+
+.small-caps {
+  font-family: var(--small-caps-font-family);
+  font-style: normal;
+  letter-spacing: 0.06rem;
+}

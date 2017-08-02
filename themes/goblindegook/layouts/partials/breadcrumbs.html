@@ -1,0 +1,18 @@
+<nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+  <ul class="trail-items" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    <meta name="numberOfItems" content="2"><meta name="itemListOrder" content="Ascending">
+    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-begin">
+      <a href="{{ .Site.BaseURL }}" rel="home">
+        <svg class="breadcrumbs-icon breadcrumbs-icon-home" title="goblindegook" role="presentation">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-home"></use>
+        </svg>
+        <span itemprop="name" class="screen-reader">{{ .Site.Title }}</span>
+      </a>
+      <meta itemprop="position" content="1">
+    </li>
+    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-end">
+      <span itemprop="name">{{ .Page.Title | markdownify }}</span>
+      <meta itemprop="position" content="2">
+    </li>
+  </ul>
+</nav>

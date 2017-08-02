@@ -1,0 +1,47 @@
+<figure class="single-entry-featured-image">
+  {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
+    <img class="lazy"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      sizes="
+        (max-width: 340px) 340px,
+        (max-width: 768px) 768px,
+        100%
+      "
+      data-original="{{ .Params.Image.Src }}"
+      data-original-set="
+        {{ delimit (split (.Params.Image.Src) ".") "." "-340w." }} 340w,
+        {{ delimit (split (.Params.Image.Src) ".") "." "-340w@2x." }} 680w,
+        {{ delimit (split (.Params.Image.Src) ".") "." "-768w." }} 768w,
+        {{ delimit (split (.Params.Image.Src) ".") "." "-768w@2x." }} 1536w,
+        {{ delimit (split (.Params.Image.Src) ".") "." "@2x." }} 2x
+      "
+      {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
+        alt="{{ with .Params.Image.Alt }}{{ . }}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
+      {{ end }}
+      {{ with .Params.Image.Width }}
+        width="{{ . }}"
+      {{ end }}
+    >
+    <noscript>
+      <img src="{{ .Params.Image.Src }}"
+        {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
+          alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
+        {{ end }}
+        {{ with .Params.Image.Width }}
+          width="{{ . }}"
+        {{ end }}
+      >
+    </noscript>
+  {{ if .Params.Image.Link }}</a>{{ end }}
+  {{ if or (or (.Params.Image.Title) (.Params.Image.Caption)) (.Params.Image.Attr)}}
+  <figcaption>
+    {{ if .Params.Image.Title }}<h4>{{ .Params.Image.Title }}</h4>{{ end }}
+    {{ if or (.Params.Image.Caption) (.Params.Image.Attr)}}<p>
+    {{ .Params.Image.Caption }}
+    {{ with .Params.Image.Attrlink}}<a href="{{ . }}"> {{ end }}
+        {{ .Params.Image.Attr }}
+    {{ if .Params.Image.Attrlink}}</a> {{ end }}
+    </p> {{ end }}
+  </figcaption>
+  {{ end }}
+</figure>

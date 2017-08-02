@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+<main id="content" class="content-single">
+	<article class="single-entry">
+    <header class="single-entry-header">
+      <h1 class="single-entry-title">{{ .Title | markdownify }}</h1>
+    </header>
+		<div class="single-entry-body">
+			{{ .Content }}
+		</div>
+	</article>
+</main>
+
+{{ partial "footer.html" . }}

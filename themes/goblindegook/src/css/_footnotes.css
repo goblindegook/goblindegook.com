@@ -1,0 +1,89 @@
+.littlefoot-footnote__button {
+  vertical-align: top;
+  margin: 0 0.4rem;
+
+  &.is-active {
+    background-color: var(--widget-active-background-color);
+    transition-delay: 0.1s;
+  }
+}
+
+.littlefoot-footnote {
+  color: var(--widget-text-color);
+  font-family: var(--widget-font-family);
+  font-size: var(--ms0);
+  font-weight: 400;
+  padding: 0;
+  z-index: 6;
+}
+
+.littlefoot-footnote.is-positioned-top {
+  z-index: 10;
+}
+
+.littlefoot-footnote__content {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 1.3rem;
+
+  & a {
+    background-color: transparent;
+    background-image:
+      linear-gradient(var(--widget-background-color), var(--widget-background-color)),
+      linear-gradient(var(--widget-background-color), var(--widget-background-color)),
+      linear-gradient(var(--link-color), var(--link-color));
+    background-position: 0 85%, 100% 85%, 0 85%;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-size: 1px 1px, 1px 1px, 1px 1px;
+    text-decoration: none;
+    text-shadow:
+      0.02em 0 var(--widget-background-color),
+      -0.02em 0 var(--widget-background-color),
+      0 0.02em var(--widget-background-color),
+      0 -0.02em var(--widget-background-color),
+      0.04em 0 var(--widget-background-color),
+      -0.04em 0 var(--widget-background-color),
+      0.06em 0 var(--widget-background-color),
+      -0.06em 0 var(--widget-background-color),
+      0.08em 0 var(--widget-background-color),
+      -0.08em 0 var(--widget-background-color),
+      0.1em 0 var(--widget-background-color),
+      -0.1em 0 var(--widget-background-color),
+      0.12em 0 var(--widget-background-color),
+      -0.12em 0 var(--widget-background-color),
+      0.14em 0 var(--widget-background-color),
+      -0.14em 0 var(--widget-background-color);
+  }
+}
+
+.littlefoot-footnote__wrapper {
+  background-color: var(--widget-background-color);
+  border-radius: 0;
+}
+
+.littlefoot-footnote .littlefoot-footnote__wrapper {
+  margin: 0;
+}
+
+.littlefoot-footnote.is-scrollable {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxNXB4IiB2aWV3Qm94PSIwIDAgMTIgMTUiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4iPgogICAgPGcgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkFycm93IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxLjAwMDAwMCwgMS4wMDAwMDApIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiPgogICAgICAgICAgICA8cGF0aCBkPSJNNSwwIEw1LDExLjUiIGlkPSJMaW5lIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjUsNy41IEw1LjAyNzY5Mjc5LDEyLjAyNzY5MjgiIGlkPSJMaW5lIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00LjUsNy41IEw5LjAyNzY5Mjc5LDEyLjAyNzY5MjgiIGlkPSJMaW5lLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcuMDAwMDAwLCAxMC4wMDAwMDApIHNjYWxlKC0xLCAxKSB0cmFuc2xhdGUoLTcuMDAwMDAwLCAtMTAuMDAwMDAwKSAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=");
+}
+
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
+  background-image: linear-gradient(180deg, var(--widget-background-color) 50%, hsla(0, 0%, 98%, 0));
+  height: 1.8rem;
+}
+
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
+  background-image: linear-gradient(0deg, var(--widget-background-color) 50%, hsla(0, 0%, 98%, 0));
+  height: 1.8rem;
+}
+
+.littlefoot-footnote__tooltip {
+  background-color: var(--widget-background-color);
+  border: 0;
+}
+
+.is-positioned-top .littlefoot-footnote__tooltip {
+  bottom: -0.62em;
+}
