@@ -1,9 +1,8 @@
-baseURL = "https://static.goblindegook.com/"
+baseURL = "https://goblindegook.com/"
 languageCode = "en-gb"
 title = "goblindegook"
 theme = "goblindegook"
 disableHugoGeneratorInject = true
-enableRobotsTXT = true
 pygmentsCodeFences = true
 
 [permalinks]
