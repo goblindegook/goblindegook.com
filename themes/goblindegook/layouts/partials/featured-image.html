@@ -35,13 +35,15 @@
   {{ if .Params.Image.Link }}</a>{{ end }}
   {{ if or (or (.Params.Image.Title) (.Params.Image.Caption)) (.Params.Image.Attr)}}
   <figcaption>
-    {{ if .Params.Image.Title }}<h4>{{ .Params.Image.Title }}</h4>{{ end }}
-    {{ if or (.Params.Image.Caption) (.Params.Image.Attr)}}<p>
-    {{ .Params.Image.Caption }}
-    {{ with .Params.Image.Attrlink}}<a href="{{ . }}"> {{ end }}
-        {{ .Params.Image.Attr }}
-    {{ if .Params.Image.Attrlink}}</a> {{ end }}
-    </p> {{ end }}
+    {{ if .Params.Image.Title }}<h4>{{ .Params.Image.Title | markdownify }}</h4>{{ end }}
+    {{ if or (.Params.Image.Caption) (.Params.Image.Attr)}}
+      <p>
+      {{ .Params.Image.Caption | markdownify }}
+      {{ with .Params.Image.Attrlink}}<a href="{{ . }}"> {{ end }}
+          {{ .Params.Image.Attr | markdownify }}
+      {{ if .Params.Image.Attrlink}}</a> {{ end }}
+      </p>
+    {{ end }}
   </figcaption>
   {{ end }}
 </figure>
