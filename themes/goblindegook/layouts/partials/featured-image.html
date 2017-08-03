@@ -40,7 +40,7 @@
       <p>
       {{ .Params.Image.Caption | markdownify }}
       {{ with .Params.Image.Attrlink}}<a href="{{ . }}"> {{ end }}
-          {{ .Params.Image.Attr | markdownify }}
+          {{ .Params.Image.Attr }}
       {{ if .Params.Image.Attrlink}}</a> {{ end }}
       </p>
     {{ end }}
