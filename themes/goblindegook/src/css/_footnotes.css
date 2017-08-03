@@ -17,6 +17,12 @@
   z-index: 6;
 }
 
+@media(--narrow-viewport) {
+  .littlefoot-footnote {
+    font-size: var(--ms-1);
+  }
+}
+
 .littlefoot-footnote.is-positioned-top {
   z-index: 10;
 }

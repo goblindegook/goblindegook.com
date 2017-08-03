@@ -8,6 +8,15 @@
   margin: 4rem 3rem;
 }
 
+@media(--narrow-viewport) {
+  .pull-quote-center,
+  .pull-quote-left,
+  .pull-quote-right {
+    font-size: var(--ms1);
+    margin: 2rem 1.5rem;
+  }
+}
+
 .pull-quote-center {
   text-align: center;
 }
