@@ -24,13 +24,6 @@ body {
   word-wrap: break-word;
 }
 
-@media(--narrow-viewport) {
-  body {
-    font-size: var(--ms0);
-  }
-}
-
-
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -54,14 +47,6 @@ blockquote {
     left: -2.5rem;
     position: relative;
     top: -0.5rem;
-  }
-}
-
-@media(--narrow-viewport) {
-  blockquote {
-    &::before {
-      font-size: var(--ms4);
-    }
   }
 }
 
@@ -105,12 +90,6 @@ figure {
 
   & img {
     padding: 0;
-  }
-}
-
-@media(--narrow-viewport) {
-  figure {
-    font-size: var(--ms-1);
   }
 }
 

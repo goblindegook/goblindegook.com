@@ -13,7 +13,6 @@
 
 @media(--narrow-viewport) {
   .site-sidebar {
-    font-size: var(--ms-1);
     padding: 1.5rem;
   }
 }

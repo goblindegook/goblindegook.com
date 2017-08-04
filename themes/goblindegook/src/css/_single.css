@@ -39,21 +39,9 @@
   font-size: var(--ms0);
 }
 
-@media(--narrow-viewport) {
-  .single-entry-date {
-     font-size: var(--ms-1); 
-  }
-}
-
 .single-entry-title {
   font-size: var(--ms3);
   font-weight: 400;
-}
-
-@media(--narrow-viewport) {
-  .single-entry-title {
-    font-size: var(--ms2);
-  }
 }
 
 .single-entry-featured-image {
@@ -98,7 +86,6 @@
     margin-top: 2rem;
 
     & figcaption {
-      font-size: var(--ms-1);
       max-width: 100%;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
@@ -202,10 +189,7 @@
 
 @media(--narrow-viewport) {
   .single-entry-body {
-    font-size: var(--ms0);
-
     & table {
-      font-size: var(--ms-1);
       margin: 2rem 0;
     }
 
@@ -220,12 +204,6 @@
   font-size: var(--ms0);
   margin: 4rem 0 2rem;
   text-align: center;
-}
-
-@media(--narrow-viewport) {
-  .single-entry-footer {
-     font-size: var(--ms-1); 
-  }
 }
 
 .single-entry-categories-icon {

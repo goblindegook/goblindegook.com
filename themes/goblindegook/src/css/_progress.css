@@ -49,9 +49,3 @@ progress {
     color: var(--widget-text-color);
   }
 }
-
-@media(--narrow-viewport) {
-  .button-furthest-read {
-    font-size: var(--ms-1);
-  }
-}

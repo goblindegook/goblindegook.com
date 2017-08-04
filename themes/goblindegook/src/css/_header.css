@@ -31,23 +31,11 @@
   }
 }
 
-@media(--narrow-viewport) {
-  .site-title {
-    font-size: var(--ms2);
-  }
-}
-
 .site-tagline {
   font-size: var(--ms0);
   line-height: 2;
   margin: 0;
   text-align: center;
-}
-
-@media(--narrow-viewport) {
-  .site-tagline {
-    font-size: var(--ms-1);
-  }
 }
 
 .site-breadcrumbs {
@@ -75,12 +63,6 @@
   & .site-title {
     font-size: var(--ms1);
     line-height: 1;
-  }
-}
-
-@media(--narrow-viewport) {
-  .site-breadcrumbs {
-    font-size: var(--ms0);
   }
 }
 

@@ -36,12 +36,6 @@
   font-size: var(--ms0);
 }
 
-@media(--narrow-viewport) {
-  .archive-entry-date {
-    font-size: var(--ms-1);
-  }
-}
-
 .archive-entry-title {
   font-size: var(--ms2);
   font-weight: 400;
@@ -51,12 +45,6 @@
 
   & a {
     text-decoration: none;
-  }
-}
-
-@media(--narrow-viewport) {
-  .archive-entry-title {
-    font-size: var(--ms1);
   }
 }
 
