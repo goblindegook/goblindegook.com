@@ -26,6 +26,6 @@
   letter-spacing: 0.06rem;
 }
 
-.small-caps-font-loaded {
+.small-caps-font-loaded .small-caps {
   font-family: var(--small-caps-font);
 }
