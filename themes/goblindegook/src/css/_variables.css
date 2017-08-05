@@ -20,7 +20,7 @@
   /* Typography */
   --body-font-family: Alegreya, serif;
   --small-caps-font-family: "Alegreya SC", serif;
-  --widget-font-family: "Fira Sans", Helvetica, sans-serif;
+  --widget-font-family: "Fira Sans", system-ui, sans-serif;
   --code-font-family: "Fira Code", monospace;
 
   /* Modular Scale */
