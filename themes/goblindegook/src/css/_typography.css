@@ -21,7 +21,11 @@
 }
 
 .small-caps {
-  font-family: var(--small-caps-font-family);
+  font-family: var(--fallback-small-caps-font);
   font-style: normal;
   letter-spacing: 0.06rem;
+}
+
+.small-caps-font-loaded {
+  font-family: var(--small-caps-font);
 }

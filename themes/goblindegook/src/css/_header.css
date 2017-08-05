@@ -16,7 +16,7 @@
 
 .site-title {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-  font-family: var(--small-caps-font-family);
+  font-family: var(--fallback-small-caps-font);
   font-size: var(--ms3);
   font-style: normal;
   font-weight: 400;
@@ -31,6 +31,10 @@
   }
 }
 
+.small-caps-font-active .site-title {
+  font-family: var(--small-caps-font);
+}
+
 .site-tagline {
   font-size: var(--ms0);
   line-height: 2;
@@ -43,7 +47,7 @@
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   display: block;
   float: left;
-  font-family: var(--small-caps-font-family);
+  font-family: var(--fallback-small-caps-font);
   font-size: var(--ms1);
   font-style: normal;
   font-weight: 400;
@@ -64,6 +68,10 @@
     font-size: var(--ms1);
     line-height: 1;
   }
+}
+
+.small-caps-font-active .site-breadcrumbs {
+  font-family: var(--small-caps-font);
 }
 
 .site-breadcrumbs-initial {

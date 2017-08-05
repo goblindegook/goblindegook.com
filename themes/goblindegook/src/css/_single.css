@@ -35,8 +35,12 @@
 }
 
 .single-entry-date {
-  font-family: var(--widget-font-family);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
+}
+
+.ui-font-active .single-entry-date {
+  font-family: var(--ui-font);
 }
 
 .single-entry-title {
@@ -61,10 +65,8 @@
   }
 
   & figcaption {
-    background-color: var(--widget-overlay-background-color);
+    background-color: var(--ui-overlay-background-color);
     bottom: 0;
-    font-family: var(--widget-font-family);
-    font-size: var(--ms0);
     padding: 0;
     position: absolute;
     text-align: left;
@@ -132,7 +134,7 @@
   & > p:first-child::first-line,
   & h2 + p::first-line,
   & hr + p::first-line {
-    font-family: var(--small-caps-font-family);
+    font-family: var(--fallback-small-caps-font);
     font-style: normal;
     letter-spacing: 0.06rem;
   }
@@ -140,7 +142,7 @@
   & table {
     border-collapse: collapse;
     border-spacing: 0;
-    font-family: var(--widget-font-family);
+    font-family: var(--fallback-ui-font);
     font-size: var(--ms0);
     margin: 3rem 0;
     width: 100%;
@@ -187,6 +189,20 @@
   }
 }
 
+.small-caps-font-active .single-entry-body {
+  & > p:first-child::first-line,
+  & h2 + p::first-line,
+  & hr + p::first-line {
+    font-family: var(--small-caps-font);
+  }
+}
+
+.ui-font-active .single-entry-body {
+  & table {
+    font-family: var(--ui-font);
+  }
+}
+
 @media(--narrow-viewport) {
   .single-entry-body {
     & table {
@@ -200,10 +216,14 @@
 }
 
 .single-entry-footer {
-  font-family: var(--widget-font-family);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   margin: 4rem 0 2rem;
   text-align: center;
+}
+
+.ui-font-active .single-entry-footer {
+  font-family: var(--ui-font);
 }
 
 .single-entry-categories-icon {

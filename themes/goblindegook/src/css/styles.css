@@ -2,6 +2,7 @@
 @import "css-modularscale";
 @import "animate.css";
 @import "littlefoot";
+@import "_fonts.css";
 @import "_variables.css";
 @import "_base.css";
 @import "_typography.css";

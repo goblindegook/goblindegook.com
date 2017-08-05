@@ -1,8 +1,13 @@
 code,
 pre {
-  font-family: var(--code-font-family);
+  font-family: var(--fallback-code-font);
   font-size: var(--ms0);
   font-weight: 300;
+}
+
+.code-font-active code,
+.code-font-active pre {
+  font-family: var(--code-font);
 }
 
 pre {

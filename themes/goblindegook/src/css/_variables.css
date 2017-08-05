@@ -10,18 +10,22 @@
   --link-color: #be9d31;
   --highlight-color: #be9d31;
   --active-color: #d2b450;
-  --widget-text-color: #fafafa;
-  --widget-background-color: #444;
-  --widget-active-background-color: #be9d31;
-  --widget-overlay-background-color: rgba(51, 51, 51, 0.5);
+  --ui-text-color: #fafafa;
+  --ui-background-color: #444;
+  --ui-active-background-color: #be9d31;
+  --ui-overlay-background-color: rgba(51, 51, 51, 0.5);
   --body-background-alt-color: #f0f0f0;
   --divider-color: #ddd;
 
   /* Typography */
-  --body-font-family: Alegreya, serif;
-  --small-caps-font-family: "Alegreya SC", serif;
-  --widget-font-family: "Fira Sans", system-ui, sans-serif;
-  --code-font-family: "Fira Code", monospace;
+  --body-font: Alegreya, serif;
+  --small-caps-font: "Alegreya SC", serif;
+  --ui-font: "Fira Sans", system-ui, sans-serif;
+  --code-font: "Fira Code", monospace;
+  --fallback-body-font: serif;
+  --fallback-small-caps-font: serif;
+  --fallback-ui-font: system-ui, sans-serif;
+  --fallback-code-font: monospace;
 
   /* Modular Scale */
   --ms-base: 1rem;

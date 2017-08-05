@@ -3,18 +3,22 @@
   margin: 0 0.4rem;
 
   &.is-active {
-    background-color: var(--widget-active-background-color);
+    background-color: var(--ui-active-background-color);
     transition-delay: 0.1s;
   }
 }
 
 .littlefoot-footnote {
-  color: var(--widget-text-color);
-  font-family: var(--widget-font-family);
+  color: var(--ui-text-color);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   font-weight: 400;
   padding: 0;
   z-index: 6;
+}
+
+.ui-font-active .littlefoot-footnote {
+  font-family: var(--ui-font);
 }
 
 .littlefoot-footnote.is-positioned-top {
@@ -29,35 +33,35 @@
   & a {
     background-color: transparent;
     background-image:
-      linear-gradient(var(--widget-background-color), var(--widget-background-color)),
-      linear-gradient(var(--widget-background-color), var(--widget-background-color)),
+      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
+      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
       linear-gradient(var(--link-color), var(--link-color));
     background-position: 0 85%, 100% 85%, 0 85%;
     background-repeat: no-repeat, no-repeat, repeat-x;
     background-size: 1px 1px, 1px 1px, 1px 1px;
     text-decoration: none;
     text-shadow:
-      0.02em 0 var(--widget-background-color),
-      -0.02em 0 var(--widget-background-color),
-      0 0.02em var(--widget-background-color),
-      0 -0.02em var(--widget-background-color),
-      0.04em 0 var(--widget-background-color),
-      -0.04em 0 var(--widget-background-color),
-      0.06em 0 var(--widget-background-color),
-      -0.06em 0 var(--widget-background-color),
-      0.08em 0 var(--widget-background-color),
-      -0.08em 0 var(--widget-background-color),
-      0.1em 0 var(--widget-background-color),
-      -0.1em 0 var(--widget-background-color),
-      0.12em 0 var(--widget-background-color),
-      -0.12em 0 var(--widget-background-color),
-      0.14em 0 var(--widget-background-color),
-      -0.14em 0 var(--widget-background-color);
+      0.02em 0 var(--ui-background-color),
+      -0.02em 0 var(--ui-background-color),
+      0 0.02em var(--ui-background-color),
+      0 -0.02em var(--ui-background-color),
+      0.04em 0 var(--ui-background-color),
+      -0.04em 0 var(--ui-background-color),
+      0.06em 0 var(--ui-background-color),
+      -0.06em 0 var(--ui-background-color),
+      0.08em 0 var(--ui-background-color),
+      -0.08em 0 var(--ui-background-color),
+      0.1em 0 var(--ui-background-color),
+      -0.1em 0 var(--ui-background-color),
+      0.12em 0 var(--ui-background-color),
+      -0.12em 0 var(--ui-background-color),
+      0.14em 0 var(--ui-background-color),
+      -0.14em 0 var(--ui-background-color);
   }
 }
 
 .littlefoot-footnote__wrapper {
-  background-color: var(--widget-background-color);
+  background-color: var(--ui-background-color);
   border-radius: 0;
 }
 
@@ -70,17 +74,17 @@
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
-  background-image: linear-gradient(180deg, var(--widget-background-color) 50%, hsla(0, 0%, 98%, 0));
+  background-image: linear-gradient(180deg, var(--ui-background-color) 50%, hsla(0, 0%, 98%, 0));
   height: 1.8rem;
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
-  background-image: linear-gradient(0deg, var(--widget-background-color) 50%, hsla(0, 0%, 98%, 0));
+  background-image: linear-gradient(0deg, var(--ui-background-color) 50%, hsla(0, 0%, 98%, 0));
   height: 1.8rem;
 }
 
 .littlefoot-footnote__tooltip {
-  background-color: var(--widget-background-color);
+  background-color: var(--ui-background-color);
   border: 0;
 }
 

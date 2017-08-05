@@ -32,8 +32,12 @@
 }
 
 .archive-entry-date {
-  font-family: var(--widget-font-family);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
+}
+
+.ui-font-active .archive-entry-date {
+  font-family: var(--ui-font);
 }
 
 .archive-entry-title {

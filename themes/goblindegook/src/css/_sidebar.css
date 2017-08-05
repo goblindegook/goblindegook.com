@@ -1,7 +1,7 @@
 .site-sidebar {
-  background-color: var(--widget-background-color);
-  color: var(--widget-text-color);
-  font-family: var(--widget-font-family);
+  background-color: var(--ui-background-color);
+  color: var(--ui-text-color);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   left: 50%;
   margin: 0 -50vw;
@@ -9,6 +9,10 @@
   position: relative;
   right: 50%;
   width: 100vw;
+}
+
+.ui-font-active .site-sidebar {
+  font-family: var(--ui-font);
 }
 
 @media(--narrow-viewport) {

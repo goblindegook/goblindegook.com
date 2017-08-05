@@ -27,13 +27,13 @@ progress {
 }
 
 .button-furthest-read {
-  background-color: var(--widget-background-color);
+  background-color: var(--ui-background-color);
   border: 0;
   bottom: 1rem;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-  color: var(--widget-text-color);
+  color: var(--ui-text-color);
   float: none;
-  font-family: var(--widget-font-family);
+  font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   height: 2rem;
   margin: auto;
@@ -45,7 +45,11 @@ progress {
   z-index: 10;
 
   &:--enter {
-    background-color: var(--widget-active-background-color);
-    color: var(--widget-text-color);
+    background-color: var(--ui-active-background-color);
+    color: var(--ui-text-color);
   }
+}
+
+.ui-font-active .button-furthest-read {
+  font-family: var(--ui-font);
 }
