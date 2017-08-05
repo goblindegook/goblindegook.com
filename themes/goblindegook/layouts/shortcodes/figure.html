@@ -9,9 +9,13 @@
       "
       data-original="{{ .Get "src" }}"
       data-original-set="
-        {{ delimit (split (.Get "src") ".") "." "-340w." }} 340w,
-        {{ delimit (split (.Get "src") ".") "." "-340w@2x." }} 680w,
-        {{ delimit (split (.Get "src") ".") "." "@2x." }} 2x
+        {{ with .Get "srcset" }}
+          {{ . }}
+        {{ else }}
+          {{ delimit (split (.Get "src") ".") "." "-340w." }} 340w,
+          {{ delimit (split (.Get "src") ".") "." "-340w@2x." }} 680w,
+          {{ delimit (split (.Get "src") ".") "." "@2x." }} 2x
+        {{ end }}
       "
       {{ if or (.Get "alt") (.Get "caption") }}
         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"

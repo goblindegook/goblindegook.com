@@ -21,7 +21,7 @@
   --body-font-family: Alegreya, serif;
   --small-caps-font-family: "Alegreya SC", serif;
   --widget-font-family: "Fira Sans", Helvetica, sans-serif;
-  --code-font-family: monospace;
+  --code-font-family: "Fira Code", monospace;
 
   /* Modular Scale */
   --ms-base: 1rem;

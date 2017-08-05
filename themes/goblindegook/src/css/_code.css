@@ -1,0 +1,31 @@
+code,
+pre {
+  font-family: var(--code-font-family);
+  font-size: var(--ms0);
+}
+
+pre {
+  hyphens: none;
+  line-height: 1.6 !important; /* override inline style */
+  overflow-wrap: break-word;
+  tab-size: 2;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: break-word; 
+}
+
+.highlight {
+  border-radius: 0.5rem;
+  margin: 3rem 0;
+  overflow: scroll;
+  padding: 1.5rem;
+}
+
+@media(--narrow-viewport) {
+  .highlight {
+    margin: 2rem 0;
+    max-width: 100%;
+  }
+}

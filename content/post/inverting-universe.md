@@ -123,7 +123,6 @@ I'm no longer at log, but the company remains fully committed to delivering Word
 
 In all, I'm glad things turned out this way.
 
-
-_Thanks to José Ruivo (co-founder and CEO of log) and Susana Salgado for their support and their feedback on this piece._
+_With thanks to José Ruivo (co-founder and CEO of log) and Susana Salgado for their support and their feedback on this piece._
 
 [^1]: Indeed, _To Myself_ was the book's original title, or the closest thing it had to one.
