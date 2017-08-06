@@ -2646,9 +2646,9 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rollup-plugin-commonjs@^8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.0.2.tgz#98b1589bfe32a6c0f67790b60c0b499972afed89"
+rollup-plugin-commonjs@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.1.0.tgz#8ac9a87e6ea4c0d136e3e0e25ef41058957622b0"
   dependencies:
     acorn "^4.0.1"
     estree-walker "^0.3.0"
@@ -3160,9 +3160,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-vanilla-lazyload@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-8.0.1.tgz#89df2fa695f47d681753c941f9caa5d276ab7bbc"
+vanilla-lazyload@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-8.0.3.tgz#f9ee1327710d117660274bf6555c63eb6b588360"
 
 vendors@^1.0.0:
   version "1.0.1"

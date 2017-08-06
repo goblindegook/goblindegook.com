@@ -2,6 +2,7 @@ baseURL = "https://goblindegook.com/"
 languageCode = "en-gb"
 title = "goblindegook"
 theme = "goblindegook"
+disableAliases = true
 disableHugoGeneratorInject = true
 pygmentsCodeFences = true
 
@@ -24,3 +25,23 @@ pygmentsCodeFences = true
   identifier = "home"
   url = "/"
   weight = -100
+
+[outputs]
+  home = [ "HTML", "RSS", "REDIR", "HEADERS" ]
+
+[mediaTypes]
+  [mediaTypes."text/netlify"]
+    suffix = ""
+    delimiter = ""
+
+[outputFormats]
+  [outputFormats.REDIR]
+    mediatype = "text/netlify"
+    baseName = "_redirects"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.HEADERS]
+    mediatype = "text/netlify"
+    baseName = "_headers"
+    isPlainText = true
+    notAlternative = true

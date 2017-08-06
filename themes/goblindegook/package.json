@@ -29,7 +29,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "rollup": "^0.45.2",
-    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
     "rollup-plugin-uglify": "^2.0.1",
@@ -51,7 +51,7 @@
     "masonry-layout": "^4.2.0",
     "tslib": "^1.7.1",
     "unfetch": "^3.0.0",
-    "vanilla-lazyload": "^8.0.1",
+    "vanilla-lazyload": "^8.0.3",
     "webfontloader": "^1.6.28"
   }
 }
