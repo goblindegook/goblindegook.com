@@ -53,7 +53,10 @@
     }
   </script>
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Feed" href="{{ .Site.BaseURL }}feed">
+  {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{ end }}
   <!--[if lt IE 9]><script type='text/javascript' src='/js/html5shiv.js?ver=3.7.3'></script><![endif]-->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
