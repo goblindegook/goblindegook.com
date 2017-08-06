@@ -9,7 +9,7 @@
     "prebuild": "concurrently 'yarn build-theme' 'yarn build-images' 'yarn build-index'",
     "build": "hugo",
     "build-images": "gulp images",
-    "build-index": "hugo-lunr",
+    "build-index": "hugo-lunr -o static/lunr.json",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
     "serve": "hugo serve --buildDrafts -t goblindegook",
