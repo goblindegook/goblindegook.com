@@ -16,6 +16,8 @@ pygmentsCodeFences = true
   intro = "My name is Luís Rodrigues and this site collects my writing.\n\nI'm [@goblindegook](https://twitter.com/goblindegook) on Twitter. Come by and say hello."
   disclaimer = "Opinions my own, unless borrowed."
   twitter = "@goblindegook"
+  searchPrefill = "Search goblindegook"
+  searchSite = "goblindegook.com"
 
 [[menu.main]]
   name = "Home"

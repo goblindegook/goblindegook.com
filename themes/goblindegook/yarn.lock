@@ -16,6 +16,10 @@
   version "4.14.71"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.71.tgz#0dc383f78981216ac76e2f2c3afd998e0450e4c1"
 
+"@types/lunr@^0.5.29":
+  version "0.5.29"
+  resolved "https://registry.yarnpkg.com/@types/lunr/-/lunr-0.5.29.tgz#9e60552ff4d0d4e0823b7062b21d968caa90f8fb"
+
 "@types/masonry-layout@^4.0.5":
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/@types/masonry-layout/-/masonry-layout-4.0.5.tgz#7c0ac516d0860f97bdd361281ab3aa8f2ed3c1d4"
@@ -1498,6 +1502,10 @@ lru-cache@^4.0.1:
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
+
+lunr@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.1.2.tgz#6b6306e04238fb09c04cfab28e45ae550226c479"
 
 macaddress@^0.2.8:
   version "0.2.8"
@@ -3107,6 +3115,10 @@ uglify-js@^3.0.9:
 uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
+
+unfetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-3.0.0.tgz#8d1e0513a4ecd0e5ff2d41a6ba77771aae8b6482"
 
 uniq@^1.0.1:
   version "1.0.1"

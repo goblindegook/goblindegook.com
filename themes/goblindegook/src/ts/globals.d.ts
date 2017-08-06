@@ -18,6 +18,36 @@ declare module 'estimate' {
   export function text(tx: string, options: Options): number
 }
 
+declare module 'unfetch' {
+  interface Options {
+    body?: FormData | JSON | Blob | ArrayBuffer | string
+    credentials?: "include"
+    headers?: { [key: string]: string }
+    method?: "GET" | "POST" | "PUT" | "PATCH" | "HEAD" | "OPTIONS" | "DELETE"
+  }
+
+  interface Headers {
+    entries: [string, string][]
+    keys: string[]
+    get(key: string): string
+    has(key: string): boolean
+  }
+
+  interface Response {
+    ok: boolean
+    status: number
+    statusText: string
+    blob(): Promise<Blob>
+    clone(): Response
+    json(): Promise<any>
+    text(): Promise<string>
+  }
+
+  function fetch(url: string, options?: Options): Promise<Response>
+
+  export = fetch
+}
+
 declare module 'littlefoot' {
   interface Settings {
     activateCallback?: (element: HTMLElement, button: HTMLElement) => any
