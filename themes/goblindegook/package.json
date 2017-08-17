@@ -10,13 +10,13 @@
     "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts'",
     "watch:styles": "postcss src/css/styles.css --watch --output static/css/styles.css",
     "watch:ts": "rollup -c rollup.watch.js -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tslint src/**/*.ts"
   },
   "author": "Luís Rodrigues",
   "license": "MIT",
   "devDependencies": {
     "@types/imagesloaded": "^4.1.1",
-    "@types/lodash": "^4.14.71",
+    "@types/lodash": "^4.14.73",
     "@types/lunr": "^0.5.29",
     "@types/masonry-layout": "^4.0.5",
     "@types/webfontloader": "^1.6.28",
@@ -24,11 +24,11 @@
     "css-modularscale": "^1.1.1",
     "cssnano": "^3.10.0",
     "normalize.css": "^7.0.0",
-    "postcss": "^6.0.8",
+    "postcss": "^6.0.9",
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "rollup": "^0.45.2",
+    "rollup": "^0.47.6",
     "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
@@ -36,7 +36,7 @@
     "rollup-watch": "^4.3.1",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
-    "tslint": "^5.5.0",
+    "tslint": "^5.6.0",
     "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.2"
   },

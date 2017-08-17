@@ -12,38 +12,36 @@ declare module 'estimate' {
     update: () => void
   }
 
-  export function element(el: HTMLElement): Calc
-  export function element(el: HTMLElement, options: Options): Calc
-  export function text(tx: string): number
-  export function text(tx: string, options: Options): number
+  export function element (el: HTMLElement, options?: Options): Calc
+  export function text (tx: string, options?: Options): number
 }
 
 declare module 'unfetch' {
   interface Options {
     body?: FormData | JSON | Blob | ArrayBuffer | string
-    credentials?: "include"
+    credentials?: 'include'
     headers?: { [key: string]: string }
-    method?: "GET" | "POST" | "PUT" | "PATCH" | "HEAD" | "OPTIONS" | "DELETE"
+    method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'HEAD' | 'OPTIONS' | 'DELETE'
   }
 
   interface Headers {
     entries: [string, string][]
     keys: string[]
-    get(key: string): string
-    has(key: string): boolean
+    get (key: string): string
+    has (key: string): boolean
   }
 
   interface Response {
     ok: boolean
     status: number
     statusText: string
-    blob(): Promise<Blob>
-    clone(): Response
-    json(): Promise<any>
-    text(): Promise<string>
+    blob (): Promise<Blob>
+    clone (): Response
+    json (): Promise<any>
+    text (): Promise<string>
   }
 
-  function fetch(url: string, options?: Options): Promise<Response>
+  function fetch (url: string, options?: Options): Promise<Response>
 
   export = fetch
 }
@@ -68,8 +66,7 @@ declare module 'littlefoot' {
     scope?: string
   }
 
-  function littlefoot(): void
-  function littlefoot(settings: Settings): void
+  function littlefoot (settings?: Settings): void
 
   export = littlefoot
 }
@@ -94,10 +91,9 @@ declare module 'vanilla-lazyload' {
   }
 
   export default class LazyLoad {
-    constructor()
-    constructor(settings: Settings)
-    public destroy(): void
-    public handleScroll(): void
-    public update(): void
+    constructor (settings?: Settings)
+    public destroy (): void
+    public handleScroll (): void
+    public update (): void
   }
 }
