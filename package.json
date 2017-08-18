@@ -6,8 +6,9 @@
   "license": "CC-BY-NC-4.0",
   "scripts": {
     "postinstall": "cd themes/goblindegook && yarn",
-    "prebuild": "concurrently 'yarn build-theme' 'yarn build-images' 'yarn build-index'",
+    "prebuild": "concurrently 'yarn build-theme' 'yarn build-images'",
     "build": "hugo",
+    "postbuild": "yarn build-index",
     "build-images": "gulp images",
     "build-index": "hugo-lunr-index",
     "build-theme": "cd themes/goblindegook && yarn build",
