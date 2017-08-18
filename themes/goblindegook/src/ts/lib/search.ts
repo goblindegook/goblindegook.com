@@ -2,7 +2,7 @@ import lunr from 'lunr'
 import fetch from 'unfetch'
 
 interface Entry extends Object {
-  uri: string
+  url: string
 }
 
 interface SearchIndex {
@@ -20,7 +20,7 @@ function buildIndex (entries: Entry[]): lunr.Index {
     this.field('categories', { boost: 3 })
     this.field('tags', { boost: 3 })
     this.field('content')
-    this.ref('uri')
+    this.ref('url')
 
     entries.forEach(entry => {
       this.add(entry)
@@ -34,7 +34,6 @@ export async function createIndex (url: string): Promise<SearchIndex> {
 
   return {
     search: (query: string) => index.search(query)
-      .map(result => result.ref)
-      .map(ref => entries.find(e => e.uri === ref)!)
+      .map(r => entries.find(e => e.url === r.ref)!)
   }
 }
