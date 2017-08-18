@@ -26,6 +26,8 @@ Code excerpts use Nikita Prokopov's [Fira Code], a variant of [Fira Mono][Fira] 
 
 The tools I use to create and maintain this site include the [Visual Studio Code] editor, [nvALT] for note-taking, and the [Hugo] static site generator with a build stack that relies on [PostCSS], [Rollup], and [TypeScript]. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
 
+Site content and sources are kept under version control on a [public Github repository][goblindegook/goblindegook.com] from which the site is deployed whenever updated.
+
 [Chrome DevTools]: https://developer.chrome.com/devtools/
 [Hugo]: http://gohugo.io
 [nvALT]: http://brettterpstra.com/projects/nvalt/
@@ -33,10 +35,11 @@ The tools I use to create and maintain this site include the [Visual Studio Code
 [Rollup]: https://rollupjs.org
 [TypeScript]: http://www.typescriptlang.org
 [Visual Studio Code]: https://code.visualstudio.com
+[goblindegook/goblindegook.com]: https://github.com/goblindegook/goblindegook.com
 
 ### Server-Side
 
-{{< small-caps >}}goblindegook{{< /small-caps >}} is hosted by [Netlify] and published through [Hugo], a static site generator written in [Go]. It uses certificates issued by the [Let's Encrypt] Certificate Authority.
+{{< small-caps >}}goblindegook{{< /small-caps >}} is hosted by [Netlify] and built using [Hugo], a static site generator written in [Go]. It uses certificates issued by the [Let's Encrypt] Certificate Authority.
 
 [Go]: http://php.net
 [Hugo]: http://gohugo.io
