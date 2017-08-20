@@ -9,6 +9,7 @@ import { createStickinessToggler } from './lib/header'
 import { masonry } from './lib/masonry'
 import { readingProgress } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
+import { createSearchHandler } from './lib/search'
 
 // Fonts
 
@@ -107,4 +108,13 @@ if (progressBar) {
   })
 
   reading.start()
+}
+
+// Search
+
+const searchInput = document.querySelector('.search-input') as HTMLInputElement
+const searchResults = document.querySelector('.search-results') as HTMLElement
+
+if (searchInput && searchResults) {
+  searchInput.addEventListener('keyup', createSearchHandler(searchInput, searchResults, '/lunr.json'))
 }

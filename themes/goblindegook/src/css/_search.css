@@ -44,6 +44,47 @@
   margin-bottom: 4rem;
 }
 
+.search-input {
+  display: block;
+  margin: 0 auto 3rem;
+  width: 100%;
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+}
+
+.search-result-none {
+  font-size: var(--ms1);
+  margin: 0 0 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.search-result-single {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: var(--ms1);
+  margin: 0 0 1rem;
+  padding: 1rem;
+}
+
+.search-result-title {
+  font-size: var(--ms1);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.search-result-preview {
+  font-size: var(--ms0);
+  margin: 0;
+}
+
 .search-form-external {
   display: block;
   height: 40px;

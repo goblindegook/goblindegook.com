@@ -1,7 +1,12 @@
+<div class="search">
+  <input aria-label="Search" class="search-input" name="q"
+    placeholder="Enter search terms" type="search" value="">
+  <ul class="search-results"></ul>
+</div>
+
+<noscript>
   <iframe src="https://duckduckgo.com/search.html?site={{ .Site.Params.SearchSite }}&amp;prefill={{ .Site.Params.SearchPrefill }}&amp;focus=yes"
     class="search-form-external" frameborder="0"></iframe>
 
-  <p class="search-note">My site does not have the ability to search its
-    content autonomously, so all queries are routed via
-    <a href="https://duckduckgo.com/">DuckDuckGo</a>, a search engine that
-    protects your privacy.</p>
+  <p class="search-note">All queries are routed via <a href="https://duckduckgo.com/">DuckDuckGo</a>, a search engine that protects your privacy.</p>
+</noscript>
