@@ -17,6 +17,6 @@ function getMarginHeight (element: HTMLElement): number {
  * @return               The DOM element's total height.
  */
 export function outerHeight (element: HTMLElement, includeMargin = false): number {
-  const marginHeight = includeMargin ? getMarginHeight(element) : 0
-  return element.offsetHeight + marginHeight
+  const marginHeight = element && includeMargin ? getMarginHeight(element) : 0
+  return (element && element.offsetHeight || 0) + marginHeight
 }

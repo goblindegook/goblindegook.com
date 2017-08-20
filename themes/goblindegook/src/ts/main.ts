@@ -4,12 +4,11 @@ import LazyLoad from 'vanilla-lazyload'
 import WebFont from 'webfontloader'
 import { outerHeight } from './lib/dom/outerHeight'
 import { triggerEvent } from './lib/dom/triggerEvent'
-import { getPageYOffset } from './lib/window/getPageYOffset'
-import { targetIsValid, targetMatchesLocation } from './lib/hash'
+import { hashChangeHandler, hashClickHandler } from './lib/hash'
+import { createStickinessToggler } from './lib/header'
 import { masonry } from './lib/masonry'
 import { readingProgress } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
-import { scrollToTarget } from './lib/scrollToTarget'
 
 // Fonts
 
@@ -64,52 +63,33 @@ littlefoot({ allowDuplicates: true })
 
 // Hash
 
-document.body.addEventListener('click', (event) => {
-  const anchor = event.target as HTMLAnchorElement
-  if (targetMatchesLocation(anchor, location) && targetIsValid(anchor)) {
-    event.preventDefault()
-    scrollToTarget(anchor.hash, 0, () => {
-      location.hash = anchor.hash
-    })
-  }
-})
-
-window.addEventListener('hashchange', () => scrollToTarget(location.hash, 0))
-window.addEventListener('load', () => scrollToTarget(location.hash, 0))
+document.body.addEventListener('click', hashClickHandler)
+window.addEventListener('hashchange', hashChangeHandler)
+window.addEventListener('load', hashChangeHandler)
 
 // Header
 
-const header = document.querySelector('.single-entry-header') as HTMLElement
-const headerHeight = header ? outerHeight(header, true) : 0
-const headerImage = document.querySelector('.single-entry-image-wrapper') as HTMLElement
-const headerImageHeight = headerImage ? outerHeight(headerImage, true) : 0
 const breadcrumbs = document.querySelector('.site-breadcrumbs') as HTMLElement
+const headerHeight = outerHeight(document.querySelector('.single-entry-header') as HTMLElement, true)
+const featuredImageHeight = outerHeight(document.querySelector('.single-entry-featured-image') as HTMLElement, true)
 const content = document.querySelector('main') as HTMLElement
+
+const headerToggler = createStickinessToggler(breadcrumbs, {
+  hiddenClass: 'bounceOutUp',
+  initialClass: 'site-breadcrumbs-initial',
+  threshold: content.offsetTop + headerHeight - featuredImageHeight,
+  visibleClass: 'slideInDown'
+})
+
+Array.from(breadcrumbs.querySelectorAll('.trail-end, .site-title'))
+  .forEach((element: HTMLElement) => element.addEventListener('click', () => scrollTo(0)))
+
+window.addEventListener('scroll', debounce(headerToggler, 30))
+triggerEvent(window, 'scroll')
+
+// Progress Bar
+
 const progressBar = document.getElementById('reading-progress')
-
-/**
- * Update fixed header visibility.
- */
-function updateNavHeaderVisibility () {
-  const hidden = 'bounceOutUp'
-  const visible = 'slideInDown'
-  const shouldMakeHeaderStick = getPageYOffset() > content.offsetTop + headerHeight - headerImageHeight
-
-  if (breadcrumbs && shouldMakeHeaderStick && breadcrumbs.classList.contains('site-breadcrumbs-initial')) {
-    breadcrumbs.classList.remove('site-breadcrumbs-initial')
-    breadcrumbs.classList.add(visible)
-  }
-
-  if (breadcrumbs && !shouldMakeHeaderStick && breadcrumbs.classList.contains(visible)) {
-    breadcrumbs.classList.remove(visible)
-    breadcrumbs.classList.add(hidden)
-  }
-
-  if (breadcrumbs && shouldMakeHeaderStick && breadcrumbs.classList.contains(hidden)) {
-    breadcrumbs.classList.remove(hidden)
-    breadcrumbs.classList.add(visible)
-  }
-}
 
 if (progressBar) {
   const entryContent = document.querySelector('.single-entry-body') as HTMLElement
@@ -128,11 +108,3 @@ if (progressBar) {
 
   reading.start()
 }
-
-Array.from(breadcrumbs.querySelectorAll('.trail-end, .site-title'))
-  .forEach((element: HTMLElement) => {
-    element.addEventListener('click', () => scrollTo(0))
-  })
-
-window.addEventListener('scroll', debounce(updateNavHeaderVisibility, 30))
-triggerEvent(window, 'scroll')
