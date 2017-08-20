@@ -15,7 +15,7 @@ Most of my open source endeavours revolve around the web, using JavaScript or PH
 : A jQuery-free rewrite of Chris Sauve's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
 
 [hugo-lunr-index-cli](https://www.npmjs.com/package/hugo-lunr-index-cli)
-: A CLI application that generates [Lunr](https://lunrjs.com) indices from the source content of a [Hugo](https://gohugo.io) static site. Get it with `npm install --global hugo-lunr-index-cli`.
+: A CLI application that generates [Lunr](https://lunrjs.com) search indices from the source content of a [Hugo](https://gohugo.io) static site. Get it with `npm install --global hugo-lunr-index-cli`.
 
 [Dicionário](https://github.com/goblindegook/dictionary-react-redux-typescript)
 : I created this simple dictionary application to become more familiar with TypeScript. It uses React, Redux and the [Dicionário Aberto](http://dicionario-aberto.net) JSON API.
