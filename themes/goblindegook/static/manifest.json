@@ -1,0 +1,10 @@
+{
+  "name": "goblindegook",
+  "short_name": "goblindegook",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation" : "portrait",
+  "background_color": "#fafafa",
+  "theme_color": "#be9d31"
+}

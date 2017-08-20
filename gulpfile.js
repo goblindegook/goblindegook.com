@@ -8,7 +8,7 @@ const responsive = require('gulp-responsive')
 const dest = 'static'
 
 const iconWidths = [
-  310, 256, 192, 180, 160, 152, 150, 144, 128, 120, 114, 96, 76, 72, 70, 64, 60, 57, 32, 16
+  310, 192, 180, 160, 152, 150, 144, 120, 114, 96, 76, 72, 70, 64, 60, 57, 32, 16
 ]
 
 $.task('default', ['images'])

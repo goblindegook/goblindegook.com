@@ -1,27 +1,23 @@
 {
   "name": "goblindegook",
   "short_name": "goblindegook",
-  "icons": [{
-    "src": "/icon/goblindegook-128.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "/icon/goblindegook-144.png",
-    "sizes": "144x144",
-    "type": "image/png"
-  }, {
-    "src": "/icon/goblindegook-152.png",
-    "sizes": "152x152",
-    "type": "image/png"
-  }, {
-    "src": "/icon/goblindegook-192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  }, {
-    "src": "/icon/goblindegook-256.png",
-    "sizes": "256x256",
-    "type": "image/png"
-  }],
+  "icons": [
+    {
+      "src": "/icon/goblindegook-114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon/goblindegook-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon/goblindegook-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "start_url": "/index.html",
   "display": "standalone",
   "orientation" : "portrait",
