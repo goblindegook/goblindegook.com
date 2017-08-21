@@ -88,7 +88,6 @@ if (breadcrumbs) {
     .forEach((element: HTMLElement) => element.addEventListener('click', () => scrollTo(0)))
 
   window.addEventListener('scroll', debounce(headerToggler, 30))
-  triggerEvent(window, 'scroll')
 }
 
 // Progress Bar
@@ -112,6 +111,8 @@ if (progressBar) {
 
   reading.start()
 }
+
+triggerEvent(window, 'scroll')
 
 // Search
 
