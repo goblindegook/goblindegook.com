@@ -9,7 +9,7 @@ import { createStickinessToggler } from './lib/header'
 import { masonry } from './lib/masonry'
 import { readingProgress } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
-import { createSearchHandler, SearchDocument } from './lib/search'
+import { createSearchHandler } from './lib/search'
 
 // Fonts
 
@@ -118,10 +118,6 @@ if (progressBar) {
 const searchInput = document.querySelector('.search-input')
 const searchResultsContainer = document.querySelector('.search-results')
 
-function renderSearchResultPreview (result: SearchDocument): string {
-  return result.description ? `<p class="search-result-preview">${result.description}</p>` : ''
-}
-
 if (searchInput && searchResultsContainer) {
   searchInput.addEventListener('keyup', createSearchHandler({
     collectionUrl: '/lunr.json',
@@ -130,7 +126,7 @@ if (searchInput && searchResultsContainer) {
       <li>
         <article class="search-result-single">
           <h2 class="search-result-title"><a href="${r.url}">${r.title}</a></h2>
-          ${renderSearchResultPreview(r)}
+          ${r.description ? `<p class="search-result-preview">${r.description}</p>` : ''}
         </article>
       </li>
     `,

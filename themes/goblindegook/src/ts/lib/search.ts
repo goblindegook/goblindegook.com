@@ -2,7 +2,7 @@ import lunr from 'lunr'
 import fetch from 'unfetch'
 
 // tslint:disable:ter-indent
-export interface SearchDocument {
+interface SearchDocument {
   [attribute: string]: any
   content: string
   description?: string
