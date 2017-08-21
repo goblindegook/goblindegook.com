@@ -56,7 +56,7 @@ function createIndex (collection: SearchDocument[]): SearchIndex {
 
 export function createSearchHandler (userOptions: SearchOptions) {
   const options = {
-    renderNoResults: (terms?: string) => `No results found for ${terms}.`,
+    renderNoResults: (terms: string) => `No results found for ${terms}.`,
     renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
     ...userOptions
   }

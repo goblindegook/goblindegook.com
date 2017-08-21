@@ -48,15 +48,17 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Lodash], [LazyLoad], [littlefoot], [Lunr], and [Masonry] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Insane], [LazyLoad], [littlefoot], [Lodash], [Lunr], [Masonry], and [Showdown] provide additional features and optimizations.
 
 The site's stylesheet is generated from [cssnext] sources and includes [animate.css] for high-performance animations.
 
-[Lodash]: https://lodash.com
+[Insane]: https://github.com/bevacqua/insane
 [LazyLoad]: https://github.com/verlok/lazyload
 [littlefoot]: https://github.com/goblindegook/littlefoot
-[Masonry]: http://masonry.desandro.com
+[Lodash]: https://lodash.com
 [Lunr]: https://lunrjs.com/
+[Masonry]: http://masonry.desandro.com
+[Showdown]: http://showdownjs.github.io/demo/
 
 [animate.css]: https://daneden.github.io/animate.css
 [cssnext]: http://cssnext.io

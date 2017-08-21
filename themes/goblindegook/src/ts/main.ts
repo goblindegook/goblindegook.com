@@ -120,20 +120,26 @@ triggerEvent(window, 'scroll')
 
 const searchInput = document.querySelector('.search-input')
 const searchResultsContainer = document.querySelector('.search-results')
-const md = new showdown.Converter()
+const md = new showdown.Converter({
+  strikethrough: true
+})
+
+function safeMarkdown (text: string): string {
+  return insane(md.makeHtml(text)).replace(/<\/?p>/ig, '')
+}
 
 if (searchInput && searchResultsContainer) {
   searchInput.addEventListener('keyup', createSearchHandler({
     collectionUrl: '/lunr.json',
     container: searchResultsContainer,
     renderNoResults: () => `<li class="search-result-none">No results found.</li>`,
-    renderResult: (r) => insane(`
+    renderResult: (r) => `
       <li>
         <article class="search-result-single">
-          <h2 class="search-result-title"><a href="${r.url}">${md.makeHtml(r.title)}</a></h2>
+          <h2 class="search-result-title"><a href="${r.url}">${safeMarkdown(r.title)}</a></h2>
           ${r.description ? `<p class="search-result-preview">${r.description}</p>` : ''}
         </article>
       </li>
-    `)
+    `
   }))
 }
