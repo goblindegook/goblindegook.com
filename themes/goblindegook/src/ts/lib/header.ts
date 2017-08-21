@@ -12,7 +12,7 @@ type HeaderTogglerOptions = {
 /**
  * Update fixed header visibility.
  */
-export function createStickinessToggler (el: HTMLElement, options?: HeaderTogglerOptions) {
+export function createStickinessToggler (el: Element, options?: HeaderTogglerOptions) {
   return () => {
     const hidden = options && options.hiddenClass || ''
     const initial = options && options.initialClass || ''

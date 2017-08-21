@@ -2,7 +2,8 @@ import lunr from 'lunr'
 import fetch from 'unfetch'
 
 // tslint:disable:ter-indent
-interface Entry extends Object {
+export interface SearchDocument {
+  [attribute: string]: any
   content: string
   description?: string
   title: string
@@ -11,15 +12,24 @@ interface Entry extends Object {
 // tslint:enable:ter-indent
 
 interface SearchIndex {
-  search (term: string): Entry[]
+  search (term: string): SearchDocument[]
 }
 
-async function fetchIndex (url: string): Promise<Entry[]> {
+// tslint:disable:ter-indent
+type SearchOptions = {
+  collectionUrl: string
+  container: Element
+  noResultsHtml?: string
+  renderResult?: (result: SearchDocument) => string
+}
+// tslint:enable:ter-indent
+
+async function fetchCollection (url: string): Promise<SearchDocument[]> {
   const response = await fetch(url)
   return await response.json()
 }
 
-function buildIndex (entries: Entry[]): lunr.Index {
+function buildIndex (entries: SearchDocument[]): lunr.Index {
   return lunr(function () {
     this.field('title', { boost: 10 })
     this.field('categories', { boost: 3 })
@@ -35,35 +45,25 @@ function buildIndex (entries: Entry[]): lunr.Index {
   })
 }
 
-export async function createIndex (url: string): Promise<SearchIndex> {
-  const entries = await fetchIndex(url)
-  const index = buildIndex(entries)
+async function createIndex (collection: SearchDocument[]): Promise<SearchIndex> {
+  const index = buildIndex(collection)
 
   return {
     search: (query: string) => index.search(query.trim())
-      .map(r => entries.find(e => e.url === r.ref)!)
+      .map(r => collection.find(d => d.url === r.ref)!)
   }
 }
 
-function renderSearchResultPreview (result: Entry): string {
-  return result.description ? `<p class="search-result-preview">${result.description}</p>` : ''
-}
+export function createSearchHandler (options: SearchOptions) {
+  const o = {
+    noResultsHtml: 'No results found.',
+    renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
+    ...options
+  }
 
-function renderSearchResult (result: Entry): string {
-  return `
-    <li>
-      <article class="search-result-single">
-        <h2 class="search-result-title"><a href="${result.url}">${result.title}</a></h2>
-        ${renderSearchResultPreview(result)}
-      </article>
-    </li>
-  `
-}
-
-export function createSearchHandler (input: HTMLInputElement, container: HTMLElement, dataUrl: string) {
-  let isLoading = false
   let index: SearchIndex
-  let previousTerms: string
+  let isLoading = false
+  let previousTerms = ''
 
   return async (event: Event) => {
     const terms = (event.target as HTMLInputElement).value || ''
@@ -71,16 +71,17 @@ export function createSearchHandler (input: HTMLInputElement, container: HTMLEle
     if (!isLoading) {
       if (!index) {
         isLoading = true
-        index = await createIndex(dataUrl)
+        const collection = await fetchCollection(o.collectionUrl)
+        index = await createIndex(collection)
         isLoading = false
       }
 
       if (index && terms !== previousTerms) {
         const results = index.search(terms)
         previousTerms = terms
-        container.innerHTML = results.length
-          ? container.innerHTML = results.reduce((h, r) => h + renderSearchResult(r), '')
-          : '<li class="search-result-none">No results found.</li>'
+        options.container.innerHTML = results.length
+          ? results.reduce((h, r) => h + o.renderResult(r), '')
+          : o.noResultsHtml
       }
     }
   }

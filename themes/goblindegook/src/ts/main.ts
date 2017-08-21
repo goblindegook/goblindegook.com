@@ -9,7 +9,7 @@ import { createStickinessToggler } from './lib/header'
 import { masonry } from './lib/masonry'
 import { readingProgress } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
-import { createSearchHandler } from './lib/search'
+import { createSearchHandler, SearchDocument } from './lib/search'
 
 // Fonts
 
@@ -70,23 +70,26 @@ window.addEventListener('load', hashChangeHandler)
 
 // Header
 
-const breadcrumbs = document.querySelector('.site-breadcrumbs') as HTMLElement
-const headerHeight = outerHeight(document.querySelector('.single-entry-header') as HTMLElement, true)
-const featuredImageHeight = outerHeight(document.querySelector('.single-entry-featured-image') as HTMLElement, true)
-const content = document.querySelector('main') as HTMLElement
+const breadcrumbs = document.querySelector('.site-breadcrumbs')
 
-const headerToggler = createStickinessToggler(breadcrumbs, {
-  hiddenClass: 'bounceOutUp',
-  initialClass: 'site-breadcrumbs-initial',
-  threshold: content.offsetTop + headerHeight - featuredImageHeight,
-  visibleClass: 'slideInDown'
-})
+if (breadcrumbs) {
+  const headerHeight = outerHeight(document.querySelector('.single-entry-header') as HTMLElement, true)
+  const featuredImageHeight = outerHeight(document.querySelector('.single-entry-featured-image') as HTMLElement, true)
+  const content = document.querySelector('main') as HTMLElement
 
-Array.from(breadcrumbs.querySelectorAll('.trail-end, .site-title'))
-  .forEach((element: HTMLElement) => element.addEventListener('click', () => scrollTo(0)))
+  const headerToggler = createStickinessToggler(breadcrumbs, {
+    hiddenClass: 'bounceOutUp',
+    initialClass: 'site-breadcrumbs-initial',
+    threshold: content.offsetTop + headerHeight - featuredImageHeight,
+    visibleClass: 'slideInDown'
+  })
 
-window.addEventListener('scroll', debounce(headerToggler, 30))
-triggerEvent(window, 'scroll')
+  Array.from(breadcrumbs.querySelectorAll('.trail-end, .site-title'))
+    .forEach((element: HTMLElement) => element.addEventListener('click', () => scrollTo(0)))
+
+  window.addEventListener('scroll', debounce(headerToggler, 30))
+  triggerEvent(window, 'scroll')
+}
 
 // Progress Bar
 
@@ -112,9 +115,25 @@ if (progressBar) {
 
 // Search
 
-const searchInput = document.querySelector('.search-input') as HTMLInputElement
-const searchResults = document.querySelector('.search-results') as HTMLElement
+const searchInput = document.querySelector('.search-input')
+const searchResultsContainer = document.querySelector('.search-results')
 
-if (searchInput && searchResults) {
-  searchInput.addEventListener('keyup', createSearchHandler(searchInput, searchResults, '/lunr.json'))
+function renderSearchResultPreview (result: SearchDocument): string {
+  return result.description ? `<p class="search-result-preview">${result.description}</p>` : ''
+}
+
+if (searchInput && searchResultsContainer) {
+  searchInput.addEventListener('keyup', createSearchHandler({
+    collectionUrl: '/lunr.json',
+    container: searchResultsContainer,
+    renderResult: (r) => `
+      <li>
+        <article class="search-result-single">
+          <h2 class="search-result-title"><a href="${r.url}">${r.title}</a></h2>
+          ${renderSearchResultPreview(r)}
+        </article>
+      </li>
+    `,
+    noResultsHtml: '<li class="search-result-none">No results found.</li>'
+  }))
 }
