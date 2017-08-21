@@ -1177,9 +1177,9 @@ html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
-hugo-lunr-index-cli@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/hugo-lunr-index-cli/-/hugo-lunr-index-cli-0.9.4.tgz#ef6b55f0e890c298e296c4041dc53a35f0a2478c"
+hugo-lunr-index-cli@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/hugo-lunr-index-cli/-/hugo-lunr-index-cli-0.9.5.tgz#6b647b774078704d4c5230a5de94c27af8c29b21"
   dependencies:
     date-fns "^1.28.5"
     glob "^7.1.2"

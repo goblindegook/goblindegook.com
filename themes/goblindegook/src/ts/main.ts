@@ -1,5 +1,7 @@
+import insane from 'insane'
 import littlefoot from 'littlefoot'
 import { debounce } from 'lodash'
+import showdown from 'showdown'
 import LazyLoad from 'vanilla-lazyload'
 import WebFont from 'webfontloader'
 import { outerHeight } from './lib/dom/outerHeight'
@@ -118,19 +120,20 @@ triggerEvent(window, 'scroll')
 
 const searchInput = document.querySelector('.search-input')
 const searchResultsContainer = document.querySelector('.search-results')
+const md = new showdown.Converter()
 
 if (searchInput && searchResultsContainer) {
   searchInput.addEventListener('keyup', createSearchHandler({
     collectionUrl: '/lunr.json',
     container: searchResultsContainer,
-    renderResult: (r) => `
+    renderNoResults: () => `<li class="search-result-none">No results found.</li>`,
+    renderResult: (r) => insane(`
       <li>
         <article class="search-result-single">
-          <h2 class="search-result-title"><a href="${r.url}">${r.title}</a></h2>
+          <h2 class="search-result-title"><a href="${r.url}">${md.makeHtml(r.title)}</a></h2>
           ${r.description ? `<p class="search-result-preview">${r.description}</p>` : ''}
         </article>
       </li>
-    `,
-    noResultsHtml: '<li class="search-result-none">No results found.</li>'
+    `)
   }))
 }

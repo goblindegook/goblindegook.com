@@ -19,7 +19,7 @@ interface SearchIndex {
 type SearchOptions = {
   collectionUrl: string
   container: Element
-  noResultsHtml?: string
+  renderNoResults?: (terms: string) => string
   renderResult?: (result: SearchDocument) => string
 }
 // tslint:enable:ter-indent
@@ -45,7 +45,7 @@ function buildIndex (entries: SearchDocument[]): lunr.Index {
   })
 }
 
-async function createIndex (collection: SearchDocument[]): Promise<SearchIndex> {
+function createIndex (collection: SearchDocument[]): SearchIndex {
   const index = buildIndex(collection)
 
   return {
@@ -54,11 +54,11 @@ async function createIndex (collection: SearchDocument[]): Promise<SearchIndex> 
   }
 }
 
-export function createSearchHandler (options: SearchOptions) {
-  const o = {
-    noResultsHtml: 'No results found.',
+export function createSearchHandler (userOptions: SearchOptions) {
+  const options = {
+    renderNoResults: (terms?: string) => `No results found for ${terms}.`,
     renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
-    ...options
+    ...userOptions
   }
 
   let index: SearchIndex
@@ -66,23 +66,21 @@ export function createSearchHandler (options: SearchOptions) {
   let previousTerms = ''
 
   return async (event: Event) => {
+    if (!isLoading && !index) {
+      isLoading = true
+      const collection = await fetchCollection(options.collectionUrl)
+      index = createIndex(collection)
+      isLoading = false
+    }
+
     const terms = (event.target as HTMLInputElement).value || ''
 
-    if (!isLoading) {
-      if (!index) {
-        isLoading = true
-        const collection = await fetchCollection(o.collectionUrl)
-        index = await createIndex(collection)
-        isLoading = false
-      }
-
-      if (index && terms !== previousTerms) {
-        const results = index.search(terms)
-        previousTerms = terms
-        options.container.innerHTML = results.length
-          ? results.reduce((h, r) => h + o.renderResult(r), '')
-          : o.noResultsHtml
-      }
+    if (!isLoading && index && terms !== previousTerms) {
+      const results = index.search(terms)
+      previousTerms = terms
+      userOptions.container.innerHTML = results.length
+        ? results.reduce((h, r) => h + options.renderResult(r), '')
+        : options.renderNoResults(terms)
     }
   }
 }
