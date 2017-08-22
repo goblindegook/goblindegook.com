@@ -33,7 +33,7 @@
       "name": "{{ .Site.Title }}",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}?s={search_term_string}",
+        "target": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}search\/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
