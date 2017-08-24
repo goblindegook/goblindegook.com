@@ -5,6 +5,8 @@ pre {
   font-weight: 300;
 }
 
+.no-js code,
+.no-js pre,
 .code-font-active code,
 .code-font-active pre {
   font-family: var(--code-font);

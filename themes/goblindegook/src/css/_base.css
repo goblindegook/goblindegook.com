@@ -23,6 +23,7 @@ body {
   word-wrap: break-word;
 }
 
+.no-js body,
 .body-font-active body {
   font-family: var(--body-font);
 }
@@ -64,6 +65,7 @@ input {
   line-height: 1.6;
 }
 
+.no-js input,
 .ui-font-active input {
   font-family: var(--ui-font);
 }
@@ -115,6 +117,7 @@ figcaption {
   }
 }
 
+.no-js figcaption,
 .ui-font-active figcaption {
   font-family: var(--ui-font);
 }
@@ -151,4 +154,8 @@ del {
 
 .visible {
   display: inherit;
+}
+
+.no-js .lazy {
+  display: none;
 }

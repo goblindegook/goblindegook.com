@@ -21,7 +21,7 @@
         {{ end }}
       >
       <noscript>
-        <img class="lazy archive-entry-thumbnail"
+        <img class="archive-entry-thumbnail"
           src="{{ delimit (split (.Params.Image.Src) ".") "." "-340w." }}"
           {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
             alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"

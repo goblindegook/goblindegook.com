@@ -11,6 +11,7 @@
   width: 100vw;
 }
 
+.no-js .site-sidebar,
 .ui-font-active .site-sidebar {
   font-family: var(--ui-font);
 }

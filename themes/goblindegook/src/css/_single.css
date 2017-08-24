@@ -39,6 +39,7 @@
   font-size: var(--ms0);
 }
 
+.no-js .site-entry-date,
 .ui-font-active .single-entry-date {
   font-family: var(--ui-font);
 }
@@ -189,6 +190,7 @@
   }
 }
 
+.no-js .single-entry-body,
 .small-caps-font-active .single-entry-body {
   & > p:first-child::first-line,
   & h2 + p::first-line,
@@ -197,6 +199,7 @@
   }
 }
 
+.no-js .single-entry-body,
 .ui-font-active .single-entry-body {
   & table {
     font-family: var(--ui-font);
@@ -222,6 +225,7 @@
   text-align: center;
 }
 
+.no-js .single-entry-footer,
 .ui-font-active .single-entry-footer {
   font-family: var(--ui-font);
 }

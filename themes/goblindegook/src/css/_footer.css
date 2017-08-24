@@ -15,6 +15,7 @@
   }
 }
 
+.no-js .site-footer,
 .ui-font-active .site-footer {
   font-family: var(--ui-font);
 }

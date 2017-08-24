@@ -17,6 +17,7 @@
   z-index: 6;
 }
 
+.no-js .littlefoot-footnote,
 .ui-font-active .littlefoot-footnote {
   font-family: var(--ui-font);
 }
