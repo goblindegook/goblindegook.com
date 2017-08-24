@@ -51,6 +51,11 @@ progress {
 }
 
 .no-js .button-furthest-read,
+.no-js .reading-progress {
+  display: none;
+}
+
+.no-js .button-furthest-read,
 .ui-font-active .button-furthest-read {
   font-family: var(--ui-font);
 }
