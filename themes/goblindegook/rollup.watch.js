@@ -7,33 +7,33 @@ const namedExports = {
   'node_modules/estimate/src/estimate.js': [ 'element' ]
 }
 
+const plugins = [
+  resolve(),
+  commonjs({ namedExports }),
+  typescript({
+    typescript: require('typescript')
+  })
+]
+
 export default [
   {
     context: 'window',
-    entry: './src/ts/inline.ts',
-    format: 'es',
-    plugins: [
-      resolve(),
-      commonjs({ namedExports }),
-      typescript({
-        typescript: require('typescript')
-      })
-    ],
-    dest: './layouts/partials/inline.js',
-    sourceMap: 'inline'
+    input: './src/ts/inline.ts',
+    output: {
+      file: './layouts/partials/inline.js',
+      format: 'es',
+      sourcemap: 'inline'
+    },
+    plugins
   },
   {
     context: 'window',
-    entry: './src/ts/main.ts',
-    format: 'es',
-    plugins: [
-      resolve(),
-      commonjs({ namedExports }),
-      typescript({
-        typescript: require('typescript')
-      })
-    ],
-    dest: './static/js/main.js',
-    sourceMap: 'inline'
+    input: './src/ts/main.ts',
+    output: {
+      file: './static/js/main.js',
+      format: 'es',
+      sourcemap: 'inline'
+    },
+    plugins
   }
 ]

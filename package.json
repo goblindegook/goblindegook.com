@@ -22,7 +22,7 @@
     "gulp-changed": "^3.1.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-responsive": "^2.7.1",
+    "gulp-responsive": "^2.8.0",
     "hugo-lunr-index-cli": "^0.9.5",
     "imagemin-pngquant": "^5.0.1"
   }

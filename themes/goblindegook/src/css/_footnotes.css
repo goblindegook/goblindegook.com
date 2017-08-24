@@ -74,13 +74,17 @@
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
-  background-image: linear-gradient(180deg, var(--ui-background-color) 50%, hsla(0, 0%, 98%, 0));
-  height: 1.8rem;
+  background-image: linear-gradient(180deg, var(--ui-background-color) 20%, transparent 100%);
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
-  background-image: linear-gradient(0deg, var(--ui-background-color) 50%, hsla(0, 0%, 98%, 0));
-  height: 1.8rem;
+  background-image: linear-gradient(0deg, var(--ui-background-color) 20%, transparent 100%);
+}
+
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before,
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
+  content: '';
+  height: 2rem;
 }
 
 .littlefoot-footnote__tooltip {
