@@ -205,12 +205,19 @@ babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-runtime@^6.23.0, babel-runtime@^6.6.1:
+babel-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
+
+babel-runtime@^6.9.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.11.0"
 
 balanced-match@0.1.0:
   version "0.1.0"
@@ -510,6 +517,33 @@ compare-versions@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-2.0.1.tgz#1edc1f93687fd97a325c59f55e45a07db106aca6"
 
+component-closest@*, component-closest@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/component-closest/-/component-closest-1.0.1.tgz#1ed0464132fc88a3510a2dabec079695789fb1b5"
+  dependencies:
+    component-matches-selector "~0.1.6"
+
+component-delegate@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/component-delegate/-/component-delegate-0.2.4.tgz#dc5028759ea681bea84a3d6bbd650207c3beb138"
+  dependencies:
+    component-closest "*"
+    component-event "*"
+
+component-event@*, component-event@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/component-event/-/component-event-0.2.0.tgz#8689a7c25a7dd0afe7e2e8408091d5b9e12ce196"
+
+component-matches-selector@^0.1.6, component-matches-selector@~0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/component-matches-selector/-/component-matches-selector-0.1.6.tgz#7b630e04e7e0c3b0019f31749fd70af5ed8b972e"
+  dependencies:
+    component-query "*"
+
+component-query@*:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/component-query/-/component-query-0.0.3.tgz#07f49dab7071fa9606725df53e607f468acdaacf"
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -695,10 +729,6 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
 
-delegate@^3.0.1:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.3.tgz#9a8251a777d7025faa55737bc3b071742127a9fd"
-
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -725,16 +755,6 @@ doctrine@^0.7.2:
 dom-classlist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dom-classlist/-/dom-classlist-1.0.1.tgz#722814dc2f509d3d7d06f2533ba9ff48eeea59b9"
-
-dom-closest@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/dom-closest/-/dom-closest-0.2.0.tgz#ebd9f91d1bf22e8d6f477876bbcd3ec90216c0cf"
-  dependencies:
-    dom-matches ">=1.0.1"
-
-dom-matches@>=1.0.1, dom-matches@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/dom-matches/-/dom-matches-2.0.0.tgz#d2728b416a87533980eb089b848d253cf23a758c"
 
 dom-matches@^1.0.1:
   version "1.0.1"
@@ -1447,17 +1467,18 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-littlefoot@^1.0.0-alpha.14:
-  version "1.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.0-alpha.14.tgz#2f3417f4109f4579c9a819214bd8db13f5ab26eb"
+littlefoot@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.0.tgz#a92bb7501b7dd85ac7adb8bf56e2823c65c4df2b"
   dependencies:
-    babel-runtime "^6.6.1"
-    delegate "^3.0.1"
+    babel-runtime "^6.9.0"
+    component-closest "^1.0.1"
+    component-delegate "^0.2.4"
+    component-event "^0.2.0"
+    component-matches-selector "^0.1.6"
     dom-classlist "^1.0.1"
-    dom-closest "^0.2.0"
-    dom-matches "^2.0.0"
     dom-siblings "^0.1.0"
-    lodash "^4.5.1"
+    lodash "^4.12.0"
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -1510,7 +1531,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.1.0, lodash@^4.17.4, lodash@^4.5.1:
+lodash@^4.0.0, lodash@^4.1.0, lodash@^4.12.0, lodash@^4.17.4, lodash@^4.5.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2581,6 +2602,10 @@ reduce-function-call@^1.0.1, reduce-function-call@^1.0.2:
 regenerator-runtime@^0.10.0:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+
+regenerator-runtime@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
 
 regex-cache@^0.4.2:
   version "0.4.3"
