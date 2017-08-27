@@ -14,16 +14,16 @@
   <link rel="canonical" href="{{ .Site.BaseURL }}" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ .Site.Title }}" />
-  <meta property="og:description" content="{{ .Site.Params.Description }}" />
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
+  <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
   <meta property="og:url" content="{{ .Site.BaseURL }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:image" content="{{ .Site.BaseURL }}icon/goblindegook.png" />
+  <meta property="og:image" content="{{ if .Page.Params.Image.Src }}{{ .Page.Params.Image.Src | absURL }}{{ else }}{{ .Site.BaseURL }}icon/goblindegook.png{{ end }}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description" content="{{ .Site.Params.Description }}" />
-  <meta name="twitter:title" content="{{ .Site.Title }}" />
+  <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
+  <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
   <meta name="twitter:site" content="{{ .Site.Params.Twitter }}" />
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}icon/goblindegook.png" />
+  <meta name="twitter:image" content="{{ if .Page.Params.Image.Src }}{{ .Page.Params.Image.Src | absURL }}{{ else }}{{ .Site.BaseURL }}icon/goblindegook.png{{ end }}" />
   <script type="application/ld+json">
     {
       "@context": "http:\/\/schema.org",
