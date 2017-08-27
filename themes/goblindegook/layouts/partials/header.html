@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie6 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
-<!--[if IE 7 ]><html class="ie7 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
-<!--[if IE 8 ]><html class="ie8 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
-<!--[if IE 9 ]><html class="ie9 no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
+<!--[if lt IE 7 ]><html class="ie6 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 7 ]><html class="ie7 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 8 ]><html class="ie8 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link type="text/css" media="all" href="/css/styles.css" rel="stylesheet" />
 	<noscript><link rel="stylesheet" type="text/css" media="all" href="/fonts/fonts.css"></noscript>
   <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Site.Params.Description }}"/>
+  <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}"/>
   <link rel="canonical" href="{{ .Site.BaseURL }}" />
-  <meta property="og:locale" content="en_US" />
+  {{ with .Site.Language }}<meta property="og:locale" content="{{ .Lang }}" />{{ end }}
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
   <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
-  <meta property="og:url" content="{{ .Site.BaseURL }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:image" content="{{ if .Page.Params.Image.Src }}{{ .Page.Params.Image.Src | absURL }}{{ else }}{{ .Site.BaseURL }}icon/goblindegook.png{{ end }}" />
+  <meta property="og:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
   <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
   <meta name="twitter:site" content="{{ .Site.Params.Twitter }}" />
-  <meta name="twitter:image" content="{{ if .Page.Params.Image.Src }}{{ .Page.Params.Image.Src | absURL }}{{ else }}{{ .Site.BaseURL }}icon/goblindegook.png{{ end }}" />
+  <meta name="twitter:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}" />
   <script type="application/ld+json">
     {
       "@context": "http:\/\/schema.org",
