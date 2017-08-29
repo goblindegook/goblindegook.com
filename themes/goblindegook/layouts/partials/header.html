@@ -81,27 +81,29 @@
 	<meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 </head>
-<body class="" itemscope itemtype="https://schema.org/WebPage">
-  {{ partial "icons.svg" }}
+<body itemscope itemtype="https://schema.org/WebPage">
+  <div id="transition-wrapper">
+    <div class="transition-container">
+      {{ partial "icons.svg" }}
 
-  <a href="#content" class="screen-reader">Skip to content</a>
+      <a href="#content" class="screen-reader">Skip to content</a>
 
-  {{ if eq .Type "post" }}
-    <progress class="reading-progress" id="reading-progress" value="0" max="100"></progress>
-    <button class="button-furthest-read" title="Scroll to furthest place read">Resume reading</button>
-  {{ end }}
+      {{ if eq .Type "post" }}
+        <progress class="reading-progress" id="reading-progress" value="0" max="100"></progress>
+        <button class="button-furthest-read" title="Scroll to furthest place read">Resume reading</button>
+      {{ end }}
 
-  <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
-    <h1 class="site-title" itemprop="headline">
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    </h1>
-    <div class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</div>
-  </header>
+      <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
+        <h1 class="site-title" itemprop="headline">
+          <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        </h1>
+        <div class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</div>
+      </header>
 
-  <div class="animated site-breadcrumbs site-breadcrumbs-initial" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-    {{ if .IsHome }}
-      <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
-    {{ else }}
-      {{ partial "breadcrumbs.html" . }}
-    {{ end }}
-  </div>
+      <div class="animated site-breadcrumbs site-breadcrumbs-initial" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+        {{ if .IsHome }}
+          <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+        {{ else }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
+      </div>

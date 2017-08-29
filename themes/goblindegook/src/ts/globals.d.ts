@@ -1,3 +1,101 @@
+declare module 'barba.js' {
+  interface Cache {
+    data: {
+      [key: string]: any
+    },
+    set: (key: string, val: any) => void
+    get: (key: string) => any
+    reset: () => void
+  }
+
+  interface Dispatcher {
+    readonly events: object
+    on: (e: string, f: Function) => void
+    off: (e: string, f: Function) => void
+    trigger: (e: string) => void
+  }
+
+  interface Dom {
+    containerClass: string
+    currentHTML: string
+    dataNameSpace: string
+    wrapperId: string
+    getWrapper: () => HTMLElement
+  }
+
+  interface Status {
+    namespace: string
+    url: string
+  }
+
+  interface HistoryManager {
+    history: ReadonlyArray<Status>
+    currentStatus: () => Status
+    prevStatus: () => Status
+  }
+
+  interface Pjax {
+    Cache: Cache
+    cacheEnabled: boolean
+    Dom: Dom
+    History: HistoryManager
+    ignoreClassLink: string
+    transitionProgress: boolean
+    getCurrentUrl: () => string
+    getTransition: () => Transition
+    goTo: (url: string) => void
+    init: () => void
+    preventCheck: (event: Event, element: HTMLElement) => boolean
+    start: () => void
+  }
+
+  interface Prefetch {
+    ignoreClassLink: string
+    init: () => boolean | void
+  }
+
+  interface Transition {
+    newContainer?: HTMLElement
+    newContainerLoading?: Promise<HTMLElement>
+    oldContainer?: HTMLElement
+    done: () => void
+    extend: (t: Partial<Transition>) => Transition
+    start: () => void
+  }
+
+  interface Utils {
+    xhrTimeout: number
+    deferred: () => {
+      promise: Promise<any>
+      reject: Function | null
+      resolve: Function | null
+    }
+    extend: (obj: object, props: object) => object
+    getCurrentUrl: () => string
+    xhr: (url: string) => Promise<string>
+  }
+
+  interface View {
+    namespace?: string
+    extend: (t: Partial<View>) => View
+    init: () => void
+    onEnter: () => void
+    onEnterCompleted: () => void
+    onLeave: () => void
+    onLeaveCompleted: () => void
+  }
+
+  export const version: string
+  export const BaseTransition: Transition
+  export const BaseView: View
+  export const BaseCache: Cache
+  export const Dispatcher: Dispatcher
+  export const HistoryManager: HistoryManager
+  export const Pjax: Pjax
+  export const Prefetch: Prefetch
+  export const Utils: Utils
+}
+
 declare module 'estimate' {
   interface Options {
     spaces: RegExp

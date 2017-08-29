@@ -1,44 +1,46 @@
-	<aside class="site-sidebar">
-    <div class="sidebar-content">
-      <div class="sidebar-intro">
-        <p>{{ .Site.Params.intro | markdownify }}</p>
-      </div>
-      <nav class="sidebar-navigation">
-        <ul class="sidebar-menu">
-          {{ $currentPage := . }}
-          {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-              <li class="menu-item{{ if $currentPage.HasMenuCurrent "main" . }} menu-item-active{{ end }}">
-                {{ .Pre }}
-                <span>{{ .Name }}</span>
-                <ul class="sub-menu">
-                  {{ range .Children }}
-                    <li class="sub-menu-item {{ if $currentPage.HasMenuCurrent "main" . }}sub-menu-item-active{{ end }}">
-                      <a href="{{.URL}}"> {{ .Name }}</a>
-                    </li>
-                  {{ end }}
-                </ul>
-              </li>
-            {{ else }}
-              <li class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} menu-item-active{{ end }}">
-                {{ if $currentPage.IsMenuCurrent "main" . }}
-                  {{ .Pre }} <span>{{ .Name }}</span>
+      <aside class="site-sidebar">
+        <div class="sidebar-content">
+          <div class="sidebar-intro">
+            <p>{{ .Site.Params.intro | markdownify }}</p>
+          </div>
+          <nav class="sidebar-navigation">
+            <ul class="sidebar-menu">
+              {{ $currentPage := . }}
+              {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                  <li class="menu-item{{ if $currentPage.HasMenuCurrent "main" . }} menu-item-active{{ end }}">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                    <ul class="sub-menu">
+                      {{ range .Children }}
+                        <li class="sub-menu-item {{ if $currentPage.HasMenuCurrent "main" . }}sub-menu-item-active{{ end }}">
+                          <a href="{{.URL}}"> {{ .Name }}</a>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </li>
                 {{ else }}
-                  <a href="{{.URL}}">{{ .Pre }} <span>{{ .Name }}</span></a>
+                  <li class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} menu-item-active{{ end }}">
+                    {{ if $currentPage.IsMenuCurrent "main" . }}
+                      {{ .Pre }} <span>{{ .Name }}</span>
+                    {{ else }}
+                      <a href="{{.URL}}">{{ .Pre }} <span>{{ .Name }}</span></a>
+                    {{ end }}
+                  </li>
                 {{ end }}
-              </li>
-            {{ end }}
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
-	</aside>
+              {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </aside>
 
-	<footer class="site-footer">
-		<p>&copy; {{ now.Year }} {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}</p>
-		<p>{{ .Site.Params.Disclaimer }}</p>
-	</footer>
-	<script type="text/javascript">{{ partial "inline.js" | safeJS }}</script>
-	<script async src="/js/main.js" type="text/javascript"></script>
+      <footer class="site-footer">
+        <p>&copy; {{ now.Year }} {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}</p>
+        <p>{{ .Site.Params.Disclaimer }}</p>
+      </footer>
+    </div>
+  </div>
+  <script type="text/javascript">{{ partial "inline.js" | safeJS }}</script>
+  <script async src="/js/main.js" type="text/javascript"></script>
 </body>
 </html>
