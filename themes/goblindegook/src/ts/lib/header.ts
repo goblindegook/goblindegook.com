@@ -4,6 +4,7 @@ import { getPageYOffset } from './window/getPageYOffset'
 type HeaderTogglerOptions = {
   hiddenClass?: string
   initialClass?: string
+  selector: string
   threshold?: number
   visibleClass?: string
 }
@@ -12,12 +13,13 @@ type HeaderTogglerOptions = {
 /**
  * Update fixed header visibility.
  */
-export function createStickinessToggler (el: Element, options?: HeaderTogglerOptions) {
+export function createStickinessToggler (options: HeaderTogglerOptions) {
   return () => {
-    const hidden = options && options.hiddenClass || ''
-    const initial = options && options.initialClass || ''
-    const visible = options && options.visibleClass || ''
-    const threshold = options && options.threshold || 0
+    const el = document.querySelector(options.selector)
+    const hidden = options.hiddenClass || ''
+    const initial = options.initialClass || ''
+    const visible = options.visibleClass || ''
+    const threshold = options.threshold || 0
     const shouldMakeElementStick = getPageYOffset() > threshold
 
     if (el && shouldMakeElementStick && el.classList.contains(initial)) {

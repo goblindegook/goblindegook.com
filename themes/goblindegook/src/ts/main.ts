@@ -11,10 +11,8 @@ import { setupSearch } from './setup/search'
 
 const triggerScroll = () => triggerEvent(window, 'scroll')
 
-const setupFn = [
-  setupFonts,
+const updateFn = [
   setupFootnotes,
-  setupHash,
   setupHeader,
   setupLazyLoad,
   setupMasonry,
@@ -23,7 +21,12 @@ const setupFn = [
   triggerScroll
 ]
 
-setupPageTransitions(setupFn)
+const setupFn = [
+  ...updateFn,
+  setupHash,
+  setupFonts,
+  () => setupPageTransitions(updateFn)
+]
 
 setupFn.forEach(fn => {
   window.addEventListener('load', fn)

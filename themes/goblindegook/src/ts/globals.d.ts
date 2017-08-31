@@ -55,12 +55,12 @@ declare module 'barba.js' {
   }
 
   interface Transition {
-    newContainer?: HTMLElement
-    newContainerLoading?: Promise<HTMLElement>
-    oldContainer?: HTMLElement
+    newContainer: HTMLElement
+    newContainerLoading: Promise<HTMLElement>
+    oldContainer: HTMLElement
     done: () => void
-    extend: (t: Partial<Transition>) => Transition
-    start: () => void
+    extend: (t: { [key: string]: any } & Partial<Transition>) => Transition
+    start: () => Promise<void>
   }
 
   interface Utils {
