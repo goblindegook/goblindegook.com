@@ -5,14 +5,13 @@ import { setupHash } from './setup/hash'
 import { setupHeader } from './setup/header'
 import { setupLazyLoad } from './setup/lazyLoad'
 import { setupMasonry } from './setup/masonry'
+import { setupPageTransitions } from './setup/pageTransitions'
 import { setupProgress } from './setup/progress'
 import { setupSearch } from './setup/search'
 
 const triggerScroll = () => triggerEvent(window, 'scroll')
 
-const setupFn = [
-  setupHash,
-  setupFonts,
+const updateFn = [
   setupFootnotes,
   setupHeader,
   setupLazyLoad,
@@ -20,6 +19,13 @@ const setupFn = [
   setupProgress,
   setupSearch,
   triggerScroll
+]
+
+const setupFn = [
+  ...updateFn,
+  setupHash,
+  setupFonts,
+  () => setupPageTransitions(updateFn)
 ]
 
 setupFn.forEach(fn => {

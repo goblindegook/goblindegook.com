@@ -1,12 +1,15 @@
 import Barba from 'barba.js'
 
 function delay (ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise(r => setTimeout(r, ms))
 }
 
 const FadeTransition = Barba.BaseTransition.extend({
   async start () {
-    await Promise.all([this.newContainerLoading, this.fadeOut()])
+    await this.newContainerLoading
+    await this.fadeOut()
+    this.done()
+    document.body.scrollTop = 0;
     await this.fadeIn()
   },
   async fadeOut () {
@@ -14,10 +17,8 @@ const FadeTransition = Barba.BaseTransition.extend({
     this.oldContainer.classList.remove('fadeIn')
     this.oldContainer.classList.add('fadeOut')
     await delay(200)
-    this.done()
   },
   async fadeIn () {
-    document.body.scrollTop = 0;
     this.newContainer.classList.add('animated')
     this.newContainer.classList.add('fadeIn')
     await delay(200)
