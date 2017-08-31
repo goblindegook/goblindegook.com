@@ -13,7 +13,7 @@
     "build-index": "hugo-lunr-index",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
-    "serve": "hugo serve --buildDrafts -t goblindegook",
+    "watch": "hugo serve --buildDrafts -t goblindegook",
     "sync": "git pull origin master && git push origin master"
   },
   "devDependencies": {
