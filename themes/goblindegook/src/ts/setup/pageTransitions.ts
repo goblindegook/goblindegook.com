@@ -9,7 +9,7 @@ const FadeTransition = Barba.BaseTransition.extend({
     await this.newContainerLoading
     await this.fadeOut()
     this.done()
-    document.body.scrollTop = 0;
+    document.body.scrollTop = 0
     await this.fadeIn()
   },
   async fadeOut () {

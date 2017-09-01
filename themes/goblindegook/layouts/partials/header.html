@@ -87,11 +87,6 @@
 
   <div id="transition-wrapper">
     <div class="transition-container">
-      {{ if eq .Type "post" }}
-        <progress class="reading-progress" id="reading-progress" value="0" max="100"></progress>
-        <button class="button-furthest-read" title="Scroll to furthest place read">Resume reading</button>
-      {{ end }}
-
       <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
         <h1 class="site-title" itemprop="headline">
           <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
