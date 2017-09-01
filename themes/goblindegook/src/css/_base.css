@@ -152,6 +152,10 @@ del {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .visible {
   display: inherit;
 }
