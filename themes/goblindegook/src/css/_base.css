@@ -161,6 +161,7 @@ del {
 }
 
 .no-js .lazy,
-.no-js .search {
+.no-js .search,
+.no-js .sidebar-search {
   display: none;
 }
