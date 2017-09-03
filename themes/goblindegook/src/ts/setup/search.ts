@@ -7,7 +7,8 @@ type SearchOptions = {
   perPage?: number
   useQueryString?: boolean
   resultsSelector: string
-  renderNoResults: () => string
+  renderLoading: (t: string) => string
+  renderNoResults: (t: string) => string
   renderResult: (r: SearchDocument) => string
 }
 
@@ -30,6 +31,7 @@ function setupSearch (options: SearchOptions): void {
       collectionUrl: '/lunr.json',
       container: searchResultsContainer,
       perPage: options.perPage,
+      renderLoading: options.renderLoading,
       renderNoResults: options.renderNoResults,
       renderResult: options.renderResult
     })
@@ -53,6 +55,7 @@ function setupSearch (options: SearchOptions): void {
 export function setupMainSearch (): void {
   setupSearch({
     inputSelector: '.search-input',
+    renderLoading: () => `<li class="search-result-none">Loading...</li>`,
     renderNoResults: () => `<li class="search-result-none">No results found.</li>`,
     renderResult: (r) => `
       <li>
@@ -70,6 +73,7 @@ export function setupSidebarSearch (): void {
   setupSearch({
     inputSelector: '.sidebar-search-input',
     perPage: 5,
+    renderLoading: () => `<li class="sidebar-search-result-none">Loading...</li>`,
     renderNoResults: () => `<li class="sidebar-search-result-none">No results found.</li>`,
     renderResult: (r) => `<li class="sidebar-search-result-single"><a href="${r.url}">${safeMarkdown(r.title)}</a></li>`,
     resultsSelector: '.sidebar-search-results'
