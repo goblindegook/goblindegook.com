@@ -4,7 +4,7 @@
   font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   left: 50%;
-  margin: 0 -50vw;
+  margin: 2rem -50vw 0;
   padding: 2rem;
   position: relative;
   right: 50%;
@@ -42,7 +42,6 @@
   }
 }
 
-
 .sidebar-navigation {
   grid-column: 2;
   grid-row: 1;
@@ -52,6 +51,18 @@
   .sidebar-navigation {
     grid-column: 1;
     grid-row: 2;
+  }
+}
+
+.sidebar-search {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media(--narrow-viewport) {
+  .sidebar-search {
+    grid-column: 1;
+    grid-row: 3;
   }
 }
 

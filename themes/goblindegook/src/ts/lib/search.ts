@@ -1,28 +1,25 @@
 import lunr from 'lunr'
 import fetch from 'unfetch'
 
-// tslint:disable:ter-indent
-interface SearchDocument {
+export interface SearchDocument {
   [attribute: string]: any
   content: string
   description?: string
   title: string
   url: string
 }
-// tslint:enable:ter-indent
 
 interface SearchIndex {
   search (term: string): SearchDocument[]
 }
 
-// tslint:disable:ter-indent
 type SearchOptions = {
   collectionUrl: string
-  container: Element
+  container: HTMLElement
+  perPage?: number
   renderNoResults?: (terms: string) => string
   renderResult?: (result: SearchDocument) => string
 }
-// tslint:enable:ter-indent
 
 async function fetchCollection (url: string): Promise<SearchDocument[]> {
   const response = await fetch(url)
@@ -75,11 +72,15 @@ export function createSearchHandler (userOptions: SearchOptions) {
 
     const terms = (event.target as HTMLInputElement).value || ''
 
+    options.container.style.display = terms ? 'inherit' : 'none'
+
     if (!isLoading && index && terms !== previousTerms) {
       const results = index.search(terms)
       previousTerms = terms
       userOptions.container.innerHTML = results.length
-        ? results.reduce((h, r) => h + options.renderResult(r), '')
+        ? results
+          .filter((r, i) => !options.perPage || i < options.perPage)
+          .reduce((h, r) => h + options.renderResult(r), '')
         : options.renderNoResults(terms)
     }
   }

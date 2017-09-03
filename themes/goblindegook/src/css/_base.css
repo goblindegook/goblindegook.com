@@ -160,6 +160,7 @@ del {
   display: inherit;
 }
 
-.no-js .lazy {
+.no-js .lazy,
+.no-js .search {
   display: none;
 }

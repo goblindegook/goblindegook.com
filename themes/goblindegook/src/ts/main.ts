@@ -1,4 +1,3 @@
-import { triggerEvent } from './lib/dom/triggerEvent'
 import { setupFonts } from './setup/fonts'
 import { setupFootnotes } from './setup/footnotes'
 import { setupHash } from './setup/hash'
@@ -7,7 +6,8 @@ import { setupLazyLoad } from './setup/lazyLoad'
 import { setupMasonry } from './setup/masonry'
 import { setupPageTransitions } from './setup/pageTransitions'
 import { setupProgress } from './setup/progress'
-import { setupSearch } from './setup/search'
+import { setupMainSearch, setupSidebarSearch } from './setup/search'
+import { triggerEvent } from './lib/dom/triggerEvent'
 
 const triggerScroll = () => triggerEvent(window, 'scroll')
 
@@ -17,7 +17,8 @@ const updateFn = [
   setupLazyLoad,
   setupMasonry,
   setupProgress,
-  setupSearch,
+  setupMainSearch,
+  setupSidebarSearch,
   triggerScroll
 ]
 
