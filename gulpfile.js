@@ -17,7 +17,7 @@ $.task('default', ['images'])
 $.task('sw-precache', cb => {
   const rootDir = 'public'
 
-  swPrecache.write(`${rootDir}/js/sw.js`, {
+  swPrecache.write(`${rootDir}/sw.js`, {
     staticFileGlobs: [rootDir + '/**/*.{js,html,css,json,png,jpg,jpeg,gif,svg,woff}'],
     stripPrefix: rootDir
   }, cb)

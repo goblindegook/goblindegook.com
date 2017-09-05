@@ -11,7 +11,7 @@ if (sessionStorage.fonts) {
 
 if (navigator && navigator.serviceWorker) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/js/sw.js')
+    navigator.serviceWorker.register('/sw.js')
       .then(reg => {
         reg.onupdatefound = () => {
 	        const installingWorker = reg.installing!

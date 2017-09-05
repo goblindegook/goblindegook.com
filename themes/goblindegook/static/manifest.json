@@ -2,8 +2,8 @@
   "name": "goblindegook",
   "short_name": "goblindegook",
   "icons": [],
-  "start_url": "/",
-  "display": "browser",
+  "start_url": "/index.html",
+  "display": "standalone",
   "orientation" : "portrait",
   "background_color": "#fafafa",
   "theme_color": "#333333"
