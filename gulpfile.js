@@ -4,6 +4,7 @@ const imagemin = require('gulp-imagemin')
 const imageminPngquant = require('imagemin-pngquant')
 const plumber = require('gulp-plumber')
 const responsive = require('gulp-responsive')
+const swPrecache = require('sw-precache')
 
 const dest = 'static'
 
@@ -12,6 +13,15 @@ const iconWidths = [
 ]
 
 $.task('default', ['images'])
+
+$.task('sw-precache', cb => {
+  const rootDir = 'public'
+
+  swPrecache.write(`${rootDir}/js/sw.js`, {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,json,png,jpg,jpeg,gif,svg,woff}'],
+    stripPrefix: rootDir
+  }, cb)
+})
 
 $.task('images', ['images:raster', 'images:vector'])
 

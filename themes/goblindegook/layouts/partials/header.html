@@ -8,7 +8,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link type="text/css" media="all" href="/css/styles.css" rel="stylesheet" />
-	<noscript><link rel="stylesheet" type="text/css" media="all" href="/fonts/fonts.css"></noscript>
   <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}"/>
   <link rel="canonical" href="{{ .Site.BaseURL }}" />
