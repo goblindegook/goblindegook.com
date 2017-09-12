@@ -132,8 +132,8 @@
   }
 }
 
-.sidebar-search-results:after,
-.sidebar-search-results:before {
+.sidebar-search-results::after,
+.sidebar-search-results::before {
   border: solid transparent;
   content: " ";
   height: 0;
@@ -170,7 +170,7 @@
   font-size: var(--ms0);
   font-weight: 400;
   margin: 0;
-  
+
   & a {
     display: block;
     padding: 0.5rem 1rem;
