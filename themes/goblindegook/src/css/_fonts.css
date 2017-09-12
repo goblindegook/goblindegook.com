@@ -3,7 +3,8 @@
   font-family: "Alegreya";
   font-style: normal;
   font-weight: 400;
-  src: local("Alegreya Regular"),
+  src:
+    local("Alegreya Regular"),
     local("Alegreya-Regular"),
     url(/fonts/Alegreya-Regular.woff2) format("woff2"),
     url(/fonts/Alegreya-Regular.woff) format("woff");
@@ -14,7 +15,8 @@
   font-family: "Alegreya";
   font-style: bold;
   font-weight: 700;
-  src: local("Alegreya Bold"),
+  src:
+    local("Alegreya Bold"),
     local("Alegreya-Bold"),
     url(/fonts/Alegreya-Bold.woff2) format("woff2"),
     url(/fonts/Alegreya-Bold.woff) format("woff");
@@ -25,7 +27,8 @@
   font-family: "Alegreya";
   font-style: italic;
   font-weight: 400;
-  src: local("Alegreya Italic"),
+  src:
+    local("Alegreya Italic"),
     local("Alegreya-Italic"),
     url(/fonts/Alegreya-Italic.woff2) format("woff2"),
     url(/fonts/Alegreya-Italic.woff) format("woff");
@@ -36,7 +39,8 @@
   font-family: "Alegreya";
   font-style: italic;
   font-weight: 700;
-  src: local("Alegreya Bold Italic"),
+  src:
+    local("Alegreya Bold Italic"),
     local("Alegreya-BoldItalic"),
     url(/fonts/Alegreya-BoldItalic.woff2) format("woff2"),
     url(/fonts/Alegreya-BoldItalic.woff) format("woff");
@@ -47,7 +51,8 @@
   font-family: "Alegreya SC";
   font-style: normal;
   font-weight: 400;
-  src: local("Alegreya SC Regular"),
+  src:
+    local("Alegreya SC Regular"),
     local("AlegreyaSC-Regular"),
     url(/fonts/AlegreyaSC-Regular.woff2) format("woff2"),
     url(/fonts/AlegreyaSC-Regular.woff) format("woff");
@@ -58,7 +63,8 @@
   font-family: "Alegreya SC";
   font-style: bold;
   font-weight: 700;
-  src: local("Alegreya SC Bold"),
+  src:
+    local("Alegreya SC Bold"),
     local("AlegreyaSC-Bold"),
     url(/fonts/AlegreyaSC-Bold.woff2) format("woff2"),
     url(/fonts/AlegreyaSC-Bold.woff) format("woff");
@@ -69,7 +75,8 @@
   font-family: "Fira Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Fira Sans Regular"),
+  src:
+    local("Fira Sans Regular"),
     local("FiraSans-Regular"),
     url(/fonts/FiraSans-Regular.woff2) format("woff2"),
     url(/fonts/FiraSans-Regular.woff) format("woff");
@@ -80,18 +87,20 @@
   font-family: "Fira Sans";
   font-style: italic;
   font-weight: 400;
-  src: local("Fira Sans Italic"),
+  src:
+    local("Fira Sans Italic"),
     local("FiraSans-Italic"),
     url(/fonts/FiraSans-Italic.woff2) format("woff2"),
     url(/fonts/FiraSans-Italic.woff) format("woff");
 }
 
-@font-face{
+@font-face {
   font-display: swap;
   font-family: "Fira Code";
   font-style: normal;
   font-weight: 300;
-  src: local("Fira Code Light"),
+  src:
+    local("Fira Code Light"),
     local("FiraCode-Light"),
     url(/fonts/FiraCode-Light.woff2) format("woff2"),
     url(/fonts/FiraCode-Light.woff) format("woff");

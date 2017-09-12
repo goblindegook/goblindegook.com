@@ -29,7 +29,7 @@
 
   /* Modular Scale */
   --ms-base: 1rem;
-	--ms-ratio: var(--fourth);
+  --ms-ratio: var(--fourth);
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;

@@ -8,7 +8,7 @@
   margin: 4rem 3rem;
 }
 
-@media(--narrow-viewport) {
+@media (--narrow-viewport) {
   .pull-quote-center,
   .pull-quote-left,
   .pull-quote-right {
