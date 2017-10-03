@@ -24,7 +24,11 @@ $.task('sw-precache', cb => {
       rootDir + '/offline/index.html',
       rootDir + '/icon/*.png'
     ],
-    stripPrefix: rootDir
+    stripPrefix: rootDir,
+    runtimeCaching: [{
+      urlPattern: /.*/,
+      handler: 'networkFirst'
+    }]
   }, cb)
 })
 
