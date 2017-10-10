@@ -130,7 +130,7 @@ declare module 'insane' {
   }
 
   function insane (html: string, options?: Options, strict?: boolean): string
-  
+
   export = insane
 }
 

@@ -9,4 +9,4 @@
   HUGO_VERSION = "0.29"
 
 [context.production.environment]
-  HUGO_VERSION = "0.25.1"
+  HUGO_VERSION = "0.29"
