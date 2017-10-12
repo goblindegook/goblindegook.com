@@ -8,10 +8,15 @@ declare module 'barba.js' {
     reset: () => void
   }
 
+  type LinkClickedHandler = (element?: HTMLElement, event?: MouseEvent) => void
+  type InitStateChangeHandler = (currentStatus?: Status) => void
+  type NewPageReadyHandler = (currentStatus?: Status, prevStatus?: Status, container?: HTMLElement, newPageRawHTML?: string) => void
+  type TransitionCompletedHandler = (currentStatus?: Status, prevStatus?: Status) => void
+
   interface Dispatcher {
     readonly events: object
-    on: (e: string, f: Function) => void
-    off: (e: string, f: Function) => void
+    on: (e: string, f: LinkClickedHandler | InitStateChangeHandler | NewPageReadyHandler | TransitionCompletedHandler) => void
+    off: (e: string, f: LinkClickedHandler | InitStateChangeHandler | NewPageReadyHandler | TransitionCompletedHandler) => void
     trigger: (e: string) => void
   }
 
@@ -59,7 +64,7 @@ declare module 'barba.js' {
     newContainerLoading: Promise<HTMLElement>
     oldContainer: HTMLElement
     done: () => void
-    extend: (t: { [key: string]: any } & Partial<Transition>) => Transition
+    extend: <T extends Transition>(t: Partial<T>) => T
     start: () => Promise<void>
   }
 
@@ -77,7 +82,7 @@ declare module 'barba.js' {
 
   interface View {
     namespace?: string
-    extend: (t: Partial<View>) => View
+    extend: <T extends View>(t: Partial<T>) => T
     init: () => void
     onEnter: () => void
     onEnterCompleted: () => void
