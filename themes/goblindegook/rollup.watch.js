@@ -35,5 +35,15 @@ export default [
       sourcemap: 'inline'
     },
     plugins
+  },
+  {
+    context: 'window',
+    input: './src/ts/sw.ts',
+    output: {
+      file: './static/sw.js',
+      format: 'es',
+      sourcemap: 'inline'
+    },
+    plugins
   }
 ]

@@ -14,7 +14,7 @@ type SearchOptions = {
 
 function searchEnterHandler (event: KeyboardEvent): void {
   const terms = (event.target as HTMLInputElement).value || ''
-  
+
   if (event.keyCode === 13) {
     const currentUrl = window.location.toString()
     const location = currentUrl.indexOf('?') >= 0 ? currentUrl.substr(0, currentUrl.indexOf('?')) : currentUrl
@@ -25,7 +25,7 @@ function searchEnterHandler (event: KeyboardEvent): void {
 function setupSearch (options: SearchOptions): void {
   const searchInput = document.querySelector(options.inputSelector) as HTMLInputElement
   const searchResultsContainer = document.querySelector(options.resultsSelector) as HTMLElement
-  
+
   if (searchInput && searchResultsContainer) {
     const searchHandler = createSearchHandler({
       collectionUrl: '/lunr.json',
@@ -35,21 +35,21 @@ function setupSearch (options: SearchOptions): void {
       renderNoResults: options.renderNoResults,
       renderResult: options.renderResult
     })
-  
+
     searchInput.addEventListener('change', searchHandler)
     searchInput.addEventListener('keyup', searchHandler)
 
     if (options.useQueryString) {
       searchInput.addEventListener('keyup', searchEnterHandler)
-    
+
       const q = getSearchValue('q')
-    
+
       if (q && q.length) {
         searchInput.value = q
         searchInput.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }))
       }
     }
-  } 
+  }
 }
 
 export function setupMainSearch (): void {

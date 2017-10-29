@@ -29,6 +29,7 @@
 .littlefoot-footnote__content {
   background-color: transparent;
   border-radius: 0;
+  line-height: 1.6;
   padding: 1.3rem;
 
   & a {
