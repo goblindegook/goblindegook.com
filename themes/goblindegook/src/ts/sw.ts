@@ -5,19 +5,9 @@ const OFFLINE_URL = '/offline/'
 const PRECACHE_URLS = [
   OFFLINE_URL,
   '/',
+  '/offline/index.html',
   '/index.html',
-  '/css/styles.css',
-  '/js/main.js',
-  '/lunr.json',
-  '/fonts/Alegreya-Regular.woff',
-  '/fonts/Alegreya-Italic.woff',
-  '/fonts/Alegreya-Bold.woff',
-  '/fonts/Alegreya-BoldItalic.woff',
-  '/fonts/AlegreyaSC-Regular.woff',
-  '/fonts/AlegreyaSC-Bold.woff',
-  '/fonts/FiraSans-Regular.woff',
-  '/fonts/FiraSans-Italic.woff',
-  '/fonts/FiraCode-Light.woff'
+  '/lunr.json'
 ]
 
 type ExtendableEvent = Event & {
