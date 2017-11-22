@@ -41,8 +41,7 @@ export default [
     input: './src/ts/sw.ts',
     output: {
       file: './static/sw.js',
-      format: 'es',
-      sourcemap: 'inline'
+      format: 'es'
     },
     plugins
   }
