@@ -63,8 +63,8 @@
 }
 
 .search-result-single {
-  @apply --card;
-
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: var(--ms1);
   margin: 0 0 1rem;
   padding: 1rem;
 }

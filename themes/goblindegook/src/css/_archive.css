@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-@media (--narrow-viewport) {
+@media(--narrow-viewport) {
   .content-archive {
     max-width: 100%;
     padding-left: 1.5rem;
@@ -14,8 +14,8 @@
 }
 
 .archive-entry {
-  @apply --card;
-
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: var(--ms1);
   margin: 0 0 3rem;
   padding: 2rem;
   width: var(--masonry-column-width);
