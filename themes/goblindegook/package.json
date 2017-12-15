@@ -8,7 +8,7 @@
     "build": "concurrently 'npm run build:styles' 'npm run build:ts'",
     "build:styles": "postcss src/css/styles.css --no-map --output static/css/styles.css",
     "build:ts": "rollup -c",
-    "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts' 'npm test -- --watch'",
+    "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts'",
     "watch:styles": "postcss src/css/styles.css --watch --output static/css/styles.css",
     "watch:ts": "rollup -c rollup.watch.js -w",
     "pretest": "tslint src/**/*.ts",

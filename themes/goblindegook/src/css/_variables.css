@@ -30,6 +30,71 @@
   /* Modular Scale */
   --ms-base: 1rem;
   --ms-ratio: var(--fourth);
+
+  --button: {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  };
+
+  --card: {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    font-size: var(--ms1);
+  };
+
+  --underline: {
+    background-color: transparent;
+    background-position: 0 85%, 100% 85%, 0 85%;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-size: 1px 1px, 1px 1px, 1px 1px;
+    text-decoration: none;
+  }
+
+  --underline-body: {
+    background-image:
+      linear-gradient(var(--body-background-color), var(--body-background-color)),
+      linear-gradient(var(--body-background-color), var(--body-background-color)),
+      linear-gradient(var(--link-color), var(--link-color));
+    text-shadow:
+      0.02em 0 var(--body-background-color),
+      -0.02em 0 var(--body-background-color),
+      0 0.02em var(--body-background-color),
+      0 -0.02em var(--body-background-color),
+      0.04em 0 var(--body-background-color),
+      -0.04em 0 var(--body-background-color),
+      0.06em 0 var(--body-background-color),
+      -0.06em 0 var(--body-background-color),
+      0.08em 0 var(--body-background-color),
+      -0.08em 0 var(--body-background-color),
+      0.1em 0 var(--body-background-color),
+      -0.1em 0 var(--body-background-color),
+      0.12em 0 var(--body-background-color),
+      -0.12em 0 var(--body-background-color),
+      0.14em 0 var(--body-background-color),
+      -0.14em 0 var(--body-background-color);
+  };
+
+  --underline-ui: {
+    background-image:
+      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
+      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
+      linear-gradient(var(--link-color), var(--link-color));
+    text-shadow:
+      0.02em 0 var(--ui-background-color),
+      -0.02em 0 var(--ui-background-color),
+      0 0.02em var(--ui-background-color),
+      0 -0.02em var(--ui-background-color),
+      0.04em 0 var(--ui-background-color),
+      -0.04em 0 var(--ui-background-color),
+      0.06em 0 var(--ui-background-color),
+      -0.06em 0 var(--ui-background-color),
+      0.08em 0 var(--ui-background-color),
+      -0.08em 0 var(--ui-background-color),
+      0.1em 0 var(--ui-background-color),
+      -0.1em 0 var(--ui-background-color),
+      0.12em 0 var(--ui-background-color),
+      -0.12em 0 var(--ui-background-color),
+      0.14em 0 var(--ui-background-color),
+      -0.14em 0 var(--ui-background-color);
+  };
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
