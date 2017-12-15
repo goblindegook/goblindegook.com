@@ -4,18 +4,32 @@
   "description": "Hugo theme for goblindegook.com.",
   "main": "static/js/index.js",
   "scripts": {
+    "prebuild": "npm test",
     "build": "concurrently 'npm run build:styles' 'npm run build:ts'",
     "build:styles": "postcss src/css/styles.css --no-map --output static/css/styles.css",
     "build:ts": "rollup -c",
-    "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts'",
+    "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts' 'npm test -- --watch'",
     "watch:styles": "postcss src/css/styles.css --watch --output static/css/styles.css",
     "watch:ts": "rollup -c rollup.watch.js -w",
-    "test": "tslint src/**/*.ts"
+    "pretest": "tslint src/**/*.ts",
+    "test": "jest"
   },
   "author": "Luís Rodrigues",
   "license": "MIT",
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
   "devDependencies": {
     "@types/imagesloaded": "^4.1.1",
+    "@types/jest": "^21.1.8",
     "@types/lodash": "^4.14.74",
     "@types/lunr": "^2.1.1",
     "@types/masonry-layout": "^4.0.5",
@@ -24,6 +38,7 @@
     "concurrently": "^3.5.0",
     "css-modularscale": "^1.1.1",
     "cssnano": "^3.10.0",
+    "jest": "^21.2.1",
     "normalize.css": "^7.0.0",
     "pixrem": "^4.0.1",
     "postcss": "^6.0.9",
@@ -38,6 +53,7 @@
     "rollup-watch": "^4.3.1",
     "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
+    "ts-jest": "^21.2.4",
     "tslint": "^5.7.0",
     "tslint-config-standard": "^6.0.1",
     "typescript": "^2.4.2"
