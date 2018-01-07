@@ -7,7 +7,7 @@ categories: [ "Business", "Life", "Work" ]
 tags: [ "business", "life", "work" ]
 date: 2017-03-03T12:00:00+01:00
 image:
-  src: "/images/featured/grizzly-bear.jpg"
+  src: "grizzly-bear.jpg"
   alt: "A bear poking its head out of the bushes"
 draft: false
 ---

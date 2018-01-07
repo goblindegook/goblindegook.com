@@ -7,7 +7,7 @@ categories: [ "Design" ]
 tags: [ "design" ]
 date: 2016-04-11T12:00:00+01:00
 image:
-  src: "/images/featured/hansen-writing-ball.jpg"
+  src: "hansen-writing-ball.jpg"
   caption: "A Writing Ball at the Technischen Sammlungen Dresden, 2016. Pavel Eremeev, CC BY-SA 4.0."
   alt: "An early typewriter whose keys were mounted on a hemispherical head"
 draft: false
@@ -51,7 +51,7 @@ Typewriters surged in popularity during the 19th century, following the producti
 
 Roughly at the same time as Hansen, American inventor Christopher Latham Sholes, together with Carlos Glidden, Samuel Willard Soulé, and James Densmore, was working on a related device. The keys on their first prototype were repurposed from a piano, in two rows of ivory and ebony, and heavily inspired by the existing Hughes-Phelps Printing Telegraph. More on the telegraph in a while — for now, I merely wish to draw your attention to its keyboard layout:
 
-<img src="/images/sholes-keyboard.svg" alt="Alphabetical key layout on an early typewriter prototype." class="align-center">
+<img src="sholes-keyboard.svg" alt="Alphabetical key layout on an early typewriter prototype." class="align-center">
 
 Yes, in the Sholes & Glidden prototype, keys were arranged _alphabetically_.
 
@@ -86,7 +86,7 @@ Keyboards eventually lost their spindly mechanical levers as engineers adapted t
 {{< figure
   alt="Smartphone showing an active on-screen QWERTY keyboard."
   class="align-right"
-  src="/images/ios-keyboard.png"
+  src="ios-keyboard.png"
 >}}
 
 I picked the keyboard to illustrate my point because it’s such an obviously _unintuitable_ device, yet we keep returning to it even as the technology around it is overhauled. The keyboard on your smartphone’s touchscreen doesn’t look the way it does because its typebars might get jammed, or because someone still needs to decode Morse quickly, or because the layout is somehow better suited to thumb typing. The reason its design has not changed in over a century is simply that it became too familiar to be abandoned,[^3] and familiarity trumps many things in interface design.

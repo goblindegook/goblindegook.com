@@ -1,5 +1,11 @@
 <figure class="single-entry-featured-image">
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
+    {{ $featured2x := .Resources.GetByPrefix .Params.Image.Src }}
+    {{ $featured := $featured2x.Resize (printf "%dx" (div $featured2x.Width 2)) }}
+    {{ $featured340 := $featured2x.Resize "340x" }}
+    {{ $featured680 := $featured2x.Resize "680x" }}
+    {{ $featured768 := $featured2x.Resize "768x" }}
+    {{ $featured1536 := $featured2x.Resize "1536x" }}
     <img class="lazy"
       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
       sizes="
@@ -9,13 +15,13 @@
         (max-width: 1536px) 1536w,
         100%
       "
-      data-original="{{ .Params.Image.Src }}"
+      data-original="{{ $featured.RelPermalink }}"
       data-original-set="
-        {{ delimit (split (.Params.Image.Src) ".") "." "-340w." }} 340w,
-        {{ delimit (split (.Params.Image.Src) ".") "." "-340w@2x." }} 680w,
-        {{ delimit (split (.Params.Image.Src) ".") "." "-768w." }} 768w,
-        {{ delimit (split (.Params.Image.Src) ".") "." "-768w@2x." }} 1536w,
-        {{ delimit (split (.Params.Image.Src) ".") "." "@2x." }} 2x
+        {{ $featured340.RelPermalink }} 340w,
+        {{ $featured680.RelPermalink }} 680w,
+        {{ $featured768.RelPermalink }} 768w,
+        {{ $featured1536.RelPermalink }} 1536w,
+        {{ $featured2x.RelPermalink }} 2x
       "
       {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
         alt="{{ with .Params.Image.Alt }}{{ . }}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
@@ -25,7 +31,7 @@
       {{ end }}
     >
     <noscript>
-      <img src="{{ .Params.Image.Src }}"
+      <img src="{{ $featured.RelPermalink }}"
         {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
           alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
         {{ end }}

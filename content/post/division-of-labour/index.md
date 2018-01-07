@@ -7,7 +7,7 @@ categories: [ "Work" ]
 tags: [ "work" ]
 date: 2016-03-06T12:00:00+01:00
 image:
-  src: "/images/featured/pin-factory.jpg"
+  src: "pin-factory.jpg"
   caption: "Pin factory engraving from Diderot's _Encyclopédie_, 1762."
   alt: "An illustration depicting people at work making pins"
 draft: false

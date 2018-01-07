@@ -110,7 +110,7 @@ _Destiny_ is a science fiction videogame made by a company named Bungie. In it, 
 {{< figure
   alt="Destiny character selection screen showing my Warlock character."
   class="align-center"
-  src="/images/destiny-bob.jpg"
+  src="destiny-bob.jpg"
   title="This is my character. His name is Bob."
 >}}
 
@@ -132,7 +132,12 @@ You see, we humans have a peculiar way to look at randomness, and by ‘peculiar
 
 Artificial intelligence guru Peter Norvig has an article on [biases in experiment design and interpretation](http://norvig.com/experiment-design.html) where he presents the following trio of charts, one of which is random while the others’ results have been skewed:
 
-<img src="/images/norvig-experiment.png" alt="Three plots, one of which contains random data" width="915" height="235" class="align-center" />
+{{< figure
+  alt="Three plots, one of which contains random data."
+  class="align-center"
+  src="norvig-experiment.png"
+  title="This is my character. His name is Bob."
+>}}
 
 Can you guess which of the three is the randomly generated plot?
 
