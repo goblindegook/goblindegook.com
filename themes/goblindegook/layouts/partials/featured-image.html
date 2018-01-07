@@ -1,13 +1,16 @@
 <figure class="single-entry-featured-image">
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
-    {{ $featured2x := .Resources.GetByPrefix .Params.Image.Src }}
-    {{ $featured := $featured2x.Resize (printf "%dx" (div $featured2x.Width 2)) }}
-    {{ $featured340 := $featured2x.Resize "340x" }}
-    {{ $featured680 := $featured2x.Resize "680x" }}
-    {{ $featured768 := $featured2x.Resize "768x" }}
-    {{ $featured1536 := $featured2x.Resize "1536x" }}
+    {{ $src := .Resources.GetByPrefix .Params.Image.Src }}
+    {{ $featured := $src.Fill (printf "%dx320" (div $src.Width 2)) }}
+    {{ $featured2x := $src.Fill (printf "%dx640" $src.Width) }}
+    {{ $featured340 := $src.Fill "340x224" }}
+    {{ $featured680 := $src.Fill "680x224" }}
+    {{ $featured768 := $src.Fill "768x640" }}
+    {{ $featured1536 := $src.Fill "1536x640" }}
     <img class="lazy"
       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      height="{{ $featured.Height }}"
+      width="{{ $featured.Width }}"
       sizes="
         (max-width: 340px) 340w,
         (max-width: 680px) 680w,
@@ -26,17 +29,13 @@
       {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
         alt="{{ with .Params.Image.Alt }}{{ . }}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
       {{ end }}
-      {{ with .Params.Image.Width }}
-        width="{{ . }}"
-      {{ end }}
     >
     <noscript>
       <img src="{{ $featured.RelPermalink }}"
+        height="{{ $featured.Height }}"
+        width="{{ $featured.Width }}"
         {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
           alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
-        {{ end }}
-        {{ with .Params.Image.Width }}
-          width="{{ . }}"
         {{ end }}
       >
     </noscript>

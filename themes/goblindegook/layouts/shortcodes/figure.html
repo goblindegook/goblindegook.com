@@ -1,13 +1,15 @@
-{{ $src := .Get "src" }}
-{{ $image2x := .Page.Resources.GetByPrefix $src }}
-{{ $image := $image2x.Resize (printf "%dx" (div $image2x.Width 2)) }}
-{{ $image340 := $image2x.Resize "340x" }}
-{{ $image680 := $image2x.Resize "680x" }}
+{{ $src := .Page.Resources.GetByPrefix (.Get "src") }}
+{{ $image := $src.Resize (printf "%dx" (div $src.Width 2)) }}
+{{ $image2x := $src }}
+{{ $image340 := $src.Resize "340x" }}
+{{ $image680 := $src.Resize "680x" }}
 
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
   {{ if .Get "link" }}<a href="{{ . }}">{{ end }}
     <img class="lazy"
       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      height="{{ $image.Height }}"
+      width="{{ $image.Width }}"
       sizes="
         (max-width: 340px) 340w,
         (max-width: 680px) 680w,
@@ -22,16 +24,14 @@
       {{ if or (.Get "alt") (.Get "caption") }}
         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
       {{ end }}
-      height="{{ $image.Height }}"
-      width="{{ $image.Width }}"
     >
     <noscript>
       <img src="{{ $image.RelPermalink }}"
+        height="{{ $image.Height }}"
+        width="{{ $image.Width }}"
         {{ if or (.Get "alt") (.Get "caption") }}
           alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
         {{ end }}
-        height="{{ $image.Height }}"
-        width="{{ $image.Width }}"
       >
     </noscript>
   {{ if .Get "link" }}</a>{{ end }}

@@ -10,22 +10,26 @@
     </h2>
   </header>
   {{ if .Params.Image.Src }}
-    {{ $featured := .Resources.GetByPrefix .Params.Image.Src }}
-    {{ $featured340 := $featured.Resize "340x" }}
-    {{ $featured680 := $featured.Resize "680x" }}
+    {{ $src := .Resources.GetByPrefix .Params.Image.Src }}
+    {{ $featured := $src.Fill "340x160" }}
+    {{ $featured2x := $src.Fill "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a href="{{ .Permalink }}" rel="bookmark">
         <img class="lazy archive-entry-thumbnail"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          data-original="{{ $featured340.RelPermalink }}"
-          data-original-set="{{ $featured680.RelPermalink }} 2x"
+          height="{{ $featured.Height }}"
+          width="{{ $featured.Width }}"
+          data-original="{{ $featured.RelPermalink }}"
+          data-original-set="{{ $featured2x.RelPermalink }} 2x"
           {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
             alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
           {{ end }}
         >
         <noscript>
           <img class="archive-entry-thumbnail"
-            src="{{ $featured340.RelPermalink }}"
+            src="{{ $featured.RelPermalink }}"
+            height="{{ $featured.Height }}"
+            width="{{ $featured.Width }}"
             {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
               alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
             {{ end }}
