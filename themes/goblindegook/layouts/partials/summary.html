@@ -11,8 +11,8 @@
   </header>
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetByPrefix .Params.Image.Src }}
-    {{ $featured := $src.Fill "340x160" }}
-    {{ $featured2x := $src.Fill "680x320" }}
+    {{ $featured := $src.Fit "340x160" }}
+    {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a href="{{ .Permalink }}" rel="bookmark">
         <img class="lazy archive-entry-thumbnail"
