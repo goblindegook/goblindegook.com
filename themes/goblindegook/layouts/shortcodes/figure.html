@@ -1,5 +1,5 @@
-{{ $src := .Page.Resources.GetByPrefix (.Get "src") }}
-{{ $image := $src.Resize (printf "%dx" (div $src.Width 2)) }}
+{{ $src := .Get "src" | .Page.Resources.GetByPrefix }}
+{{ $image := div $src.Width 2 | printf "%dx" | $src.Resize }}
 {{ $image2x := $src }}
 {{ $image340 := $src.Resize "340x" }}
 {{ $image680 := $src.Resize "680x" }}

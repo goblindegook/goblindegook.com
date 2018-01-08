@@ -9,5 +9,8 @@
     "**/.rpt2_cache": true,
     "**/node_modules": true,
     "public": true
+  },
+  "files.associations": {
+      "*.html": "gohtml"
   }
 }

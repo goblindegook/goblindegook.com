@@ -1,8 +1,8 @@
 <figure class="single-entry-featured-image">
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
     {{ $src := .Resources.GetByPrefix .Params.Image.Src }}
-    {{ $featured := $src.Fit (printf "%dx320" (div $src.Width 2)) }}
-    {{ $featured2x := $src.Fit (printf "%dx640" $src.Width) }}
+    {{ $featured := div $src.Width 2 | printf "%dx320" | $src.Fit }}
+    {{ $featured2x := printf "%dx640" $src.Width | $src.Fit }}
     {{ $featured340 := $src.Fit "340x224" }}
     {{ $featured680 := $src.Fit "680x224" }}
     {{ $featured768 := $src.Fit "768x640" }}
@@ -47,7 +47,7 @@
       <p>
       {{ .Params.Image.Caption | markdownify }}
       {{ with .Params.Image.Attrlink}}<a href="{{ . }}"> {{ end }}
-          {{ .Params.Image.Attr }}
+        {{ .Params.Image.Attr }}
       {{ if .Params.Image.Attrlink}}</a> {{ end }}
       </p>
     {{ end }}

@@ -29,6 +29,9 @@ enableRobotsTXT = true
 [outputs]
   home = [ "HTML", "RSS", "REDIR", "HEADERS" ]
 
+[imaging]
+  quality = 90
+
 [mediaTypes]
   [mediaTypes."text/netlify"]
     suffix = ""
