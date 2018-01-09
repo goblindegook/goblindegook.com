@@ -16,6 +16,11 @@
   }
 }
 
+.pull-quote-left,
+.pull-quote-right {
+  hanging-punctuation: first;
+}
+
 .pull-quote-center {
   text-align: center;
 }
