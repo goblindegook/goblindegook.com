@@ -8,7 +8,7 @@ enableRobotsTXT = true
 
 [permalinks]
   page = "/:filename"
-  post = "/:year/:filename"
+  post = "/:year/:slug"
 
 [params]
   author = "Luís Rodrigues"
