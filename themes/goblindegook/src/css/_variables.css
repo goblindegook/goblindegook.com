@@ -34,7 +34,7 @@
   /* Vertical Rhythm */
   --vr-line-height: 1.5625;
   --vr-line-height-rem: calc(var(--vr-line-height) * 1rem);
-  --vr-cap-height: calc(var(--ms-base) * 0.75);
+  --vr-cap-height: calc(0.835rem);
   --vr-baseline: calc((var(--vr-line-height-rem) - var(--vr-cap-height)) / 2);
 }
 
