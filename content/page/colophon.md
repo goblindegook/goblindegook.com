@@ -22,6 +22,13 @@ Code excerpts use Nikita Prokopov's [Fira Code], a variant of [Fira Mono][Fira] 
 [Fira]: https://mozilla.github.io/Fira/
 [Fira Code]: https://github.com/tonsky/FiraCode
 
+## Illustration
+
+The site's [favicon] was taken from [_Die Radiolarien_] (plate 34) by Ernst Haeckel (1834-1919). Haeckel was a German naturalist responsible for discovering, naming, and documenting hundreds of new species. He published many finely detailed scientific illustrations, including one depicting the minuscule radiolarian specimen that you see.
+
+[favicon]: https://en.wikipedia.org/wiki/Favicon
+[_Die Radiolarien_]: http://caliban.mpiz-koeln.mpg.de/haeckel/radiolarien/
+
 ## Technology
 
 The tools I use to create and maintain this site include the [Visual Studio Code] editor, [nvALT] for note-taking, and the [Hugo] static site generator with a build stack that relies on [PostCSS], [Rollup], and [TypeScript]. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
