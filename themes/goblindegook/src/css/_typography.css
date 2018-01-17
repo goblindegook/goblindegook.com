@@ -1,3 +1,44 @@
+body {
+  font-size: var(--ms0);
+  line-height: var(--vr-line-height);
+}
+
+:--heading {
+  font-weight: 400;
+  margin-bottom: calc(var(--vr-line-height-rem) - var(--vr-baseline));
+  margin-top: 0;
+  padding-top: var(--vr-line-height-rem);
+}
+
+h1 {
+  font-size: var(--ms3);
+  line-height: calc(var(--vr-line-height-rem) * 2);
+}
+
+h2 {
+  font-size: var(--ms2);
+}
+
+h3 {
+  font-size: var(--ms1);
+  font-style: italic;
+}
+
+small {
+  font-size: calc(1em * var(--ms-ratio) / 1.2);
+}
+
+figcaption {
+  font-family: var(--fallback-ui-font);
+  font-size: var(--ms0);
+  padding: 1rem;
+
+  & h4 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .pull-quote-center,
 .pull-quote-left,
 .pull-quote-right {

@@ -38,22 +38,6 @@ a {
   }
 }
 
-blockquote {
-  font-style: italic;
-  margin: 2rem 2rem 3rem;
-
-  &::before {
-    color: #ccc;
-    content: "\201C";
-    display: block;
-    font-size: var(--ms5);
-    height: 0;
-    left: -2.5rem;
-    position: relative;
-    top: -0.5rem;
-  }
-}
-
 button {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -70,17 +54,27 @@ input {
   font-family: var(--ui-font);
 }
 
-:--heading {
-  font-weight: 400;
+ul,
+ol,
+dl,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr {
+  margin-top: 0;
+  margin-bottom: var(--vr-line-height-rem);
 }
 
 hr {
   border: 0;
-  border-top: 2px solid var(--divider-color);
-  margin-top: 3rem;
-  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--divider-color);
+  margin-bottom: calc(var(--vr-line-height-rem) * 2 - 2px);
+  padding-top: var(--vr-line-height-rem);
   text-align: center;
   width: 10rem;
+  height: 0;
 }
 
 embed,
@@ -104,16 +98,6 @@ figure {
 
   & img {
     padding: 0;
-  }
-}
-
-figcaption {
-  font-family: var(--fallback-ui-font);
-  font-size: var(--ms0);
-  padding: 1rem;
-
-  & h4 {
-    margin: 0;
   }
 }
 

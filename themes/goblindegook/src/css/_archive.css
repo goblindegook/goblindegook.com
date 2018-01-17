@@ -45,14 +45,8 @@
   font-family: var(--ui-font);
 }
 
-.archive-entry-title {
-  font-weight: 400;
-  line-height: 1.6;
-  margin: 1rem 0 2rem;
-
-  & a {
-    text-decoration: none;
-  }
+.archive-entry-title a {
+  text-decoration: none;
 }
 
 .archive-entry-thumbnail-wrapper {

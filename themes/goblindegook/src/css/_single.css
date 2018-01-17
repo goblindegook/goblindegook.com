@@ -76,8 +76,7 @@
 
     & > p {
       max-width: var(--body-max-width);
-      margin-left: auto;
-      margin-right: auto;
+      margin: calc(var(--vr-line-height) * 0.5rem) auto;
     }
   }
 }
@@ -139,6 +138,13 @@
     font-family: var(--fallback-small-caps-font);
     font-style: normal;
     letter-spacing: 0.06rem;
+  }
+
+  & blockquote {
+    font-style: italic;
+    margin: calc(var(--vr-line-height-rem) * 2) 1rem;
+    padding: 0 var(--vr-line-height-rem);
+    border-left: 1px solid var(--divider-color);
   }
 
   & table {
@@ -206,11 +212,13 @@
 @media (--narrow-viewport) {
   .single-entry-body {
     & table {
-      margin: 2rem 0;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     & .align-center {
-      margin: 2rem -1.5rem;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
     }
   }
 }

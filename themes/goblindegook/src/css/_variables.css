@@ -30,6 +30,12 @@
   /* Modular Scale */
   --ms-base: 1rem;
   --ms-ratio: var(--fourth);
+
+  /* Vertical Rhythm */
+  --vr-line-height: 1.5625;
+  --vr-line-height-rem: calc(var(--vr-line-height) * 1rem);
+  --vr-cap-height: calc(var(--ms-base) * 0.75);
+  --vr-baseline: calc((var(--vr-line-height-rem) - var(--vr-cap-height)) / 2);
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;

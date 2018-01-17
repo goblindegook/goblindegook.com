@@ -136,7 +136,6 @@ Artificial intelligence guru Peter Norvig has an article on [biases in experimen
   alt="Three plots, one of which contains random data."
   class="align-center"
   src="norvig-experiment.png"
-  title="This is my character. His name is Bob."
 >}}
 
 Can you guess which of the three is the randomly generated plot?

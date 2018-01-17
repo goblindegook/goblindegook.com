@@ -8,17 +8,18 @@
   {{ if .Get "link" }}<a href="{{ . }}">{{ end }}
     <img class="lazy"
       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      height="{{ $image.Height }}"
-      width="{{ $image.Width }}"
+      height="{{ $image2x.Height }}"
+      width="{{ $image2x.Width }}"
       sizes="
         (max-width: 340px) 340w,
         (max-width: 680px) 680w,
         100%
       "
-      data-original="{{ $image.RelPermalink }}"
+      data-original="{{ $image2x.RelPermalink }}"
       data-original-set="
         {{ $image340.RelPermalink }} 340w,
         {{ $image680.RelPermalink }} 680w,
+        {{ $image.RelPermalink }} 1x,
         {{ $image2x.RelPermalink }} 2x
       "
       {{ if or (.Get "alt") (.Get "caption") }}

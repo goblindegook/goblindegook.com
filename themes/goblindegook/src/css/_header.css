@@ -68,6 +68,8 @@
   & .site-title {
     font-size: var(--ms1);
     line-height: 1;
+    margin: 1rem;
+    padding: 0;
   }
 }
 
