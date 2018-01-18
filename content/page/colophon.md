@@ -24,10 +24,9 @@ Code excerpts use Nikita Prokopov's [Fira Code], a variant of [Fira Mono][Fira] 
 
 ## Illustration
 
-The site's [favicon] was taken from [_Die Radiolarien_] (plate 34) by Ernst Haeckel (1834-1919). Haeckel was a German naturalist responsible for discovering, naming, and documenting hundreds of new species. He published many finely detailed scientific illustrations, including one depicting the minuscule radiolarian specimen that you see.
+The site's [favicon] was taken from [_Die Radiolarien_](http://caliban.mpiz-koeln.mpg.de/haeckel/radiolarien/) (plate 34) by Ernst Haeckel (1834-1919). Haeckel was a German naturalist responsible for discovering, naming, and documenting hundreds of new species. He published many finely detailed scientific illustrations, including one depicting the minuscule radiolarian specimen that you see.
 
 [favicon]: https://en.wikipedia.org/wiki/Favicon
-[_Die Radiolarien_]: http://caliban.mpiz-koeln.mpg.de/haeckel/radiolarien/
 
 ## Technology
 
