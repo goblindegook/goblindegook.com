@@ -10,7 +10,7 @@
     </h2>
   </header>
   {{ if .Params.Image.Src }}
-    {{ $src := .Resources.GetByPrefix .Params.Image.Src }}
+    {{ $src := .Resources.GetMatch .Params.Image.Src }}
     {{ $featured := $src.Fit "340x160" }}
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
