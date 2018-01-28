@@ -28,7 +28,7 @@ function setupSearch (options: SearchOptions): void {
 
   if (searchInput && searchResultsContainer) {
     const searchHandler = createSearchHandler({
-      collectionUrl: '/lunr.json',
+      collectionUrl: '/lunr-documents.json',
       container: searchResultsContainer,
       perPage: options.perPage,
       renderLoading: options.renderLoading,

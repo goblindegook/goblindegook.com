@@ -30,11 +30,11 @@ async function fetchCollection (url: string): Promise<SearchDocument[]> {
 function buildIndex (entries: SearchDocument[]): lunr.Index {
   return lunr(function () {
     this.field('title', { boost: 10 })
-    this.field('categories', { boost: 3 })
-    this.field('tags', { boost: 3 })
+    // this.field('categories', { boost: 3 })
+    // this.field('tags', { boost: 3 })
     this.field('description', { boost: 3 })
     this.field('content')
-    this.field('image')
+    // this.field('image')
     this.ref('url')
 
     entries.forEach(entry => {

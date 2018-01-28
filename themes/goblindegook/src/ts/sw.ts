@@ -1,4 +1,4 @@
-const CACHE_KEY = 'goblindegook-offline-v1'
+const CACHE_KEY = 'goblindegook-offline-v2'
 
 const OFFLINE_URL = '/offline/'
 
@@ -7,7 +7,7 @@ const PRECACHE_URLS = [
   '/',
   '/offline/index.html',
   '/index.html',
-  '/lunr.json'
+  '/lunr-documents.json'
 ]
 
 type ExtendableEvent = Event & {

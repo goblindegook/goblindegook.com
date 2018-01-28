@@ -8,9 +8,7 @@
     "postinstall": "cd themes/goblindegook && yarn",
     "prebuild": "concurrently 'yarn build-theme' 'yarn build-images'",
     "build": "hugo",
-    "postbuild": "yarn build-index",
     "build-images": "gulp images",
-    "build-index": "hugo-lunr-index",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
     "watch": "hugo serve --buildDrafts -t goblindegook",
@@ -23,7 +21,6 @@
     "gulp-imagemin": "^3.3.0",
     "gulp-plumber": "^1.1.0",
     "gulp-responsive": "^2.8.0",
-    "hugo-lunr-index-cli": "^0.9.5",
     "imagemin-pngquant": "^5.0.1"
   }
 }
