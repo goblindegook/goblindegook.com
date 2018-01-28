@@ -12,6 +12,5 @@
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
     "watch": "hugo serve --buildDrafts -t goblindegook",
     "sync": "git pull origin master && git push origin master"
-  },
-  "devDependencies": {}
+  }
 }
