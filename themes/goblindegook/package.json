@@ -35,6 +35,7 @@
     "@types/masonry-layout": "^4.0.5",
     "@types/showdown": "^1.7.1",
     "@types/webfontloader": "^1.6.29",
+    "caniuse-lite": "^1.0.30000792",
     "concurrently": "^3.5.0",
     "css-modularscale": "^1.1.1",
     "cssnano": "^3.10.0",

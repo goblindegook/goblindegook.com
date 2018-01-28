@@ -6,21 +6,12 @@
   "license": "CC-BY-NC-4.0",
   "scripts": {
     "postinstall": "cd themes/goblindegook && yarn",
-    "prebuild": "concurrently 'yarn build-theme' 'yarn build-images'",
+    "prebuild": "yarn build-theme",
     "build": "hugo",
-    "build-images": "gulp images",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
     "watch": "hugo serve --buildDrafts -t goblindegook",
     "sync": "git pull origin master && git push origin master"
   },
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "gulp": "^3.9.1",
-    "gulp-changed": "^3.1.0",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-responsive": "^2.8.0",
-    "imagemin-pngquant": "^5.0.1"
-  }
+  "devDependencies": {}
 }
