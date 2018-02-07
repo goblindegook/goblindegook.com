@@ -88,14 +88,20 @@
     <div class="transition-container">
       <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
         <div class="site-header-wrapper">
-          <div class="site-breadcrumbs">
-            {{ if .IsHome }}
-              <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
-              <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
-            {{ else }}
-              {{ partial "breadcrumbs.html" . }}
-            {{ end }}
-          </div>
+          {{ if .IsHome }}
+            <nav class="breadcrumb-trail breadcrumbs">
+              <ul class="trail-items">
+                <li class="trail-item trail-begin">
+                  <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+                </li>
+                <li class="trail-item trail-end">
+                  <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
+                </li>
+              </ul>
+            </nav>
+          {{ else }}
+            {{ partial "breadcrumbs.html" . }}
+          {{ end }}
           <div class="sidebar-search">
             <input aria-label="Search" class="sidebar-search-input" name="q"
               placeholder="Enter search terms" type="search" value="">
