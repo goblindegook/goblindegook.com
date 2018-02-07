@@ -1,4 +1,4 @@
-const CACHE_KEY = 'goblindegook-offline-v2'
+const CACHE_KEY = 'goblindegook-offline-v3'
 
 const OFFLINE_URL = '/offline/'
 

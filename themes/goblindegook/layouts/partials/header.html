@@ -86,17 +86,20 @@
 
   <div id="transition-wrapper">
     <div class="transition-container">
-      <header class="site-header" itemscope itemtype="https://schema.org/WPHeader">
-        <h1 class="site-title" itemprop="headline">
-          <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-        </h1>
-        <div class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</div>
+      <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+        <div class="site-header-wrapper">
+          <div class="site-breadcrumbs">
+            {{ if .IsHome }}
+              <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+              <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
+            {{ else }}
+              {{ partial "breadcrumbs.html" . }}
+            {{ end }}
+          </div>
+          <div class="sidebar-search">
+            <input aria-label="Search" class="sidebar-search-input" name="q"
+              placeholder="Enter search terms" type="search" value="">
+            <ul class="sidebar-search-results"></ul>
+          </div>
+        </div>
       </header>
-
-      <div class="animated site-breadcrumbs site-breadcrumbs-initial" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-        {{ if .IsHome }}
-          <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
-        {{ else }}
-          {{ partial "breadcrumbs.html" . }}
-        {{ end }}
-      </div>

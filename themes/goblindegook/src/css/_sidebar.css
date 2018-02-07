@@ -54,19 +54,8 @@
   }
 }
 
-.sidebar-search {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-@media (--narrow-viewport) {
-  .sidebar-search {
-    grid-column: 1;
-    grid-row: 3;
-  }
-}
-
 .sidebar-menu {
+  margin: 0;
   padding-left: 0;
 }
 
