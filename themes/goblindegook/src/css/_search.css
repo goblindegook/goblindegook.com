@@ -107,7 +107,6 @@
 .sidebar-search {
   font-family: var(--fallback-ui-font);
   font-size: var(--ms-1);
-  margin: 0.5rem 0;
 }
 
 .no-js .sidebar-search,
@@ -124,7 +123,7 @@
 .sidebar-search-input {
   display: block;
   margin: 0;
-  padding: 0.3rem 0.5rem;
+  padding: 0 0.5rem;
   width: 100%;
 }
 
@@ -133,7 +132,7 @@
   display: none;
   list-style: none;
   padding: 1rem 0.5rem;
-  top: 3.5rem;
+  top: 3.4rem;
   position: fixed;
   z-index: 20;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
