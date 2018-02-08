@@ -16,7 +16,7 @@
 
 .site-header-wrapper {
   max-width: var(--body-max-width);
-  margin: 0 auto;
+  margin: 0.6rem auto;
   display: grid;
   grid-template-columns: auto 10rem;
 }
