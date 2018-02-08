@@ -23,7 +23,7 @@
 
 @media (--narrow-viewport) {
   .site-header-wrapper {
-    padding: 0.65rem 1.25rem;
+    padding: 0 1.25rem;
     grid-template-columns: auto;
   }
 }
