@@ -4,11 +4,11 @@
   font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   left: 50%;
-  margin: 2rem -50vw 0;
+  margin: 2rem -50% 0;
   padding: 2rem;
   position: relative;
   right: 50%;
-  width: 100vw;
+  width: 100%;
 }
 
 .no-js .site-sidebar,
