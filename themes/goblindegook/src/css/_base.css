@@ -7,7 +7,6 @@ input[type=search] {
 
 html {
   overflow-x: hidden; /* workaround for 100vw overflows */
-  overflow-y: scroll;
 }
 
 body,
