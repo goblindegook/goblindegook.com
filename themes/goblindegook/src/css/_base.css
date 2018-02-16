@@ -5,10 +5,14 @@ input[type=search] {
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden; /* workaround for 100vw overflows */
+  overflow-y: scroll;
+}
+
 body,
 html {
   text-size-adjust: 100%;
-  overflow-y: hidden; /* workaround for 100vw overflows */
 }
 
 body {
