@@ -3,7 +3,7 @@ import { scrollTo } from '../lib/scrollTo'
 
 export function setupProgress () {
   const progressBar = document.getElementById('reading-progress')
-  
+
   if (progressBar) {
     const entryContent = document.querySelector('.single-entry-body') as HTMLElement
     const scrollButton = document.querySelector('.button-furthest-read') as HTMLElement
@@ -22,7 +22,7 @@ export function setupProgress () {
       scrollButton.blur()
       scrollTo(reading.getFurthestRead())
     })
-  
+
     reading.start()
   }
 }

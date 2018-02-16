@@ -63,7 +63,7 @@
 }
 
 .search-result-single {
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px 0 var(--shadow-color);
   font-size: var(--ms1);
   margin: 0 0 1rem;
   padding: 1rem;
@@ -135,7 +135,7 @@
   top: 3.4rem;
   position: fixed;
   z-index: 20;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px var(--shadow-color);
 }
 
 .sidebar-search-results::after,

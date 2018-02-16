@@ -16,6 +16,7 @@
   --ui-overlay-background-color: rgba(51, 51, 51, 0.9);
   --body-background-alt-color: #f0f0f0;
   --divider-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Typography */
   --body-font: Alegreya, serif;

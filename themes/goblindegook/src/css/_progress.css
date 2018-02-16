@@ -5,14 +5,16 @@ progress {
 
   &::-moz-progress-bar {
     background-color: var(--active-color);
+    box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
   }
 
   &::-webkit-progress-bar {
     background-color: transparent;
   }
-
+  
   &::-webkit-progress-value {
     background-color: var(--active-color);
+    box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
   }
 }
 
@@ -30,7 +32,7 @@ progress {
   background-color: var(--ui-background-color);
   border: 0;
   bottom: 1rem;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px 0 var(--shadow-color);
   color: var(--ui-text-color);
   float: none;
   font-family: var(--fallback-ui-font);
