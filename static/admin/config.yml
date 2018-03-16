@@ -6,9 +6,9 @@ public_folder: "/uploads"
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "content/post/{{slug}}"
+    folder: "content/post"
     create: true
-    slug: "index"
+    slug: "{{slug}}/index"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
