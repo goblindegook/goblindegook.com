@@ -14,20 +14,20 @@ Most of my open source endeavours revolve around the web, using JavaScript or PH
 [littlefoot](https://www.npmjs.com/package/littlefoot)
 : A jQuery-free rewrite of Chris Sauve's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
 
-[hugo-lunr-index-cli](https://www.npmjs.com/package/hugo-lunr-index-cli)
-: A CLI application that generates a [Lunr](https://lunrjs.com) document collection from the source content of a [Hugo](https://gohugo.io) static site. Get it with `npm install --global hugo-lunr-index-cli`.
-
-[Dicionário](https://github.com/goblindegook/dictionary-react-redux-typescript)
-: I created this simple dictionary application to become more familiar with TypeScript. It uses React, Redux and the [Dicionário Aberto](http://dicionario-aberto.net) JSON API.
+[Gatsby Starter (TypeScript)](https://github.com/goblindegook/gatsby-starter-typescript)
+: A [Gatsby](https://www.gatsbyjs.org) static site starter using TypeScript with support for offline viewing, responsive images, syntax highlighting, and Markdown content.
 
 [generator-pacote](https://www.npmjs.com/package/generator-pacote)
 : A [Yeoman](http://yeoman.io/) code generator for new NPM modules using modern JavaScript language features and unit tests that run in parallel.
 
-[VVV Material Dashboard](https://github.com/goblindegook/vvv-material-dashboard)
-: A Material Design dashboard for [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) using React and Redux.
+[Dicionário](https://github.com/goblindegook/dictionary-react-redux-typescript)
+: I created this simple dictionary application to become more familiar with TypeScript. It uses React, Redux and the [Dicionário Aberto](http://dicionario-aberto.net) JSON API.
 
-[B3](http://beebeebee.be)
-: An experimental JavaScript starter theme for WordPress made with Bootstrap, Marionette.js and the WordPress REST API.
+[Genesis Starter](https://github.com/goblindegook/genesis-starter)
+: A WordPress starter theme with sophisticated enhancements and tools for custom [Genesis Framework](http://www.studiopress.com)-based projects.
+
+[Syllables](https://packagist.org/packages/goblindegook/syllables)
+: A collection of minimalistic classes and functions to aid WordPress development. Frequently-used code from my WordPress projects is thoroughly groomed and receives 100% test coverage before it ends up here.
 
 [Cassava CAS Server](https://wordpress.org/plugins/wp-cas-server/)
 : Cassava turns WordPress into a single sign-on authenticator for the [Central Authentication Service (CAS)](https://www.apereo.org/projects/cas) protocol. The plugin authenticates site members at the request of different CAS-enabled applications with just one password that never leaves the server.
@@ -38,17 +38,7 @@ Most of my open source endeavours revolve around the web, using JavaScript or PH
 [Network Restricted Members](https://wordpress.org/plugins/network-restricted-members/)
 : This WordPress plugin restricts members on a multisite install to the sites they belong to. I made it for log's private [P2](http://p2theme.com) network, which is open to all employees but allows only limited access for clients and contractors.
 
-[Syllables](https://packagist.org/packages/goblindegook/syllables)
-: A collection of minimalistic classes and functions to aid WordPress development. Frequently-used code from my WordPress projects is thoroughly groomed and receives 100% test coverage before it ends up here.
-
-[Genesis Starter](https://github.com/goblindegook/genesis-starter)
-: A WordPress starter theme with sophisticated enhancements and tools for custom [Genesis Framework](http://www.studiopress.com)-based projects.
-
-[gulp-font2css](https://www.npmjs.com/package/gulp-font2css)
-: A [Gulp](http://gulpjs.com/) plugin to encode font files as CSS. This is meant to facilitate `localStorage` caching and deferred loading of fonts.[^localFont]
-
 [delimiter-align](https://packagist.org/packages/goblindegook/delimiter-align)
 : A PHP function that aligns and rebalances plain text multiline strings around a delimiter.
 
 [^littlefoot]: Hello, world!
-[^localFont]: This performance optimisation technique is [used by Smashing Magazine](https://gist.github.com/hdragomir/8f00ce2581795fd7b1b7), among others.
