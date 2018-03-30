@@ -5,3 +5,4 @@ layouts/partials/inline.js
 static/css/styles.css
 static/js/main.js
 static/sw.js
+*.log
