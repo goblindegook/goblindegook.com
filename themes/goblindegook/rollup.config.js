@@ -3,14 +3,9 @@ import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import uglify from 'rollup-plugin-uglify'
 
-const namedExports = {
-  'node_modules/lodash/lodash.js': [ 'debounce' ],
-  'node_modules/estimate/src/estimate.js': [ 'element' ]
-}
-
 const plugins = [
   resolve(),
-  commonjs({ namedExports }),
+  commonjs(),
   typescript({
     typescript: require('typescript')
   }),
