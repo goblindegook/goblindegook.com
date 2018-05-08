@@ -2,6 +2,9 @@
   "name": "hugo-theme-goblindegook",
   "version": "1.0.0",
   "description": "Hugo theme for goblindegook.com.",
+  "author": "Luís Rodrigues",
+  "license": "MIT",
+  "private": true,
   "main": "static/js/index.js",
   "scripts": {
     "prebuild": "npm test",
@@ -14,8 +17,6 @@
     "pretest": "tslint src/**/*.ts",
     "test": "jest"
   },
-  "author": "Luís Rodrigues",
-  "license": "MIT",
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
@@ -44,7 +45,7 @@
     "postcss-cli": "^5.0.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
-    "rollup": "^0.57.1",
+    "rollup": "^0.58.2",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript": "^0.8.1",

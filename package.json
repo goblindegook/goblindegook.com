@@ -4,6 +4,7 @@
   "repository": "git@gitlab.com:goblindegook/static.goblindegook.com.git",
   "author": "Luis Rodrigues <hello@goblindegook.com>",
   "license": "CC-BY-NC-4.0",
+  "private": true,
   "scripts": {
     "postinstall": "cd themes/goblindegook && yarn",
     "prebuild": "yarn build-theme",
