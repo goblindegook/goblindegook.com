@@ -2,5 +2,9 @@ import insane from 'insane'
 import marked from 'marked'
 
 export function safeMarkdown (text: string): string {
-  return insane(marked(text)).replace(/<\/?p>/ig, '')
+  return marked(text, {
+    sanitize: true,
+    sanitizer: insane,
+    smartypants: true
+  }).replace(/<\/?p>/ig, '')
 }
