@@ -1,10 +1,6 @@
 import insane from 'insane'
-import showdown from 'showdown'
-
-const md = new showdown.Converter({
-  strikethrough: true
-})
+import marked from 'marked'
 
 export function safeMarkdown (text: string): string {
-  return insane(md.makeHtml(text)).replace(/<\/?p>/ig, '')
+  return insane(marked(text)).replace(/<\/?p>/ig, '')
 }

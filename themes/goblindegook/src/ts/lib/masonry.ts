@@ -2,8 +2,8 @@ import Masonry from 'masonry-layout'
 import imagesLoaded from 'imagesloaded'
 
 const defaultOptions = {
-  columnWidth:     '.masonry-column',
-  gutter:          '.masonry-gutter',
+  columnWidth: '.masonry-column',
+  gutter: '.masonry-gutter',
   percentPosition: true
 }
 
