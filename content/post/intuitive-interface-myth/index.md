@@ -21,7 +21,7 @@ The problem is that ‘intuitive interfaces’ do not exist. It’s a made-up ph
 
 Claims of intuitiveness usually imply that an interface’s features blend effortlessly into a person’s existing workflow, requiring no conscious thought or prior knowledge about the interface.
 
-This looks like a fine working definition at first blush — but it’s not. Attempting to establish ‘no prior knowledge’ is extremely complicated, and you cannot make assurances about intuition while at the same time requiring people to be taught.
+This looks like a fine working definition at first blush — but it’s not. Attempting to establish ‘no prior knowledge’ is extremely complicated, and you cannot make assurances about intuition while requiring people to be taught.
 
 This is why it’s absurd to say human intuition is enough to navigate a computer interface. It glosses over the basic fact that using a computer is itself a learned skill, since [nothing about interacting with a machine comes naturally to us](http://www.donotlick.com/2011/07/06/user-testing-in-the-wild-joes-first-computer-encounter/). In fact, few things are truly innate to a human being.[^1]
 
@@ -95,14 +95,13 @@ _Familiarity._ That’s your go-to word if you ever feel the discussion is in da
 
 Raskin adds:
 
-> Even where my proposals are seen as significant improvements, they are often rejected nonetheless on the grounds that they are not intuitive. It is a classic ‘catch 22.’ The client wants something that is significantly superior to the competition. But if superior, it cannot be the same, so it must be different (typically the greater the improvement, the greater the difference). Therefore it cannot be intuitive, that is, familiar. What the client usually wants is an interface with at most marginal differences that, somehow, makes a major improvement. This can be achieved only on the rare occasions where the original interface has some major flaw that is remedied by a minor fix. 
+> Even where my proposals are seen as significant improvements, they are often rejected nonetheless on the grounds that they are not intuitive. It is a classic ‘catch 22.’ The client wants something that is significantly superior to the competition. But if superior, it cannot be the same, so it must be different (typically the greater the improvement, the greater the difference). Therefore it cannot be intuitive, that is, familiar. What the client usually wants is an interface with at most marginal differences that, somehow, makes a major improvement. This can be achieved only on the rare occasions where the original interface has some major flaw that is remedied by a minor fix.
 
 Designing for familiarity provides a sturdier framework for your projects than intuition. It forces you to admit your intended public is _not_ universal, giving you some much needed focus. More importantly, though, it encourages you to get to know your audience, and understand what is familiar and meaningful to them.
 
 Think about the times you threw your arms up in frustration because users did something stupid. Maybe you even laughed at them. But rather than blame them, blame the unrealistic expectations you held. They may not be your ideal customers — they may even be as inept as you think — but the knowledge you take for granted is not shared by everybody, and may even confuse some. If your target audience is unprepared to use an interface, then not having closed that knowledge gap is your own fault.
 
 Mind that gap, and avoid designing for an audience who exists only inside your head. To create an interface that’s familiar to people, it helps first of all to make those people familiar to you.
-
 
 [^1]: If any. The jury is still out on psychological nativism, which concerns itself with instinctual knowledge and is a great subject for some other time. Even so, researchers like Noam Chomsky and Steven Pinker have focused primarily on linguistic ability, not the knack for pressing buttons and pointing cursors at rectangles on a screen. Other people may _feel_ there must be some magical way of acquiring knowledge, but the least helpful approach to an eminently empirical field like computer interface design is to start invoking the supernatural. Best not to rely on some extraordinary ability to draw knowledge from a Platonic reservoir of memories or shared universal consciousness.
 

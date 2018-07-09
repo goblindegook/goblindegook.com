@@ -95,7 +95,6 @@ Additionally, we should allow the richness and warmth of our lives to bleed into
 
 The nastiest consequences of the division of labour will continue to plague us into the 21st century if we allow our work — and by extension ourselves — to be stripped of value and humanity. Through learning and empathy, we must rethink the way we collaborate and make ourselves whole again.
 
-
 [^1]: Or, as the employed philosophy major says to the unemployed philosophy major, ‘Would you like fries with that?’
 
 [^2]: Clients have their own divisions working against them. Those who decide are the same people writing the checks; not the hapless ‘end users’ about to have some dreary, convoluted software application foisted on them.

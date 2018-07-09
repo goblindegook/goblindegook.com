@@ -35,7 +35,7 @@ Tech news outlets love to remind us how important website performance is, but th
 
 So, what is a concerned WordPress developer to do?
 
-First of all, and because you can’t manage what you can’t measure, a number of services exist to rate your page loading speed.
+First, and because you can’t manage what you can’t measure, a number of services exist to rate your page loading speed.
 
 Of course nobody expects you to fix every single problem raised by these reports. For example, Google PageSpeed Insights is still going to slap your hand if your already-optimised stylesheets haven’t been partially inlined, or you failed to compress your images by 12 bytes.[^4] The PageSpeed score is as good as useless after some point, and it’s not even correlated with the time your site actually takes to load, but most of its recommendations are nevertheless valid.
 

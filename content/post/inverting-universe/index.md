@@ -81,7 +81,7 @@ After taking stock of our history, skills, clients, and constrained ability, the
 
 As if on cue, seasoned engineers should now be gnashing their teeth.
 
-Let's be realistic. WordPress is, in many ways, terrible. It's a 13-year-old bundle of convoluted PHP 5.2 code derived from an older, mostly-abandoned hobbyist project. It grew haphazardly to address omissions and feature requests, especially in its early days. The community-driven plugin and theme ecosystem, touted as one of WordPress's greatest strengths, is vast and for the most part unreliable.
+Let's be realistic. WordPress is, in many ways, terrible. It's a 13-year-old bundle of convoluted PHP 5.2 code derived from an older, mostly abandoned hobbyist project. It grew haphazardly to address omissions and feature requests, especially in its early days. The community-driven plugin and theme ecosystem, touted as one of WordPress's greatest strengths, is vast and for the most part unreliable.
 
 Circumstances demanded pragmatism, however. Excessive purism would only impede our progress.
 
@@ -91,7 +91,7 @@ At the time, the platform supported a growing chunk of the public web, and had b
 
 So we vowed to not only do WordPress, but do it well, and innovate whenever we could. We targeted bigger companies, learning to optimise WordPress at scale and for less traditional use cases, and adopted JavaScript extensively years before WordPress creator Matt Mullenweg exhorted developers to embrace the language.
 
-By having a single core technology, engineers knew they wouldn't have to keep switching gears to tackle radically different challenges. Know-how flowed between projects. Whatever innovation there was, it stemmed from the familiar. Experimentation was encouraged but nevertheless controlled.
+By having a single core technology, engineers knew they wouldn't have to keep switching gears to tackle radically different challenges. Know-how flowed between projects. Whatever innovation there was, it stemmed from the familiar. Experimentation was encouraged but controlled.
 
 Because the remaining team was a fraction of what it had been, it was easier to implement a shift in engineering culture. We instituted peer code reviews and automated delivery, which dramatically decreased the time spent chasing and fixing bugs. It kept clients happy and made sure developers would be empowered to fix their own mistakes and be constantly learning from each other.
 
