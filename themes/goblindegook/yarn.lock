@@ -2858,8 +2858,8 @@ levn@~0.3.0:
     type-check "~0.3.2"
 
 littlefoot@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.3.tgz#e6fe9d65cc6cd081c07289d787d0a5006802cab9"
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.4.tgz#038e3a90d3cb7695ed9f627fbae4b288d25b1229"
   dependencies:
     babel-polyfill "^6.26.0"
     dom-classlist "^1.0.1"
