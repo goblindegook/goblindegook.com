@@ -2857,9 +2857,9 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-littlefoot@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.5.tgz#788b8bc2a0448b0161d23f09f5999a28f55b770a"
+littlefoot@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.6.tgz#844b44c9945601158e8326ffea6a2815adddbf3b"
   dependencies:
     babel-polyfill "^6.26.0"
     dom-classlist "^1.0.1"
