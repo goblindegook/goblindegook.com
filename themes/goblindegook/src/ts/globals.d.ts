@@ -169,31 +169,6 @@ declare module 'unfetch' {
   export = fetch
 }
 
-declare module 'littlefoot' {
-  interface Settings {
-    activateCallback?: (element: HTMLElement, button: HTMLElement) => any
-    activateDelay?: number
-    activateOnHover?: boolean
-    allowDuplicates?: boolean
-    allowMultiple?: boolean
-    anchorParentSelector?: string
-    anchorPattern?: RegExp,
-    buttonTemplate?: string
-    contentTemplate?: string
-    dismissDelay?: number
-    dismissOnUnhover?: boolean
-    footnoteParentClass?: string
-    footnoteSelector?: string
-    hoverDelay?: number
-    numberResetSelector?: string
-    scope?: string
-  }
-
-  function littlefoot (settings?: Settings): void
-
-  export = littlefoot
-}
-
 declare module 'vanilla-lazyload' {
   interface Settings {
     class_error?: string
