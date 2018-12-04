@@ -34,7 +34,7 @@ enableRobotsTXT = true
 
 [mediaTypes]
   [mediaTypes."text/netlify"]
-    suffix = ""
+    suffixes = [""]
     delimiter = ""
 
 [outputFormats]
