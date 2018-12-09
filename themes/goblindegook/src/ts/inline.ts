@@ -3,14 +3,17 @@ const html = document.documentElement
 html.className = html.className.replace(/\bno-js\b/, 'js')
 
 if (sessionStorage.fonts) {
-  html.classList.add('body-font-active')
-  html.classList.add('small-caps-font-active')
-  html.classList.add('ui-font-active')
-  html.classList.add('code-font-active')
+  html.classList.add(
+    'body-font-active',
+    'small-caps-font-active',
+    'ui-font-active',
+    'code-font-active'
+  )
 }
 
 if (navigator && navigator.serviceWorker) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
+      .catch(console.error)
   })
 }

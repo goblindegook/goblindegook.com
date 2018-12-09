@@ -19,20 +19,20 @@ type FetchEvent = ExtendableEvent & {
   respondWith: (response: Promise<Response>) => Promise<void>
 }
 
-async function precache (): Promise<void> {
+async function precache(): Promise<void> {
   const cache = await caches.open(CACHE_KEY)
   return cache.addAll(PRECACHE_URLS)
 }
 
-async function purge (): Promise<void> {
-  const keys = await caches.keys() as string[]
+async function purge(): Promise<void> {
+  const keys = await caches.keys()
   await Promise.all(keys
     .filter(k => k !== CACHE_KEY)
     .map(k => caches.delete(k))
   )
 }
 
-async function networkFetchAndCache (request: RequestInfo): Promise<Response> {
+async function networkFetchAndCache(request: RequestInfo): Promise<Response> {
   const response = await fetch(request)
 
   try {
@@ -45,21 +45,22 @@ async function networkFetchAndCache (request: RequestInfo): Promise<Response> {
   return response
 }
 
-async function offlineFallback (request: RequestInfo): Promise<Response> {
+async function offlineFallback(request: RequestInfo): Promise<Response> {
   const response = await caches.match(request)
   if (!response || response.status === 404) {
-    return caches.match(OFFLINE_URL)
+    const offline = await caches.match(OFFLINE_URL)
+    return offline!
   } else {
     return response
   }
 }
 
 self.addEventListener('install', (event: ExtendableEvent) => {
-  event.waitUntil(precache())
+  event.waitUntil(precache()).catch(console.error)
 })
 
 self.addEventListener('activate', (event: ExtendableEvent) => {
-  event.waitUntil(purge())
+  event.waitUntil(purge()).catch(console.error)
 })
 
 self.addEventListener('fetch', (event: FetchEvent) => {
@@ -67,6 +68,6 @@ self.addEventListener('fetch', (event: FetchEvent) => {
     event.respondWith(
       networkFetchAndCache(event.request)
         .catch(() => offlineFallback(event.request))
-    )
+    ).catch(console.error)
   }
 })

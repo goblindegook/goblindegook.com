@@ -14,7 +14,7 @@
     "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts' 'npm test -- --watch'",
     "watch:styles": "postcss src/css/styles.css --watch --output static/css/styles.css",
     "watch:ts": "rollup -c rollup.watch.js -w",
-    "pretest": "tslint src/**/*.ts",
+    "pretest": "tslint -p . src/**/*.ts",
     "test": "jest"
   },
   "jest": {
@@ -45,16 +45,18 @@
     "postcss-cli": "^6.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
-    "rollup": "^0.62.0",
+    "rollup": "^0.67.4",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-typescript": "^0.8.1",
-    "rollup-plugin-uglify": "^4.0.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.0",
     "rollup-watch": "^4.3.1",
     "stylelint": "^9.1.3",
     "stylelint-config-standard": "^18.2.0",
     "ts-jest": "^23.0.0",
+    "tslib": "^1.9.3",
     "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.17.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.2.1"
   },
@@ -70,7 +72,6 @@
     "masonry": "^0.0.2",
     "masonry-layout": "^4.2.1",
     "normalize.css": "^8.0.0",
-    "tslib": "^1.7.1",
     "unfetch": "^4.0.1",
     "vanilla-lazyload": "8.2.1",
     "webfontloader": "^1.6.28"
