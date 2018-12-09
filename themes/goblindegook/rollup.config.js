@@ -6,9 +6,7 @@ import { uglify } from 'rollup-plugin-uglify'
 const plugins = [
   resolve(),
   commonjs(),
-  typescript({
-    typescript: require('typescript')
-  }),
+  typescript(),
   uglify()
 ]
 

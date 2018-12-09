@@ -5,9 +5,7 @@ import typescript from 'rollup-plugin-typescript'
 const plugins = [
   resolve(),
   commonjs(),
-  typescript({
-    typescript: require('typescript')
-  })
+  typescript()
 ]
 
 export default [
