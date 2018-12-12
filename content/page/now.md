@@ -7,12 +7,12 @@ draft: false
 ---
 
 * Living in Lisbon, Portugal, where I work as a software engineer for [Equal Experts](https://www.equalexperts.com).
-* Developing a [functional programming JavaScript library](https://github.com/goblindegook/funny) from scratch.
-* Preparing a new talk on property-based testing.
+* _Imparando l'italiano._
 * Reading...
-  * [_An Edible History of Humanity_](http://amzn.to/2iZAte6), by Tom Standage
-  * [_This World is Full of Monsters_](http://amzn.to/2ksb24X), by Jeff VanderMeer
-* Writing an introduction to William Hope Hodgson's [_The House on the Borderland_](https://en.wikipedia.org/wiki/The_House_on_the_Borderland).
+  * [_Fluent Forever_](https://fluent-forever.com/book/), by Gabriel Wyner
+  * [_O design que o design näo vê_](https://www.orfeunegro.org/products/o-design-que-o-design-nao-ve), by Mário Moura
 * Playing [_Destiny 2_](https://www.destinythegame.com) on the PlayStation 4.
+* Restoring the [_Fantastic Metropolis_](https://fantasticmetropolis.com/) site.
 * Experimenting with photography using a dummy-level Nikon D3300 DSLR camera.
-* Relearning how to play the piano with [Yousician](https://yousician.com) as my guide.
+* Delivering talks on TypeScript and property-based testing.
+* Researching and writing an introduction to William Hope Hodgson's [_The House on the Borderland_](https://en.wikipedia.org/wiki/The_House_on_the_Borderland).
