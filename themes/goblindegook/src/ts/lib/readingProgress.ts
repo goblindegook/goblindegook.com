@@ -1,12 +1,10 @@
 import { requestFrame } from './window/requestFrame'
 import { element } from 'estimate'
 
-// tslint:disable:ter-indent
 type Progress = {
   getFurthestRead: () => number
   start: () => void
 }
-// tslint:enable:ter-indent
 
 type UpdateCallback = (progress: number, furthest: number) => void
 
