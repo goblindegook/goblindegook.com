@@ -19,6 +19,7 @@ menu: "main"
 ### _More My Type: React Applications in TypeScript_
 
 * Pixels Camp (September 30 · Lisbon, Portugal)
+* change.log (July 26 · Lisbon, Portugal)
 * require('lx') (June 29 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=H2hMHgx-OUA))
 * Expert Talks (April 18 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=G7LU_4-NQlQ))
 * Microsoft OSCAMP (April 5 · Lisbon, Portugal) ([video](https://channel9.msdn.com/Events/DXPortugal/OSCAMP-Open-Source-Software-powered-by-Bright-Pixel/More-My-Type-Developing-React-Applications-in-TypeScript))
