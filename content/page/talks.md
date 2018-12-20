@@ -3,7 +3,9 @@ title: Talks
 categories: [ "Talks" ]
 tags: [ "Talks" ]
 noToc: true
-menu: "main"
+menu:
+  main:
+    weight: 30
 ---
 
 ## 2018

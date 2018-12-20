@@ -3,7 +3,9 @@ title: "Colophon"
 author: "Luís Rodrigues"
 date: 2017-06-27T12:00:00+01:00
 draft: false
-menu: "main"
+menu:
+  main:
+    weight: 10
 ---
 
 {{< small-caps >}}goblindegook{{< /small-caps >}} is written and maintained by Luís Rodrigues.

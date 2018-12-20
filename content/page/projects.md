@@ -3,7 +3,9 @@ title: "Projects"
 author: "Luís Rodrigues"
 date: 2017-06-27T12:00:00+01:00
 draft: false
-menu: "main"
+menu:
+  main:
+    weight: 20
 ---
 
 Most of my open source endeavours revolve around the web, using TypeScript or just plain old JavaScript. The list below is only a selection of projects that I started --- you are welcome to visit [my profile page on Github](https://github.com/goblindegook/) for a fuller picture of my work and interests.
