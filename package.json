@@ -8,7 +8,7 @@
   "scripts": {
     "postinstall": "cd themes/goblindegook && yarn",
     "prebuild": "yarn build-theme",
-    "build": "hugo",
+    "build": "hugo --gc --minify",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
     "watch": "hugo serve --buildDrafts -t goblindegook",

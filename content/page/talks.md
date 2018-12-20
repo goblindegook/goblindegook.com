@@ -8,42 +8,34 @@ menu:
     weight: 30
 ---
 
-## 2018
+## More Tests, Less Work
 
-### _More Tests, Less Work_
+* Tech Mate (May 22, 2018 · Lisbon, Portugal)
+* require('lx') (April 18, 2018 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=PZskhUemFlc))
+* Expert Talks (April 10, 2018 · Lisbon, Portugal)
 
-* Tech Mate (May 22 · Lisbon, Portugal)
-* require('lx') (April 18 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=PZskhUemFlc))
-* Expert Talks (April 10 · Lisbon, Portugal)
+## More My Type: React Applications in TypeScript
 
-## 2017
+* Pixels Camp (September 30, 2017 · Lisbon, Portugal)
+* change.log (July 26, 2017 · Lisbon, Portugal)
+* require('lx') (June 29, 2017 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=H2hMHgx-OUA))
+* Expert Talks (April 18, 2017 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=G7LU_4-NQlQ))
+* Microsoft OSCAMP (April 5, 2017 · Lisbon, Portugal) ([video](https://channel9.msdn.com/Events/DXPortugal/OSCAMP-Open-Source-Software-powered-by-Bright-Pixel/More-My-Type-Developing-React-Applications-in-TypeScript))
 
-### _More My Type: React Applications in TypeScript_
+## [Inverting the Universe](/2017/inverting-universe/)
 
-* Pixels Camp (September 30 · Lisbon, Portugal)
-* change.log (July 26 · Lisbon, Portugal)
-* require('lx') (June 29 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=H2hMHgx-OUA))
-* Expert Talks (April 18 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=G7LU_4-NQlQ))
-* Microsoft OSCAMP (April 5 · Lisbon, Portugal) ([video](https://channel9.msdn.com/Events/DXPortugal/OSCAMP-Open-Source-Software-powered-by-Bright-Pixel/More-My-Type-Developing-React-Applications-in-TypeScript))
+* WordPress Porto Meetup (March 3, 2017 · Porto, Portugal)
 
-### _[Inverting the Universe](/2017/inverting-universe/)_
+## [~~Designing~~ Developing for Humans](/2016/designing-developing-humans)
 
-* WordPress Porto Meetup (March 3 · Porto, Portugal)
+* Pixels Camp (October 8, 2016 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=eBJd5TfIXrY), [slides](https://goblindegook.github.io/developing-for-humans/))
+* Landing.Festival 2016 (June 4, 2016 · Lisbon, Portugal)
+* WordCamp Porto 2016 (May 14, 2016 · Porto, Portugal)
 
-## 2016
+## React + Redux + WP REST API
 
-### _[~~Designing~~ Developing for Humans](/2016/designing-developing-humans)_
+* WordPress Lisboa Meetup (June 6, 2016 · Lisbon, Portugal)
 
-* Pixels Camp (October 8 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=eBJd5TfIXrY), [slides](https://goblindegook.github.io/developing-for-humans/))
-* Landing.Festival 2016 (June 4 · Lisbon, Portugal)
-* WordCamp Porto 2016 (May 14 · Porto, Portugal)
+## Introducing B3
 
-### _React + Redux + WP REST API_
-
-* WordPress Lisboa Meetup (June 6 · Lisbon, Portugal)
-
-## 2015
-
-### _Introducing B3_
-
-* WordCamp Lisboa 2015 (May 4 · Lisbon, Portugal)
+* WordCamp Lisboa 2015 (May 4, 2015 · Lisbon, Portugal)
