@@ -32,7 +32,7 @@ menu: "main"
 
 ### _[~~Designing~~ Developing for Humans](/2016/designing-developing-humans)_
 
-* Pixels Camp (October 8 · Lisbon, Portugal) ([slides](https://goblindegook.github.io/developing-for-humans/))
+* Pixels Camp (October 8 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=eBJd5TfIXrY), [slides](https://goblindegook.github.io/developing-for-humans/))
 * Landing.Festival 2016 (June 4 · Lisbon, Portugal)
 * WordCamp Porto 2016 (May 14 · Porto, Portugal)
 
