@@ -8,6 +8,14 @@ menu:
     weight: 30
 ---
 
+## react-testing-library
+
+- **Upcoming** [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
+
+## When Engineers Pair with Product Managers
+
+- **Upcoming** With Neha Datt and Ali Asad Lotia, [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/260173064/) (April 10, 2019 · Lisbon, Portugal)
+
 ## More Tests, Less Work
 
 - Pixels Camp (March 22, 2019 · Lisbon, Portugal)
