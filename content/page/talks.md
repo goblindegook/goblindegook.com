@@ -10,13 +10,19 @@ menu:
 
 ## react-testing-library
 
+Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering.
+
 - **Upcoming** [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
 
 ## When Engineers Pair with Product Managers
 
-- **Upcoming** With Neha Datt and Ali Asad Lotia, [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/260173064/) (April 10, 2019 · Lisbon, Portugal)
+How do you get engineers more involved in business decisions? How do you make product managers more aware of delivery opportunities and difficulties? How can they meaningfully challenge each other? A conversation with Neha Datt, Ali Asad Lotia and Luís Rodrigues around the benefits of stepping outside our comfort zone for a closer collaboration between engineering and product management roles.
+
+- [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/260173064/) (April 10, 2019 · Lisbon, Portugal)
 
 ## More Tests, Less Work
+
+Writing tests can be tricky. How do you ensure appropriate coverage yet keep things straightforward and maintainable? Generative (or property-based) testing frameworks exist to reinforce your tests with hundreds of randomised checks, but they require changing your test design mentality. This talk introduces [fast-check](https://github.com/dubzzz/fast-check) and its underpinnings, and suggests strategies to help you make the most of it immediately.
 
 - Pixels Camp (March 22, 2019 · Lisbon, Portugal)
 - Tech Mate (May 22, 2018 · Lisbon, Portugal)
@@ -24,6 +30,8 @@ menu:
 - Expert Talks (April 10, 2018 · Lisbon, Portugal)
 
 ## More My Type: React Applications in TypeScript
+
+An overview of the benefits of using typed languages when working with React and React Native, with examples in TypeScript, including setup using Webpack and tsc, a comparison with standard PropTypes and Flow, common caveats, and strategies for converting your existing applications.
 
 - Pixels Camp (September 30, 2017 · Lisbon, Portugal)
 - change.log (July 26, 2017 · Lisbon, Portugal)
@@ -33,9 +41,13 @@ menu:
 
 ## [Inverting the Universe](/2017/inverting-universe/)
 
+WordPress, business, and bears.
+
 - WordPress Porto Meetup (March 3, 2017 · Porto, Portugal)
 
 ## [~~Designing~~ Developing for Humans](/2016/designing-developing-humans)
+
+Think UX is a designer's job? Think again. Everybody has a responsibility to provide their visitors with an excellent experience, and sometimes a pretty interface and smooth animations aren't enough to save your site, your app, or your business. UX goes beyond your device's screen---CPUs, slow networks, random number generators and the economy may well conspire to ruin your day.
 
 - Pixels Camp (October 8, 2016 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=eBJd5TfIXrY), [slides](https://goblindegook.github.io/developing-for-humans/))
 - Landing.Festival 2016 (June 4, 2016 · Lisbon, Portugal)
