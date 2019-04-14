@@ -1624,6 +1624,13 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
+delegated-events@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/delegated-events/-/delegated-events-1.0.10.tgz#bac0dd30549daa7f14830c11114c16df0562224e"
+  integrity sha512-OP+IyXmEr5ate3EF25F/WE5B5JB7GTs1VTS/61hXN8q9yXDft1GL+NKLCxAKl1pNaejFBpBsWbd/YgQJKi+4+A==
+  dependencies:
+    selector-set "^1.1.2"
+
 delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
@@ -1674,33 +1681,6 @@ doctrine@0.7.2:
     esutils "^1.1.6"
     isarray "0.0.1"
 
-dom-classlist@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dom-classlist/-/dom-classlist-1.0.1.tgz#722814dc2f509d3d7d06f2533ba9ff48eeea59b9"
-  integrity sha1-cigU3C9QnT19BvJTO6n/SO7qWbk=
-
-dom-closest@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/dom-closest/-/dom-closest-0.2.0.tgz#ebd9f91d1bf22e8d6f477876bbcd3ec90216c0cf"
-  integrity sha1-69n5HRvyLo1vR3h2u80+yQIWwM8=
-  dependencies:
-    dom-matches ">=1.0.1"
-
-dom-delegate@^2.0.3:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/dom-delegate/-/dom-delegate-2.2.0.tgz#fcbe2e0de086f82bd03eaa2caaac51e4a87f2e6b"
-  integrity sha512-uhzlGq+RIYiRrXo8jEe8SQ84UYyE1z5Ucq95oQGxW3KjLtqrxI0mNi0Un8t5QZXQ8U7ig0I1pJQNqDvr3aJg2Q==
-
-dom-matches@>=1.0.1, dom-matches@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/dom-matches/-/dom-matches-2.0.0.tgz#d2728b416a87533980eb089b848d253cf23a758c"
-  integrity sha1-0nKLQWqHUzmA6wibhI0lPPI6dYw=
-
-dom-matches@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dom-matches/-/dom-matches-1.0.1.tgz#fa7b57cd8287895bf40936b8d8544ba8e8b35a1f"
-  integrity sha1-+ntXzYKHiVv0CTa42FRLqOizWh8=
-
 dom-serializer@0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.1.tgz#1ec4059e284babed36eec2941d4a970a189ce7c0"
@@ -1708,13 +1688,6 @@ dom-serializer@0:
   dependencies:
     domelementtype "^1.3.0"
     entities "^1.1.1"
-
-dom-siblings@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/dom-siblings/-/dom-siblings-0.1.0.tgz#88025ffa0201f62cbede543066d7ef184c0ec1e9"
-  integrity sha1-iAJf+gIB9iy+3lQwZtfvGEwOwek=
-  dependencies:
-    dom-matches "^1.0.1"
 
 domelementtype@1, domelementtype@^1.3.0, domelementtype@^1.3.1:
   version "1.3.1"
@@ -3540,17 +3513,12 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-littlefoot@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-1.0.9.tgz#01ce9939d146daf70ca2f43151bdf8f61a7f727d"
-  integrity sha512-tlUfEJEfrd5ZReSod6uyRxNupX2j2T9MAiu6IGWhWdIfYs+NBqx8uk7YMCezfDydJVh9V3DCbCj/3HdPfxCpBQ==
+littlefoot@^2.0.0-alpha.1:
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/littlefoot/-/littlefoot-2.0.0-alpha.1.tgz#7b308cef5de3b72141496e9bd974e61891e1c05d"
+  integrity sha512-86pcuBDYJ3jzaQiERQyco+Q5qcrTKE0eLdyqYWddJi1cOIFQDUK6ze7ttSoLlY0LOzfKoLMlJAj3Px9bbjh5iA==
   dependencies:
-    dom-classlist "^1.0.1"
-    dom-closest "^0.2.0"
-    dom-delegate "^2.0.3"
-    dom-matches "^2.0.0"
-    dom-siblings "^0.1.0"
-    lodash.escape "^4.0.1"
+    delegated-events "^1.0.10"
     lodash.template "^4.4.0"
     lodash.throttle "^4.1.1"
 
@@ -3584,11 +3552,6 @@ lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
-
-lodash.escape@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/lodash.escape/-/lodash.escape-4.0.1.tgz#c9044690c21e04294beaa517712fded1fa88de98"
-  integrity sha1-yQRGkMIeBClL6qUXcS/e0fqI3pg=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -5682,6 +5645,11 @@ scrolltop@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/scrolltop/-/scrolltop-0.0.1.tgz#afd2251618d76446ab1727ec2ed7b9b5bf534973"
   integrity sha1-r9IlFhjXZEarFyfsLte5tb9TSXM=
+
+selector-set@^1.1.2:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/selector-set/-/selector-set-1.1.4.tgz#435f84f94b8c87d9d220df785ec5a049680b46dc"
+  integrity sha512-p852Z9CGCtWamKUcDpOaXFsggjTW5jS9MNQjvUEr6+l2tC2SflbqaMsd39+hnYmIfVx0hl0Sj4w1a7oaL8wLoA==
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5, semver@^5.5.0:
   version "5.7.0"
