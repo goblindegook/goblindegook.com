@@ -12,7 +12,9 @@ menu:
 
 Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering.
 
-- **Upcoming** [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
+- **Upcoming** [Expert Talks](https://www.meetup.com/expert-talks-portugal/) (June 5, 2019 · Lisbon, Portugal)
+- **Upcoming** [WordCamp Lisboa 2019](https://2019.lisboa.wordcamp.org) (May 18, 2019 · Lisbon, Portugal)
+- [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
 
 ## When Engineers Pair with Product Managers
 
