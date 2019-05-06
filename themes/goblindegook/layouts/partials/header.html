@@ -52,9 +52,9 @@
     }
   </script>
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  {{ with .OutputFormats.Get "RSS" }}
-    {{ .RelPermalink }}
-  {{ end }}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
   <!--[if lt IE 9]><script type='text/javascript' src='/js/html5shiv.js?ver=3.7.3'></script><![endif]-->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
