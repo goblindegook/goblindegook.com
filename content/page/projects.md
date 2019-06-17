@@ -14,7 +14,7 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 : A collection of utilities written in TypeScript and distributed under the [`@pacote` organisation on NPM](https://www.npmjs.com/org/pacote).
 
 [littlefoot](https://www.npmjs.com/package/littlefoot)
-: A jQuery-free rewrite of Chris Sauve's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
+: A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
 
 [funny](https://github.com/goblindegook/funny)
 : Tiny JavaScript modules for functional programming, inspired by Ramda and Lodash.
