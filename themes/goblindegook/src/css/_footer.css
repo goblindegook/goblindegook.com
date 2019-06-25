@@ -5,10 +5,10 @@
   margin: 0;
   padding: 1rem 0;
   text-align: center;
+}
 
-  & p {
-    margin: 0;
-  }
+.site-footer p {
+  margin: 0;
 }
 
 .no-js .site-footer,

@@ -2,8 +2,8 @@ module.exports = {
   plugins: {
     'stylelint': {},
     'postcss-import': {},
-    'postcss-cssnext': {
-      warnForDuplicates: false
+    'postcss-preset-env': {
+      stage: 1
     },
     'pixrem': {},
     'cssnano': {}

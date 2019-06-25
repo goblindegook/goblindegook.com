@@ -57,28 +57,28 @@
   position: relative;
   right: 50%;
   width: 100vw;
+}
 
-  & img {
-    margin: 0 calc(50% - 50vw);
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
+.single-entry-featured-image img {
+  margin: 0 calc(50% - 50vw);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
 
-  & figcaption {
-    background-color: var(--ui-overlay-background-color);
-    bottom: 0;
-    padding: 0;
-    position: absolute;
-    text-align: left;
-    width: 100%;
-    z-index: 3;
+.single-entry-featured-image figcaption {
+  background-color: var(--ui-overlay-background-color);
+  bottom: 0;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  z-index: 3;
+}
 
-    & > p {
-      max-width: var(--body-max-width);
-      margin: calc(var(--vr-line-height) * 0.5rem) auto;
-    }
-  }
+.single-entry-featured-image figcaption > p {
+  max-width: var(--body-max-width);
+  margin: calc(var(--vr-line-height) * 0.5rem) auto;
 }
 
 @media (--narrow-viewport) {
@@ -86,140 +86,142 @@
     height: 14rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+  }
 
-    & figcaption {
-      max-width: 100%;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+  .single-entry-featured-image figcaption {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
 .single-entry-body {
   font-size: var(--ms1);
   hanging-punctuation: first;
-
-  & h2 {
-    border-bottom: 1px solid var(--divider-color);
-  }
-
-  & a {
-    background-color: transparent;
-    background-image:
-      linear-gradient(var(--body-background-color), var(--body-background-color)),
-      linear-gradient(var(--body-background-color), var(--body-background-color)),
-      linear-gradient(var(--link-color), var(--link-color));
-    background-position: 0 85%, 100% 85%, 0 85%;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-size: 1px 1px, 1px 1px, 1px 1px;
-    text-decoration: none;
-    text-shadow:
-      0.02em 0 var(--body-background-color),
-      -0.02em 0 var(--body-background-color),
-      0 0.02em var(--body-background-color),
-      0 -0.02em var(--body-background-color),
-      0.04em 0 var(--body-background-color),
-      -0.04em 0 var(--body-background-color),
-      0.06em 0 var(--body-background-color),
-      -0.06em 0 var(--body-background-color),
-      0.08em 0 var(--body-background-color),
-      -0.08em 0 var(--body-background-color),
-      0.1em 0 var(--body-background-color),
-      -0.1em 0 var(--body-background-color),
-      0.12em 0 var(--body-background-color),
-      -0.12em 0 var(--body-background-color),
-      0.14em 0 var(--body-background-color),
-      -0.14em 0 var(--body-background-color);
-  }
-
-  & > p:first-child::first-line,
-  & h2 + p::first-line,
-  & hr + p::first-line {
-    font-family: var(--fallback-small-caps-font);
-    font-style: normal;
-    letter-spacing: 0.06rem;
-  }
-
-  & blockquote {
-    font-style: italic;
-    margin: calc(var(--vr-line-height-rem) * 2) 1rem;
-    padding: 0 var(--vr-line-height-rem);
-    border-left: 1px solid var(--divider-color);
-  }
-
-  & table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-family: var(--fallback-ui-font);
-    font-size: var(--ms0);
-    margin: 3rem 0;
-    width: 100%;
-  }
-
-  & tr {
-    border-top: 1px solid var(--divider-color);
-    border-bottom: 1px solid var(--divider-color);
-  }
-
-  & tr:nth-of-type(even) {
-    background: var(--body-background-alt-color);
-  }
-
-  & th {
-    background: var(--body-background-alt-color);
-    font-weight: 700;
-    padding: 0.5rem;
-    vertical-align: bottom;
-  }
-
-  & td {
-    font-weight: 400;
-    padding: 0.5rem;
-    vertical-align: top;
-  }
-
-  & .align-center {
-    margin: 3rem 0;
-  }
-
-  & .align-left {
-    float: left;
-    margin: 0 2rem 2rem 0;
-  }
-
-  & .align-right {
-    float: right;
-    margin: 0 0 2rem 2rem;
-  }
 }
 
-.no-js .single-entry-body,
-.small-caps-font-active .single-entry-body {
-  & > p:first-child::first-line,
-  & h2 + p::first-line,
-  & hr + p::first-line {
-    font-family: var(--small-caps-font);
-  }
+.single-entry-body h2 {
+  border-bottom: 1px solid var(--divider-color);
 }
 
-.no-js .single-entry-body,
-.ui-font-active .single-entry-body {
-  & table {
-    font-family: var(--ui-font);
-  }
+.single-entry-body a {
+  background-color: transparent;
+  background-image:
+    linear-gradient(var(--body-background-color), var(--body-background-color)),
+    linear-gradient(var(--body-background-color), var(--body-background-color)),
+    linear-gradient(var(--link-color), var(--link-color));
+  background-position: 0 85%, 100% 85%, 0 85%;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: 1px 1px, 1px 1px, 1px 1px;
+  text-decoration: none;
+  text-shadow:
+    0.02em 0 var(--body-background-color),
+    -0.02em 0 var(--body-background-color),
+    0 0.02em var(--body-background-color),
+    0 -0.02em var(--body-background-color),
+    0.04em 0 var(--body-background-color),
+    -0.04em 0 var(--body-background-color),
+    0.06em 0 var(--body-background-color),
+    -0.06em 0 var(--body-background-color),
+    0.08em 0 var(--body-background-color),
+    -0.08em 0 var(--body-background-color),
+    0.1em 0 var(--body-background-color),
+    -0.1em 0 var(--body-background-color),
+    0.12em 0 var(--body-background-color),
+    -0.12em 0 var(--body-background-color),
+    0.14em 0 var(--body-background-color),
+    -0.14em 0 var(--body-background-color);
+}
+
+.single-entry-body > p:first-child::first-line,
+.single-entry-body h2 + p::first-line,
+.single-entry-body hr + p::first-line {
+  font-family: var(--fallback-small-caps-font);
+  font-style: normal;
+  letter-spacing: 0.06rem;
+}
+
+.single-entry-body blockquote {
+  font-style: italic;
+  margin: calc(var(--vr-line-height-rem) * 2) 1rem;
+  padding: 0 var(--vr-line-height-rem);
+  border-left: 1px solid var(--divider-color);
+}
+
+.single-entry-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: var(--fallback-ui-font);
+  font-size: var(--ms0);
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.single-entry-body tr {
+  border-top: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.single-entry-body tr:nth-of-type(even) {
+  background: var(--body-background-alt-color);
+}
+
+.single-entry-body th {
+  background: var(--body-background-alt-color);
+  font-weight: 700;
+  padding: 0.5rem;
+  vertical-align: bottom;
+}
+
+.single-entry-body td {
+  font-weight: 400;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.single-entry-body .align-center {
+  margin: 3rem 0;
+}
+
+.single-entry-body .align-left {
+  float: left;
+  margin: 0 2rem 2rem 0;
+}
+
+.single-entry-body .align-right {
+  float: right;
+  margin: 0 0 2rem 2rem;
+}
+
+.no-js .single-entry-body > p:first-child::first-line,
+.small-caps-font-active .single-entry-body > p:first-child::first-line {
+  font-family: var(--small-caps-font);
+}
+
+.no-js .single-entry-body h2 + p::first-line,
+.small-caps-font-active .single-entry-body h2 + p::first-line {
+  font-family: var(--small-caps-font);
+}
+
+.no-js .single-entry-body hr + p::first-line,
+.small-caps-font-active .single-entry-body hr + p::first-line {
+  font-family: var(--small-caps-font);
+}
+
+.no-js .single-entry-body table,
+.ui-font-active .single-entry-body table {
+  font-family: var(--ui-font);
 }
 
 @media (--narrow-viewport) {
-  .single-entry-body {
-    & table {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  .single-entry-body table {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-    & .align-center {
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
-    }
+  .single-entry-body .align-center {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
   }
 }
 
@@ -253,12 +255,12 @@
   display: inline-block;
   margin: 0;
   padding: 0;
+}
 
-  & > li {
-    display: inline-block;
-  }
+.single-entry-categories > li {
+  display: inline-block;
+}
 
-  & > li:not(:last-child)::after {
-    content: " · ";
-  }
+.single-entry-categories > li:not(:last-child)::after {
+  content: " · ";
 }

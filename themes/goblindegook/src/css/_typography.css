@@ -3,7 +3,7 @@ body {
   line-height: var(--vr-line-height);
 }
 
-:--heading {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   margin-bottom: calc(var(--vr-line-height-rem) - var(--vr-baseline));
   margin-top: 0;
@@ -32,11 +32,11 @@ figcaption {
   font-family: var(--fallback-ui-font);
   font-size: var(--ms0);
   padding: 1rem;
+}
 
-  & h4 {
-    margin: 0;
-    padding: 0;
-  }
+figcaption h4 {
+  margin: 0;
+  padding: 0;
 }
 
 .pull-quote-center,

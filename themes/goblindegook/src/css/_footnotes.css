@@ -1,11 +1,11 @@
 .littlefoot-footnote__button {
   font-size: 0.7em;
   margin: 0 0.4rem;
+}
 
-  &.is-active {
-    background-color: var(--ui-active-background-color);
-    transition-delay: 0.1s;
-  }
+.littlefoot-footnote__button.is-active {
+  background-color: var(--ui-active-background-color);
+  transition-delay: 0.1s;
 }
 
 .littlefoot-footnote {
@@ -28,47 +28,46 @@
 
 .littlefoot-footnote__content {
   background-color: transparent;
-  border-radius: 0;
   hanging-punctuation: first;
   line-height: 1.6;
   padding: 1.3rem;
+}
 
-  & a {
-    background-color: transparent;
-    background-image:
-      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
-      linear-gradient(var(--ui-background-color), var(--ui-background-color)),
-      linear-gradient(var(--link-color), var(--link-color));
-    background-position: 0 85%, 100% 85%, 0 85%;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-size: 1px 1px, 1px 1px, 1px 1px;
-    text-decoration: none;
-    text-shadow:
-      0.02em 0 var(--ui-background-color),
-      -0.02em 0 var(--ui-background-color),
-      0 0.02em var(--ui-background-color),
-      0 -0.02em var(--ui-background-color),
-      0.04em 0 var(--ui-background-color),
-      -0.04em 0 var(--ui-background-color),
-      0.06em 0 var(--ui-background-color),
-      -0.06em 0 var(--ui-background-color),
-      0.08em 0 var(--ui-background-color),
-      -0.08em 0 var(--ui-background-color),
-      0.1em 0 var(--ui-background-color),
-      -0.1em 0 var(--ui-background-color),
-      0.12em 0 var(--ui-background-color),
-      -0.12em 0 var(--ui-background-color),
-      0.14em 0 var(--ui-background-color),
-      -0.14em 0 var(--ui-background-color);
-  }
+.littlefoot-footnote__content :last-child {
+  margin-bottom: 1.3rem;
+}
+
+.littlefoot-footnote__content a {
+  background-color: transparent;
+  background-image:
+    linear-gradient(var(--ui-background-color), var(--ui-background-color)),
+    linear-gradient(var(--ui-background-color), var(--ui-background-color)),
+    linear-gradient(var(--link-color), var(--link-color));
+  background-position: 0 85%, 100% 85%, 0 85%;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: 1px 1px, 1px 1px, 1px 1px;
+  text-decoration: none;
+  text-shadow:
+    0.02em 0 var(--ui-background-color),
+    -0.02em 0 var(--ui-background-color),
+    0 0.02em var(--ui-background-color),
+    0 -0.02em var(--ui-background-color),
+    0.04em 0 var(--ui-background-color),
+    -0.04em 0 var(--ui-background-color),
+    0.06em 0 var(--ui-background-color),
+    -0.06em 0 var(--ui-background-color),
+    0.08em 0 var(--ui-background-color),
+    -0.08em 0 var(--ui-background-color),
+    0.1em 0 var(--ui-background-color),
+    -0.1em 0 var(--ui-background-color),
+    0.12em 0 var(--ui-background-color),
+    -0.12em 0 var(--ui-background-color),
+    0.14em 0 var(--ui-background-color),
+    -0.14em 0 var(--ui-background-color);
 }
 
 .littlefoot-footnote__wrapper {
   background-color: var(--ui-background-color);
-  border-radius: 0;
-}
-
-.littlefoot-footnote .littlefoot-footnote__wrapper {
   margin: 0;
 }
 
@@ -92,7 +91,6 @@
 
 .littlefoot-footnote__tooltip {
   background-color: var(--ui-background-color);
-  border: 0;
 }
 
 .is-positioned-top .littlefoot-footnote__tooltip {

@@ -37,10 +37,10 @@ a {
   color: var(--link-color);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+}
 
-  &:--enter {
-    color: var(--active-color);
-  }
+a:hover, a:focus, a:active {
+  color: var(--active-color);
 }
 
 button {
@@ -100,10 +100,10 @@ figure {
   color: var(--ui-text-color);
   margin: 2rem auto;
   width: auto;
+}
 
-  & img {
-    padding: 0;
-  }
+figure img {
+  padding: 0;
 }
 
 .no-js figcaption,
@@ -121,20 +121,20 @@ del {
   display: inline-block;
   position: relative;
   text-decoration: none;
+}
 
-  &::after {
-    border-top: 2px solid var(--highlight-color);
-    bottom: 0;
-    content: '';
-    height: 50%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
+del::after {
+  border-top: 2px solid var(--highlight-color);
+  bottom: 0;
+  content: '';
+  height: 50%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
 
-  &::selection {
-    background-color: var(--highlight-color);
-  }
+del::selection {
+  background-color: var(--highlight-color);
 }
 
 .hidden {

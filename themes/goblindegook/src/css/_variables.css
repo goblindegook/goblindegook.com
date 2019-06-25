@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light dark;
+
   /* Layout */
   --body-max-width: 720px;
   --masonry-column-width: 47.05882%;
@@ -6,6 +8,7 @@
 
   /* Colour */
   --body-background-color: #fafafa;
+  --body-background-alt-color: #f0f0f0;
   --body-color: #333;
   --link-color: #be9d31;
   --highlight-color: #be9d31;
@@ -14,7 +17,7 @@
   --ui-background-color: #444;
   --ui-active-background-color: #be9d31;
   --ui-overlay-background-color: rgba(51, 51, 51, 0.9);
-  --body-background-alt-color: #f0f0f0;
+  --overlay-background-color: #fafafafa;
   --divider-color: #ddd;
   --shadow-color: rgba(0, 0, 0, 0.2);
 
@@ -39,8 +42,15 @@
   --vr-baseline: calc((var(--vr-line-height-rem) - var(--vr-cap-height)) / 2);
 }
 
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;
-@custom-selector :--enter :hover, :focus, :active;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-color: #fafafa;
+    --body-background-color: #333;
+    --body-background-alt-color: #444;
+    --divider-color: #333;
+    --overlay-background-color: #444;
+  }
+}
 
 @custom-media --narrow-viewport (width < 768px);
 @custom-media --medium-viewport (width >= 768px) and (width < 1024px);

@@ -1,5 +1,5 @@
 .site-header {
-  background-color: hsla(0, 0%, 98%, 0.95);
+  background-color: var(--overlay-background-color);
   box-shadow: 0 2px 8px 0 var(--shadow-color);
   display: block;
   font-size: var(--ms1);
@@ -68,21 +68,21 @@
   line-height: 0;
   list-style-type: none;
   text-indent: 0;
+}
 
-  &::before {
-    font-size: var(--ms0);
-    content: '/';
-    padding: 0 0.2rem;
-  }
+.trail-item::before {
+  font-size: var(--ms0);
+  content: '/';
+  padding: 0 0.2rem;
 }
 
 .trail-begin {
   font-size: var(--ms1);
   padding-left: 0;
+}
 
-  &::before {
-    font-size: var(--ms0);
-    content: "";
-    padding: 0;
-  }
+.trail-begin::before {
+  font-size: var(--ms0);
+  content: "";
+  padding: 0;
 }

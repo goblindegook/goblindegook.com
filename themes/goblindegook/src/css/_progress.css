@@ -2,20 +2,20 @@ progress {
   appearance: none;
   background-color: transparent;
   color: var(--active-color);
+}
 
-  &::-moz-progress-bar {
-    background-color: var(--active-color);
-    box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
-  }
+progress::-moz-progress-bar {
+  background-color: var(--active-color);
+  box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
+}
 
-  &::-webkit-progress-bar {
-    background-color: transparent;
-  }
-  
-  &::-webkit-progress-value {
-    background-color: var(--active-color);
-    box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
-  }
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--active-color);
+  box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
 }
 
 .reading-progress {
@@ -45,11 +45,13 @@ progress {
   text-align: center;
   transition: all 0.3s ease-in-out;
   z-index: 10;
+}
 
-  &:--enter {
-    background-color: var(--ui-active-background-color);
-    color: var(--ui-text-color);
-  }
+.button-furthest-read:hover, 
+.button-furthest-read:focus,
+.button-furthest-read:active {
+  background-color: var(--ui-active-background-color);
+  color: var(--ui-text-color);
 }
 
 .no-js .button-furthest-read,
