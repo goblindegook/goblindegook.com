@@ -33,10 +33,6 @@
   padding: 1.3rem;
 }
 
-.littlefoot-footnote__content :last-child {
-  margin-bottom: 1.3rem;
-}
-
 .littlefoot-footnote__content a {
   background-color: transparent;
   background-image:

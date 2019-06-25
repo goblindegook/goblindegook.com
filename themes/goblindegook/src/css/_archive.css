@@ -68,7 +68,7 @@
 }
 
 :not(.archive-entry-thumbnail-wrapper) + .archive-entry-content {
-  border-top: 2px solid #f0f0f0;
+  border-top: 1px solid var(--divider-color);
   padding-top: 1rem;
 }
 

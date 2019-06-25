@@ -17,8 +17,8 @@
   --ui-background-color: #444;
   --ui-active-background-color: #be9d31;
   --ui-overlay-background-color: rgba(51, 51, 51, 0.9);
-  --overlay-background-color: #fafafafa;
-  --divider-color: #ddd;
+  --overlay-background-color: #fafafaf0;
+  --divider-color: rgba(51, 51, 51, 0.2);
   --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Typography */
@@ -42,13 +42,13 @@
   --vr-baseline: calc((var(--vr-line-height-rem) - var(--vr-cap-height)) / 2);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: none) {
   :root {
     --body-color: #fafafa;
     --body-background-color: #333;
     --body-background-alt-color: #444;
-    --divider-color: #333;
-    --overlay-background-color: #444;
+    --divider-color: rgba(221, 221, 221, 0.9);
+    --overlay-background-color: rgba(68, 68, 68, 0.9);
   }
 }
 
