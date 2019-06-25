@@ -42,7 +42,7 @@
   --vr-baseline: calc((var(--vr-line-height-rem) - var(--vr-cap-height)) / 2);
 }
 
-@media (prefers-color-scheme: none) {
+@media (prefers-color-scheme: dark) {
   :root {
     --body-color: #fafafa;
     --body-background-color: #333;
