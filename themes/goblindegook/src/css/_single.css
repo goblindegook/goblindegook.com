@@ -244,13 +244,6 @@
   display: inline-block;
 }
 
-@media (--narrow-viewport) {
-  .single-entry-categories-icon {
-    height: 0.75rem;
-    width: 0.75rem;
-  }
-}
-
 .single-entry-categories {
   display: inline-block;
   margin: 0;
@@ -262,5 +255,6 @@
 }
 
 .single-entry-categories > li:not(:last-child)::after {
-  content: " · ";
+  content: "·";
+  margin: 0 0 0 0.3rem;
 }
