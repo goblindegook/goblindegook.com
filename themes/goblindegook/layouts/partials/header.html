@@ -5,24 +5,44 @@
 <!--[if IE 9 ]><html class="ie9 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link type="text/css" media="all" href="/css/styles.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+	<meta name="msapplication-TileColor" content="#BE9D31">
+	<meta name="msapplication-TileImage" content="/icon/goblindegook-144.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#333333">
+  <meta name="twitter:site" content="{{ .Site.Params.Twitter }}">
+  <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}">
+  <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}">
+  <meta name="twitter:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}">
+  {{ with .Site.Language }}<meta property="og:locale" content="{{ .Lang }}">{{ end }}
+  <meta property="og:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}">
+  <meta property="og:type" content="website">
+  <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
   <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}"/>
-  <link rel="canonical" href="{{ .Site.BaseURL }}" />
-  {{ with .Site.Language }}<meta property="og:locale" content="{{ .Lang }}" />{{ end }}
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
-  <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}" />
-  <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}" />
-  <meta name="twitter:site" content="{{ .Site.Params.Twitter }}" />
-  <meta name="twitter:image" content="{{ .Page.Params.Image.Src | default "/icon/goblindegook.png" | absURL }}" />
+  <link rel="canonical" href="{{ .Site.BaseURL }}">
+  <link rel="stylesheet" type="text/css" media="all" href="/css/styles.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+  <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="192x192" href="/icon/goblindegook-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/icon/goblindegook-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/icon/goblindegook-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/icon/goblindegook-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/goblindegook-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/goblindegook-16.png">
+	<link rel="apple-touch-icon" href="/icon/goblindegook-180.png">
   <script type="application/ld+json">
     {
       "@context": "http:\/\/schema.org",
@@ -51,25 +71,7 @@
       "name": "{{ .Site.Params.Author }}"
     }
   </script>
-  <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
   <!--[if lt IE 9]><script type='text/javascript' src='/js/html5shiv.js?ver=3.7.3'></script><![endif]-->
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
-	<link rel="icon" type="image/png" sizes="192x192" href="/icon/goblindegook-192.png">
-	<link rel="icon" type="image/png" sizes="160x160" href="/icon/goblindegook-160.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="/icon/goblindegook-96.png">
-	<link rel="icon" type="image/png" sizes="64x64" href="/icon/goblindegook-64.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icon/goblindegook-32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icon/goblindegook-16.png">
-	<link rel="apple-touch-icon" href="/icon/goblindegook-180.png">
-  <link rel="manifest" href="/manifest.webmanifest">
-	<meta name="msapplication-TileColor" content="#BE9D31">
-	<meta name="msapplication-TileImage" content="/icon/goblindegook-144.png">
-	<meta name="msapplication-config" content="/browserconfig.xml">
-  <meta name="theme-color" content="#333333">
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
   {{ partial "icons.svg" }}

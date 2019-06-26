@@ -22,8 +22,12 @@
 }
 
 @media (--narrow-viewport) {
+  .site-header {
+    height: calc(env(safe-area-inset-top) + 7.5rem);
+  }
+
   .site-header-wrapper {
-    padding: 0 1.25rem;
+    padding: env(safe-area-inset-top) 1.25rem 0;
     grid-template-columns: auto;
   }
 }
