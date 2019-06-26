@@ -58,7 +58,7 @@ Site content and sources are kept under version control on a [public Github repo
 
 The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [Insane], [LazyLoad], [littlefoot], [Lodash], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
 
-The site's stylesheet is generated from [cssnext] sources and includes [animate.css] for high-performance animations.
+The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
 [Barba.js]: http://barbajs.org/
 [Insane]: https://github.com/bevacqua/insane
@@ -70,4 +70,4 @@ The site's stylesheet is generated from [cssnext] sources and includes [animate.
 [Masonry]: http://masonry.desandro.com
 
 [animate.css]: https://daneden.github.io/animate.css
-[cssnext]: http://cssnext.io
+[postcss-preset-env]: https://preset-env.cssdb.org/
