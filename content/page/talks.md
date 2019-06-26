@@ -21,7 +21,7 @@ Frontend test automation seems hard but it's only as hard as you make it. Are yo
 
 How do you get engineers more involved in business decisions? How do you make product managers more aware of delivery opportunities and difficulties? How can they meaningfully challenge each other? A conversation with Neha Datt, Ali Asad Lotia and Luís Rodrigues around the benefits of stepping outside our comfort zone for a closer collaboration between engineering and product management roles.
 
-- [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/260173064/) (April 10, 2019 · Lisbon, Portugal)
+- [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/260173064/) (April 10, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=JJsH6DefxEQ))
 
 ## More Tests, Less Work
 

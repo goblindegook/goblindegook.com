@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link type="text/css" media="all" href="/css/styles.css" rel="stylesheet" />
   <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}"/>
@@ -64,15 +64,7 @@
 	<link rel="icon" type="image/png" sizes="64x64" href="/icon/goblindegook-64.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/goblindegook-32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/goblindegook-16.png">
-	<link rel="apple-touch-icon" href="/icon/goblindegook-57.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icon/goblindegook-180.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/icon/goblindegook-152.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/icon/goblindegook-144.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/icon/goblindegook-120.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/icon/goblindegook-114.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/icon/goblindegook-76.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/icon/goblindegook-72.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/icon/goblindegook-60.png">
+	<link rel="apple-touch-icon" href="/icon/goblindegook-180.png">
   <link rel="manifest" href="/manifest.json">
 	<meta name="msapplication-TileColor" content="#BE9D31">
 	<meta name="msapplication-TileImage" content="/icon/goblindegook-144.png">
