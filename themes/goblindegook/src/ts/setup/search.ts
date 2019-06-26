@@ -1,24 +1,29 @@
 import { safeMarkdown } from '../lib/markdown'
 import { createSearchHandler, SearchDocument } from '../lib/search'
-import { getSearchValue } from '../lib/url'
+import { parseQueryString } from '../lib/url'
 
 type SearchOptions = {
   inputSelector: string
   perPage?: number
-  useQueryString?: boolean
+  useQueryString: boolean
   resultsSelector: string
   renderLoading: (t: string) => string
   renderNoResults: (t: string) => string
   renderResult: (r: SearchDocument) => string
 }
 
-function searchEnterHandler (event: KeyboardEvent): void {
-  const terms = (event.target as HTMLInputElement).value || ''
+function updateSearchOnEnter (event: KeyboardEvent): void {
+  if (event.key === 'Enter') {
+    const terms = (event.target as HTMLInputElement).value || ''
+    const [path] = window.location.toString().split('?')
+    window.history.pushState(null, '', `${path}?q=${terms}`)
+  }
+}
 
-  if (event.keyCode === 13) {
-    const currentUrl = window.location.toString()
-    const location = currentUrl.indexOf('?') >= 0 ? currentUrl.substr(0, currentUrl.indexOf('?')) : currentUrl
-    history.pushState(null, '', `${location}?q=${terms}`)
+function pushSearchUrl (event: KeyboardEvent): void {
+  if (event.key === 'Enter') {
+    const terms = (event.target as HTMLInputElement).value || ''
+    window.location.replace(`/search/?q=${terms}`)
   }
 }
 
@@ -38,16 +43,19 @@ function setupSearch (options: SearchOptions): void {
 
     searchInput.addEventListener('change', searchHandler)
     searchInput.addEventListener('keyup', searchHandler)
-
+    
     if (options.useQueryString) {
-      searchInput.addEventListener('keyup', searchEnterHandler)
-
-      const q = getSearchValue('q')
-
+      const q = parseQueryString().q
       if (q && q.length) {
         searchInput.value = q
         searchInput.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }))
       }
+
+      searchInput.addEventListener('keyup', updateSearchOnEnter)
+      searchInput.focus()
+
+    } else {
+      searchInput.addEventListener('keyup', pushSearchUrl)
     }
   }
 }
@@ -65,7 +73,8 @@ export function setupMainSearch (): void {
         </article>
       </li>
     `,
-    resultsSelector: '.search-results'
+    resultsSelector: '.search-results',
+    useQueryString: true
   })
 }
 
@@ -76,6 +85,7 @@ export function setupSidebarSearch (): void {
     renderLoading: () => `<li class="sidebar-search-result-none">Loading...</li>`,
     renderNoResults: () => `<li class="sidebar-search-result-none">No results found.</li>`,
     renderResult: (r) => `<li class="sidebar-search-result-single"><a href="${r.url}">${safeMarkdown(r.title)}</a></li>`,
-    resultsSelector: '.sidebar-search-results'
+    resultsSelector: '.sidebar-search-results',
+    useQueryString: false
   })
 }

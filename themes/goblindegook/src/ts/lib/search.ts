@@ -24,7 +24,7 @@ type SearchOptions = {
 
 async function fetchCollection (url: string): Promise<SearchDocument[]> {
   const response = await fetch(url)
-  return await response.json()
+  return response.json()
 }
 
 function buildIndex (entries: SearchDocument[]): lunr.Index {

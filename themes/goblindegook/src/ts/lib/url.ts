@@ -2,7 +2,7 @@ type QueryVars = {
   [variable: string]: string
 }
 
-function parseSearch (): QueryVars {
+export function parseQueryString (): QueryVars {
   const queryString = window.location.search.substring(1)
   return queryString
     .split('&')
@@ -16,9 +16,4 @@ function parseSearch (): QueryVars {
         [name]: value
       }
     }, {})
-}
-
-export function getSearchValue (name: string): string | undefined {
-  const search = parseSearch()
-  return search[name]
 }
