@@ -11,13 +11,18 @@ import { easeInOutCubic, EasingFunction } from './easings'
  * @param  {Function} completion     Completion callback (optional).
  * @param  {Function} easing         Easing function (optional, defaults to easeInOutCubic).
  */
-export function scrollTo (targetPosition: number, duration = 1000, completion?: Function, easing: EasingFunction = easeInOutCubic) {
+export function scrollTo(
+  targetPosition: number,
+  duration = 1000,
+  completion?: Function,
+  easing: EasingFunction = easeInOutCubic
+) {
   const offset = getPageYOffset()
   const change = targetPosition - offset
 
   let start = 0
 
-  function animateScroll (timestamp: number): void {
+  function animateScroll(timestamp: number): void {
     if (!start) {
       start = timestamp
     }
@@ -28,7 +33,6 @@ export function scrollTo (targetPosition: number, duration = 1000, completion?: 
 
     if (progress <= duration) {
       requestFrame(animateScroll)
-
     } else if (completion && typeof completion === 'function') {
       completion()
     }

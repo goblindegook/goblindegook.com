@@ -10,10 +10,10 @@ export interface SearchDocument {
 }
 
 interface SearchIndex {
-  search (term: string): SearchDocument[]
+  search(term: string): SearchDocument[]
 }
 
-type SearchOptions = {
+interface SearchOptions {
   collectionUrl: string
   container: HTMLElement
   perPage?: number
@@ -22,13 +22,13 @@ type SearchOptions = {
   renderResult?: (result: SearchDocument) => string
 }
 
-async function fetchCollection (url: string): Promise<SearchDocument[]> {
+async function fetchCollection(url: string): Promise<SearchDocument[]> {
   const response = await fetch(url)
   return response.json()
 }
 
-function buildIndex (entries: SearchDocument[]): lunr.Index {
-  return lunr(function () {
+function buildIndex(entries: SearchDocument[]): lunr.Index {
+  return lunr(function() {
     this.field('title', { boost: 10 })
     // this.field('categories', { boost: 3 })
     // this.field('tags', { boost: 3 })
@@ -43,16 +43,19 @@ function buildIndex (entries: SearchDocument[]): lunr.Index {
   })
 }
 
-function createIndex (collection: SearchDocument[]): SearchIndex {
+function createIndex(collection: SearchDocument[]): SearchIndex {
   const index = buildIndex(collection)
 
   return {
-    search: (query: string) => index.search(query.trim())
-      .map(r => collection.find(d => d.url === r.ref)!)
+    search: (query: string) =>
+      index
+        .search(query.trim())
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        .map(r => collection.find(d => d.url === r.ref)!)
   }
 }
 
-export function createSearchHandler (userOptions: SearchOptions) {
+export function createSearchHandler(userOptions: SearchOptions) {
   const options = {
     renderLoading: (terms: string) => `Loading search results for ${terms}.`,
     renderNoResults: (terms: string) => `No results found for ${terms}.`,
@@ -85,8 +88,8 @@ export function createSearchHandler (userOptions: SearchOptions) {
       previousTerms = terms
       userOptions.container.innerHTML = results.length
         ? results
-          .filter((r, i) => !options.perPage || i < options.perPage)
-          .reduce((h, r) => h + options.renderResult(r), '')
+            .filter((r, i) => !options.perPage || i < options.perPage)
+            .reduce((h, r) => h + options.renderResult(r), '')
         : options.renderNoResults(terms)
     }
   }

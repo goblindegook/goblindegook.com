@@ -1,6 +1,6 @@
 import littlefoot from 'littlefoot'
 
-export function setupFootnotes () {
+export function setupFootnotes() {
   littlefoot({
     allowDuplicates: true
   })

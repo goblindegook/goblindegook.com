@@ -1,13 +1,13 @@
 import WebFont from 'webfontloader'
 
-export function setupFonts () {
+export function setupFonts() {
   const fontClasses: { [key: string]: string } = {
-    'Alegreya': 'body-font-active',
+    Alegreya: 'body-font-active',
     'Alegreya SC': 'small-caps-font-active',
     'Fira Sans': 'ui-font-active',
     'Fira Code': 'code-font-active'
   }
-  
+
   WebFont.load({
     custom: {
       families: [
@@ -18,9 +18,9 @@ export function setupFonts () {
       ]
     },
     active: () => {
-      sessionStorage.fonts = true
+      window.sessionStorage.fonts = true
     },
-    fontactive: (familyName) => {
+    fontactive: familyName => {
       if (fontClasses[familyName]) {
         document.documentElement.classList.add(fontClasses[familyName])
       }

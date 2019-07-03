@@ -2,7 +2,7 @@ const html = document.documentElement
 
 html.className = html.className.replace(/\bno-js\b/, 'js')
 
-if (sessionStorage.fonts) {
+if (window.sessionStorage.fonts) {
   html.classList.add(
     'body-font-active',
     'small-caps-font-active',
@@ -13,7 +13,6 @@ if (sessionStorage.fonts) {
 
 if (navigator && navigator.serviceWorker) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .catch(console.error)
+    navigator.serviceWorker.register('/sw.js').catch(console.error)
   })
 }

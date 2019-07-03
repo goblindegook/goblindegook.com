@@ -2,7 +2,7 @@ declare module 'barba.js' {
   interface Cache {
     data: {
       [key: string]: any
-    },
+    }
     set: (key: string, val: any) => void
     get: (key: string) => any
     reset: () => void
@@ -10,13 +10,35 @@ declare module 'barba.js' {
 
   type LinkClickedHandler = (element?: HTMLElement, event?: MouseEvent) => void
   type InitStateChangeHandler = (currentStatus?: Status) => void
-  type NewPageReadyHandler = (currentStatus?: Status, prevStatus?: Status, container?: HTMLElement, newPageRawHTML?: string) => void
-  type TransitionCompletedHandler = (currentStatus?: Status, prevStatus?: Status) => void
+  type NewPageReadyHandler = (
+    currentStatus?: Status,
+    prevStatus?: Status,
+    container?: HTMLElement,
+    newPageRawHTML?: string
+  ) => void
+  type TransitionCompletedHandler = (
+    currentStatus?: Status,
+    prevStatus?: Status
+  ) => void
 
   interface Dispatcher {
     readonly events: object
-    on: (e: string, f: LinkClickedHandler | InitStateChangeHandler | NewPageReadyHandler | TransitionCompletedHandler) => void
-    off: (e: string, f: LinkClickedHandler | InitStateChangeHandler | NewPageReadyHandler | TransitionCompletedHandler) => void
+    on: (
+      e: string,
+      f:
+        | LinkClickedHandler
+        | InitStateChangeHandler
+        | NewPageReadyHandler
+        | TransitionCompletedHandler
+    ) => void
+    off: (
+      e: string,
+      f:
+        | LinkClickedHandler
+        | InitStateChangeHandler
+        | NewPageReadyHandler
+        | TransitionCompletedHandler
+    ) => void
     trigger: (e: string) => void
   }
 
@@ -34,7 +56,7 @@ declare module 'barba.js' {
   }
 
   interface HistoryManager {
-    history: ReadonlyArray<Status>
+    history: readonly Status[]
     currentStatus: () => Status
     prevStatus: () => Status
   }
@@ -115,8 +137,8 @@ declare module 'estimate' {
     update: () => void
   }
 
-  export function element (el: HTMLElement, options?: Options): Calc
-  export function text (tx: string, options?: Options): number
+  export function element(el: HTMLElement, options?: Options): Calc
+  export function text(tx: string, options?: Options): number
 }
 
 declare module 'insane' {
@@ -134,39 +156,9 @@ declare module 'insane' {
     transformText?: (text: string) => string
   }
 
-  function insane (html: string, options?: Options, strict?: boolean): string
+  function insane(html: string, options?: Options, strict?: boolean): string
 
   export = insane
-}
-
-declare module 'unfetch' {
-  interface Options {
-    body?: FormData | JSON | Blob | ArrayBuffer | string
-    credentials?: 'include'
-    headers?: { [key: string]: string }
-    method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'HEAD' | 'OPTIONS' | 'DELETE'
-  }
-
-  interface Headers {
-    entries: [string, string][]
-    keys: string[]
-    get (key: string): string
-    has (key: string): boolean
-  }
-
-  interface Response {
-    ok: boolean
-    status: number
-    statusText: string
-    blob (): Promise<Blob>
-    clone (): Response
-    json (): Promise<any>
-    text (): Promise<string>
-  }
-
-  function fetch (url: string, options?: Options): Promise<Response>
-
-  export = fetch
 }
 
 declare module 'vanilla-lazyload' {
@@ -189,9 +181,9 @@ declare module 'vanilla-lazyload' {
   }
 
   export default class LazyLoad {
-    constructor (settings?: Settings)
-    public destroy (): void
-    public handleScroll (): void
-    public update (): void
+    public constructor(settings?: Settings)
+    public destroy(): void
+    public handleScroll(): void
+    public update(): void
   }
 }

@@ -1,7 +1,7 @@
 import Barba, { Transition } from 'barba.js'
 
-function delay (ms: number): Promise<void> {
-  return new Promise(r => setTimeout(r, ms))
+function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 interface FadeTransition extends Transition {
@@ -10,7 +10,7 @@ interface FadeTransition extends Transition {
 }
 
 const FadeTransition = Barba.BaseTransition.extend<FadeTransition>({
-  async start () {
+  async start() {
     await this.newContainerLoading
     await this.fadeOut()
     this.done()
@@ -18,21 +18,21 @@ const FadeTransition = Barba.BaseTransition.extend<FadeTransition>({
     await this.fadeIn()
   },
 
-  async fadeOut () {
+  async fadeOut() {
     this.oldContainer.classList.add('animated')
     this.oldContainer.classList.remove('fadeIn')
     this.oldContainer.classList.add('fadeOut')
     await delay(200)
   },
 
-  async fadeIn () {
+  async fadeIn() {
     this.newContainer.classList.add('animated')
     this.newContainer.classList.add('fadeIn')
     await delay(200)
   }
 })
 
-export function setupPageTransitions (updateFns: Array<() => void> = []) {
+export function setupPageTransitions(updateFns: (() => void)[] = []) {
   Barba.Pjax.Dom.containerClass = 'transition-container'
   Barba.Pjax.Dom.wrapperId = 'transition-wrapper'
   Barba.Pjax.getTransition = () => FadeTransition
@@ -41,5 +41,4 @@ export function setupPageTransitions (updateFns: Array<() => void> = []) {
   updateFns.forEach(fn => {
     Barba.Dispatcher.on('transitionCompleted', fn)
   })
-
 }

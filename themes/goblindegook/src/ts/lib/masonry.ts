@@ -15,7 +15,7 @@ const defaultOptions = {
  * @param container Parent element for the new element.
  * @param classes   Element classes.
  */
-function createStyleHolder (container: Element, classes: string): void {
+function createStyleHolder(container: Element, classes: string): void {
   container.insertAdjacentHTML('beforebegin', `<div class="${classes}"></div>`)
 }
 
@@ -27,14 +27,19 @@ function createStyleHolder (container: Element, classes: string): void {
  * @param container Container element.
  * @param options   Masonry options.
  */
-export function masonry (container: Element, options = {}): void {
+export function masonry(container: Element, options = {}): void {
   if (container && container.firstElementChild) {
     createStyleHolder(container.firstElementChild, 'masonry-column')
     createStyleHolder(container.firstElementChild, 'masonry-gutter')
 
-    const instance = new Masonry(container as any, { ...defaultOptions, ...options })
+    const instance = new Masonry(container as any, {
+      ...defaultOptions,
+      ...options
+    })
 
-    imagesLoaded(container)
-      .on('progress', () => instance.layout && instance.layout())
+    imagesLoaded(container).on(
+      'progress',
+      () => instance.layout && instance.layout()
+    )
   }
 }
