@@ -12,7 +12,7 @@ menu:
 
 Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering.
 
-- **Upcoming** [Landing Festival](https://landingfestival.com) (June 29, 2019 · Lisbon, Portugal)
+- [Landing Festival](https://landingfestival.com) (June 29, 2019 · Lisbon, Portugal)
 - [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/261679249/) (June 5, 2019 · Lisbon, Portugal)
 - [WordCamp Lisboa 2019](https://2019.lisboa.wordcamp.org) (May 18, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=LMy62Rk5wSo))
 - [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
@@ -27,7 +27,7 @@ How do you get engineers more involved in business decisions? How do you make pr
 
 Writing tests can be tricky. How do you ensure appropriate coverage yet keep things straightforward and maintainable? Generative (or property-based) testing frameworks exist to reinforce your tests with hundreds of randomised checks, but they require changing your test design mentality. This talk introduces [fast-check](https://github.com/dubzzz/fast-check) and its underpinnings, and suggests strategies to help you make the most of it immediately.
 
-- Pixels Camp (March 22, 2019 · Lisbon, Portugal)
+- Pixels Camp (March 22, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=-GOHtsxZNJw))
 - Tech Mate (May 22, 2018 · Lisbon, Portugal)
 - require('lx') (April 18, 2018 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=PZskhUemFlc))
 - Expert Talks (April 10, 2018 · Lisbon, Portugal)
