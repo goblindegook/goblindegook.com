@@ -1,6 +1,9 @@
 import marked from 'marked'
-import { sanitize } from 'dompurify'
+import DOMPurify from 'dompurify'
 
 export function safeMarkdown(text: string): string {
-  return sanitize(marked(text, { smartypants: true })).replace(/<\/?p>/gi, '')
+  return DOMPurify.sanitize(marked(text, { smartypants: true })).replace(
+    /<\/?p>/gi,
+    ''
+  )
 }
