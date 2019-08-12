@@ -11,7 +11,6 @@
     "build": "hugo --gc --minify",
     "build-theme": "cd themes/goblindegook && yarn build",
     "build-preview": "yarn build -- --buildDrafts --buildFuture",
-    "build-index": "cat ./public/lunr-documents.json | themes/goblindegook/bin/lunr.js > ./public/lunr-index.json",
     "watch": "hugo serve --buildDrafts -t goblindegook",
     "sync": "git pull origin master && git push origin master",
     "deploy-dat": "yarn build && dat share public"
