@@ -56,12 +56,12 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [Insane], [LazyLoad], [littlefoot], [Lodash], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [DOMPurify], [LazyLoad], [littlefoot], [Lodash], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
 
 The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
 [Barba.js]: http://barbajs.org/
-[Insane]: https://github.com/bevacqua/insane
+[DOMPurify]: https://github.com/cure53/DOMPurify
 [LazyLoad]: https://github.com/verlok/lazyload
 [littlefoot]: https://github.com/goblindegook/littlefoot
 [Lodash]: https://lodash.com

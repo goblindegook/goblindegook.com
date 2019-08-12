@@ -1,10 +1,6 @@
-import insane from 'insane'
 import marked from 'marked'
+import { sanitize } from 'dompurify'
 
 export function safeMarkdown(text: string): string {
-  return marked(text, {
-    sanitize: true,
-    sanitizer: insane,
-    smartypants: true
-  }).replace(/<\/?p>/gi, '')
+  return sanitize(marked(text, { smartypants: true })).replace(/<\/?p>/gi, '')
 }

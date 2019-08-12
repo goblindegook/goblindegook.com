@@ -39,9 +39,7 @@ async function networkFetchAndCache(request: RequestInfo): Promise<Response> {
   try {
     const cache = await window.caches.open(CACHE_KEY)
     await cache.put(request, response.clone())
-  } catch (e) {
-    console.error(e)
-  }
+  } catch {}
 
   return response
 }
@@ -58,21 +56,19 @@ async function offlineFallback(request: RequestInfo): Promise<Response> {
 }
 
 self.addEventListener('install', (event: ExtendableEvent) => {
-  event.waitUntil(precache()).catch(console.error)
+  event.waitUntil(precache())
 })
 
 self.addEventListener('activate', (event: ExtendableEvent) => {
-  event.waitUntil(purge()).catch(console.error)
+  event.waitUntil(purge())
 })
 
 self.addEventListener('fetch', (event: FetchEvent) => {
   if (event.request.method === 'GET') {
-    event
-      .respondWith(
-        networkFetchAndCache(event.request).catch(() =>
-          offlineFallback(event.request)
-        )
+    event.respondWith(
+      networkFetchAndCache(event.request).catch(() =>
+        offlineFallback(event.request)
       )
-      .catch(console.error)
+    )
   }
 })

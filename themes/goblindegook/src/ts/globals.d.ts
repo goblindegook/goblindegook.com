@@ -182,8 +182,11 @@ declare module 'vanilla-lazyload' {
 
   export default class LazyLoad {
     public constructor(settings?: Settings)
+
     public destroy(): void
+
     public handleScroll(): void
+
     public update(): void
   }
 }
