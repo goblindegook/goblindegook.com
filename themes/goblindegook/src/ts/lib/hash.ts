@@ -1,4 +1,4 @@
-import { getPageYOffset } from './window/getPageYOffset'
+import { getPageYOffset } from './window/pageYOffset'
 import { scrollTo } from './scrollTo'
 
 /**

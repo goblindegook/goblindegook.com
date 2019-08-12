@@ -1,5 +1,4 @@
-import { getPageYOffset } from './window/getPageYOffset'
-import { setPageYOffset } from './window/setPageYOffset'
+import { getPageYOffset, setPageYOffset } from './window/pageYOffset'
 import { requestFrame } from './window/requestFrame'
 import { easeInOutCubic, EasingFunction } from './easings'
 
