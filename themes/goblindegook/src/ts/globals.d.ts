@@ -141,26 +141,6 @@ declare module 'estimate' {
   export function text(tx: string, options?: Options): number
 }
 
-declare module 'insane' {
-  interface Token {
-    tag: string
-    attrs: { [attr: string]: string }
-  }
-
-  interface Options {
-    allowedAttributes?: { [tag: string]: string[] }
-    allowedClasses?: { [tag: string]: string[] }
-    allowedSchemes?: string[]
-    allowedTags?: string[]
-    filter?: (token: Token) => boolean
-    transformText?: (text: string) => string
-  }
-
-  function insane(html: string, options?: Options, strict?: boolean): string
-
-  export = insane
-}
-
 declare module 'vanilla-lazyload' {
   interface Settings {
     class_error?: string
@@ -181,7 +161,7 @@ declare module 'vanilla-lazyload' {
   }
 
   export default class LazyLoad {
-    public constructor(settings?: Settings)
+    // public constructor(settings?: Settings)
 
     public destroy(): void
 

@@ -29,6 +29,8 @@
     ]
   },
   "devDependencies": {
+    "@pacote/eslint-config": "^1.0.0",
+    "@pacote/eslint-config-jest": "^1.0.0",
     "@types/dompurify": "^0.0.33",
     "@types/imagesloaded": "^4.1.1",
     "@types/jest": "^24.0.11",
@@ -44,9 +46,9 @@
     "cssnano": "^4.1.7",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
@@ -62,8 +64,8 @@
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-typescript": "^1.0.0",
     "rollup-plugin-uglify": "^6.0.0",
-    "stylelint": "^10.0.1",
-    "stylelint-config-standard": "^18.2.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "ts-jest": "^24.0.0",
     "tslib": "^1.9.3",
     "typescript": "^3.2.1"
@@ -71,7 +73,7 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "barba.js": "^1.0.0",
-    "dompurify": "^1.0.11",
+    "dompurify": "^2.0.3",
     "estimate": "^1.0.0",
     "imagesloaded": "^4.1.4",
     "littlefoot": "^3.0.0",
