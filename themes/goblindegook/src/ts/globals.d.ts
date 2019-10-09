@@ -123,24 +123,6 @@ declare module 'barba.js' {
   export const Utils: Utils
 }
 
-declare module 'estimate' {
-  interface Options {
-    spaces: RegExp
-    speed: number
-  }
-
-  interface Calc {
-    progress: number
-    remaining: number
-    total: number
-    initialize: () => void
-    update: () => void
-  }
-
-  export function element(el: HTMLElement, options?: Options): Calc
-  export function text(tx: string, options?: Options): number
-}
-
 declare module 'vanilla-lazyload' {
   interface Settings {
     class_error?: string
