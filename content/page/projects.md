@@ -16,17 +16,11 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 [littlefoot](https://www.npmjs.com/package/littlefoot)
 : A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
 
-[funny](https://github.com/goblindegook/funny)
-: Tiny JavaScript modules for functional programming, inspired by Ramda and Lodash.
-
 [Gatsby Starter (TypeScript)](https://github.com/goblindegook/gatsby-starter-typescript)
 : A [Gatsby](https://www.gatsbyjs.org) static site starter using TypeScript with support for offline viewing, local search, responsive images, syntax highlighting, and Markdown content.
 
-[generator-pacote](https://www.npmjs.com/package/generator-pacote)
-: A [Yeoman](http://yeoman.io/) code generator for new NPM modules using modern JavaScript language features and unit tests that run in parallel.
-
-[Dicionário](https://github.com/goblindegook/dictionary-react-redux-typescript)
-: I created this simple dictionary application to become more familiar with TypeScript. It uses React, Redux and the [Dicionário Aberto](http://dicionario-aberto.net) JSON API.
+[Scopa](https://github.com/goblindegook/scopa)
+: The Italian card game of [Scopa](https://en.wikipedia.org/wiki/Scopa) in TypeScript and React.
 
 ## WordPress
 
