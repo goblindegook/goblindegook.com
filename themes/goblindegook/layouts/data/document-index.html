@@ -1,6 +1,6 @@
 {{- $.Scratch.Add "index" slice -}}
 
-{{- $searchablePages := where .Site.Pages "Params.search" "!=" "false" -}}
+{{- $searchablePages := where .Site.RegularPages "Params.search" "!=" "false" -}}
 
 {{- range $index, $page := $searchablePages -}}
   {{- .Scratch.Set "pageData" "" -}}

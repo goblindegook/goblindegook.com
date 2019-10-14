@@ -5,7 +5,7 @@
     <div class="masonry-gutter"></div>
     <div class="masonry-column"></div>
 
-    {{ $paginator := .Paginate (where .RegularPages "Type" "post") }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
     {{ range $paginator.Pages }}
       {{ partial "summary.html" . }}
     {{ end }}

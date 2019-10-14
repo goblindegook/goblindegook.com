@@ -3,7 +3,7 @@
     <a href="{{ .Paginator.Prev.URL }}" class="pagination-previous">Previous</a>
   {{ end }}
   <span class="pagination-number">{{ .Paginator.PageNumber }}</span>
-  of
+  <i>of</i>
   <span class="pagination-total">{{ .Paginator.TotalPages }}</span>
   {{ if .Paginator.HasNext }}
     <a href="{{ .Paginator.Next.URL }}" class="pagination-next">Next</a>

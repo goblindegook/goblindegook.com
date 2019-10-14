@@ -79,9 +79,9 @@ Note that both passwords contain the (usually required) mix of lower and upperca
 Now take these brute force cracking estimates, obtained through [Steve Gibson’s Haystack Calculator](https://www.grc.com/haystack.htm):
 
 | Password           | Time to brute force<br>(100 billion guesses/s) |
-| :----------------- | :------------------ |
-| `PrXyc.N7#L!eVfp9` | 14.1 trillion years |
-| `Wc16............` | 14.1 trillion years |
+| :----------------- | :--------------------------------------------- |
+| `PrXyc.N7#L!eVfp9` | 14.1 trillion years                            |
+| `Wc16............` | 14.1 trillion years                            |
 
 Unless ‘Wc16’ is in an attacker’s dictionary (and I’m not saying it can’t be), these passwords should take roughly the same time to crack by brute force — that is, if the attacker had to guess every single character combination.
 
