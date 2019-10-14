@@ -1,6 +1,6 @@
 {
   "name": "goblindegook.com",
-  "repository": "git@gitlab.com:goblindegook/static.goblindegook.com.git",
+  "repository": "github:goblindegook/goblindegook.com",
   "author": "Luis Rodrigues <hello@goblindegook.com>",
   "license": "CC-BY-NC-4.0",
   "private": true,
