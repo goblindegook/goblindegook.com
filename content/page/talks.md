@@ -27,7 +27,7 @@ How do you get engineers more involved in business decisions? How do you make pr
 
 Writing tests can be tricky. How do you ensure appropriate coverage yet keep things straightforward and maintainable? Generative (or property-based) testing frameworks exist to reinforce your tests with hundreds of randomised checks, but they require changing your test design mentality. This talk introduces [fast-check](https://github.com/dubzzz/fast-check) and its underpinnings, and suggests strategies to help you make the most of it immediately.
 
-- [Export Talks](https://www.meetup.com/ExpertTalks-Porto/events/268172805/) (February 6, 2020 · Porto, Portugal)
+- [Expert Talks](https://www.meetup.com/ExpertTalks-Porto/events/268172805/) (February 6, 2020 · Porto, Portugal)
 - Pixels Camp (March 22, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=-GOHtsxZNJw))
 - Tech Mate (May 22, 2018 · Lisbon, Portugal)
 - require('lx') (April 18, 2018 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=PZskhUemFlc))
