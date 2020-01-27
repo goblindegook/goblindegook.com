@@ -27,6 +27,7 @@ How do you get engineers more involved in business decisions? How do you make pr
 
 Writing tests can be tricky. How do you ensure appropriate coverage yet keep things straightforward and maintainable? Generative (or property-based) testing frameworks exist to reinforce your tests with hundreds of randomised checks, but they require changing your test design mentality. This talk introduces [fast-check](https://github.com/dubzzz/fast-check) and its underpinnings, and suggests strategies to help you make the most of it immediately.
 
+- [Export Talks](https://www.meetup.com/ExpertTalks-Porto/events/268172805/) (February 6, 2020 · Porto, Portugal)
 - Pixels Camp (March 22, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=-GOHtsxZNJw))
 - Tech Mate (May 22, 2018 · Lisbon, Portugal)
 - require('lx') (April 18, 2018 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=PZskhUemFlc))
@@ -34,8 +35,9 @@ Writing tests can be tricky. How do you ensure appropriate coverage yet keep thi
 
 ## More My Type: React Applications in TypeScript
 
-An overview of the benefits of using typed languages when working with React and React Native, with examples in TypeScript, including setup using Webpack and tsc, a comparison with standard PropTypes and Flow, common caveats, and strategies for converting your existing applications.
+An overview of the benefits of using typed languages when working with React and React Native, with examples in TypeScript, building using Webpack, Babel and the TypeScript compiler, a comparison with standard PropTypes and Flow, common caveats, and strategies for migrating your existing applications.
 
+- [Tech Along](https://www.eventbrite.com/e/tech-along-evident-tickets-90144720285) (January 30, 2020 · Lisbon, Portugal)
 - Pixels Camp (September 30, 2017 · Lisbon, Portugal)
 - change.log (July 26, 2017 · Lisbon, Portugal)
 - require('lx') (June 29, 2017 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=H2hMHgx-OUA))
