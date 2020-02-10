@@ -1,14 +1,11 @@
-import commonjs from 'rollup-plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve'
-import typescript from 'rollup-plugin-typescript'
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import { uglify } from 'rollup-plugin-uglify'
 
-const plugins = [
-  resolve(),
-  commonjs(),
-  typescript(),
-  uglify()
-]
+const production = !process.env.ROLLUP_WATCH
+
+const plugins = [resolve(), commonjs(), typescript(), production && uglify()]
 
 export default [
   {
@@ -16,7 +13,7 @@ export default [
     input: './src/ts/inline.ts',
     output: {
       file: './layouts/partials/inline.js',
-      format: 'es'
+      format: 'iife'
     },
     plugins
   },
@@ -25,7 +22,7 @@ export default [
     input: './src/ts/main.ts',
     output: {
       file: './static/js/main.js',
-      format: 'es'
+      format: 'iife'
     },
     plugins
   },
@@ -34,7 +31,7 @@ export default [
     input: './src/ts/sw.ts',
     output: {
       file: './static/sw.js',
-      format: 'es'
+      format: 'iife'
     },
     plugins
   }

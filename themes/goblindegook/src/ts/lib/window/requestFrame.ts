@@ -2,9 +2,6 @@
  * Create requestAnimationFrame() polyfill function.
  *
  * Creates a requestAnimationFrame()-compatible function based on setTimeout().
- *
- * @param  {Number}   fps Frames per second (defaults to 60).
- * @return {Function}     requestAnimationFrame() polyfill.
  */
 function createRequestFrame(fps = 60): (cb: FrameRequestCallback) => number {
   const tick = 1000 / fps
@@ -21,8 +18,8 @@ function createRequestFrame(fps = 60): (cb: FrameRequestCallback) => number {
 
 export const requestFrame =
   window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
   (window as any).msRequestAnimationFrame ||
   (window as any).mozRequestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
   (window as any).oRequestAnimationFrame ||
   createRequestFrame()

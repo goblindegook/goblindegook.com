@@ -32,13 +32,13 @@ const FadeTransition = Barba.BaseTransition.extend<FadeTransition>({
   }
 })
 
-export function setupPageTransitions(updateFns: (() => void)[] = []) {
+export function setupPageTransitions(listeners: (() => void)[] = []) {
   Barba.Pjax.Dom.containerClass = 'transition-container'
   Barba.Pjax.Dom.wrapperId = 'transition-wrapper'
   Barba.Pjax.getTransition = () => FadeTransition
   Barba.Pjax.start()
 
-  updateFns.forEach(fn => {
+  listeners.forEach(fn => {
     Barba.Dispatcher.on('transitionCompleted', fn)
   })
 }

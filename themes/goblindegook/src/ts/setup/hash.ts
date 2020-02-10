@@ -1,7 +1,7 @@
 import { hashChangeHandler, hashClickHandler } from '../lib/hash'
 
-export function setupHash(event: Event) {
+export function setupHash() {
   document.body.addEventListener('click', hashClickHandler)
   window.addEventListener('hashchange', hashChangeHandler)
-  hashChangeHandler(event)
+  hashChangeHandler()
 }

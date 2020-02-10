@@ -11,7 +11,7 @@ import { triggerEvent } from './lib/dom/triggerEvent'
 
 const triggerScroll = () => triggerEvent(window, 'scroll')
 
-const updateFn = [
+const onTransition = [
   setupFootnotes,
   setupHeader,
   setupLazyLoad,
@@ -22,13 +22,13 @@ const updateFn = [
   triggerScroll
 ]
 
-const setupFn = [
-  ...updateFn,
+const onFirstLoad = [
+  ...onTransition,
   setupHash,
   setupFonts,
-  () => setupPageTransitions(updateFn)
+  () => setupPageTransitions(onTransition)
 ]
 
-setupFn.forEach(fn => {
+onFirstLoad.forEach(fn => {
   window.addEventListener('load', fn)
 })
