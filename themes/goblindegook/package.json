@@ -86,7 +86,7 @@
     "masonry-layout": "^4.2.1",
     "normalize.css": "^8.0.0",
     "unfetch": "^4.0.1",
-    "vanilla-lazyload": "8.2.1",
+    "vanilla-lazyload": "^12.4.0",
     "webfontloader": "^1.6.28"
   }
 }

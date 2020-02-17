@@ -19,8 +19,8 @@
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           height="{{ $featured.Height }}"
           width="{{ $featured.Width }}"
-          data-original="{{ $featured.RelPermalink }}"
-          data-original-set="{{ $featured2x.RelPermalink }} 2x"
+          data-src="{{ $featured.RelPermalink }}"
+          data-srcset="{{ $featured2x.RelPermalink }} 2x"
           {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
             alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
           {{ end }}
