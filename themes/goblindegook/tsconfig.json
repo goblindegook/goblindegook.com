@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "importHelpers": true,
-    "lib": ["DOM", "ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020"],
+    "lib": ["DOM", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmitHelpers": true,
@@ -16,7 +16,7 @@
     "removeComments": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es5"
+    "target": "ES5"
   },
   "include": ["src/ts/**/*.ts"],
   "exclude": ["node_modules", "test/**/*.spec.ts"]

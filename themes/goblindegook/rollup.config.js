@@ -1,3 +1,4 @@
+import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
@@ -5,7 +6,19 @@ import { uglify } from 'rollup-plugin-uglify'
 
 const production = !process.env.ROLLUP_WATCH
 
-const plugins = [resolve(), commonjs(), typescript(), production && uglify()]
+const plugins = [
+  alias({
+    entries: [{ find: 'marked', replacement: 'marked/lib/marked' }]
+  }),
+  resolve({ mainFields: ['main'] }),
+  commonjs({
+    namedExports: {
+      tslib: ['__assign', '__awaiter', '__generator', '__spreadArrays']
+    }
+  }),
+  typescript(),
+  production && uglify()
+]
 
 export default [
   {
