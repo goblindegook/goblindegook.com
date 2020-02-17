@@ -21,38 +21,37 @@ type FetchEvent = ExtendableEvent & {
   respondWith: (response: Promise<Response>) => Promise<void>
 }
 
-async function precache(): Promise<void> {
-  const cache = await window.caches.open(CACHE_KEY)
-  return cache.addAll(PRECACHE_URLS)
+function precache(): Promise<void> {
+  return self.caches.open(CACHE_KEY).then(cache => cache.addAll(PRECACHE_URLS))
 }
 
-async function purge(): Promise<void> {
-  const keys = await window.caches.keys()
-  await Promise.all(
-    keys.filter(k => k !== CACHE_KEY).map(k => window.caches.delete(k))
+function purge(): Promise<boolean[]> {
+  return self.caches
+    .keys()
+    .then(keys =>
+      Promise.all(
+        keys.filter(k => k !== CACHE_KEY).map(k => self.caches.delete(k))
+      )
+    )
+}
+
+function networkFetchAndCache(request: RequestInfo): Promise<Response> {
+  return self.fetch(request).then(response =>
+    self.caches
+      .open(CACHE_KEY)
+      .then(cache => cache.put(request, response.clone()))
+      .catch()
+      .then(() => response)
   )
 }
 
-async function networkFetchAndCache(request: RequestInfo): Promise<Response> {
-  const response = await window.fetch(request)
-
-  try {
-    const cache = await window.caches.open(CACHE_KEY)
-    await cache.put(request, response.clone())
-  } catch {}
-
-  return response
-}
-
-async function offlineFallback(request: RequestInfo): Promise<Response> {
-  const response = await window.caches.match(request)
-  if (!response || response.status === 404) {
-    const offline = await window.caches.match(OFFLINE_URL)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return offline!
-  } else {
-    return response
-  }
+function offlineFallback(request: RequestInfo): Promise<Response> {
+  return self.caches.match(request).then(response =>
+    !response || response.status === 404
+      ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        self.caches.match(OFFLINE_URL).then(offline => offline!)
+      : response
+  )
 }
 
 self.addEventListener('install', (event: ExtendableEvent) => {
