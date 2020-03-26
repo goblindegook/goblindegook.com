@@ -1,7 +1,7 @@
 *,
 ::after,
 ::before,
-input[type=search] {
+input[type='search'] {
   box-sizing: border-box;
 }
 
@@ -40,7 +40,9 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   color: var(--active-color);
 }
 

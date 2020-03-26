@@ -30,7 +30,7 @@
   background-color: transparent;
   hanging-punctuation: first;
   line-height: 1.6;
-  padding: 0 1.3rem;
+  padding: 0 1.5rem;
 }
 
 .littlefoot-footnote__content a {
@@ -68,16 +68,16 @@
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
   background-image: linear-gradient(
     180deg,
-    var(--ui-background-color) 20%,
-    transparent 100%
+    var(--ui-background-color) 0%,
+    transparent 80%
   );
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
   background-image: linear-gradient(
     0deg,
-    var(--ui-background-color) 20%,
-    transparent 100%
+    var(--ui-background-color) 0%,
+    transparent 80%
   );
 }
 
