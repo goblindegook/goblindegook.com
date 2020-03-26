@@ -5,7 +5,7 @@ export function setupFonts() {
     Alegreya: 'body-font-active',
     'Alegreya SC': 'small-caps-font-active',
     'Fira Sans': 'ui-font-active',
-    'Fira Code': 'code-font-active'
+    'Fira Code': 'code-font-active',
   }
 
   WebFont.load({
@@ -14,16 +14,16 @@ export function setupFonts() {
         'Alegreya:n4,i4,n7,i7',
         'Alegreya SC:n4,n7',
         'Fira Sans:n4,i4',
-        'Fira Code:n3'
-      ]
+        'Fira Code:n3',
+      ],
     },
     active: () => {
       window.sessionStorage.fonts = true
     },
-    fontactive: familyName => {
+    fontactive: (familyName) => {
       if (fontClasses[familyName]) {
         document.documentElement.classList.add(fontClasses[familyName])
       }
-    }
+    },
   })
 }

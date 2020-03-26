@@ -4,7 +4,7 @@ import imagesLoaded from 'imagesloaded'
 const defaultOptions = {
   columnWidth: '.masonry-column',
   gutter: '.masonry-gutter',
-  percentPosition: true
+  percentPosition: true,
 }
 
 /**
@@ -34,7 +34,7 @@ export function masonry(container: Element, options = {}): void {
 
     const instance = new Masonry(container as any, {
       ...defaultOptions,
-      ...options
+      ...options,
     })
 
     imagesLoaded(container).on(

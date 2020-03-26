@@ -11,7 +11,7 @@ export function parseQueryString(): QueryVars {
 
     return {
       ...vars,
-      [name]: value
+      [name]: value,
     }
   }, {})
 }

@@ -37,6 +37,11 @@ enableRobotsTXT = true
     suffixes = [""]
     delimiter = ""
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [outputFormats]
   [outputFormats.REDIR]
     mediatype = "text/netlify"

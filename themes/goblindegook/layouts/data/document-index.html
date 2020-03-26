@@ -9,7 +9,7 @@
   {{- .Scratch.Set "pageURL" "" -}}
   {{- .Scratch.Set "pageType" "" -}}
 
-  {{- if gt (len $page.Content) 0 -}}
+  {{- if gt (len (default "" $page.Content)) 0 -}}
     {{- .Scratch.Set "pageContent" $page.Plain -}}
     {{- .Scratch.Set "pageURL" $page.Permalink -}}
     {{- .Scratch.Set "pageType" $page.Type -}}

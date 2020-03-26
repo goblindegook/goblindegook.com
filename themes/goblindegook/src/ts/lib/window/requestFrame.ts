@@ -7,7 +7,7 @@ function createRequestFrame(fps = 60): (cb: FrameRequestCallback) => number {
   const tick = 1000 / fps
   let progress = 0
 
-  return frameRequestCallback => {
+  return (frameRequestCallback) => {
     const now = new Date().getTime()
     const wait = Math.max(0, progress + tick - now)
     const id = window.setTimeout(() => frameRequestCallback(now + wait), wait)

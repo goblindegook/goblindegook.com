@@ -19,16 +19,16 @@ const onTransition = [
   setupProgress,
   setupMainSearch,
   setupSidebarSearch,
-  triggerScroll
+  triggerScroll,
 ]
 
 const onFirstLoad = [
   ...onTransition,
   setupHash,
   setupFonts,
-  () => setupPageTransitions(onTransition)
+  () => setupPageTransitions(onTransition),
 ]
 
-onFirstLoad.forEach(fn => {
+onFirstLoad.forEach((fn) => {
   window.addEventListener('load', fn)
 })

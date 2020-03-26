@@ -8,16 +8,18 @@ const production = !process.env.ROLLUP_WATCH
 
 const plugins = [
   alias({
-    entries: [{ find: 'marked', replacement: 'marked/lib/marked' }]
+    entries: [{ find: 'marked', replacement: 'marked/lib/marked' }],
   }),
   resolve({ mainFields: ['main'] }),
   commonjs({
     namedExports: {
-      tslib: ['__assign', '__awaiter', '__generator', '__spreadArrays']
-    }
+      tslib: ['__assign', '__awaiter', '__generator', '__spreadArrays'],
+    },
   }),
-  typescript(),
-  production && uglify()
+  typescript({
+    sourceMap: !production,
+  }),
+  production && uglify(),
 ]
 
 export default [
@@ -26,26 +28,26 @@ export default [
     input: './src/ts/inline.ts',
     output: {
       file: './layouts/partials/inline.js',
-      format: 'iife'
+      format: 'iife',
     },
-    plugins
+    plugins,
   },
   {
     context: 'window',
     input: './src/ts/main.ts',
     output: {
       file: './static/js/main.js',
-      format: 'iife'
+      format: 'iife',
     },
-    plugins
+    plugins,
   },
   {
     context: 'window',
     input: './src/ts/sw.ts',
     output: {
       file: './static/sw.js',
-      format: 'iife'
+      format: 'iife',
     },
-    plugins
-  }
+    plugins,
+  },
 ]

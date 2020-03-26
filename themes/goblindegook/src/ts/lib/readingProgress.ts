@@ -61,6 +61,6 @@ export function readingProgress(
 
   return {
     getFurthestRead,
-    start
+    start,
   }
 }

@@ -28,7 +28,7 @@ async function fetchCollection(url: string): Promise<SearchDocument[]> {
 }
 
 function buildIndex(entries: SearchDocument[]): lunr.Index {
-  return lunr(function() {
+  return lunr(function () {
     this.field('title', { boost: 10 })
     // this.field('categories', { boost: 3 })
     // this.field('tags', { boost: 3 })
@@ -37,7 +37,7 @@ function buildIndex(entries: SearchDocument[]): lunr.Index {
     // this.field('image')
     this.ref('url')
 
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       this.add(entry)
     })
   })
@@ -51,7 +51,7 @@ function createIndex(collection: SearchDocument[]): SearchIndex {
       index
         .search(query.trim())
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        .map(r => collection.find(d => d.url === r.ref)!)
+        .map((r) => collection.find((d) => d.url === r.ref)!),
   }
 }
 
@@ -60,7 +60,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
     renderLoading: (terms: string) => `Loading search results for ${terms}.`,
     renderNoResults: (terms: string) => `No results found for ${terms}.`,
     renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
-    ...userOptions
+    ...userOptions,
   }
 
   let index: SearchIndex

@@ -44,7 +44,7 @@ function setupSearch(options: SearchOptions): void {
       perPage: options.perPage,
       renderLoading: options.renderLoading,
       renderNoResults: options.renderNoResults,
-      renderResult: options.renderResult
+      renderResult: options.renderResult,
     })
 
     searchInput.addEventListener('change', searchHandler)
@@ -73,7 +73,7 @@ export function setupMainSearch(): void {
     renderLoading: () => `<li class="search-result-none">Loading...</li>`,
     renderNoResults: () =>
       `<li class="search-result-none">No results found.</li>`,
-    renderResult: r => `
+    renderResult: (r) => `
       <li>
         <article class="search-result-single">
           <h2 class="search-result-title"><a href="${r.url}">${safeMarkdown(
@@ -88,7 +88,7 @@ export function setupMainSearch(): void {
       </li>
     `,
     resultsSelector: '.search-results',
-    useQueryString: true
+    useQueryString: true,
   })
 }
 
@@ -100,11 +100,11 @@ export function setupSidebarSearch(): void {
       `<li class="sidebar-search-result-none">Loading...</li>`,
     renderNoResults: () =>
       `<li class="sidebar-search-result-none">No results found.</li>`,
-    renderResult: r =>
+    renderResult: (r) =>
       `<li class="sidebar-search-result-single"><a href="${
         r.url
       }">${safeMarkdown(r.title)}</a></li>`,
     resultsSelector: '.sidebar-search-results',
-    useQueryString: false
+    useQueryString: false,
   })
 }

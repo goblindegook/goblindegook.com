@@ -50,7 +50,7 @@ WordPress, business, and bears.
 
 - WordPress Porto Meetup (March 3, 2017 · Porto, Portugal)
 
-## [~~Designing~~ Developing for Humans](/2016/designing-developing-humans)
+## [<del>Designing</del> Developing for Humans](/2016/designing-developing-humans)
 
 Think UX is a designer's job? Think again. Everybody has a responsibility to provide their visitors with an excellent experience, and sometimes a pretty interface and smooth animations aren't enough to save your site, your app, or your business. UX goes beyond your device's screen---CPUs, slow networks, random number generators and the economy may well conspire to ruin your day.
 

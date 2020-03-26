@@ -9,7 +9,7 @@ const PRECACHE_URLS = [
   '/',
   '/offline/index.html',
   '/index.html',
-  '/lunr-documents.json'
+  '/lunr-documents.json',
 ]
 
 type ExtendableEvent = Event & {
@@ -22,34 +22,36 @@ type FetchEvent = ExtendableEvent & {
 }
 
 function precache(): Promise<void> {
-  return self.caches.open(CACHE_KEY).then(cache => cache.addAll(PRECACHE_URLS))
+  return self.caches
+    .open(CACHE_KEY)
+    .then((cache) => cache.addAll(PRECACHE_URLS))
 }
 
 function purge(): Promise<boolean[]> {
   return self.caches
     .keys()
-    .then(keys =>
+    .then((keys) =>
       Promise.all(
-        keys.filter(k => k !== CACHE_KEY).map(k => self.caches.delete(k))
+        keys.filter((k) => k !== CACHE_KEY).map((k) => self.caches.delete(k))
       )
     )
 }
 
 function networkFetchAndCache(request: RequestInfo): Promise<Response> {
-  return self.fetch(request).then(response =>
+  return self.fetch(request).then((response) =>
     self.caches
       .open(CACHE_KEY)
-      .then(cache => cache.put(request, response.clone()))
+      .then((cache) => cache.put(request, response.clone()))
       .catch()
       .then(() => response)
   )
 }
 
 function offlineFallback(request: RequestInfo): Promise<Response> {
-  return self.caches.match(request).then(response =>
+  return self.caches.match(request).then((response) =>
     !response || response.status === 404
       ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        self.caches.match(OFFLINE_URL).then(offline => offline!)
+        self.caches.match(OFFLINE_URL).then((offline) => offline!)
       : response
   )
 }

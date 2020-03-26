@@ -5,12 +5,12 @@ export function setupLazyLoad() {
     document.querySelectorAll<HTMLElement>('img.lazy')
   )
 
-  lazyImages.forEach(item => {
+  lazyImages.forEach((item) => {
     item.style.display = 'inline'
   })
 
   return new LazyLoad({
     // eslint-disable-next-line @typescript-eslint/camelcase
-    elements_selector: '.lazy'
+    elements_selector: '.lazy',
   }).update
 }
