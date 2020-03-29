@@ -48,11 +48,11 @@
       "@context": "http:\/\/schema.org",
       "@type": "WebSite",
       "@id": "#website",
-      "url": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}",
+      "url": "{{ .Site.BaseURL | safeHTML }}",
       "name": "{{ .Site.Title }}",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}search\/?q={search_term_string}",
+        "target": "{{ .Site.BaseURL | safeHTML }}search\/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -61,7 +61,7 @@
     {
       "@context": "http:\/\/schema.org",
       "@type": "Person",
-      "url": "{{ replace .Site.BaseURL "/" "\\/" | safeHTML }}",
+      "url": "{{ .Site.BaseURL | safeHTML }}",
       "sameAs": [
         "https:\/\/www.instagram.com\/goblindegook\/",
         "https:\/\/www.linkedin.com\/in\/luispedrorodrigues",
