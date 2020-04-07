@@ -6,12 +6,15 @@ date: 2017-06-27T12:00:00+01:00
 draft: false
 ---
 
-* Living in Lisbon, Portugal, where I work as a software engineer for [Equal Experts](https://www.equalexperts.com).
-* _Imparando l'italiano._
+* I live in Lisbon, Portugal, where I work as a software engineer for [Equal Experts](https://www.equalexperts.com).
+* [I'm staying home](https://staythefuckhome.com/).
+* Preparing a talk on simplicity in software engineering.
+* _Continuo ad imparare l'italiano (livello B2)._
 * Reading...
   * _Accidence Will Happen: A Recovering Pedant's Guide to English Language and Style_, by Oliver Kamm
   * _Dept. of Speculation_, by Jenny Offill
-* Playing [_Destiny 2_](https://www.destinythegame.com) on the PlayStation 4.
-* Restoring the [_Fantastic Metropolis_](https://fantasticmetropolis.com/) site.
-* Experimenting with photography using a dummy-level Nikon D3300 DSLR camera.
-* Delivering talks on TypeScript and property-based testing.
+  * _Le venti giornate di Torino_, by Giorgio de Maria
+* Playing [_Destiny 2_](https://www.destinythegame.com) on the PlayStation 4 and GeForce Now.
+* Redesigning [Jeff VanderMeer's website](https://www.jeffvandermeer.com/).
+* Restoring the [_Fantastic Metropolis_](https://fantasticmetropolis.com/) site archive.
+* Learning photography with a a dummy-level Nikon D3300 DSLR camera.
