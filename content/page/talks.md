@@ -12,7 +12,7 @@ menu:
 
 A simple talk about software’s complexity problem.
 
-- [Expert Talks](https://www.meetup.com/expert-talks-portugal/) (April 16, 2020 · Online)
+- Expert Talks (May 2020 · Online)
 
 ## testing-library
 
