@@ -19,15 +19,15 @@ const FadeTransition = Barba.BaseTransition.extend<FadeTransition>({
   },
 
   async fadeOut() {
-    this.oldContainer.classList.add('animated')
-    this.oldContainer.classList.remove('fadeIn')
-    this.oldContainer.classList.add('fadeOut')
+    this.oldContainer.classList.add('animate__animated')
+    this.oldContainer.classList.remove('animate__fadeIn')
+    this.oldContainer.classList.add('animate__fadeOut')
     await delay(200)
   },
 
   async fadeIn() {
-    this.newContainer.classList.add('animated')
-    this.newContainer.classList.add('fadeIn')
+    this.newContainer.classList.add('animate__animated')
+    this.newContainer.classList.add('animate__fadeIn')
     await delay(200)
   },
 })

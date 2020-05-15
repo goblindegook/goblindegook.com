@@ -1,3 +1,4 @@
+import quicklink from 'quicklink'
 import { setupFonts } from './setup/fonts'
 import { setupFootnotes } from './setup/footnotes'
 import { setupHash } from './setup/hash'
@@ -9,9 +10,11 @@ import { setupProgress } from './setup/progress'
 import { setupMainSearch, setupSidebarSearch } from './setup/search'
 import { triggerEvent } from './lib/dom/triggerEvent'
 
+const setupPrefetch = () => quicklink.listen()
 const triggerScroll = () => triggerEvent(window, 'scroll')
 
 const onTransition = [
+  setupPrefetch,
   setupFootnotes,
   setupHeader,
   setupLazyLoad,

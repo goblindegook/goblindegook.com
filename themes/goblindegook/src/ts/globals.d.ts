@@ -122,3 +122,34 @@ declare module 'barba.js' {
   export const Prefetch: Prefetch
   export const Utils: Utils
 }
+
+declare module 'quicklink' {
+  interface TimeoutOptions {
+    timeout?: number
+  }
+
+  interface IdleDeadline {
+    didTimeout: boolean
+  }
+
+  interface Options {
+    el?: HTMLElement
+    limit?: number
+    throttle?: number
+    timeout?: number
+    timeoutFn?: (
+      fn: (deadline: IdleDeadline) => void,
+      options: TimeoutOptions
+    ) => void
+    priority?: boolean
+    origins?: string[]
+    ignores?: RegExp | string[] | ((url: string) => boolean)
+    onError?: (error: Error) => void
+  }
+
+  export function listen(options?: Options): () => void
+  export function prefetch(
+    urls: string | string[],
+    isPriority?: boolean
+  ): Promise<void>
+}
