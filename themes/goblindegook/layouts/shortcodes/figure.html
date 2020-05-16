@@ -1,5 +1,6 @@
 {{ $src := .Get "src" | .Page.Resources.GetMatch }}
 {{ $image := div $src.Width 2 | printf "%dx" | $src.Resize }}
+{{ $imageLazy := $src.Resize "170x" }}
 {{ $image2x := $src }}
 {{ $image340 := $src.Resize "340x" }}
 {{ $image680 := $src.Resize "680x" }}
@@ -7,7 +8,7 @@
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
   {{ if .Get "link" }}<a href="{{ . }}">{{ end }}
     <img class="lazy"
-      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      src="{{ $imageLazy.RelPermalink }}"
       height="{{ $image2x.Height }}"
       width="{{ $image2x.Width }}"
       sizes="

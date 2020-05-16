@@ -1,24 +1,24 @@
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
-  <ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
-    {{ template "breadcrumbitemlistelement" (dict "p1" . "p2" .) }}
-  </ul>
+  <ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
+    {{ template "breadcrumbitemlistelement" (dict "current" . "leaf" .) }}
+  </ol>
 </nav>
 
 {{ define "breadcrumbitemlistelement" }}
-  {{ if .p1.Parent }}
-    {{ template "breadcrumbitemlistelement" (dict "p1" .p1.Parent "p2" .p2) }}
-  {{ else if not .p1.IsHome }}
-    {{ template "breadcrumbitemlistelement" (dict "p1" .p1.Site.Home "p2" .p2) }}
+  {{ if .current.Parent }}
+    {{ template "breadcrumbitemlistelement" (dict "current" .current.Parent "leaf" .leaf) }}
+  {{ else if not .current.IsHome }}
+    {{ template "breadcrumbitemlistelement" (dict "current" .current.Site.Home "leaf" .leaf) }}
   {{ end }}
-  {{ if not (.p1.Param "noBreadcrumb") }}
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item {{ if .p1.IsHome }}trail-begin{{ end }} {{ if eq .p1 .p2 }}trail-end{{ end }}">
-      {{ if eq .p1 .p2 }}
-        <span itemprop="item">
-          {{ template "breadcrumbname" (dict "p" .p1 )  }}
+  {{ if not (.current.Param "noBreadcrumb") }}
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item {{ if .current.IsHome }}trail-begin{{ end }} {{ if eq .current .leaf }}trail-end{{ end }}">
+      {{ if eq .current .leaf }}
+        <span itemprop="item" aria-current="page">
+          {{- template "breadcrumbname" (dict "p" .current ) -}}
         </span>
       {{ else }}
-        <a href="{{ .p1.Permalink }}" itemprop="item">
-          {{ template "breadcrumbname" (dict "p" .p1 )  }}
+        <a href="{{ .current.Permalink }}" itemprop="item">
+          {{- template "breadcrumbname" (dict "p" .current ) -}}
         </a>
       {{ end }}
     </li>

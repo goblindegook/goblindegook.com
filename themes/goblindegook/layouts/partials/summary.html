@@ -12,11 +12,12 @@
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
     {{ $featured := $src.Fit "340x160" }}
+    {{ $featuredLazy := $src.Fit "170x80" }}
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a href="{{ .Permalink }}" rel="bookmark">
         <img class="lazy archive-entry-thumbnail"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          src="{{ $featuredLazy.RelPermalink }}"
           height="{{ $featured.Height }}"
           width="{{ $featured.Width }}"
           data-src="{{ $featured.RelPermalink }}"

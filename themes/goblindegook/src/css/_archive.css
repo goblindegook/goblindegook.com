@@ -74,12 +74,20 @@
 .archive-entry-thumbnail-wrapper {
   height: 10rem;
   margin: 2rem calc(-2rem - 1px);
+  overflow: hidden;
 }
 
 .archive-entry-thumbnail {
   height: 100%;
   object-fit: cover;
+  transition-delay: .1s;
+  transition-property: transform;
+  transition-timing-function: ease;
   width: 100%;
+}
+
+.archive-entry-thumbnail-wrapper:hover .archive-entry-thumbnail {
+  transform: scale(1.1);
 }
 
 .archive-entry-content {

@@ -1,16 +1,13 @@
-*,
-::after,
-::before,
-input[type='search'] {
+*, ::after, ::before, input[type='search'] {
   box-sizing: border-box;
 }
 
 html {
-  overflow-x: hidden; /* workaround for 100vw overflows */
+  overflow-x: hidden;
+  /* workaround for 100vw overflows */
 }
 
-body,
-html {
+body, html {
   text-size-adjust: 100%;
 }
 
@@ -29,8 +26,7 @@ body {
   word-wrap: break-word;
 }
 
-.no-js body,
-.body-font-active body {
+.no-js body, .body-font-active body {
   font-family: var(--body-font);
 }
 
@@ -40,9 +36,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
   color: var(--active-color);
 }
 
@@ -57,20 +51,11 @@ input {
   line-height: 1.6;
 }
 
-.no-js input,
-.ui-font-active input {
+.no-js input, .ui-font-active input {
   font-family: var(--ui-font);
 }
 
-ul,
-ol,
-dl,
-p,
-figure,
-pre,
-table,
-fieldset,
-hr {
+ul, ol, dl, p, figure, pre, table, fieldset, hr {
   margin-top: 0;
   margin-bottom: var(--vr-line-height-rem);
 }
@@ -85,11 +70,7 @@ hr {
   height: 0;
 }
 
-embed,
-iframe,
-img,
-object,
-video {
+embed, iframe, img, object, video {
   max-width: 100%;
 }
 
@@ -109,8 +90,7 @@ figure img {
   padding: 0;
 }
 
-.no-js figcaption,
-.ui-font-active figcaption {
+.no-js figcaption, .ui-font-active figcaption {
   font-family: var(--ui-font);
 }
 
@@ -152,8 +132,17 @@ del::selection {
   display: inherit;
 }
 
-.no-js .lazy,
-.no-js .search,
-.no-js .sidebar-search {
+.lazy {
+  filter: blur(5px);
+  transition-duration: 0.5s;
+  transition-property: filter;
+  transition-timing-function: ease-out;
+}
+
+.lazy.loaded {
+  filter: blur(0);
+}
+
+.no-js .lazy, .no-js .search, .no-js .sidebar-search {
   display: none;
 }
