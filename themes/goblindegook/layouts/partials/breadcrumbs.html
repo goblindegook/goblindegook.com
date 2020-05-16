@@ -1,17 +1,30 @@
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
   <ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
-    <meta name="numberOfItems" content="2"><meta name="itemListOrder" content="Ascending">
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-begin">
-      <a href="{{ .Site.BaseURL }}" rel="home" itemprop="item">
-        <span itemprop="name">{{ .Site.Title }}</span>
-      </a>
-      <meta itemprop="position" content="1">
-    </li>
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end">
-      <span itemprop="item">
-        <span itemprop="name">{{ .Page.Title | markdownify }}</span>
-      </span>
-      <meta itemprop="position" content="2">
-    </li>
+    {{ template "breadcrumbitemlistelement" (dict "p1" . "p2" .) }}
   </ul>
 </nav>
+
+{{ define "breadcrumbitemlistelement" }}
+  {{ if .p1.Parent }}
+    {{ template "breadcrumbitemlistelement" (dict "p1" .p1.Parent "p2" .p2) }}
+  {{ else if not .p1.IsHome }}
+    {{ template "breadcrumbitemlistelement" (dict "p1" .p1.Site.Home "p2" .p2) }}
+  {{ end }}
+  {{ if not (.p1.Param "noBreadcrumb") }}
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item {{ if .p1.IsHome }}trail-begin{{ end }} {{ if eq .p1 .p2 }}trail-end{{ end }}">
+      {{ if eq .p1 .p2 }}
+        <span itemprop="item">
+          {{ template "breadcrumbname" (dict "p" .p1 )  }}
+        </span>
+      {{ else }}
+        <a href="{{ .p1.Permalink }}" itemprop="item">
+          {{ template "breadcrumbname" (dict "p" .p1 )  }}
+        </a>
+      {{ end }}
+    </li>
+  {{end}}
+{{ end }}
+
+{{ define "breadcrumbname" }}
+  <span itemprop="name">{{ .p.Param "breadcrumb" | default .p.Title | markdownify }}</span>
+{{ end }}

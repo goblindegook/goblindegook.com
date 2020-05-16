@@ -9,6 +9,7 @@ enableRobotsTXT = true
 [permalinks]
   page = "/:filename"
   post = "/:year/:slug"
+  til  = "/til/:year/:month/:day/:filename"
 
 [params]
   author = "Luís Rodrigues"
@@ -19,6 +20,7 @@ enableRobotsTXT = true
   twitter = "@goblindegook"
   searchPrefill = "Search goblindegook"
   searchSite = "goblindegook.com"
+  mainSections = ["post", "til"]
 
 [[menu.main]]
   name = "Home"

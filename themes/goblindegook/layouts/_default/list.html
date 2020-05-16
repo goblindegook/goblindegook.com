@@ -1,11 +1,14 @@
 {{ partial "header.html" . }}
 
 <main id="content" class="content-archive">
+  <header class="archive-header {{ if .IsHome }}screen-reader{{ end }}">
+    <h2 class="archive-title">{{ .Title }}</h2>
+  </header>
   <div class="content-list">
     <div class="masonry-gutter"></div>
     <div class="masonry-column"></div>
 
-    {{ $paginator := .Paginate (where .RegularPages "Type" "post") }}
+    {{ $paginator := .Paginate (where .RegularPages "Type" "in" site.Params.mainSections) }}
     {{ range $paginator.Pages }}
       {{ partial "summary.html" . }}
     {{ end }}

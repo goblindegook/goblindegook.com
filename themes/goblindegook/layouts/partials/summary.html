@@ -3,11 +3,11 @@
     <time class="archive-entry-date" itemprop="datePublished" datetime="{{ .Date }}">
       {{ .Date.Format "January 2, 2006" }}
     </time>
-    <h2 class="archive-entry-title">
+    <h3 class="archive-entry-title">
       <a href="{{ .Permalink }}" rel="bookmark">
         {{ .Title | markdownify }}
       </a>
-    </h2>
+    </h3>
   </header>
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
