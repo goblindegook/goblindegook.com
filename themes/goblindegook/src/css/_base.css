@@ -1,13 +1,16 @@
-*, ::after, ::before, input[type='search'] {
+*,
+::after,
+::before,
+input[type='search'] {
   box-sizing: border-box;
 }
 
 html {
-  overflow-x: hidden;
-  /* workaround for 100vw overflows */
+  overflow-x: hidden; /* workaround for 100vw overflows */
 }
 
-body, html {
+body,
+html {
   text-size-adjust: 100%;
 }
 
@@ -26,7 +29,8 @@ body {
   word-wrap: break-word;
 }
 
-.no-js body, .body-font-active body {
+.no-js body,
+.body-font-active body {
   font-family: var(--body-font);
 }
 
@@ -36,7 +40,9 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   color: var(--active-color);
 }
 
@@ -51,11 +57,20 @@ input {
   line-height: 1.6;
 }
 
-.no-js input, .ui-font-active input {
+.no-js input,
+.ui-font-active input {
   font-family: var(--ui-font);
 }
 
-ul, ol, dl, p, figure, pre, table, fieldset, hr {
+ul,
+ol,
+dl,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr {
   margin-top: 0;
   margin-bottom: var(--vr-line-height-rem);
 }
@@ -70,7 +85,11 @@ hr {
   height: 0;
 }
 
-embed, iframe, img, object, video {
+embed,
+iframe,
+img,
+object,
+video {
   max-width: 100%;
 }
 
@@ -87,10 +106,6 @@ figure {
   }
 }
 
-.no-js figcaption, .ui-font-active figcaption {
-  font-family: var(--ui-font);
-}
-
 figcaption {
   background-color: var(--ui-background-color);
   color: var(--ui-text-color);
@@ -99,13 +114,20 @@ figcaption {
   }
 }
 
-del {
+.no-js figcaption,
+.ui-font-active figcaption {
+  font-family: var(--ui-font);
+}
+
+del,
+s {
   display: inline-block;
   position: relative;
   text-decoration: none;
 }
 
-del::after {
+del::after,
+s::after {
   border-top: 2px solid var(--highlight-color);
   bottom: 0;
   content: '';
@@ -115,7 +137,8 @@ del::after {
   width: 100%;
 }
 
-del::selection {
+del::selection,
+s::selection {
   background-color: var(--highlight-color);
 }
 
@@ -132,7 +155,7 @@ del::selection {
 }
 
 .lazy {
-  filter: blur(5px);
+  filter: blur(10px);
   transition-duration: 0.5s;
   transition-property: filter;
   transition-timing-function: ease-out;
@@ -142,6 +165,8 @@ del::selection {
   filter: blur(0);
 }
 
-.no-js .lazy, .no-js .search, .no-js .sidebar-search {
+.no-js .lazy,
+.no-js .search,
+.no-js .sidebar-search {
   display: none;
 }

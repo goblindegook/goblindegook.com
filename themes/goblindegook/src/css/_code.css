@@ -5,13 +5,6 @@ pre {
   font-weight: 300;
 }
 
-.no-js code,
-.no-js pre,
-.code-font-active code,
-.code-font-active pre {
-  font-family: var(--code-font);
-}
-
 pre {
   hyphens: none;
   line-height: 1.6 !important; /* override inline style */
@@ -24,15 +17,20 @@ pre {
   word-wrap: break-word;
 }
 
+.no-js code,
+.no-js pre,
+.code-font-active code,
+.code-font-active pre {
+  font-family: var(--code-font);
+}
+
 .highlight {
   border-radius: 0.5rem;
   margin: 3rem 0;
   overflow: scroll;
   padding: 1.5rem;
-}
 
-@media (--narrow-viewport) {
-  .highlight {
+  @media (--narrow-viewport) {
     margin: 2rem 0;
     max-width: 100%;
   }

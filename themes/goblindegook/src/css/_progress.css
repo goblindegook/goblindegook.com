@@ -47,7 +47,7 @@ progress::-webkit-progress-value {
   z-index: 10;
 }
 
-.button-furthest-read:hover, 
+.button-furthest-read:hover,
 .button-furthest-read:focus,
 .button-furthest-read:active {
   background-color: var(--ui-active-background-color);

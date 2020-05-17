@@ -58,7 +58,8 @@
   font-size: var(--ms0);
 }
 
-.no-js .archive-entry-date, .ui-font-active .archive-entry-date {
+.no-js .archive-entry-date,
+.ui-font-active .archive-entry-date {
   font-family: var(--ui-font);
 }
 
@@ -80,7 +81,7 @@
 .archive-entry-thumbnail {
   height: 100%;
   object-fit: cover;
-  transition-delay: .1s;
+  transition-delay: 0.1s;
   transition-property: transform;
   transition-timing-function: ease;
   width: 100%;
@@ -95,7 +96,7 @@
   margin-bottom: -1rem;
 }
 
-:not(.archive-entry-thumbnail-wrapper)+.archive-entry-content {
+:not(.archive-entry-thumbnail-wrapper) + .archive-entry-content {
   border-top: 1px solid var(--divider-color);
   padding-top: 1rem;
 }

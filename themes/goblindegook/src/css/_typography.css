@@ -3,7 +3,12 @@ body {
   line-height: var(--vr-line-height);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   margin-bottom: calc(var(--vr-line-height-rem) - var(--vr-baseline));
   margin-top: 0;
@@ -39,7 +44,9 @@ figcaption h4 {
   padding: 0;
 }
 
-.pull-quote-center, .pull-quote-left, .pull-quote-right {
+.pull-quote-center,
+.pull-quote-left,
+.pull-quote-right {
   color: var(--highlight-color);
   display: center;
   font-size: var(--ms2);
@@ -48,12 +55,15 @@ figcaption h4 {
 }
 
 @media (--narrow-viewport) {
-  .pull-quote-center, .pull-quote-left, .pull-quote-right {
+  .pull-quote-center,
+  .pull-quote-left,
+  .pull-quote-right {
     margin: 2rem 1.5rem;
   }
 }
 
-.pull-quote-left, .pull-quote-right {
+.pull-quote-left,
+.pull-quote-right {
   hanging-punctuation: first;
 }
 
@@ -67,6 +77,7 @@ figcaption h4 {
   letter-spacing: 0.06rem;
 }
 
-.no-js .small-caps, .small-caps-font-active .small-caps {
+.no-js .small-caps,
+.small-caps-font-active .small-caps {
   font-family: var(--small-caps-font);
 }

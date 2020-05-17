@@ -87,6 +87,6 @@
 
 .trail-begin::before {
   font-size: var(--ms0);
-  content: "";
+  content: '';
   padding: 0;
 }

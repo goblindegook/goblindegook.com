@@ -141,7 +141,7 @@
 .sidebar-search-results::after,
 .sidebar-search-results::before {
   border: solid transparent;
-  content: " ";
+  content: ' ';
   height: 0;
   left: 1.5rem;
   pointer-events: none;

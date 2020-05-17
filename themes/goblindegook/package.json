@@ -11,10 +11,14 @@
     "build": "concurrently 'npm run build:styles' 'npm run build:ts'",
     "build:styles": "postcss src/css/styles.css --no-map --output static/css/styles.css",
     "build:ts": "rollup -c",
+    "lint": "concurrently 'npm run lint:styles' 'npm run lint:ts'",
+    "lint:styles": "stylelint 'src/**/*.css'",
+    "lint:ts": "eslint '{src,test}/**/*.ts'",
+    "format": "",
     "watch": "concurrently 'npm run watch:styles' 'npm run watch:ts' 'npm test -- --watch'",
     "watch:styles": "postcss src/css/styles.css --watch --output static/css/styles.css",
     "watch:ts": "rollup -c -w",
-    "pretest": "eslint '{src,test}/**/*.ts'",
+    "pretest": "npm run lint",
     "test": "jest"
   },
   "jest": {
@@ -69,6 +73,7 @@
     "rollup": "^2.2.0",
     "rollup-plugin-uglify": "^6.0.0",
     "stylelint": "^13.1.0",
+    "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "ts-jest": "^25.2.0",
     "tslib": "^2.0.0",
@@ -87,6 +92,7 @@
     "masonry-layout": "^4.2.1",
     "normalize.css": "^8.0.0",
     "quicklink": "^2.0.0",
+    "stylelint-prettier": "^1.1.2",
     "unfetch": "^4.0.1",
     "vanilla-lazyload": "^12.4.0",
     "webfontloader": "^1.6.28"

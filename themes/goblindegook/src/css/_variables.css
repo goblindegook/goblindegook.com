@@ -22,10 +22,10 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Typography */
-  --body-font: Alegreya, serif;
-  --small-caps-font: "Alegreya SC", serif;
-  --ui-font: "Fira Sans", system-ui, sans-serif;
-  --code-font: "Fira Code", monospace;
+  --body-font: 'Alegreya', serif;
+  --small-caps-font: 'Alegreya SC', serif;
+  --ui-font: 'Fira Sans', system-ui, sans-serif;
+  --code-font: 'Fira Code', monospace;
   --fallback-body-font: serif;
   --fallback-small-caps-font: serif;
   --fallback-ui-font: system-ui, sans-serif;
@@ -53,5 +53,5 @@
 }
 
 @custom-media --narrow-viewport (width < 768px);
-@custom-media --medium-viewport (width >= 768px) and (width < 1024px);
-@custom-media --wide-viewport (width >= 1024px);
+@custom-media --medium-viewport (width >=768px) and (width < 1024px);
+@custom-media --wide-viewport (width >=1024px);

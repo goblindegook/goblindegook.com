@@ -17,8 +17,8 @@ export function setupProgress() {
       if (scrolledBack) {
         scrollButton.classList.remove('invisible')
       }
-      scrollButton.classList.toggle('fadeOut', !scrolledBack)
-      scrollButton.classList.toggle('bounceInUp', scrolledBack)
+      scrollButton.classList.toggle('animate__fadeOut', !scrolledBack)
+      scrollButton.classList.toggle('animate__bounceInUp', scrolledBack)
       progressBar.setAttribute('value', `${progress}`)
     })
 

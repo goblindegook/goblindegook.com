@@ -1,11 +1,11 @@
 module.exports = {
   plugins: {
-    'stylelint': {},
+    stylelint: {},
     'postcss-import': {},
     'postcss-preset-env': {
-      stage: 1
+      stage: 1,
     },
-    'pixrem': {},
-    'cssnano': {}
-  }
+    pixrem: {},
+    cssnano: {},
+  },
 }
