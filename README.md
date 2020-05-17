@@ -6,7 +6,7 @@ This is my site. There are many like it, but this one is mine.
 
 ## Building the site
 
-Requires [Hugo](https://gohugo.io) 0.36 or greater.
+Requires [Hugo](https://gohugo.io) 0.65 or greater.
 
 ```sh
 $ yarn build

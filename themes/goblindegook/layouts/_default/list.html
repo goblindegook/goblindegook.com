@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <main id="content" class="content-archive">
-  <header class="archive-header {{ if .IsHome }}screen-reader{{ end }}">
+  <header class="archive-header">
     <h2 class="archive-title">{{ .Title }}</h2>
   </header>
 
@@ -11,7 +11,7 @@
 
     {{ $paginator := .Paginate (where .RegularPages "Type" "in" site.Params.mainSections) }}
     {{ range $paginator.Pages }}
-      {{ partial "summary.html" . }}
+      {{ .Render "summary" }}
     {{ end }}
   </div>
 

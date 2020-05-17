@@ -16,11 +16,11 @@
 			{{ .Content }}
 		</div>
 		<footer class="single-entry-footer">
-      {{ if .Params.categories }}
+      {{ if .GetTerms "categories" }}
       <svg class="single-entry-categories-icon" title="Filed Under" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-folder"></use></svg>
 			<ul class="single-entry-categories">
-        {{ range .Params.categories }}
-				<li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" itemprop="about">{{ . }}</a></li>
+        {{ range (.GetTerms "categories") }}
+				<li><a href="{{ .Permalink }}" itemprop="about">{{ .LinkTitle }}</a></li>
 				{{ end }}
       </ul>
       {{ end }}
