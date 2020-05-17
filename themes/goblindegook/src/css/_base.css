@@ -80,22 +80,21 @@ img {
 }
 
 figure {
-  background-color: var(--ui-background-color);
-  color: var(--ui-text-color);
   margin: 2rem auto;
   width: auto;
-}
-
-figure img {
-  padding: 0;
+  & img {
+    padding: 0;
+  }
 }
 
 .no-js figcaption, .ui-font-active figcaption {
   font-family: var(--ui-font);
 }
 
-@media (--narrow-viewport) {
-  figcaption {
+figcaption {
+  background-color: var(--ui-background-color);
+  color: var(--ui-text-color);
+  @media (--narrow-viewport) {
     padding: 1rem 1.5rem;
   }
 }

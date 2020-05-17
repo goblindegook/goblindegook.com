@@ -11,13 +11,13 @@
   </header>
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
+    {{ $featuredLazy := $src.Fit "34x16" }}
     {{ $featured := $src.Fit "340x160" }}
-    {{ $featuredLazy := $src.Fit "170x80" }}
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a href="{{ .Permalink }}" rel="bookmark">
         <img class="lazy archive-entry-thumbnail"
-          src="{{ $featuredLazy.RelPermalink }}"
+          src="data:{{ $featuredLazy.MediaType }};base64,{{ $featuredLazy.Content | base64Encode }}"
           height="{{ $featured.Height }}"
           width="{{ $featured.Width }}"
           data-src="{{ $featured.RelPermalink }}"
