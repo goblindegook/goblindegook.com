@@ -51,8 +51,7 @@
 }
 
 .search-results {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
   list-style: none;
   padding: 0;
@@ -138,6 +137,10 @@
   position: fixed;
   z-index: 20;
   box-shadow: 0 0 8px var(--shadow-color);
+
+  &.search-active {
+    display: inline-block;
+  }
 }
 
 .sidebar-search-results::after,

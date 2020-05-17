@@ -31,11 +31,10 @@ async function fetchCollection(url: string): Promise<SearchDocument[]> {
 function buildIndex(entries: SearchDocument[]): lunr.Index {
   return lunr(function () {
     this.field('title', { boost: 10 })
-    // this.field('categories', { boost: 3 })
-    // this.field('tags', { boost: 3 })
+    this.field('categories', { boost: 3 })
+    this.field('tags', { boost: 3 })
     this.field('description', { boost: 3 })
     this.field('content')
-    // this.field('image')
     this.ref('url')
 
     entries.forEach((entry) => {
@@ -78,6 +77,12 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
 
     const terms = (event.target as HTMLInputElement).value || ''
+
+    if (terms && index) {
+      options.container.classList.add('search-active')
+    } else {
+      options.container.classList.remove('search-active')
+    }
 
     if (isLoading) {
       userOptions.container.innerHTML = options.renderLoading(terms)
