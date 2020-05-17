@@ -1,4 +1,4 @@
-.section-list {
+.terms-list {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
@@ -7,12 +7,12 @@
   margin-bottom: 4rem;
 }
 
-.section-list-item {
+.terms-list-item {
   box-shadow: 0 1px 4px 0 var(--shadow-color);
   font-size: var(--ms1);
 }
 
-.section-link {
+.term-link {
   display: block;
   padding: 1rem;
   text-decoration: none;

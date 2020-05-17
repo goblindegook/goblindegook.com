@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<main id="content" class="content-archive">
+  <header class="archive-header {{ if .IsHome }}screen-reader{{ end }}">
+    <h2 class="archive-title">{{ .Title }}</h2>
+  </header>
+
+  <ul class="terms-list">
+    {{ range .Pages.ByTitle }}
+      <li class="terms-list-item"><a href="{{ .Permalink }}" class="term-link">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</main>
+
+{{ partial "footer.html" . }}
