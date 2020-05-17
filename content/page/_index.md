@@ -1,4 +1,4 @@
 ---
-title: "Writing"
+title: "Pages"
 noBreadcrumb: true
 ---

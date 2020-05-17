@@ -1,7 +1,5 @@
 ---
 title: Talks
-categories: ['Talks']
-tags: ['Talks']
 noToc: true
 menu:
   main:

@@ -24,7 +24,7 @@
 
 .sidebar-content {
   display: grid;
-  grid-gap: 1rem;
+  gap: 1rem;
   grid-template-columns: 2;
   margin: 0 auto;
   max-width: var(--body-max-width);

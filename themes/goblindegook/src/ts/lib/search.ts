@@ -19,6 +19,7 @@ interface SearchOptions {
   perPage?: number
   renderLoading?: (terms: string) => string
   renderNoResults?: (terms: string) => string
+  renderPrompt?: () => string
   renderResult?: (result: SearchDocument) => string
 }
 
@@ -59,6 +60,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
   const options = {
     renderLoading: (terms: string) => `Loading search results for ${terms}.`,
     renderNoResults: (terms: string) => `No results found for ${terms}.`,
+    renderPrompt: () => ``,
     renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
     ...userOptions,
   }
@@ -77,20 +79,20 @@ export function createSearchHandler(userOptions: SearchOptions) {
 
     const terms = (event.target as HTMLInputElement).value || ''
 
-    options.container.style.display = terms ? 'inherit' : 'none'
-
     if (isLoading) {
       userOptions.container.innerHTML = options.renderLoading(terms)
     }
 
     if (!isLoading && index && terms !== previousTerms) {
-      const results = index.search(terms)
+      const results = terms ? index.search(terms) : []
       previousTerms = terms
       userOptions.container.innerHTML = results.length
         ? results
             .filter((r, i) => !options.perPage || i < options.perPage)
             .reduce((h, r) => h + options.renderResult(r), '')
-        : options.renderNoResults(terms)
+        : terms
+        ? options.renderNoResults(terms)
+        : options.renderPrompt()
     }
   }
 }
