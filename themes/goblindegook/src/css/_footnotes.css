@@ -33,6 +33,10 @@
   padding: 1rem 1.5rem;
 }
 
+.is-scrollable .littlefoot-footnote__content {
+  padding: 1rem 1.5rem;
+}
+
 .littlefoot-footnote__content a {
   background-color: transparent;
   background-image: linear-gradient(
@@ -66,25 +70,17 @@
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
-  background-image: linear-gradient(
-    180deg,
-    var(--ui-background-color) 0%,
-    transparent 80%
-  );
+  background-image: none;
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
-  background-image: linear-gradient(
-    0deg,
-    var(--ui-background-color) 0%,
-    transparent 80%
-  );
+  background-image: none;
 }
 
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before,
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
   content: '';
-  height: 2rem;
+  height: 0;
 }
 
 .littlefoot-footnote__tooltip {
