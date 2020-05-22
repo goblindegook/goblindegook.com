@@ -76,11 +76,6 @@
     }
   }
 
-  &:hover img,
-  &:hover img.lazy.loaded {
-    transform: scale(1.025);
-  }
-
   & figcaption {
     background-color: var(--ui-overlay-background-color);
     bottom: 0;
