@@ -11,11 +11,7 @@ const plugins = [
     entries: [{ find: 'marked', replacement: 'marked/lib/marked' }],
   }),
   resolve({ mainFields: ['main'] }),
-  commonjs({
-    namedExports: {
-      tslib: ['__assign', '__awaiter', '__generator', '__spreadArrays'],
-    },
-  }),
+  commonjs(),
   typescript({
     sourceMap: !production,
   }),
@@ -29,6 +25,7 @@ export default [
     output: {
       file: './layouts/partials/inline.js',
       format: 'iife',
+      sourcemap: !production,
     },
     plugins,
   },
@@ -38,6 +35,7 @@ export default [
     output: {
       file: './static/js/main.js',
       format: 'iife',
+      sourcemap: !production,
     },
     plugins,
   },
@@ -47,6 +45,7 @@ export default [
     output: {
       file: './static/sw.js',
       format: 'iife',
+      sourcemap: !production,
     },
     plugins,
   },
