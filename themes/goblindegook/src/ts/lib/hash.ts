@@ -11,7 +11,7 @@ import { scrollTo } from './scrollTo'
 function scrollToTarget(
   target: string | HTMLElement,
   offset: number,
-  complete?: Function
+  complete?: () => void
 ): void {
   if (target) {
     const targetEl =

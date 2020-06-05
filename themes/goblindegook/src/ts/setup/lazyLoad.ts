@@ -10,7 +10,6 @@ export function setupLazyLoad() {
   })
 
   return new LazyLoad({
-    // eslint-disable-next-line @typescript-eslint/camelcase
     elements_selector: '.lazy',
   }).update
 }

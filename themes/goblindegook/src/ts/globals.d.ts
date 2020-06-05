@@ -22,7 +22,7 @@ declare module 'barba.js' {
   ) => void
 
   interface Dispatcher {
-    readonly events: object
+    readonly events: Record<string, unknown>
     on: (
       e: string,
       f:
@@ -94,10 +94,13 @@ declare module 'barba.js' {
     xhrTimeout: number
     deferred: () => {
       promise: Promise<any>
-      reject: Function | null
-      resolve: Function | null
+      reject: () => void | null
+      resolve: () => void | null
     }
-    extend: (obj: object, props: object) => object
+    extend: (
+      obj: Record<string, unknown>,
+      props: Record<string, unknown>
+    ) => Record<string, unknown>
     getCurrentUrl: () => string
     xhr: (url: string) => Promise<string>
   }

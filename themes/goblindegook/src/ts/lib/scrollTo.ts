@@ -13,7 +13,7 @@ import { easeInOutCubic, EasingFunction } from './easings'
 export function scrollTo(
   targetPosition: number,
   duration = 1000,
-  completion?: Function,
+  completion?: () => void,
   easing: EasingFunction = easeInOutCubic
 ) {
   const offset = getPageYOffset()

@@ -12,5 +12,6 @@
   },
   "files.associations": {
       "*.html": "gohtml"
-  }
+  },
+  "deno.enable": false
 }
