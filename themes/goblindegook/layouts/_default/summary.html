@@ -41,7 +41,7 @@
   {{ end }}
   <div class="archive-entry-content">
     <p itemprop="text">
-      {{ .Description | default .Summary }}
+      {{ .Description | default .Summary | markdownify }}
     </p>
   </div>
 </article>
