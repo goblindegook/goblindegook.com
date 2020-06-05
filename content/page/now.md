@@ -11,10 +11,9 @@ draft: false
 * Preparing a talk on simplicity in software engineering.
 * _Continuo ad imparare l'italiano (livello B2)._
 * Reading...
-  * _Accidence Will Happen: A Recovering Pedant's Guide to English Language and Style_, by Oliver Kamm
-  * _Dept. of Speculation_, by Jenny Offill
   * _Le venti giornate di Torino_, by Giorgio de Maria
+  * _China Miéville: Critical Essays_, edited by Caroline Edwards and Tony Venezia
+  * _Programming Kotlin_, by Venkat Subramaniam
 * Playing [_Destiny 2_](https://www.destinythegame.com) on the PlayStation 4 and GeForce Now.
-* Redesigning [Jeff VanderMeer's website](https://www.jeffvandermeer.com/).
 * Restoring the [_Fantastic Metropolis_](https://fantasticmetropolis.com/) site archive.
 * Learning photography with a a dummy-level Nikon D3300 DSLR camera.
