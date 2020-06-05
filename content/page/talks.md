@@ -6,12 +6,6 @@ menu:
     weight: 30
 ---
 
-## Simple
-
-A simple talk about software’s complexity problem.
-
-- Expert Talks (May 2020 · Online)
-
 ## testing-library
 
 Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering.
