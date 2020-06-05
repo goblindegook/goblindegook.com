@@ -25,10 +25,11 @@ pre {
 }
 
 .highlight {
+  background-color: #272822;
   border-radius: 0.5rem;
   margin: 3rem 0;
   overflow: scroll;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0;
 
   @media (--narrow-viewport) {
     margin: 2rem 0;
