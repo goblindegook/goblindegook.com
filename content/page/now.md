@@ -6,9 +6,9 @@ date: 2017-06-27T12:00:00+01:00
 draft: false
 ---
 
-* I live in Lisbon, Portugal, where I work as a software engineer for [Equal Experts](https://www.equalexperts.com).
-* [I'm staying home](https://staythefuckhome.com/).
-* Preparing a talk on simplicity in software engineering.
+* I live in Lisbon, Portugal, where I work as a software engineer for [Springer Nature](https://www.springernature.com/gp).
+* Due to COVID-19, I'm still staying home whenever possible.
+* Preparing an article and a talk about simplicity in software engineering.
 * _Continuo ad imparare l'italiano (livello B2)._
 * Reading...
   * _Le venti giornate di Torino_, by Giorgio de Maria
