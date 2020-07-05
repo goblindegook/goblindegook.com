@@ -25,6 +25,6 @@ setting aside around 10% of the total weight of flour in your recipe and adjust
 the liquid content accordingly.
 
 Because the gelatinous starch will bind to more water molecules and prevent the
-gluten from retaining it instead, your dough might become stiffer and less
-likely to rise unless you increase your original recipe's hydration. Again,
-I will want to experiment with it, but it seems 75% is a good starting point.
+gluten from retaining it, your dough might become stiffer and less likely to
+rise unless you increase your original recipe's hydration. Again, I will want to
+experiment with it, but it seems 75% is a good starting point.
