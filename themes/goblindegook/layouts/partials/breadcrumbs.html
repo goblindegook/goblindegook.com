@@ -1,30 +1,57 @@
+{{ $position := 1 }}
+{{ $current := . }}
+{{ range $index, $element := (seq 1 (len (split .URL "/"))) }}
+  {{ if $current.Parent }}
+    {{ $current = $current.Parent }}
+    {{ if not ($current.Param "noBreadcrumb") }}
+      {{ $position = (add $position 1) }}
+    {{ end}}
+  {{ end }}
+{{ end }}
+
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
   <ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
-    {{ template "breadcrumbitemlistelement" (dict "current" . "leaf" .) }}
+    {{- template "breadcrumbitemlistelement" (dict "current" . "leaf" . "position" $position) -}}
   </ol>
 </nav>
 
 {{ define "breadcrumbitemlistelement" }}
+  {{ $step := 1 }}
+  {{ if (.current.Param "noBreadcrumb") }}
+    {{ $step = 0 }}
+  {{ end }}
   {{ if .current.Parent }}
-    {{ template "breadcrumbitemlistelement" (dict "current" .current.Parent "leaf" .leaf) }}
+    {{ template "breadcrumbitemlistelement" (dict "current" .current.Parent "leaf" .leaf "position" (sub .position $step)) }}
   {{ else if not .current.IsHome }}
-    {{ template "breadcrumbitemlistelement" (dict "current" .current.Site.Home "leaf" .leaf) }}
+    {{ template "breadcrumbitemlistelement" (dict "current" .current.Site.Home "leaf" .leaf "position" (sub .position $step)) }}
   {{ end }}
   {{ if not (.current.Param "noBreadcrumb") }}
-    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="trail-item {{ if .current.IsHome }}trail-begin{{ end }} {{ if eq .current .leaf }}trail-end{{ end }}">
+    <li
+      itemprop="itemListElement"
+      itemscope
+      itemtype="http://schema.org/ListItem"
+      class="trail-item {{ if .current.IsHome }}trail-begin{{ end }} {{ if eq .current .leaf }}trail-end{{ end }}"
+    >
       {{ if eq .current .leaf }}
-        <span itemprop="item" aria-current="page">
-          {{- template "breadcrumbname" (dict "p" .current ) -}}
-        </span>
+        {{- template "breadcrumbname" (dict "current" .current "leaf" .leaf) -}}
       {{ else }}
-        <a href="{{ .current.Permalink }}" itemprop="item">
-          {{- template "breadcrumbname" (dict "p" .current ) -}}
+        <a
+          href="{{ .current.Permalink }}"
+          itemprop="item"
+          itemscope
+          itemtype="https://schema.org/WebPage"
+          itemid="{{ .current.Permalink }}"
+        >
+          {{- template "breadcrumbname" (dict "current" .current "leaf" .leaf) -}}
         </a>
       {{ end }}
+      <meta itemprop="position" content="{{ .position }}" />
     </li>
   {{end}}
 {{ end }}
 
 {{ define "breadcrumbname" }}
-  <span itemprop="name">{{ .p.Param "breadcrumb" | default .p.Title | markdownify }}</span>
+  <span itemprop="name" {{ if eq .current .leaf }}aria-current="page"{{ end }}>
+    {{- .current.Param "breadcrumb" | default .current.Title | markdownify -}}
+  </span>
 {{ end }}

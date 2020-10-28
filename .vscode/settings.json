@@ -13,5 +13,8 @@
   "files.associations": {
       "*.html": "gohtml"
   },
-  "deno.enable": false
+  "deno.enable": false,
+  "prettier.disableLanguages": [
+    "gohtml"
+  ]
 }
