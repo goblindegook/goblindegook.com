@@ -123,8 +123,9 @@
 
 .sidebar-search-input {
   display: block;
-  margin: 0;
-  padding: 0.1rem 0.5rem;
+  font-size: 0.9rem;
+  margin: 0.1rem 0;
+  padding: 0.3rem 0.5rem;
   width: 100%;
 }
 
