@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "yarn build"
   publish = "public"
 
 [context.deploy-preview]
-  command = "npm run build-preview"
+  command = "yarn build-preview"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.67.1"
