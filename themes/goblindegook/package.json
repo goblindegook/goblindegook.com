@@ -85,7 +85,7 @@
     "dompurify": "^2.0.3",
     "estimate": "^1.0.0",
     "imagesloaded": "^4.1.4",
-    "littlefoot": "github:goblindegook/littlefoot",
+    "littlefoot": "^4.0.0-0",
     "lunr": "^2.1.2",
     "marked": "^0.8.0",
     "masonry": "^0.0.2",

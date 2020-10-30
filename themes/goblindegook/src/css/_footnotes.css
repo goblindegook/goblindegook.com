@@ -17,6 +17,12 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --littlefoot-popover-border: 1px solid var(--divider-color);
+  }
+}
+
 .littlefoot__button.is-active {
   transition-delay: 0.1s;
 }
