@@ -31,8 +31,12 @@
 .littlefoot__popover {
   z-index: 6;
 
-  &.is-position-top {
-    z-index: 10;
+  &.is-above {
+    z-index: 20;
+  }
+
+  @media (max-width: 767px) {
+    z-index: 20;
   }
 }
 
