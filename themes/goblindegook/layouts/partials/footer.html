@@ -17,7 +17,7 @@
                         class="sub-menu-item {{ if $currentPage.HasMenuCurrent "main" . }}sub-menu-item-active{{ end }}"
                         {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}
                       >
-                        <a href="{{.URL}}"> {{ .Name }}</a>
+                        <a href="{{.RelPermalink}}"> {{ .Name }}</a>
                       </li>
                     {{ end }}
                   </ul>

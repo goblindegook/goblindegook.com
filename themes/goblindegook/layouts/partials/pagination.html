@@ -7,9 +7,9 @@
 <ul class="pagination" aria-label="Pagination" role="navigation">
   {{ if $paginator.HasPrev }}
     {{ if ne $paginator.PageNumber 1 }}
-    <li class="pagination-first"><a href="{{ $paginator.First.URL }}" aria-label="First page">&laquo;</a></li>
+    <li class="pagination-first"><a href="{{ $paginator.First.RelPermalink }}" aria-label="First page">&laquo;</a></li>
     {{ end }}
-    <li class="pagination-previous screen-reader"><a href="{{ $paginator.Prev.URL }}" aria-label="Previous page">&lsaquo;</a></li>
+    <li class="pagination-previous screen-reader"><a href="{{ $paginator.Prev.RelPermalink }}" aria-label="Previous page">&lsaquo;</a></li>
   {{ end }}
   {{ range $paginator.Pagers }}
     {{ $.Scratch.Set "page_number_flag" false }}
