@@ -1,4 +1,4 @@
-import barba from '@barba/core'
+import barba, { ITransitionData } from '@barba/core'
 import prefetch from '@barba/prefetch'
 import { setupFonts } from './setup/fonts'
 import { setupFootnotes } from './setup/footnotes'
@@ -10,8 +10,38 @@ import { setupProgress } from './setup/progress'
 import { setupMainSearch, setupSidebarSearch } from './setup/search'
 import { triggerEvent } from './lib/dom/triggerEvent'
 
+const parser = new DOMParser()
+
+const from = (source: Document) => ({
+  replace(name: string) {
+    const element = source.querySelector(`[data-transition="${name}"]`)
+    if (element) {
+      const target = document.querySelector(`[data-transition="${name}"]`)
+      target?.parentNode?.replaceChild(element, target)
+    }
+    return this
+  },
+})
+
 window.addEventListener('load', () => {
+  setupHash()
+  setupFonts()
+  setupHeader(document)
+  setupSidebarSearch(document)
+  setupLazyLoad(document)
+  triggerEvent(window, 'scroll')
+
   barba.use(prefetch)
+
+  barba.hooks.beforeEnter(({ next }: ITransitionData) => {
+    from(parser.parseFromString(next.html, 'text/html'))
+      .replace('breadcrumbs')
+      .replace('navigation')
+
+    setupLazyLoad(next.container)
+    triggerEvent(window, 'scroll')
+  })
+
   barba.init({
     schema: {
       prefix: 'data-transition',
@@ -19,32 +49,16 @@ window.addEventListener('load', () => {
     transitions: [
       {
         name: 'default-transition',
-        once({ next }) {
-          setupHash()
-          setupFonts()
-          setupHeader(next.container)
-          setupLazyLoad(next.container)
-          setupSidebarSearch(next.container)
-          setupMainSearch(next.container)
-          triggerEvent(window, 'scroll')
+        leave({ current }) {
+          current.container.classList.add('animate__animated')
+          current.container.classList.remove('animate__fadeIn')
+          current.container.classList.add('animate__fadeOut')
+          return new Promise((resolve) => setTimeout(resolve, 200))
         },
         enter({ next }) {
           window.scrollTo(0, 0)
           next.container.classList.add('animate__animated')
           next.container.classList.add('animate__fadeIn')
-        },
-        after({ next }) {
-          setupHeader(next.container)
-          setupLazyLoad(next.container)
-          setupSidebarSearch(next.container)
-          setupMainSearch(next.container)
-          triggerEvent(window, 'scroll')
-        },
-        leave({ current }) {
-          current.container.classList.add('animate__animated')
-          current.container.classList.add('animate__fadeIn')
-          current.container.classList.add('animate__fadeOut')
-          return new Promise((resolve) => setTimeout(resolve, 200))
         },
       },
     ],
@@ -78,6 +92,12 @@ window.addEventListener('load', () => {
         beforeEnter({ next }) {
           setupProgress(next.container)
           setupFootnotes()
+        },
+      },
+      {
+        namespace: 'search',
+        beforeEnter({ next }) {
+          setupMainSearch(next.container)
         },
       },
     ],

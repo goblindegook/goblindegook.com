@@ -11,6 +11,7 @@
   --littlefoot-popover-line-height: 1.6;
   --littlefoot-popover-border: 0;
   --littlefoot-popover-scroll-indicator-color: var(--ui-text-color);
+  --littlefoot-popover-width: 22rem;
 
   @media (max-width: 767px) {
     --littlefoot-popover-border-radius: 0;

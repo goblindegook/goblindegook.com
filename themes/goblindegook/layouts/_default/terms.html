@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 
-<main id="content" class="content-archive">
+<main id="content" class="content-archive" data-transition="container" data-transition-namespace="{{ .Kind }}">
   <header class="archive-header {{ if .IsHome }}screen-reader{{ end }}">
     <h2 class="archive-title">{{ .Title }}</h2>
   </header>

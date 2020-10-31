@@ -13,6 +13,7 @@ interface SearchIndex {
 }
 
 interface SearchOptions {
+  input: HTMLInputElement
   container: HTMLElement
   fetchCollection: () => Promise<SearchDocument[]>
   perPage?: number
@@ -58,6 +59,18 @@ export function createSearchHandler(userOptions: SearchOptions) {
     ...userOptions,
   }
 
+  const deactivation = (event: Event) => {
+    const target = event.target as HTMLElement
+    if (
+      [options.container, options.input].every(
+        (element) => !element.contains(target) && element !== target
+      )
+    ) {
+      options.container.classList.remove('search-active')
+      window.removeEventListener('click', deactivation)
+    }
+  }
+
   let index: SearchIndex
   let isLoading = false
   let previousTerms = ''
@@ -74,8 +87,10 @@ export function createSearchHandler(userOptions: SearchOptions) {
 
     if (terms && index) {
       options.container.classList.add('search-active')
+      window.addEventListener('click', deactivation)
     } else {
       options.container.classList.remove('search-active')
+      window.removeEventListener('click', deactivation)
     }
 
     if (isLoading) {
@@ -93,5 +108,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
         ? options.renderNoResults(terms)
         : options.renderPrompt()
     }
+
+    event.stopPropagation()
   }
 }

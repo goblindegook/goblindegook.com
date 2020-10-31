@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 
-<main id="content" class="content-single">
+<main id="content" class="content-single" data-transition="container" data-transition-namespace="{{ .Kind }}">
   <article class="single-entry" itemscope itemtype="http://schema.org/Article">
     <progress class="reading-progress" id="reading-progress" value="0" max="100"></progress>
     <button class="button-furthest-read animate__animated invisible" title="Scroll to furthest place read">Resume reading</button>

@@ -1,50 +1,49 @@
-      <aside class="site-sidebar">
-        <div class="sidebar-content">
-          <div class="sidebar-intro">
-            {{ .Site.Params.intro | markdownify }}
-          </div>
-          <nav class="sidebar-navigation">
-            <ul class="sidebar-menu">
-              {{ $currentPage := . }}
-              {{ range .Site.Menus.main }}
-                {{ if .HasChildren }}
-                  <li class="menu-item{{ if $currentPage.HasMenuCurrent "main" . }} menu-item-active{{ end }}">
-                    {{ .Pre }}
-                    <span>{{ .Name }}</span>
-                    <ul class="sub-menu">
-                      {{ range .Children }}
-                        <li
-                          class="sub-menu-item {{ if $currentPage.HasMenuCurrent "main" . }}sub-menu-item-active{{ end }}"
-                          {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}
-                        >
-                          <a href="{{.URL}}"> {{ .Name }}</a>
-                        </li>
-                      {{ end }}
-                    </ul>
-                  </li>
-                {{ else }}
-                  <li
-                    class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} menu-item-active{{ end }}"
-                    {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}
-                  >
-                    {{ if $currentPage.IsMenuCurrent "main" . }}
-                      {{ .Pre }} <span>{{ .Name }}</span>
-                    {{ else }}
-                      <a href="{{.URL}}">{{ .Pre }} <span>{{ .Name }}</span></a>
-                    {{ end }}
-                  </li>
-                {{ end }}
-              {{ end }}
-            </ul>
-          </nav>
+    <aside class="site-sidebar">
+      <div class="sidebar-content">
+        <div class="sidebar-intro">
+          {{ .Site.Params.intro | markdownify }}
         </div>
-      </aside>
+        <nav class="sidebar-navigation" data-transition="navigation">
+          <ul class="sidebar-menu">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+                <li class="menu-item{{ if $currentPage.HasMenuCurrent "main" . }} menu-item-active{{ end }}">
+                  {{ .Pre }}
+                  <span>{{ .Name }}</span>
+                  <ul class="sub-menu">
+                    {{ range .Children }}
+                      <li
+                        class="sub-menu-item {{ if $currentPage.HasMenuCurrent "main" . }}sub-menu-item-active{{ end }}"
+                        {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}
+                      >
+                        <a href="{{.URL}}"> {{ .Name }}</a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                </li>
+              {{ else }}
+                <li
+                  class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} menu-item-active{{ end }}"
+                  {{ if $currentPage.IsMenuCurrent "main" . }}aria-current="page"{{ end }}
+                >
+                  {{ if $currentPage.IsMenuCurrent "main" . }}
+                    {{ .Pre }} <span>{{ .Name }}</span>
+                  {{ else }}
+                    <a href="{{.URL}}">{{ .Pre }} <span>{{ .Name }}</span></a>
+                  {{ end }}
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+    </aside>
 
-      <footer class="site-footer">
-        <p>&copy; {{ now.Year }} {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}</p>
-        <p>{{ .Site.Params.Disclaimer }}</p>
-      </footer>
-    </div>
+    <footer class="site-footer">
+      <p>&copy; {{ now.Year }} {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}</p>
+      <p>{{ .Site.Params.Disclaimer }}</p>
+    </footer>
   </div>
   <script type="application/javascript">{{ partial "inline.js" | safeJS }}</script>
   <script async src="/js/main.js" type="application/javascript"></script>

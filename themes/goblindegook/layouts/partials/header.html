@@ -78,9 +78,9 @@
   <a href="#content" class="screen-reader">Skip to content</a>
 
   <div data-transition="wrapper">
-    <div data-transition="container" data-transition-namespace="{{ .Kind }}">
-      <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-        <div class="site-header-wrapper">
+    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+      <div class="site-header-wrapper">
+        <div data-transition="breadcrumbs">
           {{ if .IsHome }}
             <nav class="breadcrumb-trail breadcrumbs">
               <ul class="trail-items">
@@ -95,11 +95,12 @@
           {{ else }}
             {{ partial "breadcrumbs.html" . }}
           {{ end }}
-          <div class="sidebar-search">
-            <input aria-label="Search" class="sidebar-search-input" name="q"
-              placeholder="Enter search terms" type="search" value=""
-              autocomplete="off">
-            <ul class="sidebar-search-results"></ul>
-          </div>
         </div>
-      </header>
+        <div class="sidebar-search">
+          <input aria-label="Search" class="sidebar-search-input" name="q"
+            placeholder="Enter search terms" type="search" value=""
+            autocomplete="off">
+          <ul class="sidebar-search-results"></ul>
+        </div>
+      </div>
+    </header>

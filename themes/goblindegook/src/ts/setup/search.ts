@@ -41,6 +41,7 @@ function setupSearch({
   const searchHandler = createSearchHandler({
     fetchCollection: () =>
       fetch('/lunr-documents.json').then(({ json }) => json()),
+    input,
     container,
     perPage,
     renderLoading,
@@ -48,8 +49,10 @@ function setupSearch({
     renderResult,
   })
 
+  input.addEventListener('input', searchHandler)
   input.addEventListener('change', searchHandler)
   input.addEventListener('keyup', searchHandler)
+  input.addEventListener('click', searchHandler)
 
   if (useQueryString) {
     const q = parseQueryString().q
