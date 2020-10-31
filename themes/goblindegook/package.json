@@ -44,7 +44,7 @@
     "@types/jest": "^26.0.0",
     "@types/lunr": "^2.1.1",
     "@types/marked": "^0.7.2",
-    "@types/masonry-layout": "^4.2.0",
+    "@types/masonry-layout": "^4.2.2",
     "@types/node-fetch": "^2.5.4",
     "@types/vfile-message": "^2.0.0",
     "@types/webfontloader": "^1.6.29",
