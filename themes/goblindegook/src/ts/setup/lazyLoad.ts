@@ -1,13 +1,11 @@
 import LazyLoad from 'vanilla-lazyload'
 
-export function setupLazyLoad() {
-  const lazyImages = Array.from(
-    document.querySelectorAll<HTMLElement>('img.lazy')
+export function setupLazyLoad(parent: ParentNode) {
+  Array.from(parent.querySelectorAll<HTMLElement>('img.lazy')).forEach(
+    (item) => {
+      item.style.display = 'inline'
+    }
   )
-
-  lazyImages.forEach((item) => {
-    item.style.display = 'inline'
-  })
 
   return new LazyLoad({
     elements_selector: '.lazy',

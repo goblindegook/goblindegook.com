@@ -1,14 +1,11 @@
 import { scrollTo } from '../lib/scrollTo'
 
-export function setupHeader() {
-  const selector = '.site-header'
-  const header = document.querySelector(selector)
-
-  if (header) {
-    Array.from(
-      header.querySelectorAll('.trail-end, .site-title, .site-tagline')
-    ).forEach((element: HTMLElement) =>
-      element.addEventListener('click', () => scrollTo(0))
+export function setupHeader(parent: ParentNode) {
+  Array.from(
+    parent.querySelectorAll(
+      '.site-header .trail-end, .site-header .site-title, .site-header .site-tagline'
     )
-  }
+  ).forEach((element: HTMLElement) =>
+    element.addEventListener('click', () => scrollTo(0))
+  )
 }

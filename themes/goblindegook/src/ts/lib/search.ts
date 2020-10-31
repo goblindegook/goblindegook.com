@@ -1,5 +1,4 @@
 import lunr from 'lunr'
-import fetch from 'unfetch'
 
 export interface SearchDocument {
   [attribute: string]: any
@@ -14,18 +13,13 @@ interface SearchIndex {
 }
 
 interface SearchOptions {
-  collectionUrl: string
   container: HTMLElement
+  fetchCollection: () => Promise<SearchDocument[]>
   perPage?: number
   renderLoading?: (terms: string) => string
   renderNoResults?: (terms: string) => string
   renderPrompt?: () => string
   renderResult?: (result: SearchDocument) => string
-}
-
-async function fetchCollection(url: string): Promise<SearchDocument[]> {
-  const response = await fetch(url)
-  return response.json()
 }
 
 function buildIndex(entries: SearchDocument[]): lunr.Index {
@@ -71,7 +65,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
   return async (event: Event) => {
     if (!isLoading && !index) {
       isLoading = true
-      const collection = await fetchCollection(options.collectionUrl)
+      const collection = await options.fetchCollection()
       index = createIndex(collection)
       isLoading = false
     }

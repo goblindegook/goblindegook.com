@@ -77,8 +77,8 @@
   {{ partial "icons.svg" }}
   <a href="#content" class="screen-reader">Skip to content</a>
 
-  <div id="transition-wrapper">
-    <div class="transition-container">
+  <div data-transition="wrapper">
+    <div data-transition="container" data-transition-namespace="{{ .Kind }}">
       <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
         <div class="site-header-wrapper">
           {{ if .IsHome }}

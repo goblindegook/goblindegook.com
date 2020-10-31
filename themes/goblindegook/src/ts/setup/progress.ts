@@ -1,14 +1,14 @@
 import { readingProgress } from '../lib/readingProgress'
 import { scrollTo } from '../lib/scrollTo'
 
-export function setupProgress() {
+export function setupProgress(parent: ParentNode) {
   const progressBar = document.getElementById('reading-progress')
 
   if (progressBar) {
-    const entryContent = document.querySelector(
+    const entryContent = parent.querySelector(
       '.single-entry-body'
     ) as HTMLElement
-    const scrollButton = document.querySelector(
+    const scrollButton = parent.querySelector(
       '.button-furthest-read'
     ) as HTMLElement
 

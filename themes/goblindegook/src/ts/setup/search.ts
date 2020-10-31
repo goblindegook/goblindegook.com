@@ -1,14 +1,14 @@
 /* globals Event */
-
+import fetch from 'unfetch'
 import { safeMarkdown } from '../lib/markdown'
 import { createSearchHandler, SearchDocument } from '../lib/search'
 import { parseQueryString } from '../lib/url'
 
 interface SearchOptions {
-  inputSelector: string
+  input: HTMLInputElement
+  container: HTMLElement
   perPage?: number
   useQueryString: boolean
-  resultsSelector: string
   renderLoading: (t: string) => string
   renderNoResults: (t: string) => string
   renderResult: (r: SearchDocument) => string
@@ -29,47 +29,56 @@ function pushSearchUrl(event: KeyboardEvent): void {
   }
 }
 
-function setupSearch(options: SearchOptions): void {
-  const searchInput = document.querySelector(
-    options.inputSelector
-  ) as HTMLInputElement
-  const searchResultsContainer = document.querySelector(
-    options.resultsSelector
-  ) as HTMLElement
+function setupSearch({
+  input,
+  container,
+  perPage,
+  useQueryString,
+  renderLoading,
+  renderNoResults,
+  renderResult,
+}: SearchOptions): void {
+  const searchHandler = createSearchHandler({
+    fetchCollection: () =>
+      fetch('/lunr-documents.json').then(({ json }) => json()),
+    container,
+    perPage,
+    renderLoading,
+    renderNoResults,
+    renderResult,
+  })
 
-  if (searchInput && searchResultsContainer) {
-    const searchHandler = createSearchHandler({
-      collectionUrl: '/lunr-documents.json',
-      container: searchResultsContainer,
-      perPage: options.perPage,
-      renderLoading: options.renderLoading,
-      renderNoResults: options.renderNoResults,
-      renderResult: options.renderResult,
-    })
+  input.addEventListener('change', searchHandler)
+  input.addEventListener('keyup', searchHandler)
 
-    searchInput.addEventListener('change', searchHandler)
-    searchInput.addEventListener('keyup', searchHandler)
-
-    if (options.useQueryString) {
-      const q = parseQueryString().q
-      if (q && q.length) {
-        searchInput.value = q
-        searchInput.dispatchEvent(
-          new Event('change', { bubbles: true, cancelable: true })
-        )
-      }
-
-      searchInput.addEventListener('keyup', updateSearchOnEnter)
-      searchInput.focus()
-    } else {
-      searchInput.addEventListener('keyup', pushSearchUrl)
+  if (useQueryString) {
+    const q = parseQueryString().q
+    if (q && q.length) {
+      input.value = q
+      input.dispatchEvent(
+        new Event('change', { bubbles: true, cancelable: true })
+      )
     }
+
+    input.addEventListener('keyup', updateSearchOnEnter)
+    input.focus()
+  } else {
+    input.addEventListener('keyup', pushSearchUrl)
   }
 }
 
-export function setupMainSearch(): void {
+export function setupMainSearch(parent: ParentNode): void {
+  const input = parent.querySelector<HTMLInputElement>('.search-input')
+  const container = parent.querySelector<HTMLElement>('.search-results')
+
+  if (!input || !container) {
+    return
+  }
+
   setupSearch({
-    inputSelector: '.search-input',
+    input,
+    container,
+    useQueryString: true,
     renderLoading: () => `<li class="search-result-none">Loading...</li>`,
     renderNoResults: () =>
       `<li class="search-result-none">No results found.</li>`,
@@ -87,15 +96,22 @@ export function setupMainSearch(): void {
         </article>
       </li>
     `,
-    resultsSelector: '.search-results',
-    useQueryString: true,
   })
 }
 
-export function setupSidebarSearch(): void {
+export function setupSidebarSearch(parent: ParentNode): void {
+  const input = parent.querySelector<HTMLInputElement>('.sidebar-search-input')
+  const container = parent.querySelector<HTMLElement>('.sidebar-search-results')
+
+  if (!input || !container) {
+    return
+  }
+
   setupSearch({
-    inputSelector: '.sidebar-search-input',
+    input,
+    container,
     perPage: 5,
+    useQueryString: false,
     renderLoading: () =>
       `<li class="sidebar-search-result-none">Loading...</li>`,
     renderNoResults: () =>
@@ -104,7 +120,5 @@ export function setupSidebarSearch(): void {
       `<li class="sidebar-search-result-single"><a href="${
         r.url
       }">${safeMarkdown(r.title)}</a></li>`,
-    resultsSelector: '.sidebar-search-results',
-    useQueryString: false,
   })
 }

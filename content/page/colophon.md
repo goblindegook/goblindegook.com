@@ -56,7 +56,7 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [DOMPurify], [LazyLoad], [littlefoot], [Lunr], [Marked], [Masonry], and [quicklink] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [DOMPurify], [LazyLoad], [littlefoot], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
 
 The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
@@ -67,6 +67,5 @@ The site's stylesheet is [generated from CSS sources][postcss-preset-env] and in
 [lunr]: https://github.com/olivernn/lunr.js
 [marked]: https://marked.js.org/
 [masonry]: https://github.com/desandro/masonry
-[quicklink]: https://github.com/GoogleChromeLabs/quicklink
 [animate.css]: https://daneden.github.io/animate.css
 [postcss-preset-env]: https://preset-env.cssdb.org/
