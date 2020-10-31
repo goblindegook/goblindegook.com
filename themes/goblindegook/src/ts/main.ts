@@ -26,8 +26,8 @@ const from = (source: Document) => ({
 window.addEventListener('load', () => {
   setupHash()
   setupFonts()
-  setupHeader(document)
   setupSidebarSearch(document)
+  setupHeader(document)
   setupLazyLoad(document)
   triggerEvent(window, 'scroll')
 
@@ -38,6 +38,7 @@ window.addEventListener('load', () => {
       .replace('breadcrumbs')
       .replace('navigation')
 
+    setupHeader(document)
     setupLazyLoad(next.container)
     triggerEvent(window, 'scroll')
   })
