@@ -24,9 +24,8 @@
   font-size: var(--ms3);
   line-height: calc(var(--vr-line-height-rem) * 2);
   transition-duration: var(--page-transition-duration);
-  transition-property: font-size width;
+  transition-property: font-size;
   transition-timing-function: var(--page-transition-timing-function);
-  width: var(--body-max-width);
 
   & a {
     color: var(--body-color);
@@ -47,7 +46,6 @@
 .archive-entry-content__leave {
   opacity: 0;
   transition-duration: var(--page-transition-duration);
-  transition-property: opacity width;
+  transition-property: opacity;
   transition-timing-function: calc(var(--page-transition-duration) / 2);
-  width: var(--body-max-width);
 }
