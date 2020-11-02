@@ -1,4 +1,4 @@
-import barba, { ITransitionData, Trigger } from '@barba/core'
+import barba, { ITransitionData } from '@barba/core'
 import prefetch from '@barba/prefetch'
 import { setupFonts } from './setup/fonts'
 import { setupFootnotes } from './setup/footnotes'
@@ -9,6 +9,8 @@ import { setupMasonry } from './setup/masonry'
 import { setupProgress } from './setup/progress'
 import { setupMainSearch, setupSidebarSearch } from './setup/search'
 import { triggerEvent } from './lib/dom/triggerEvent'
+import { defaultTransition } from './transitions/default-transition'
+import { homeArticleTransition } from './transitions/home-article-transition'
 
 const parser = new DOMParser()
 
@@ -23,44 +25,6 @@ const from = (source: Document) => ({
   },
 })
 
-function isArticleLink(trigger: Trigger): trigger is HTMLAnchorElement {
-  return typeof trigger === 'object' && !!trigger.closest('article')
-}
-
-function fadeOut<T extends Element>(elements: T | T[]): void {
-  Array<T>()
-    .concat(elements)
-    .forEach((element) => {
-      element.classList.add('animate__animated')
-      element.classList.remove('animate__fadeIn')
-      element.classList.add('animate__fadeOut')
-    })
-}
-
-function fadeIn<T extends Element>(elements: T | T[]): void {
-  Array<T>()
-    .concat(elements)
-    .forEach((element) => {
-      element.classList.add('animate__animated')
-      element.classList.add('animate__fadeIn')
-    })
-}
-
-function transitionToPage(
-  container: Element | null | undefined,
-  classNames: string[],
-  suffix: string
-): void {
-  classNames.forEach((className) => {
-    if (container?.classList.contains(className)) {
-      container?.classList.add(className + '__' + suffix)
-    }
-    container
-      ?.querySelector('.' + className)
-      ?.classList.add(className + '__' + suffix)
-  })
-}
-
 window.addEventListener('load', () => {
   setupHash()
   setupFonts()
@@ -72,6 +36,7 @@ window.addEventListener('load', () => {
   barba.use(prefetch)
 
   barba.hooks.beforeEnter(({ next }: ITransitionData) => {
+    window.scrollTo(0, 0)
     from(parser.parseFromString(next.html, 'text/html'))
       .replace('breadcrumbs')
       .replace('navigation')
@@ -82,64 +47,11 @@ window.addEventListener('load', () => {
   })
 
   barba.init({
-    debug: true,
+    debug: false,
     schema: {
       prefix: 'data-transition',
     },
-    transitions: [
-      {
-        name: 'default-transition',
-        leave({ current }) {
-          fadeOut(current.container)
-          return new Promise((resolve) => setTimeout(resolve, 200))
-        },
-        enter({ next }) {
-          window.scrollTo(0, 0)
-          fadeIn(next.container)
-        },
-      },
-      {
-        name: 'home-article',
-        from: { namespace: ['home'] },
-        to: { namespace: ['page'] },
-        leave({ current, trigger }) {
-          if (isArticleLink(trigger)) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const article = trigger.closest('article')!
-            article.style.top = window.scrollY + 'px'
-            transitionToPage(
-              article,
-              [
-                'archive-entry',
-                'archive-entry-title',
-                'archive-entry-thumbnail-wrapper',
-                'archive-entry-content',
-              ],
-              'leave'
-            )
-          } else {
-            fadeOut(current.container)
-          }
-
-          return new Promise((resolve) => setTimeout(resolve, 200))
-        },
-        enter({ next, trigger }) {
-          window.scrollTo(0, 0)
-
-          if (isArticleLink(trigger)) {
-            fadeIn(
-              Array.from(
-                next.container.querySelectorAll(
-                  '.single-entry-featured-image figcaption, .single-entry-body'
-                )
-              )
-            )
-          } else {
-            fadeIn(next.container)
-          }
-        },
-      },
-    ],
+    transitions: [defaultTransition, homeArticleTransition],
     views: [
       {
         namespace: 'home',
