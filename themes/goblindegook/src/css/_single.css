@@ -1,3 +1,13 @@
+:root {
+  --single-featured-image-height: 20rem;
+}
+
+@media (--narrow-viewport) {
+  :root {
+    --single-featured-image-height: 14rem;
+  }
+}
+
 .content-single {
   max-width: var(--body-max-width);
   margin-left: auto;
@@ -50,7 +60,7 @@
 }
 
 .single-entry-featured-image {
-  height: 20rem;
+  height: var(--single-featured-image-height);
   left: 50%;
   margin: 4rem -50vw;
   overflow: hidden;
@@ -94,7 +104,6 @@
 
 @media (--narrow-viewport) {
   .single-entry-featured-image {
-    height: 14rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
 

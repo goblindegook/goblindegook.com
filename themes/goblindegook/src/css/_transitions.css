@@ -5,24 +5,22 @@
 
 .archive-entry__leave {
   background-color: var(--body-background-color);
-  bottom: 0;
   box-shadow: none;
   height: 100vw;
   left: 50% !important;
   margin: 0 -50vw;
   padding: 0.5rem;
   right: 50%;
-  transition-duration: var(--page-transition-duration);
-  transition-property: background-color box-shadow height margin padding top
-    bottom left right width;
-  transition-timing-function: var(--page-transition-timing-function);
   width: 100vw;
   z-index: 20;
+  transition-duration: var(--page-transition-duration);
+  transition-property: background-color box-shadow height left margin padding
+    right width;
+  transition-timing-function: var(--page-transition-timing-function);
 }
 
 .archive-entry-title__leave {
   font-size: var(--ms3);
-  line-height: calc(var(--vr-line-height-rem) * 2);
   transition-duration: var(--page-transition-duration);
   transition-property: font-size;
   transition-timing-function: var(--page-transition-timing-function);
@@ -36,10 +34,10 @@
 }
 
 .archive-entry-thumbnail-wrapper__leave {
-  height: 20rem;
+  height: var(--single-featured-image-height);
   margin: 4rem 0;
   transition-duration: var(--page-transition-duration);
-  transition-property: margin height width;
+  transition-property: height margin;
   transition-timing-function: var(--page-transition-timing-function);
 }
 
