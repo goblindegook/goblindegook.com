@@ -9,8 +9,8 @@
   box-shadow: none;
   height: 100vw;
   left: 50% !important;
-  margin: 0 -50vw;
-  padding: 0.5rem;
+  padding: 3.5rem 0;
+  margin: -3rem -50vw 0;
   width: 100vw;
   z-index: 20;
   transition-duration: var(--page-transition-duration);
@@ -33,13 +33,9 @@
   }
 }
 
-/* FIXME: performance */
 .archive-entry-thumbnail-wrapper__leave {
   height: var(--single-featured-image-height);
   margin: 4rem 0;
-  transition-duration: var(--page-transition-duration);
-  transition-property: height margin;
-  transition-timing-function: var(--page-transition-timing-function);
 }
 
 .archive-entry-content__leave {

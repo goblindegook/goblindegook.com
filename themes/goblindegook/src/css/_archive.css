@@ -1,3 +1,7 @@
+:root {
+  --archive-featured-image-height: 14rem;
+}
+
 .content-archive {
   max-width: var(--body-max-width);
   margin-left: auto;
@@ -37,6 +41,7 @@
   margin: 0 0 3rem;
   padding: 2rem;
   width: var(--masonry-column-width);
+  will-change: left, width;
 }
 
 .no-js .archive-entry {
@@ -73,7 +78,7 @@
 }
 
 .archive-entry-thumbnail-wrapper {
-  height: 10rem;
+  height: var(--archive-featured-image-height);
   margin: 2rem calc(-2rem - 1px);
   overflow: hidden;
 }

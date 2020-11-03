@@ -8,19 +8,11 @@
     {{ $featured680 := $src.Fit "680x224" }}
     {{ $featured768 := $src.Fit "768x640" }}
     {{ $featured1536 := $src.Fit "1536x640" }}
-    <img class="lazy"
-      src="data:{{ $featuredLazy.MediaType }};base64,{{ $featuredLazy.Content | base64Encode }}"
+    <img
       height="{{ $featured.Height }}"
       width="{{ $featured.Width }}"
-      sizes="
-        (max-width: 340px) 340w,
-        (max-width: 680px) 680w,
-        (max-width: 768px) 768w,
-        (max-width: 1536px) 1536w,
-        100%
-      "
-      data-src="{{ $featured.RelPermalink }}"
-      data-srcset="
+      src="{{ $featured.RelPermalink }}"
+      srcset="
         {{ $featured340.RelPermalink }} 340w,
         {{ $featured680.RelPermalink }} 680w,
         {{ $featured768.RelPermalink }} 768w,
@@ -31,15 +23,6 @@
         alt="{{ with .Params.Image.Alt }}{{ . }}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
       {{ end }}
     >
-    <noscript>
-      <img src="{{ $featured.RelPermalink }}"
-        height="{{ $featured.Height }}"
-        width="{{ $featured.Width }}"
-        {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
-          alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
-        {{ end }}
-      >
-    </noscript>
   {{ if .Params.Image.Link }}</a>{{ end }}
   {{ if or (or (.Params.Image.Title) (.Params.Image.Caption)) (.Params.Image.Attr)}}
   <figcaption>
