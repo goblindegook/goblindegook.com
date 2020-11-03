@@ -20,8 +20,9 @@
 
 .archive-entry-title__leave {
   font-size: var(--ms3);
+  line-height: calc(var(--vr-line-height-rem) * 2);
   transition-duration: var(--page-transition-duration);
-  transition-property: font-size;
+  transition-property: font-size line-height;
   transition-timing-function: var(--page-transition-timing-function);
 
   & a {
