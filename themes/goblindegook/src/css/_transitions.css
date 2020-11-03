@@ -3,6 +3,7 @@
   --page-transition-timing-function: ease-in;
 }
 
+/* FIXME: performance */
 .archive-entry__leave {
   background-color: var(--body-background-color);
   box-shadow: none;
@@ -10,12 +11,10 @@
   left: 50% !important;
   margin: 0 -50vw;
   padding: 0.5rem;
-  right: 50%;
   width: 100vw;
   z-index: 20;
   transition-duration: var(--page-transition-duration);
-  transition-property: background-color box-shadow height left margin padding
-    right width;
+  transition-property: background-color box-shadow height left transform width;
   transition-timing-function: var(--page-transition-timing-function);
 }
 
@@ -33,6 +32,7 @@
   }
 }
 
+/* FIXME: performance */
 .archive-entry-thumbnail-wrapper__leave {
   height: var(--single-featured-image-height);
   margin: 4rem 0;
