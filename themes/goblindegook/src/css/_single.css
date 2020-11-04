@@ -76,14 +76,6 @@
     transition-property: transform;
     transition-timing-function: ease;
     width: 100%;
-
-    &.lazy {
-      transform: scale(1.1);
-
-      &.loaded {
-        transform: scale(1);
-      }
-    }
   }
 
   & figcaption {

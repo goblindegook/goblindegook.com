@@ -4,7 +4,7 @@
       {{ .Date.Format "January 2, 2006" }}
     </time>
     <h3 class="archive-entry-title">
-      <a href="{{ .Permalink }}" rel="bookmark">
+      <a class="archive-entry-link" href="{{ .Permalink }}" rel="bookmark">
         {{ .Title | markdownify }}
       </a>
     </h3>
@@ -15,7 +15,7 @@
     {{ $featured := $src.Fit "340x160" }}
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
-      <a href="{{ .Permalink }}" rel="bookmark">
+      <a tabindex="-1" href="{{ .Permalink }}" rel="bookmark">
         <img class="lazy archive-entry-thumbnail"
           src="data:{{ $featuredLazy.MediaType }};base64,{{ $featuredLazy.Content | base64Encode }}"
           height="{{ $featured.Height }}"
