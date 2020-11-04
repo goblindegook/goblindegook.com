@@ -47,7 +47,7 @@
 }
 
 .archive-entry:hover {
-  box-shadow: 0 10px 20px 0 var(--shadow-color);
+  box-shadow: 0 2px 8px 0 var(--shadow-color);
   transition-duration: 0.2s;
   transition-timing-function: ease-in;
 }
