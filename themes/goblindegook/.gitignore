@@ -1,11 +1,5 @@
 .DS_Store
 .rpt2_cache/
 node_modules/
-layouts/partials/inline.js
-layouts/partials/inline.js.map
 static/css/styles.css
-static/js/main.js
-static/js/main.js.map
-static/sw.js
-static/sw.js.map
 *.log
