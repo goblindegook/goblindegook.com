@@ -6,9 +6,9 @@ menu:
     weight: 30
 ---
 
-## testing-library
+## @testing-library
 
-Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering.
+Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering. [View the _@testing-library_ talk slides.](https://goblindegook.github.io/talks/testing-library.html)
 
 - [LuxembourgJS](https://www.meetup.com/luxembourgjs/events/272682228/) (November 4, 2020 · Online)
 - [Landing Festival](https://landingfestival.com) (June 29, 2019 · Lisbon, Portugal)
