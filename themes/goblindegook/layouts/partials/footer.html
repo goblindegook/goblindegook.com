@@ -45,7 +45,12 @@
       <p>{{ .Site.Params.Disclaimer }}</p>
     </footer>
   </div>
-  <script type="application/javascript">{{ partial "inline.js" | safeJS }}</script>
-  <script async src="/js/main.js" type="application/javascript"></script>
+  {{ $sw := resources.Get "sw.ts" | js.Build (dict "target" "es6" "minify" true ) }}
+  {{ $inline := resources.Get "scripts/inline.ts" | js.Build (dict "target" "es6" "minify" true) }}
+  {{ $main := resources.Get "scripts/main.ts" | js.Build (dict "target" "es6" "minify" true) }}
+  <script type="application/javascript">{{ $inline.Content | safeJS }}</script>
+  <script async src="{{ $main.RelPermalink }}" type="application/javascript"></script>
+  {{/* Call RelPermalink unnecessarily to generate JS files */}}
+  {{ $placebo := slice $sw.RelPermalink }}
 </body>
 </html>
