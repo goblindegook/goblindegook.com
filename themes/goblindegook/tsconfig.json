@@ -4,7 +4,6 @@
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "importHelpers": true,
-    "isolatedModules": true,
     "lib": ["DOM", "ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
