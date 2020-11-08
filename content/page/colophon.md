@@ -1,6 +1,6 @@
 ---
-title: "Colophon"
-author: "Luís Rodrigues"
+title: 'Colophon'
+author: 'Luís Rodrigues'
 date: 2017-06-27T12:00:00+01:00
 draft: false
 menu:
@@ -32,16 +32,13 @@ The site's [favicon] was taken from [_Die Radiolarien_](http://caliban.mpiz-koel
 
 ## Technology
 
-The tools I use to create and maintain this site include the [Visual Studio Code] editor, [nvALT] for note-taking, and the [Hugo] static site generator with a build stack that relies on [PostCSS], [Rollup], and [TypeScript]. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
+The tools I use to create and maintain this site include the [Visual Studio Code] editor, [nvALT] for note-taking, and the [Hugo] static site generator. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
 
 Site content and sources are kept under version control on a [public Github repository][goblindegook/goblindegook.com] from which the site is deployed whenever updated.
 
 [chrome devtools]: https://developer.chrome.com/devtools/
 [hugo]: http://gohugo.io
 [nvalt]: http://brettterpstra.com/projects/nvalt/
-[postcss]: https://twitter.com/PostCSS/
-[rollup]: https://rollupjs.org
-[typescript]: http://www.typescriptlang.org
 [visual studio code]: https://code.visualstudio.com
 [goblindegook/goblindegook.com]: https://github.com/goblindegook/goblindegook.com
 
@@ -56,10 +53,11 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in TypeScript and compiled to a universally-supported version of JavaScript. [Barba.js], [DOMPurify], [LazyLoad], [littlefoot], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in [TypeScript]. [Barba.js], [DOMPurify], [LazyLoad], [littlefoot], [Lunr], [Marked], and [Masonry] provide additional features and optimizations.
 
 The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
+[typescript]: http://www.typescriptlang.org
 [barba.js]: https://barba.js.org/
 [dompurify]: https://github.com/cure53/DOMPurify
 [lazyload]: https://github.com/verlok/lazyload
@@ -67,5 +65,5 @@ The site's stylesheet is [generated from CSS sources][postcss-preset-env] and in
 [lunr]: https://github.com/olivernn/lunr.js
 [marked]: https://marked.js.org/
 [masonry]: https://github.com/desandro/masonry
-[animate.css]: https://daneden.github.io/animate.css
 [postcss-preset-env]: https://preset-env.cssdb.org/
+[animate.css]: https://daneden.github.io/animate.css
