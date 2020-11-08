@@ -1,4 +1,4 @@
-import { scrollTo } from '../lib/scrollTo'
+import { scrollTo } from './lib/scrollTo'
 
 export function setupHeader(parent: ParentNode) {
   Array.from(

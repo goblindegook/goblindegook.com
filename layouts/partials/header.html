@@ -29,7 +29,7 @@
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
   <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
   <link rel="canonical" href="{{ .Site.BaseURL }}">
-  {{ $css := resources.Get "styles/main.css"  | resources.PostCSS (dict "inlineImports" true) }}
+  {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
   <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <link rel="manifest" href="/manifest.webmanifest">
   {{ range .AlternativeOutputFormats -}}

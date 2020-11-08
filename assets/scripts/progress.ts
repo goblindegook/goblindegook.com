@@ -1,5 +1,5 @@
-import { readingProgress } from '../lib/readingProgress'
-import { scrollTo } from '../lib/scrollTo'
+import { readingProgress } from './lib/readingProgress'
+import { scrollTo } from './lib/scrollTo'
 
 export function setupProgress(parent: ParentNode) {
   const progressBar = document.getElementById('reading-progress')

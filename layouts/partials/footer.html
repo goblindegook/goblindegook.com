@@ -46,8 +46,8 @@
     </footer>
   </div>
   {{ $sw := resources.Get "sw.ts" | js.Build (dict "target" "es6" "minify" true ) }}
-  {{ $inline := resources.Get "scripts/inline.ts" | js.Build (dict "target" "es6" "minify" true) }}
-  {{ $main := resources.Get "scripts/main.ts" | js.Build (dict "target" "es6" "minify" true) }}
+  {{ $inline := resources.Get "inline.ts" | js.Build (dict "target" "es6" "minify" true) }}
+  {{ $main := resources.Get "main.ts" | js.Build (dict "target" "es6" "minify" true) }}
   <script type="application/javascript">{{ $inline.Content | safeJS }}</script>
   <script async src="{{ $main.RelPermalink }}" type="application/javascript"></script>
   {{/* Call RelPermalink unnecessarily to generate JS files */}}

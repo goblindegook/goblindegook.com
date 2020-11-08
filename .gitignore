@@ -12,5 +12,5 @@ public/
 resources/
 .rpt2_cache/
 
-static/css/styles.css
+# Logs
 *.log

@@ -1,8 +1,8 @@
 /* globals Event */
 import fetch from 'unfetch'
-import { safeMarkdown } from '../lib/markdown'
-import { createSearchHandler, SearchDocument } from '../lib/search'
-import { parseQueryString } from '../lib/url'
+import { safeMarkdown } from './lib/markdown'
+import { createSearchHandler, SearchDocument } from './lib/search'
+import { parseQueryString } from './lib/url'
 
 interface SearchOptions {
   input: HTMLInputElement
