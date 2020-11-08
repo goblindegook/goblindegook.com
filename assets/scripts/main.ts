@@ -10,7 +10,7 @@ import { setupProgress } from './setup/progress'
 import { setupMainSearch, setupSidebarSearch } from './setup/search'
 import { triggerEvent } from './lib/dom/triggerEvent'
 import { defaultTransition } from './transitions/default-transition'
-import { homeArticleTransition } from './transitions/home-article-transition'
+import { articleTransition } from './transitions/article-transition'
 
 const parser = new DOMParser()
 
@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
     schema: {
       prefix: 'data-transition',
     },
-    transitions: [defaultTransition, homeArticleTransition],
+    transitions: [defaultTransition, articleTransition],
     views: [
       {
         namespace: 'home',

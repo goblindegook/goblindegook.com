@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    stylelint: {},
+    // stylelint: {},
     'postcss-import': {},
     'postcss-preset-env': {
       stage: 1,

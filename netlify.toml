@@ -3,7 +3,7 @@
   publish = "public"
 
 [context.deploy-preview]
-  command = "yarn build-preview"
+  command = "yarn build:preview"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.76.5"

@@ -1,7 +1,6 @@
 baseURL = "https://goblindegook.com/"
 languageCode = "en-gb"
 title = "goblindegook"
-theme = "goblindegook"
 disableHugoGeneratorInject = true
 pygmentsCodeFences = true
 enableRobotsTXT = true

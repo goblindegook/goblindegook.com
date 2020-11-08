@@ -5,7 +5,7 @@ function isArticleLink(trigger: Trigger): trigger is HTMLAnchorElement {
   return typeof trigger === 'object' && !!trigger.closest('article')
 }
 
-function leaveHome(
+function leaveTransition(
   container: Element | null | undefined,
   classNames: string[],
   suffix: string
@@ -20,7 +20,7 @@ function leaveHome(
   })
 }
 
-export const homeArticleTransition: ITransitionPage = {
+export const articleTransition: ITransitionPage = {
   name: 'home-article-transition',
   from: { namespace: ['home'] },
   to: { namespace: ['page'] },
@@ -29,7 +29,7 @@ export const homeArticleTransition: ITransitionPage = {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const article = trigger.closest('article')!
       article.style.top = window.scrollY + 'px'
-      leaveHome(
+      leaveTransition(
         article,
         [
           'archive-entry',
