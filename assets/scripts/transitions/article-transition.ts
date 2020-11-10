@@ -1,57 +1,52 @@
 import { ITransitionPage, Trigger } from '@barba/core'
-import { fadeIn, fadeOut } from '../lib/animate'
+import { fadeIn, fadeOut, delay } from '../lib/animate'
 
 function isArticleLink(trigger: Trigger): trigger is HTMLAnchorElement {
   return typeof trigger === 'object' && !!trigger.closest('article')
 }
 
-function leaveTransition(
-  container: Element | null | undefined,
-  classNames: string[],
-  suffix: string
-): void {
-  classNames.forEach((className) => {
-    if (container?.classList.contains(className)) {
-      container?.classList.add(className + '__' + suffix)
-    }
-    container
-      ?.querySelector('.' + className)
-      ?.classList.add(className + '__' + suffix)
-  })
-}
-
 export const articleTransition: ITransitionPage = {
   name: 'home-article-transition',
-  from: { namespace: ['home'] },
+  from: { namespace: ['home', 'section', 'term'] },
   to: { namespace: ['page'] },
-  leave({ current, trigger }) {
+  async leave({ current, trigger }) {
     if (isArticleLink(trigger)) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const article = trigger.closest('article')!
+
+      document
+        .querySelector('.archive-header')
+        ?.classList.add('archive-header__fadeout')
+
+      Array.from(document.querySelectorAll('.archive-entry'))
+        .filter((element) => element !== article)
+        .forEach(fadeOut)
+
+      await delay(200)
+
+      fadeOut(article.querySelector('.archive-entry-content'))
+
+      await delay(200)
+
       article.style.top = window.scrollY + 'px'
-      leaveTransition(
-        article,
-        [
-          'archive-entry',
-          'archive-entry-title',
-          'archive-entry-thumbnail-wrapper',
-          'archive-entry-content',
-        ],
-        'leave'
-      )
+      article.classList.add('archive-entry__fill')
+      article
+        .querySelector('.archive-entry-title')
+        ?.classList.add('archive-entry-title__fill')
+      article
+        .querySelector('.archive-entry-thumbnail-wrapper')
+        ?.classList.add('archive-entry-thumbnail-wrapper__fill')
     } else {
       fadeOut(current.container)
     }
 
-    return new Promise((resolve) => setTimeout(resolve, 200))
+    await delay(200)
   },
-  enter({ next, trigger }) {
+  async enter({ next, trigger }) {
     if (isArticleLink(trigger)) {
       fadeIn(
-        Array.from(
-          next.container.querySelectorAll(
-            '.single-entry-featured-image figcaption, .single-entry-body'
-          )
+        next.container.querySelectorAll(
+          '.single-entry-featured-image figcaption, .single-entry-body'
         )
       )
     } else {
