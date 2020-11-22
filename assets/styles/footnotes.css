@@ -1,26 +1,24 @@
-:root {
-  --littlefoot-button-active-background-color: var(
-    --ui-active-background-color
-  );
-  --littlefoot-button-margin: 0 0.4rem;
-  --littlefoot-popover-background-color: var(--ui-background-color);
-  --littlefoot-popover-text-color: var(--ui-text-color);
-  --littlefoot-popover-font-family: var(--fallback-ui-font);
-  --littlefoot-popover-font-size: var(--ms0);
-  --littlefoot-popover-font-weight: 400;
-  --littlefoot-popover-line-height: 1.6;
-  --littlefoot-popover-border: 0;
-  --littlefoot-popover-scroll-indicator-color: var(--ui-text-color);
-  --littlefoot-popover-width: 22rem;
+.littlefoot {
+  --button-active-background-color: var(--ui-active-background-color);
+  --button-margin: 0 0.4rem;
+  --popover-background-color: var(--ui-background-color);
+  --popover-text-color: var(--ui-text-color);
+  --popover-font-family: var(--fallback-ui-font);
+  --popover-font-size: var(--ms0);
+  --popover-font-weight: 400;
+  --popover-line-height: 1.6;
+  --popover-border: 0;
+  --popover-scroll-indicator-color: var(--ui-text-color);
+  --popover-width: 22rem;
 
   @media (max-width: 767px) {
-    --littlefoot-popover-border-radius: 0;
+    --popover-border-radius: 0;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --littlefoot-popover-border: 1px solid var(--divider-color);
+  .littlefoot {
+    --popover-border: 1px solid var(--divider-color);
   }
 }
 
