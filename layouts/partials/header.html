@@ -5,9 +5,10 @@
 <!--[if IE 9 ]><html class="ie9 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
-  {{ $image := "/icon/goblindegook.png" | absURL }}
+  {{ $title := .Page.Title | markdownify | plainify }}
+  {{ $ogImage := "/icon/goblindegook.png" | absURL }}
   {{ if .Page.Params.Image.Src }}
-    {{ $image = ((.Resources.GetMatch .Params.Image.Src).Fit "768x640").Permalink }}
+    {{ $ogImage = ((.Resources.GetMatch .Params.Image.Src).Fit "768x640").Permalink }}
   {{ end }}
   <meta charset="UTF-8">
   <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}">
@@ -19,19 +20,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#333333">
   <meta name="twitter:site" content="{{ .Site.Params.Twitter }}">
-  <meta name="twitter:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}">
+  <meta name="twitter:title" content="{{ if not .IsHome }}{{ $title }}{{ else }}{{ .Site.Title }}{{ end }}">
   <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}">
-  <meta name="twitter:image" content="{{ $image }}">
+  <meta name="twitter:image" content="{{ $ogImage }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="{{ .Site.Title }}">
-  <meta property="og:title" content="{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}">
+  <meta property="og:title" content="{{ if not .IsHome }}{{ $title }}{{ else }}{{ .Site.Title }}{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}">
   {{ with .Site.Language }}<meta property="og:locale" content="{{ .Lang }}">{{ end }}
-  <meta property="og:image" content="{{ $image }}">
+  <meta property="og:image" content="{{ $ogImage }}">
   <meta property="og:type" content="website">
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  <title>{{ if not .IsHome }}{{ .Page.Title | markdownify | plainify }} &middot; {{ end }}{{ .Site.Title }}</title>
+  <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title }}</title>
   <link rel="canonical" href="{{ .Site.BaseURL }}">
   {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
   <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
