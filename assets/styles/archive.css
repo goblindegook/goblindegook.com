@@ -116,6 +116,11 @@
 .archive-entry-content {
   hanging-punctuation: first;
   margin-bottom: -1rem;
+
+  & blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 :not(.archive-entry-thumbnail-wrapper) + .archive-entry-content {
@@ -148,12 +153,7 @@
   padding: 0.5rem;
 }
 
-.pagination-first,
-.pagination-previous,
-.pagination-page,
-.pagination-current,
-.pagination-next,
-.pagination-last {
+.page-item {
   display: inline-block;
   line-height: var(--vr-line-height);
   margin: 0 0.06rem;
@@ -161,43 +161,29 @@
   text-align: center;
 }
 
-.pagination-first a,
-.pagination-previous a,
-.pagination-next a,
-.pagination-last a,
-.pagination-number {
+.page-link {
   display: table-cell;
   height: 3rem;
   vertical-align: middle;
   width: 3rem;
+  background-color: var(--ui-background-color);
+  box-shadow: 0 1px 4px 0 var(--shadow-color);
+  color: var(--active-color);
 }
 
-.pagination-first,
-.pagination-previous,
-.pagination-page,
-.pagination-next,
-.pagination-last {
-  & a {
-    background-color: var(--ui-background-color);
-    box-shadow: 0 1px 4px 0 var(--shadow-color);
-    color: var(--ui-text-color);
-  }
+.page-item.active .page-link {
+  color: var(--ui-text-color);
+}
 
-  & a:active,
-  & a:hover {
-    background-color: var(--ui-active-background-color);
-    color: var(--ui-text-color);
-  }
+.page-item:not(.disabled) .page-link:active,
+.page-item:not(.disabled) .page-link:hover {
+  background-color: var(--ui-active-background-color);
+  color: var(--ui-text-color);
 }
 
 .no-js,
 .ui-font-active {
-  & .pagination-first,
-  & .pagination-previous,
-  & .pagination-page,
-  & .pagination-current,
-  & .pagination-next,
-  & .pagination-last {
+  & .page-item {
     font-family: var(--ui-font);
   }
 }
