@@ -1,0 +1,15 @@
+<article class="archive-entry" itemscope="" itemtype="https://schema.org/CreativeWork">
+  <header class="archive-entry-header">
+    <time class="archive-entry-date" itemprop="datePublished" datetime="{{ .Date }}">
+      {{ .Date.Format "January 2, 2006" }}
+    </time>
+    <h3 class="archive-entry-title">
+      <a class="archive-entry-link" href="{{ .Permalink }}" rel="bookmark">
+        {{ .Title | markdownify }}
+      </a>
+    </h3>
+  </header>
+  <div class="archive-entry-content">
+    {{ .Content }}
+  </div>
+</article>
