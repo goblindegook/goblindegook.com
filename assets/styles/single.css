@@ -49,7 +49,7 @@
   font-size: var(--ms0);
 }
 
-.no-js .site-entry-date,
+.no-js .single-entry-date,
 .ui-font-active .single-entry-date {
   font-family: var(--ui-font);
 }

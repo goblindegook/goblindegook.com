@@ -1,21 +1,21 @@
 ---
-title: "Division"
-description: "On the division of labour, web design and software engineering."
-author: "Luís Rodrigues"
-slug: "division-of-labour"
-categories: [ "Work" ]
-tags: [ "work" ]
+title: 'Division'
+description: 'On the division of labour, web design, and software engineering.'
+author: 'Luís Rodrigues'
+slug: 'division-of-labour'
+categories: ['Work']
+tags: ['work']
 date: 2016-03-06T12:00:00+01:00
 image:
-  src: "pin-factory.jpg"
+  src: 'pin-factory.jpg'
   caption: "Pin factory engraving from Diderot's _Encyclopédie_, 1762."
-  alt: "An illustration depicting people at work making pins"
+  alt: 'An illustration depicting people at work making pins'
 draft: false
 ---
 
 Out of my somewhat varied interests, the one that pays nearly all of the bills is software engineering. I’ve been putting together small web sites and applications on my own for almost two decades, and collaborating with others to create larger ones for at least half that time. Since I’m also quite interested in the organisation and politics of work, I’ve been watching the way these and other projects were managed, and have been able to observe how broken models of cooperation have affected their outcome or strained relationships in the workplace. Of these, one idea in particular has caught my attention for its double-edged consequences and controversial history, and that is the division of labour.
 
-***
+---
 
 The concept of dividing labour is almost as old as work itself. Mastering a trade is difficult enough, let alone several, so as people drifted to their preferred or mandated occupations they became specialised.
 
@@ -65,7 +65,7 @@ I should point out that Russell takes a similar stance towards work as Smith: fo
 
 While Bertrand Russell is more concerned with the inequality of access to leisure, I worry that a considerable slice of that time is still spent feeding people back into the grinder. For example, a lot of effort is put into leading students and job-seekers down easily marketable career paths. An all-encompassing education has become secondary to developing narrow technical skills with a clear path to profit — the liberal arts, once seen as essential disciplines worthy of a ‘free person’ (hence the name), are now frequently derided as useless.[^1]
 
-***
+---
 
 I’ve been writing with little regard for the distinction between physical and intellectual labour because attributes shift when it comes to the services and knowledge-based industries. This is the case with software engineering: you wouldn’t call programming ‘physical labour,’ but you’ll see professionals in the field turned into operatives not unlike those hired to toil mindlessly on the pin assembly line.
 
@@ -96,7 +96,5 @@ Additionally, we should allow the richness and warmth of our lives to bleed into
 The nastiest consequences of the division of labour will continue to plague us into the 21st century if we allow our work — and by extension ourselves — to be stripped of value and humanity. Through learning and empathy, we must rethink the way we collaborate and make ourselves whole again.
 
 [^1]: Or, as the employed philosophy major says to the unemployed philosophy major, ‘Would you like fries with that?’
-
 [^2]: Clients have their own divisions working against them. Those who decide are the same people writing the checks; not the hapless ‘end users’ about to have some dreary, convoluted software application foisted on them.
-
 [^3]: You’d think the pin shortage would be solved by now, right?

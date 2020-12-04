@@ -5,7 +5,7 @@
 <!--[if IE 9 ]><html class="ie9 no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" {{ with .Site.Language }}lang="{{ .Lang }}"{{ end }} prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
-  {{ $title := .Page.Title | markdownify | plainify }}
+  {{ $title := .Page.Title | markdownify | plainify | safeHTML }}
   {{ $ogImage := "/icon/goblindegook.png" | absURL }}
   {{ if .Page.Params.Image.Src }}
     {{ $ogImage = ((.Resources.GetMatch .Params.Image.Src).Fit "768x640").Permalink }}
@@ -32,7 +32,7 @@
   <meta property="og:image" content="{{ $ogImage }}">
   <meta property="og:type" content="website">
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title }}</title>
+  <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title | safeHTML }}</title>
   <link rel="canonical" href="{{ .Site.BaseURL }}">
   {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
   <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
