@@ -3,7 +3,7 @@
         <div class="sidebar-intro">
           {{ .Site.Params.intro | markdownify }}
         </div>
-        <nav class="sidebar-navigation" data-transition="navigation">
+        <nav class="sidebar-navigation" title="Site Navigation" data-transition="navigation">
           <ul class="sidebar-menu">
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
