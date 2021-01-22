@@ -66,7 +66,6 @@
     "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.6.0",
     "prettier": "^2.2.0",
-    "ramda": "^0.27.1",
     "stopwords-en": "^0.3.0",
     "stylelint": "^13.1.0",
     "stylelint-config-prettier": "^8.0.1",

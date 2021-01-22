@@ -1,18 +1,15 @@
 import { CountingBloomFilter } from '@pacote/bloom-filter'
 import stemmer from 'stemmer'
 
-interface IndexedDocument {
-  title: string
-  description?: string
-  url: string
-  filter: CountingBloomFilter<string>
-}
-
 export interface SearchResult {
   title: string
   description?: string
   url: string
-  matches: number
+}
+
+interface IndexedDocument {
+  summary: SearchResult
+  filter: CountingBloomFilter<string>
 }
 
 interface SearchOptions {
@@ -32,21 +29,19 @@ function withFilter(item: IndexedDocument): IndexedDocument {
 
 function search(index: IndexedDocument[], terms: string): SearchResult[] {
   const results = index
-    .map((item) => ({
-      title: item.title,
-      description: item.description,
-      url: item.url,
+    .map(({ summary, filter }) => ({
+      summary,
       matches: terms
         .split(/\s/)
         .filter((i) => i)
-        .reduce((acc, term) => acc + item.filter.has(stemmer(term)), 0),
+        .reduce((acc, term) => acc + filter.has(stemmer(term)), 0),
     }))
     .filter((result) => result.matches > 0)
     .sort((a, b) =>
       a.matches === b.matches ? 0 : a.matches > b.matches ? -1 : 1
     )
 
-  return results
+  return results.map((result) => result.summary)
 }
 
 export function createSearchHandler(userOptions: SearchOptions) {
@@ -74,7 +69,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
   let isLoading = false
   let previousTerms = ''
 
-  return async (event: Event) => {
+  return async (event: InputEvent) => {
     if (!isLoading && !index) {
       isLoading = true
       index = (await options.fetchIndex()).map(withFilter)
