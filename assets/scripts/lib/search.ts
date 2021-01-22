@@ -42,8 +42,6 @@ function search(index: IndexedDocument[], query: string): SearchResult[] {
       a.matches === b.matches ? 0 : a.matches > b.matches ? -1 : 1
     )
 
-  console.log(results)
-
   return results
 }
 
