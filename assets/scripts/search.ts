@@ -1,7 +1,7 @@
 /* globals Event */
 import fetch from 'unfetch'
 import { safeMarkdown } from './lib/markdown'
-import { createSearchHandler, SearchDocument } from './lib/search'
+import { createSearchHandler, SearchResult } from './lib/search'
 import { parseQueryString } from './lib/url'
 
 interface SearchOptions {
@@ -11,7 +11,7 @@ interface SearchOptions {
   useQueryString: boolean
   renderLoading: (t: string) => string
   renderNoResults: (t: string) => string
-  renderResult: (r: SearchDocument) => string
+  renderResult: (r: SearchResult) => string
 }
 
 function updateSearchOnEnter(event: KeyboardEvent): void {
@@ -39,8 +39,7 @@ function setupSearch({
   renderResult,
 }: SearchOptions): void {
   const searchHandler = createSearchHandler({
-    fetchCollection: () =>
-      fetch('/lunr-documents.json').then(({ json }) => json()),
+    fetchIndex: () => fetch('/search-index.json').then(({ json }) => json()),
     input,
     container,
     perPage,

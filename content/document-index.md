@@ -1,5 +1,5 @@
 ---
 type: data
 layout: document-index
-url: lunr-documents.json
+url: document-index.json
 ---

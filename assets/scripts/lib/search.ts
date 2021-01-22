@@ -1,53 +1,50 @@
-import lunr from 'lunr'
+import { CountingBloomFilter } from '@pacote/bloom-filter'
+import stemmer from 'stemmer'
 
-export interface SearchDocument {
-  [attribute: string]: any
-  content: string
-  description?: string
+export interface IndexedDocument {
   title: string
+  description?: string
   url: string
+  filter: CountingBloomFilter<string>
 }
 
-interface SearchIndex {
-  search(term: string): SearchDocument[]
+export interface SearchResult {
+  title: string
+  description?: string
+  url: string
+  matches: number
 }
 
 interface SearchOptions {
   input: HTMLInputElement
   container: HTMLElement
-  fetchCollection: () => Promise<SearchDocument[]>
+  fetchIndex: () => Promise<IndexedDocument[]>
   perPage?: number
   renderLoading?: (terms: string) => string
   renderNoResults?: (terms: string) => string
   renderPrompt?: () => string
-  renderResult?: (result: SearchDocument) => string
+  renderResult?: (result: SearchResult) => string
 }
 
-function buildIndex(entries: SearchDocument[]): lunr.Index {
-  return lunr(function () {
-    this.field('title', { boost: 10 })
-    this.field('categories', { boost: 3 })
-    this.field('tags', { boost: 3 })
-    this.field('description', { boost: 3 })
-    this.field('content')
-    this.ref('url')
+function search(index: IndexedDocument[], query: string): SearchResult[] {
+  const results = index
+    .map((item) => ({
+      title: item.title,
+      description: item.description,
+      url: item.url,
+      matches: query
+        .split(/\s/)
+        .filter((i) => i)
+        .reduce((acc, term) => acc + item.filter.has(stemmer(term)), 0),
+    }))
+    .filter((result) => result.matches > 0)
+    .sort((a, b) =>
+      a.matches === b.matches ? 0 : a.matches > b.matches ? -1 : 1
+    )
 
-    entries.forEach((entry) => {
-      this.add(entry)
-    })
-  })
-}
+  console.log(results)
 
-function createIndex(collection: SearchDocument[]): SearchIndex {
-  const index = buildIndex(collection)
-
-  return {
-    search: (query: string) =>
-      index
-        .search(query.trim())
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        .map((r) => collection.find((d) => d.url === r.ref)!),
-  }
+  return results
 }
 
 export function createSearchHandler(userOptions: SearchOptions) {
@@ -55,7 +52,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
     renderLoading: (terms: string) => `Loading search results for ${terms}.`,
     renderNoResults: (terms: string) => `No results found for ${terms}.`,
     renderPrompt: () => ``,
-    renderResult: (r: SearchDocument) => `<a href="${r.url}">${r.title}</a>`,
+    renderResult: (r: SearchResult) => `<a href="${r.url}">${r.title}</a>`,
     ...userOptions,
   }
 
@@ -71,15 +68,17 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
   }
 
-  let index: SearchIndex
+  let index: IndexedDocument[]
   let isLoading = false
   let previousTerms = ''
 
   return async (event: Event) => {
     if (!isLoading && !index) {
       isLoading = true
-      const collection = await options.fetchCollection()
-      index = createIndex(collection)
+      index = (await options.fetchIndex()).map((item) => ({
+        ...item,
+        filter: new CountingBloomFilter(item.filter),
+      }))
       isLoading = false
     }
 
@@ -98,7 +97,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
 
     if (!isLoading && index && terms !== previousTerms) {
-      const results = terms ? index.search(terms) : []
+      const results = terms ? search(index, terms) : []
       previousTerms = terms
       userOptions.container.innerHTML = results.length
         ? results
