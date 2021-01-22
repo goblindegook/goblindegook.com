@@ -58,6 +58,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-testing-library": "^3.10.1",
+    "html-entities": "^2.0.3",
     "jest": "^26.0.1",
     "pixrem": "^5.0.0",
     "postcss": "^8.1.9",

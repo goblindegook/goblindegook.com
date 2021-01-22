@@ -84,15 +84,17 @@ export function setupMainSearch(parent: ParentNode): void {
     renderLoading: () => `<li class="search-result-none">Loading...</li>`,
     renderNoResults: () =>
       `<li class="search-result-none">No results found.</li>`,
-    renderResult: (r) => `
+    renderResult: ({ url, title, description }) => `
       <li>
         <article class="search-result-single">
-          <h2 class="search-result-title"><a href="${r.url}">${safeMarkdown(
-      r.title
+          <h2 class="search-result-title"><a href="${url}">${safeMarkdown(
+      title
     )}</a></h2>
           ${
-            r.description
-              ? `<p class="search-result-preview">${r.description}</p>`
+            description
+              ? `<p class="search-result-preview">${safeMarkdown(
+                  description
+                )}</p>`
               : ''
           }
         </article>
@@ -118,9 +120,9 @@ export function setupSidebarSearch(parent: ParentNode): void {
       `<li class="sidebar-search-result-none">Loading...</li>`,
     renderNoResults: () =>
       `<li class="sidebar-search-result-none">No results found.</li>`,
-    renderResult: (r) =>
-      `<li class="sidebar-search-result-single"><a href="${
-        r.url
-      }">${safeMarkdown(r.title)}</a></li>`,
+    renderResult: ({ url, title }) =>
+      `<li class="sidebar-search-result-single"><a href="${url}">${safeMarkdown(
+        title
+      )}</a></li>`,
   })
 }

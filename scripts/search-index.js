@@ -1,90 +1,79 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { CountingBloomFilter, optimal } = require('@pacote/bloom-filter')
 const fs = require('fs')
 const path = require('path')
 const { times, uniq } = require('ramda')
+const { JSDOM } = require('jsdom')
+const createDOMPurify = require('dompurify')
+const { decode } = require('html-entities')
 const stemmer = require('stemmer')
 const stopwords = require('stopwords-en')
+
+const ERROR_RATE = 0.001
+const FILE_OPTIONS = { encoding: 'utf8' }
 
 const documentIndexFile = path.join('public', 'document-index.json')
 const searchIndexFile = path.join('public', 'search-index.json')
 
-const ERROR_RATE = 0.02
+const { window } = new JSDOM('')
+const DOMPurify = createDOMPurify(window)
 
-const documents = JSON.parse(
-  fs.readFileSync(documentIndexFile, {
-    encoding: 'utf8',
-  })
-)
+const stripHtml = (text) =>
+  DOMPurify.sanitize(decode(text), { ALLOWED_TAGS: ['#text'] })
+
+const normalize = (word) =>
+  word
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\W/gi, '')
+    .toLowerCase()
+
+const stopWords = (word) => word.length > 1 && !stopwords.includes(word)
 
 function process(text) {
-  return text
-    .split(/[\s-]/)
-    .map((word) =>
-      word
-        .replace(/\&[\w\d]+;/gi, '')
-        .replace(/[\.\?\(\)\[\]\{\}!,;:—·]/gi, '')
-        .toLowerCase()
-    )
-    .filter((i) => i.length > 1)
-    .filter((word) => !stopwords.includes(word))
-    .map((word) => stemmer(word))
+  return text.split(/[\s-]/).map(normalize).filter(stopWords).map(stemmer)
 }
 
 function addToFilter(filter, words, weight) {
   times(() => words.forEach((word) => filter.add(word)), weight)
 }
 
+const documents = JSON.parse(fs.readFileSync(documentIndexFile, FILE_OPTIONS))
+
 console.log(`Indexing ${documents.length} documents...`)
 
 const searchIndex = documents.map(
-  ({
-    url,
-    title = '',
-    description = '',
-    tags = [],
-    categories = [],
-    content = '',
-  }) => {
-    const titleTerms = process(title)
-    const descriptionTerms = process(description)
-    const tagTerms = process(tags.join(' '))
-    const categoryTerms = process(categories.join(' '))
-    const contentTerms = process(content)
+  ({ url, title = '', description = '', content = '' }) => {
+    const titleTerms = process(stripHtml(title))
+    const descriptionTerms = process(stripHtml(description))
+    const contentTerms = process(stripHtml(content))
 
-    const wordCount = uniq([
+    const uniqueTermCount = uniq([
       ...titleTerms,
       ...descriptionTerms,
-      ...tagTerms,
-      ...categoryTerms,
       ...contentTerms,
     ]).length
 
-    const filter = new CountingBloomFilter(optimal(wordCount, ERROR_RATE))
+    const filter = new CountingBloomFilter(optimal(uniqueTermCount, ERROR_RATE))
 
     addToFilter(filter, titleTerms, 5)
     addToFilter(filter, descriptionTerms, 3)
-    addToFilter(filter, tagTerms, 3)
-    addToFilter(filter, categoryTerms, 3)
     addToFilter(filter, contentTerms, 1)
 
     return {
       url,
       title,
       description,
-      filter: {
-        size: filter.size,
-        hashes: filter.hashes,
-        seed: filter.seed,
-        filter: Array.from(filter.filter),
-      },
+      filter: { ...filter, filter: Array.from(filter.filter) },
     }
   }
 )
 
 const serializedSearchIndex = JSON.stringify(searchIndex)
 
-fs.writeFileSync(searchIndexFile, serializedSearchIndex, { encoding: 'utf-8' })
+fs.writeFileSync(searchIndexFile, serializedSearchIndex, FILE_OPTIONS)
 
 console.log(
   `Search index written to ${searchIndexFile} (${serializedSearchIndex.length} bytes).`
