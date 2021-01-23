@@ -5,39 +5,39 @@ const { CountingBloomFilter, optimal } = require('@pacote/bloom-filter')
 const repeat = (times, fn) => Array(times).fill(null).forEach(fn)
 
 class BloomSearch {
-  items = []
+  index = []
 
   constructor({ errorRate, fields, summary, preprocess, stopwords, stemmer }) {
     this.errorRate = errorRate
-    this.fields = fields
+    this.fields = Array.isArray(fields)
+      ? fields.reduce((acc, field) => ({ ...acc, [field]: 1 }), {})
+      : fields
     this.summary = summary ?? ['id']
     this.preprocess = preprocess ?? ((text) => text)
     this.stemmer = stemmer ?? ((text) => text)
-    this.stopwords = stopwords ?? []
+    this.stopwords = stopwords ?? (() => true)
   }
 
-  normalize(term) {
-    return term.normalize('NFD').replace(/\W/gi, '').toLowerCase()
+  tokenizer(text) {
+    return text
+      .split(/\s/)
+      .map((term) => term.normalize('NFD').replace(/\W/gi, '').toLowerCase())
   }
 
   add(document, language) {
-    const terms = Object.keys(this.fields).reduce((acc, field) => {
-      acc[field] = this.preprocess(document[field])
-        .split(/\s/)
-        .map(this.normalize)
-        .filter((term) => term.length > 1 && !this.stopwords.includes(term))
-        .map((term) => this.stemmer(term, language))
+    const tokens = Object.keys(this.fields).reduce((acc, field) => {
+      acc[field] = this.tokenizer(this.preprocess(document[field]))
+        .filter((token) => this.stopwords(token, language))
+        .map((token) => this.stemmer(token, language))
       return acc
     }, {})
 
-    const uniqueTerms = new Set(Object.values(terms).flat()).size
+    const uniqTokens = new Set(Object.values(tokens).flat()).size
 
-    const filter = new CountingBloomFilter(optimal(uniqueTerms, this.errorRate))
+    const filter = new CountingBloomFilter(optimal(uniqTokens, this.errorRate))
 
     Object.entries(this.fields).forEach(([field, weight]) => {
-      repeat(weight ?? 1, () =>
-        terms[field].forEach((term) => filter.add(term))
-      )
+      repeat(weight, () => tokens[field].forEach((term) => filter.add(term)))
     })
 
     const entry = this.summary.reduce(
@@ -48,17 +48,7 @@ class BloomSearch {
       { summary: {}, filter }
     )
 
-    this.items.push(entry)
-  }
-
-  index() {
-    return this.items.map((entry) => ({
-      ...entry,
-      filter: {
-        ...entry.filter,
-        filter: Array.from(entry.filter.filter),
-      },
-    }))
+    this.index.push(entry)
   }
 }
 

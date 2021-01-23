@@ -25,13 +25,22 @@ const searchIndex = new BloomSearch({
   fields: { title: 5, description: 3, content: 1 },
   summary: ['url', 'title', 'description'],
   preprocess: (text) => decode(sanitize(text, { ALLOWED_TAGS: ['#text'] })),
-  stopwords,
+  stopwords: (term) => term.length > 1 && !stopwords.includes(term),
   stemmer,
 })
 
 documents.forEach((item) => searchIndex.add(item))
 
-const serializedSearchIndex = JSON.stringify(searchIndex.index())
+const serializedSearchIndex = JSON.stringify(
+  searchIndex.index.map((entry) => ({
+    ...entry,
+    filter: {
+      ...entry.filter,
+      filter: Array.from(entry.filter.filter),
+    },
+  }))
+)
+
 writeFileSync(searchIndexFile, serializedSearchIndex, 'utf8')
 
 console.log(
