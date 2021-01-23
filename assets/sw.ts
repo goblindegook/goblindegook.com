@@ -9,7 +9,7 @@ const PRECACHE_URLS = [
   '/',
   '/offline/index.html',
   '/index.html',
-  '/lunr-documents.json',
+  '/search-index.json',
 ]
 
 type ExtendableEvent = Event & {
