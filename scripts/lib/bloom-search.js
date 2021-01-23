@@ -21,7 +21,7 @@ class BloomSearch {
   tokenizer(text) {
     return text
       .split(/\s/)
-      .map((term) => term.normalize('NFD').replace(/\W/gi, '').toLowerCase())
+      .map((token) => token.normalize('NFD').replace(/\W/gi, '').toLowerCase())
   }
 
   add(document, language) {
@@ -37,7 +37,7 @@ class BloomSearch {
     const filter = new CountingBloomFilter(optimal(uniqTokens, this.errorRate))
 
     Object.entries(this.fields).forEach(([field, weight]) => {
-      repeat(weight, () => tokens[field].forEach((term) => filter.add(term)))
+      tokens[field].forEach((token) => repeat(weight, () => filter.add(token)))
     })
 
     const entry = this.summary.reduce(
