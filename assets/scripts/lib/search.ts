@@ -1,7 +1,7 @@
 import { BloomSearch } from '@pacote/bloom-search'
 import stemmer from 'stemmer'
 
-export interface SearchResult extends Record<string, unknown> {
+export type SearchResult = {
   url: string
   title: string
   description?: string
@@ -39,30 +39,28 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
   }
 
-  let index: BloomSearch<SearchResult, 'url' | 'title' | 'description', 'url'>
+  const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
+    errorRate: 0.0001,
+    fields: [],
+    summary: ['title', 'description', 'url'],
+    stemmer,
+  })
+
   let isLoading = false
+  let isReady = false
   let previousTerms = ''
 
   return async (event: InputEvent) => {
-    if (!isLoading && !index) {
+    if (!isLoading && !isReady) {
       isLoading = true
-      index = new BloomSearch<
-        SearchResult,
-        'url' | 'title' | 'description',
-        'url'
-      >({
-        errorRate: 0.0001,
-        fields: [],
-        summary: ['title', 'description', 'url'],
-        index: await options.fetchIndex(),
-        stemmer,
-      })
+      bs.load(await options.fetchIndex())
+      isReady = true
       isLoading = false
     }
 
     const terms = (event.target as HTMLInputElement).value || ''
 
-    if (terms && index) {
+    if (terms && isReady) {
       options.container.classList.add('search-active')
       window.addEventListener('click', deactivation)
     } else {
@@ -74,8 +72,8 @@ export function createSearchHandler(userOptions: SearchOptions) {
       userOptions.container.innerHTML = options.renderLoading(terms)
     }
 
-    if (!isLoading && index && terms !== previousTerms) {
-      const results = terms ? index.search(terms) : []
+    if (!isLoading && isReady && terms !== previousTerms) {
+      const results = terms ? bs.search(terms) : []
       previousTerms = terms
       userOptions.container.innerHTML = results.length
         ? results
