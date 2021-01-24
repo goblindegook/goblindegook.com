@@ -542,6 +542,20 @@
   dependencies:
     xxhashjs "^0.2.2"
 
+"@pacote/bloom-filter@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-filter/-/bloom-filter-0.2.0.tgz#e6c11a3d68253f9f4b8c273f6bb92b80badd84d0"
+  integrity sha512-eKNlUqejSov3QmfD6Idgq4PTExsD76R3C9V2uToQ0EOgUWRUW56eICEvizZbmefeS4Xys3WoV4f74tUL838f6Q==
+  dependencies:
+    xxhashjs "^0.2.2"
+
+"@pacote/bloom-search@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.1.0.tgz#be709529679daf11b499fd7a3b9a0031a4223d68"
+  integrity sha512-cPJ4N4iDWXqWLwsvgKOO4OSBAmJ0jODnagCSnf2hSUF69w71/Rqo8Jknn492cUtjdyvXlGhu6LTtlI8goYTJ7w==
+  dependencies:
+    "@pacote/bloom-filter" "^0.2.0"
+
 "@pacote/eslint-config-jest@^1.0.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@pacote/eslint-config-jest/-/eslint-config-jest-1.2.1.tgz#7daaa3d92a31a72df3329459a814d57d776824ff"

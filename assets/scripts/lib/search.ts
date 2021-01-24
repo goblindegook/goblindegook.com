@@ -1,47 +1,21 @@
-import { CountingBloomFilter } from '@pacote/bloom-filter'
+import { BloomSearch } from '@pacote/bloom-search'
 import stemmer from 'stemmer'
 
-export interface SearchResult {
+export interface SearchResult extends Record<string, unknown> {
+  url: string
   title: string
   description?: string
-  url: string
-}
-
-interface IndexedDocument {
-  summary: SearchResult
-  filter: CountingBloomFilter<string>
 }
 
 interface SearchOptions {
   input: HTMLInputElement
   container: HTMLElement
-  fetchIndex: () => Promise<IndexedDocument[]>
+  fetchIndex: () => Promise<any[]>
   perPage?: number
   renderLoading?: (terms: string) => string
   renderNoResults?: (terms: string) => string
   renderPrompt?: () => string
   renderResult?: (result: SearchResult) => string
-}
-
-function withFilter(item: IndexedDocument): IndexedDocument {
-  return { ...item, filter: new CountingBloomFilter(item.filter) }
-}
-
-function search(index: IndexedDocument[], terms: string): SearchResult[] {
-  const results = index
-    .map(({ summary, filter }) => ({
-      summary,
-      matches: terms
-        .split(/\s/)
-        .filter((i) => i)
-        .reduce((acc, term) => acc + filter.has(stemmer(term)), 0),
-    }))
-    .filter((result) => result.matches > 0)
-    .sort((a, b) =>
-      a.matches === b.matches ? 0 : a.matches > b.matches ? -1 : 1
-    )
-
-  return results.map((result) => result.summary)
 }
 
 export function createSearchHandler(userOptions: SearchOptions) {
@@ -65,14 +39,24 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
   }
 
-  let index: IndexedDocument[]
+  let index: BloomSearch<SearchResult, 'url' | 'title' | 'description', 'url'>
   let isLoading = false
   let previousTerms = ''
 
   return async (event: InputEvent) => {
     if (!isLoading && !index) {
       isLoading = true
-      index = (await options.fetchIndex()).map(withFilter)
+      index = new BloomSearch<
+        SearchResult,
+        'url' | 'title' | 'description',
+        'url'
+      >({
+        errorRate: 0.0001,
+        fields: [],
+        summary: ['title', 'description', 'url'],
+        index: await options.fetchIndex(),
+        stemmer,
+      })
       isLoading = false
     }
 
@@ -91,7 +75,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
     }
 
     if (!isLoading && index && terms !== previousTerms) {
-      const results = terms ? search(index, terms) : []
+      const results = terms ? index.search(terms) : []
       previousTerms = terms
       userOptions.container.innerHTML = results.length
         ? results
