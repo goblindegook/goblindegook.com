@@ -51,6 +51,8 @@ export function createSearchHandler(userOptions: SearchOptions) {
   let previousTerms = ''
 
   return async (event: InputEvent) => {
+    const terms = (event.target as HTMLInputElement).value || ''
+
     if (!isLoading && !isReady) {
       isLoading = true
       bs.load(await options.fetchIndex())
@@ -58,9 +60,11 @@ export function createSearchHandler(userOptions: SearchOptions) {
       isLoading = false
     }
 
-    const terms = (event.target as HTMLInputElement).value || ''
+    if (isLoading) {
+      userOptions.container.innerHTML = options.renderLoading(terms)
+    }
 
-    if (terms && isReady) {
+    if (isReady && terms) {
       options.container.classList.add('search-active')
       window.addEventListener('click', deactivation)
     } else {
@@ -68,11 +72,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
       window.removeEventListener('click', deactivation)
     }
 
-    if (isLoading) {
-      userOptions.container.innerHTML = options.renderLoading(terms)
-    }
-
-    if (!isLoading && isReady && terms !== previousTerms) {
+    if (isReady && terms !== previousTerms) {
       const results = terms ? bs.search(terms) : []
       previousTerms = terms
       userOptions.container.innerHTML = results.length
