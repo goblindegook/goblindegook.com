@@ -1,4 +1,4 @@
-import { BloomSearch } from '@pacote/bloom-search'
+import { BloomSearch, DocumentIndex } from '@pacote/bloom-search'
 import stemmer from 'stemmer'
 
 export type SearchResult = {
@@ -10,7 +10,7 @@ export type SearchResult = {
 interface SearchOptions {
   input: HTMLInputElement
   container: HTMLElement
-  fetchIndex: () => Promise<any[]>
+  fetchIndex: () => Promise<DocumentIndex<SearchResult, keyof SearchResult>>
   perPage?: number
   renderLoading?: (terms: string) => string
   renderNoResults?: (terms: string) => string

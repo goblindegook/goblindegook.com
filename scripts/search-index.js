@@ -30,16 +30,16 @@ const searchIndex = new BloomSearch({
   stemmer,
 })
 
-documents.forEach((item) => searchIndex.add(item))
+documents.forEach((item) => searchIndex.add(String(item.id), item))
 
 const serializedSearchIndex = JSON.stringify(
-  searchIndex.index.map((entry) => ({
-    ...entry,
-    filter: {
-      ...entry.filter,
-      filter: Array.from(entry.filter.filter),
-    },
-  }))
+  Object.entries(searchIndex.index).reduce((acc, [ref, entry]) => {
+    acc[ref] = {
+      ...entry,
+      filter: { ...entry.filter, filter: Array.from(entry.filter.filter) },
+    }
+    return acc
+  }, {})
 )
 
 writeFileSync(searchIndexFile, serializedSearchIndex, 'utf8')
