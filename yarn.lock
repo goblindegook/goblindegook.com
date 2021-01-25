@@ -535,19 +535,19 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@pacote/bloom-filter@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@pacote/bloom-filter/-/bloom-filter-0.2.0.tgz#e6c11a3d68253f9f4b8c273f6bb92b80badd84d0"
-  integrity sha512-eKNlUqejSov3QmfD6Idgq4PTExsD76R3C9V2uToQ0EOgUWRUW56eICEvizZbmefeS4Xys3WoV4f74tUL838f6Q==
+"@pacote/bloom-filter@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-filter/-/bloom-filter-0.3.0.tgz#3eb3a5571b9a965e9874282c60d3bcff793d8c09"
+  integrity sha512-YxeS9CJTgMaJtBczavyBp8nOoNWAfcHo/kA1Yt2l59JzUPzLvXxWdN3xEBGcc8f/qPD0aFWTIz88/CT0P50bMQ==
   dependencies:
     xxhashjs "^0.2.2"
 
-"@pacote/bloom-search@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.2.0.tgz#00f52ff2a6f39e1a6b4d3b4380224870c41e1347"
-  integrity sha512-9lc16icO7spClDFE334qSYdHnsefz27kzCvr07syrxm/VKgRt1yKwB9aOYyscy3Xh3t5pUNPO5TYNcljNnmg8A==
+"@pacote/bloom-search@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.3.0.tgz#f0b25a561a330f675a61a83192b81586a1364027"
+  integrity sha512-NN7kw0VhDUUPwP7prCgwBNciNghazjX6zLGHgGZ6iFI4bzTsW4DqUhYxRl4PBDqtXyv8LlIF/cNJWIO/riuMBw==
   dependencies:
-    "@pacote/bloom-filter" "^0.2.0"
+    "@pacote/bloom-filter" "^0.3.0"
 
 "@pacote/eslint-config-jest@^1.0.0":
   version "1.2.1"
