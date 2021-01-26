@@ -1,8 +1,9 @@
-import marked from 'marked'
+import snarkdown from 'snarkdown'
+import smartypants from 'smartypants'
 import DOMPurify from 'dompurify'
 
 export function safeMarkdown(text: string): string {
-  return DOMPurify.sanitize(marked(text, { smartypants: true })).replace(
+  return DOMPurify.sanitize(smartypants(snarkdown(text), 1)).replace(
     /<\/?p>/gi,
     ''
   )
