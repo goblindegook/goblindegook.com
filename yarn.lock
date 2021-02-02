@@ -543,9 +543,9 @@
     xxhashjs "^0.2.2"
 
 "@pacote/bloom-search@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.5.0.tgz#35c43d5983e38582c13274136a8c6ebe484662d5"
-  integrity sha512-fcFeGT79S1f/aFDbh7FLbe+Uw3B76oFSVt/iNt72VQEC32tR0yxsYUm/+BtrgkbZeet0uXuWEmhcV2q8LTpbDA==
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.5.1.tgz#e17651bc3920e5fba06ad30c9c260f4e9d4ac328"
+  integrity sha512-Ua/bv6AXU9QrTNuv5xLlSVl2ESN43paAPulw70kwFLfmnHuSlFSHrJ5opIoKKR7RzTRbbR9dDu/zoq2ZeAeEcA==
   dependencies:
     "@pacote/bloom-filter" "^0.3.1"
 
@@ -3419,10 +3419,11 @@ is-promise@^2.1.0:
   integrity sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==
 
 is-regex@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.1.tgz#c6f98aacc546f6cec5468a07b7b153ab564a57b9"
-  integrity sha512-1+QkEcxiLlB7VEyFtyBg94e08OAsvq7FUBgApTq/w2ymCLyKJgDPsybBENVtA7XCQEgEXxKPonG+mvYRxh/LIg==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.2.tgz#81c8ebde4db142f2cf1c53fc86d6a45788266251"
+  integrity sha512-axvdhb5pdhEVThqJzYXwMlVuZwC+FF2DpcOhTS+y/8jVq4trxyPgfcwIxIKiyeuLlSQYKkmUaPQJ8ZE4yNKXDg==
   dependencies:
+    call-bind "^1.0.2"
     has-symbols "^1.0.1"
 
 is-regexp@^2.0.0:
