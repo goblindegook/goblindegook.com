@@ -2,7 +2,7 @@ import { ITransitionPage, Trigger } from '@barba/core'
 import { fadeIn, fadeOut, delay } from '../lib/animate'
 
 function isArticleLink(trigger: Trigger): trigger is HTMLAnchorElement {
-  return typeof trigger === 'object' && !!trigger.closest('article')
+  return typeof trigger === 'object' && trigger.closest('article') !== null
 }
 
 export const articleTransition: ITransitionPage = {
@@ -11,8 +11,7 @@ export const articleTransition: ITransitionPage = {
   to: { namespace: ['page'] },
   async leave({ current, trigger }) {
     if (isArticleLink(trigger)) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const article = trigger.closest('article')!
+      const article = trigger.closest('article')
 
       document
         .querySelector('.archive-header')

@@ -1,4 +1,4 @@
-import barba, { ITransitionData } from '@barba/core'
+import barba from '@barba/core'
 import prefetch from '@barba/prefetch'
 import { setupFonts } from './scripts/fonts'
 import { setupFootnotes } from './scripts/footnotes'
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
 
   barba.use(prefetch)
 
-  barba.hooks.beforeEnter(({ next }: ITransitionData) => {
+  barba.hooks.beforeEnter(({ next }) => {
     window.scrollTo(0, 0)
     from(parser.parseFromString(next.html, 'text/html'))
       .replace('breadcrumbs')
