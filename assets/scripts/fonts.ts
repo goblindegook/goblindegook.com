@@ -5,7 +5,7 @@ export function setupFonts() {
     Alegreya: 'body-font-active',
     'Alegreya SC': 'small-caps-font-active',
     'Fira Sans': 'ui-font-active',
-    'Fira Code': 'code-font-active',
+    'Fira Mono': 'code-font-active',
   }
 
   WebFont.load({
@@ -14,7 +14,7 @@ export function setupFonts() {
         'Alegreya:n4,i4,n7,i7',
         'Alegreya SC:n4,n7',
         'Fira Sans:n4,i4',
-        'Fira Code:n3',
+        'Fira Mono:n4',
       ],
     },
     active: () => {

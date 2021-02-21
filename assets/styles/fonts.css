@@ -80,10 +80,10 @@
 
 @font-face {
   font-display: swap;
-  font-family: 'Fira Code';
+  font-family: 'Fira Mono';
   font-style: normal;
-  font-weight: 300;
-  src: local('Fira Code Light'), local('FiraCode-Light'),
-    url(/fonts/FiraCode-Light.woff2) format('woff2'),
-    url(/fonts/FiraCode-Light.woff) format('woff');
+  font-weight: 400;
+  src: local('Fira Mono Regular'), local('FiraMono-Regular'),
+    url(/fonts/FiraMono-Regular.woff2) format('woff2'),
+    url(/fonts/FiraMono-Regular.woff) format('woff');
 }
