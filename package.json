@@ -29,7 +29,7 @@
     ]
   },
   "devDependencies": {
-    "@pacote/eslint-config": "^4.1.0",
+    "@pacote/eslint-config": "^5.0.0",
     "@pacote/eslint-config-jest": "^1.0.0",
     "@types/dompurify": "^2.0.1",
     "@types/estimate": "^1.0.0",
