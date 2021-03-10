@@ -67,7 +67,7 @@
     "stopwords-en": "^0.3.0",
     "stylelint": "^13.1.0",
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard": "^21.0.0",
     "stylelint-prettier": "^1.1.2",
     "ts-jest": "^26.2.0",
     "tslib": "^2.0.0",
