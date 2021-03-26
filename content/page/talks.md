@@ -6,6 +6,12 @@ menu:
     weight: 30
 ---
 
+## Searching with Bloom Filters
+
+I built a search engine for my sites — it's small, fast, private, and doesn't require a server. Then I tried to explain it to a generalist audience in less than 15 minutes. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html) and the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search).
+
+- BOLT Talks (March 18, 2021 · Online)
+
 ## @testing-library
 
 Frontend test automation seems hard but it's only as hard as you make it. Are you bogged down by endless component tests and still not sure your application won't break? I talk about the advantages of testing your frontend from the perspective of the people using it, and bust some myths about unit testing and the supposed convenience of shallow component rendering. [View the _@testing-library_ talk slides.](https://goblindegook.github.io/talks/testing-library.html)
