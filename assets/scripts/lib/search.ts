@@ -1,5 +1,5 @@
 import { BloomSearch, DocumentIndex } from '@pacote/bloom-search'
-import stemmer from 'stemmer'
+import { stemmer } from 'stemmer'
 
 export type SearchResult = {
   url: string

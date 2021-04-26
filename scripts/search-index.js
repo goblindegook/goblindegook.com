@@ -7,7 +7,7 @@ const { JSDOM } = require('jsdom')
 const createDOMPurify = require('dompurify')
 const { decode } = require('html-entities')
 const stopwords = require('stopwords-en')
-const stemmer = require('stemmer')
+const { stemmer } = import('stemmer')
 const { BloomSearch } = require('@pacote/bloom-search')
 
 const documentIndexFile = path.join('public', 'document-index.json')
