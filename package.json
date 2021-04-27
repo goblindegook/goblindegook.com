@@ -9,7 +9,7 @@
     "postbuild": "yarn build:search",
     "build": "hugo --gc --minify",
     "build:preview": "yarn build -- --buildDrafts --buildFuture",
-    "build:search": "scripts/search-index.js",
+    "build:search": "node --experimental-json-modules scripts/search-index.mjs",
     "lint": "concurrently 'yarn lint:styles' 'yarn lint:scripts'",
     "lint:styles": "stylelint 'assets/**/*.css'",
     "lint:scripts": "eslint '{assets,test}/**/*.ts'",

@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { readFileSync, writeFileSync } = require('fs')
-const path = require('path')
-const { JSDOM } = require('jsdom')
-const createDOMPurify = require('dompurify')
-const { decode } = require('html-entities')
-const stopwords = require('stopwords-en')
-const { stemmer } = import('stemmer')
-const { BloomSearch } = require('@pacote/bloom-search')
+import { stemmer } from 'stemmer'
+import { readFileSync, writeFileSync } from 'fs'
+import path from 'path'
+import { JSDOM } from 'jsdom'
+import createDOMPurify from 'dompurify'
+import { decode } from 'html-entities'
+import { BloomSearch } from '@pacote/bloom-search'
+
+import stopwords from 'stopwords-en'
 
 const documentIndexFile = path.join('public', 'document-index.json')
 const searchIndexFile = path.join('public', 'search-index.json')
