@@ -22,7 +22,7 @@ Frontend test automation seems hard but it's only as hard as you make it. Are yo
 - [LuxembourgJS](https://www.meetup.com/luxembourgjs/events/272682228/) (November 4, 2020 · Online)
 - [Landing Festival](https://landingfestival.com) (June 29, 2019 · Lisbon, Portugal)
 - [Expert Talks](https://www.meetup.com/expert-talks-portugal/events/261679249/) (June 5, 2019 · Lisbon, Portugal)
-- [WordCamp Lisboa 2019](https://2019.lisboa.wordcamp.org) (May 18, 2019 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=LMy62Rk5wSo))
+- [WordCamp Lisboa 2019](https://2019.lisboa.wordcamp.org) (May 18, 2019 · Lisbon, Portugal) ([video](https://wordpress.tv/2019/06/10/luis-rodrigues-testing-components-with-react-testing-library/))
 - [require('lx')](https://www.meetup.com/require-lx/events/260341405/) (April 17, 2019 · Lisbon, Portugal)
 
 ## When Engineers Pair with Product Managers

@@ -9,7 +9,9 @@ noToc: true
 > NewStore. He is passionate about agile software development, test automation,
 > functional programming, and design.
 
-## My Talks
+## Portrait
+
+## My talks
 
 Interested in a topic I've already covered? Curious to see if the style and
 substance of my talks will fit your event? [Head over to the Talks list.](/talks/)
