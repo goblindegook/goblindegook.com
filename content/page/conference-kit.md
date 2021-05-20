@@ -6,8 +6,8 @@ noToc: true
 ## Biography
 
 > Luís Rodrigues is based in Lisbon, Portugal and works as a staff engineer at
-> NewStore. He is passionate about agile software development, test automation
-> and functional programming.
+> NewStore. He is passionate about agile software development, test automation,
+> functional programming, and design.
 
 ## My Talks
 
