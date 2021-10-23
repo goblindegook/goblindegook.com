@@ -157,14 +157,14 @@
 }
 
 .sidebar-search-results::after {
-  border-color: rgba(0, 255, 0, 0);
+  border-color: rgb(0 255 0 / 0%);
   border-bottom-color: var(--ui-overlay-background-color);
   border-width: 1rem;
   margin-left: -1rem;
 }
 
 .sidebar-search-results::before {
-  border-color: rgba(255, 0, 0, 0);
+  border-color: rgb(255 0 0 / 0%);
   border-width: calc(1rem + 2px);
   margin-left: calc(-1rem - 2px);
 }

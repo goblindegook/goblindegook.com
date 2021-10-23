@@ -101,6 +101,7 @@ img {
 figure {
   margin: 2rem auto;
   width: auto;
+
   & img {
     padding: 0;
   }

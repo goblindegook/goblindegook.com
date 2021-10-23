@@ -5,7 +5,7 @@
 
 .archive-header__fadeout {
   height: 0;
-  opacity: 0;
+  opacity: 0%;
   margin-bottom: 0;
   transition-duration: var(--page-transition-duration);
   transition-property: height margin-bottom opacity;
