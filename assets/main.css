@@ -1,7 +1,7 @@
 @import 'normalize.css';
 @import 'css-modularscale';
 @import 'animate.css';
-@import 'littlefoot';
+@import 'styles/littlefoot.css';
 @import 'styles/fonts.css';
 @import 'styles/variables.css';
 @import 'styles/base.css';
