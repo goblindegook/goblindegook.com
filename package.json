@@ -52,7 +52,7 @@
     "eslint-plugin-jest-dom": "^3.1.7",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-testing-library": "^5.0.0",
     "html-entities": "^2.0.3",
     "jest": "^27.3.1",
@@ -74,7 +74,7 @@
   "dependencies": {
     "@barba/core": "^2.9.7",
     "@barba/prefetch": "^2.1.10",
-    "@pacote/bloom-search": "^0.6.3",
+    "@pacote/bloom-search": "^0.7.0",
     "animate.css": "^4.1.0",
     "dompurify": "^2.0.3",
     "estimate": "^1.0.0",
