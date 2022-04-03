@@ -84,11 +84,10 @@ Keyboards eventually lost their spindly mechanical levers as engineers adapted t
 ---
 
 {{< figure
-alt="Smartphone showing an active on-screen QWERTY keyboard."
-class="align-right"
-src="ios-keyboard.png"
-
-> }}
+  alt="Smartphone showing an active on-screen QWERTY keyboard."
+  class="align-right"
+  src="ios-keyboard.png"
+>}}
 
 I picked the keyboard to illustrate my point because it’s such an obviously _unintuitable_ device, yet we keep returning to it even as the technology around it is overhauled. The keyboard on your smartphone’s touchscreen doesn’t look the way it does because its typebars might get jammed, or because someone still needs to decode Morse quickly, or because the layout is somehow better suited to thumb typing. The reason its design has not changed in over a century is simply that it became too familiar to be abandoned,[^3] and familiarity trumps many things in interface design.
 
