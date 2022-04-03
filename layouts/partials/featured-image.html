@@ -2,7 +2,6 @@
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
     {{ $featured := div $src.Width 2 | printf "%dx320" | $src.Fit }}
-    {{ $featuredLazy := $src.Fit "34x22" }}
     {{ $featured2x := printf "%dx640" $src.Width | $src.Fit }}
     {{ $featured340 := $src.Fit "340x224" }}
     {{ $featured680 := $src.Fit "680x224" }}

@@ -1,15 +1,15 @@
 ---
-title: "The Intuitive Interface Myth"
-description: "On how every interface must be learned."
-author: "Luís Rodrigues"
-slug: "intuitive-interface-myth"
-categories: [ "Design" ]
-tags: [ "design" ]
+title: 'The Intuitive Interface Myth'
+description: 'On how every interface must be learned.'
+author: 'Luís Rodrigues'
+slug: 'intuitive-interface-myth'
+categories: ['Design']
+tags: ['design']
 date: 2016-04-11T12:00:00+01:00
 image:
-  src: "hansen-writing-ball.jpg"
-  caption: "A Writing Ball at the Technischen Sammlungen Dresden, 2016. Pavel Eremeev, CC BY-SA 4.0."
-  alt: "An early typewriter whose keys were mounted on a hemispherical head"
+  src: 'hansen-writing-ball.jpg'
+  caption: 'A Writing Ball at the Technischen Sammlungen Dresden, 2016. Pavel Eremeev, CC BY-SA 4.0.'
+  alt: 'An early typewriter whose keys were mounted on a hemispherical head'
 draft: false
 ---
 
@@ -51,7 +51,7 @@ Typewriters surged in popularity during the 19th century, following the producti
 
 Roughly at the same time as Hansen, American inventor Christopher Latham Sholes, together with Carlos Glidden, Samuel Willard Soulé, and James Densmore, was working on a related device. The keys on their first prototype were repurposed from a piano, in two rows of ivory and ebony, and heavily inspired by the existing Hughes-Phelps Printing Telegraph. More on the telegraph in a while — for now, I merely wish to draw your attention to its keyboard layout:
 
-<img src="sholes-keyboard.svg" alt="Alphabetical key layout on an early typewriter prototype." class="align-center">
+<img loading="lazy" src="sholes-keyboard.svg" alt="Alphabetical key layout on an early typewriter prototype." class="align-center">
 
 Yes, in the Sholes & Glidden prototype, keys were arranged _alphabetically_.
 
@@ -81,13 +81,14 @@ Christopher Shole’s partners eventually dropped out of the typewriter project,
 
 Keyboards eventually lost their spindly mechanical levers as engineers adapted the teletype into an input device for electronic computers. With mass adoption of touchscreen devices, keyboards even lost their actual physical keys. Yet the QWERTY layout survives, and even ergonomic improvements like the ones introduced by August Dvorak in the 1930s or Shai Coleman in the 2000s did little to displace it, having only been embraced by a minority of enthusiasts.
 
-* * *
+---
 
 {{< figure
-  alt="Smartphone showing an active on-screen QWERTY keyboard."
-  class="align-right"
-  src="ios-keyboard.png"
->}}
+alt="Smartphone showing an active on-screen QWERTY keyboard."
+class="align-right"
+src="ios-keyboard.png"
+
+> }}
 
 I picked the keyboard to illustrate my point because it’s such an obviously _unintuitable_ device, yet we keep returning to it even as the technology around it is overhauled. The keyboard on your smartphone’s touchscreen doesn’t look the way it does because its typebars might get jammed, or because someone still needs to decode Morse quickly, or because the layout is somehow better suited to thumb typing. The reason its design has not changed in over a century is simply that it became too familiar to be abandoned,[^3] and familiarity trumps many things in interface design.
 
@@ -104,7 +105,5 @@ Think about the times you threw your arms up in frustration because users did so
 Mind that gap, and avoid designing for an audience who exists only inside your head. To create an interface that’s familiar to people, it helps first of all to make those people familiar to you.
 
 [^1]: If any. The jury is still out on psychological nativism, which concerns itself with instinctual knowledge and is a great subject for some other time. Even so, researchers like Noam Chomsky and Steven Pinker have focused primarily on linguistic ability, not the knack for pressing buttons and pointing cursors at rectangles on a screen. Other people may _feel_ there must be some magical way of acquiring knowledge, but the least helpful approach to an eminently empirical field like computer interface design is to start invoking the supernatural. Best not to rely on some extraordinary ability to draw knowledge from a Platonic reservoir of memories or shared universal consciousness.
-
 [^2]: A few countries developed slightly adjusted layouts better suited to their languages, like the AZERTY layout for French and QWERTZ for German. [In 1937, Portugal’s dictatorship devised the significantly different HCESAR layout](https://dre.pt/application/dir/pdf1sdip/1937/07/16500/06910692.pdf), which hung around until the rise of imported personal computers in the 1980s caused it to fall out of favour.
-
 [^3]: Economists call the overwhelming weight of history in current circumstances _[path dependence](http://www.econ.ucsb.edu/%7Etedb/Courses/Ec100C/DavidQwerty.pdf)._ You may think of it as a hangover that takes decades to wear off.

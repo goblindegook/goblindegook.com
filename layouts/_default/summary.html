@@ -16,7 +16,8 @@
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a tabindex="-1" href="{{ .Permalink }}" rel="bookmark">
-        <img class="lazy archive-entry-thumbnail"
+        <img
+          class="lazy archive-entry-thumbnail"
           src="data:{{ $featuredLazy.MediaType }};base64,{{ $featuredLazy.Content | base64Encode }}"
           height="{{ $featured.Height }}"
           width="{{ $featured.Width }}"
@@ -27,8 +28,11 @@
           {{ end }}
         >
         <noscript>
-          <img class="archive-entry-thumbnail"
+          <img
+            loading="lazy"
+            class="archive-entry-thumbnail"
             src="{{ $featured.RelPermalink }}"
+            srcset="{{ $featured2x.RelPermalink }} 2x"
             height="{{ $featured.Height }}"
             width="{{ $featured.Width }}"
             {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}

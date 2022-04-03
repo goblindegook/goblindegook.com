@@ -7,7 +7,8 @@
 
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
   {{ if .Get "link" }}<a href="{{ . }}">{{ end }}
-    <img class="lazy"
+    <img
+      class="lazy"
       src="data:{{ $imageLazy.MediaType }};base64,{{ $imageLazy.Content | base64Encode }}"
       height="{{ $image2x.Height }}"
       width="{{ $image2x.Width }}"
@@ -28,9 +29,22 @@
       {{ end }}
     >
     <noscript>
-      <img src="{{ $image.RelPermalink }}"
-        height="{{ $image.Height }}"
-        width="{{ $image.Width }}"
+      <img
+        loading="lazy"
+        src="{{ $image2x.RelPermalink }}"
+        srcset="
+          {{ $image340.RelPermalink }} 340w,
+          {{ $image680.RelPermalink }} 680w,
+          {{ $image.RelPermalink }} 1x,
+          {{ $image2x.RelPermalink }} 2x
+        "
+        height="{{ $image2x.Height }}"
+        width="{{ $image2x.Width }}"
+        sizes="
+          (max-width: 340px) 340w,
+          (max-width: 680px) 680w,
+          100%
+        "
         {{ if or (.Get "alt") (.Get "caption") }}
           alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"
         {{ end }}
