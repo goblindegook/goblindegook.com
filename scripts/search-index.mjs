@@ -9,7 +9,7 @@ import createDOMPurify from 'dompurify'
 import { decode } from 'html-entities'
 import { BloomSearch } from '@pacote/bloom-search'
 
-import stopwords from 'stopwords-en'
+import stopwords from 'stopwords-en' assert { type: 'json' }
 
 const documentIndexFile = path.join('public', 'document-index.json')
 const searchIndexFile = path.join('public', 'search-index.json')
