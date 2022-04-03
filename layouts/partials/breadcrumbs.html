@@ -1,6 +1,6 @@
 {{ $position := 1 }}
 {{ $current := . }}
-{{ range $index, $element := (seq 1 (len (split .URL "/"))) }}
+{{ range $index, $element := (seq 1 (len (split .RelPermalink "/"))) }}
   {{ if $current.Parent }}
     {{ $current = $current.Parent }}
     {{ if not ($current.Param "noBreadcrumb") }}
