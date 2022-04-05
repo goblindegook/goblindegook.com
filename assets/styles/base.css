@@ -155,18 +155,6 @@ s::selection {
   display: inherit;
 }
 
-.lazy {
-  filter: blur(10px);
-  transition-duration: 0.5s;
-  transition-property: filter;
-  transition-timing-function: ease-out;
-}
-
-.lazy.loaded {
-  filter: blur(0);
-}
-
-.no-js .lazy,
 .no-js .search,
 .no-js .sidebar-search {
   display: none;

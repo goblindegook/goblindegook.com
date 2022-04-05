@@ -4,7 +4,6 @@ import { setupFonts } from './scripts/fonts'
 import { setupFootnotes } from './scripts/footnotes'
 import { setupHash } from './scripts/hash'
 import { setupHeader } from './scripts/header'
-import { setupLazyLoad } from './scripts/lazyLoad'
 import { setupMasonry } from './scripts/masonry'
 import { setupProgress } from './scripts/progress'
 import { setupMainSearch, setupSidebarSearch } from './scripts/search'
@@ -30,7 +29,6 @@ window.addEventListener('load', () => {
   setupFonts()
   setupSidebarSearch(document)
   setupHeader(document)
-  setupLazyLoad(document)
   triggerEvent(window, 'scroll')
 
   barba.use(prefetch)
@@ -42,7 +40,6 @@ window.addEventListener('load', () => {
       .replace('navigation')
 
     setupHeader(document)
-    setupLazyLoad(next.container)
     triggerEvent(window, 'scroll')
   })
 

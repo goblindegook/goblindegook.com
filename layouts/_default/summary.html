@@ -11,35 +11,20 @@
   </header>
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
-    {{ $featuredLazy := $src.Fit "34x16" }}
     {{ $featured := $src.Fit "340x160" }}
     {{ $featured2x := $src.Fit "680x320" }}
     <figure class="archive-entry-thumbnail-wrapper">
       <a tabindex="-1" href="{{ .Permalink }}" rel="bookmark">
         <img
-          class="lazy archive-entry-thumbnail"
-          src="data:{{ $featuredLazy.MediaType }};base64,{{ $featuredLazy.Content | base64Encode }}"
+          class="archive-entry-thumbnail"
+          src="{{ $featured.RelPermalink }}"
+          srcset="{{ $featured2x.RelPermalink }} 2x"
           height="{{ $featured.Height }}"
           width="{{ $featured.Width }}"
-          data-src="{{ $featured.RelPermalink }}"
-          data-srcset="{{ $featured2x.RelPermalink }} 2x"
           {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
             alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
           {{ end }}
         >
-        <noscript>
-          <img
-            loading="lazy"
-            class="archive-entry-thumbnail"
-            src="{{ $featured.RelPermalink }}"
-            srcset="{{ $featured2x.RelPermalink }} 2x"
-            height="{{ $featured.Height }}"
-            width="{{ $featured.Width }}"
-            {{ if or (.Params.Image.Alt) (.Params.Image.Caption) }}
-              alt="{{ with .Params.Image.Alt }}{{.}}{{ else }}{{ .Params.Image.Caption }}{{ end }}"
-            {{ end }}
-          >
-        </noscript>
       </a>
     </figure>
   {{ end }}

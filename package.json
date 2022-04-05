@@ -87,7 +87,6 @@
     "snarkdown": "^2.0.0",
     "stemmer": "^2.0.0",
     "unfetch": "^4.0.1",
-    "vanilla-lazyload": "^17.3.0",
     "webfontloader": "^1.6.28"
   }
 }
