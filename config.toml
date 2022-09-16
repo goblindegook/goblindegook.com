@@ -43,3 +43,17 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = "node_modules/normalize.css/normalize.css"
+    target = "assets/normalize.css"
+  [[module.mounts]]
+    source = "node_modules/css-modularscale/index.css"
+    target = "assets/css-modularscale"
+  [[module.mounts]]
+    source = "node_modules/animate.css/animate.css"
+    target = "assets/animate.css"
