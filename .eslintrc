@@ -1,3 +1,4 @@
 {
-  "extends": ["@pacote/eslint-config", "@pacote/eslint-config-jest"]
+  "plugins": ["testing-library", "vitest"],
+  "extends": ["@pacote/eslint-config"]
 }
