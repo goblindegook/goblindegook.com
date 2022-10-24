@@ -69,12 +69,14 @@
       "@type": "Person",
       "url": "{{ .Site.BaseURL | safeHTML }}",
       "sameAs": [
+        "https:\/\/github.com\/goblindegook",
         "https:\/\/www.instagram.com\/goblindegook\/",
         "https:\/\/www.linkedin.com\/in\/luispedrorodrigues",
         "https:\/\/twitter.com\/goblindegook"
       ],
       "@id": "#person",
-      "name": "{{ .Site.Params.Author }}"
+      "name": "{{ .Site.Params.Author }}",
+      "rel": "me"
     }
   </script>
 </head>
