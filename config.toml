@@ -15,9 +15,10 @@ enableRobotsTXT = true
   author = "Luís Rodrigues"
   tagline = "Full of IT."
   description = "Luís Rodrigues writing about software development, design, and literature."
-  intro = "My name is Luís Rodrigues and this site collects my writing.\n\nI'm <a href=\"https://twitter.com/goblindegook\" rel=\"me\">@goblindegook</a> on Twitter. Come by and say hello."
+  intro = "My name is Luís Rodrigues and this site collects my writing.\n\nI'm <a href=\"https://mastodon.social/@goblindegook\" rel=\"me\">@goblindegook@mastodon.social</a> on Mastodon. Come by and say hello."
   disclaimer = "Opinions my own, unless borrowed."
   twitter = "@goblindegook"
+  mastodon = "@goblindegook@mastodon.social"
   searchPrefill = "Search goblindegook"
   searchSite = "goblindegook.com"
   mainSections = ["post", "til", "echomatic"]
