@@ -35,6 +35,7 @@
   <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title | safeHTML }}</title>
   <link rel="canonical" href="{{ .Site.BaseURL }}">
   {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
+  <link rel="preload" as="style" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <link rel="manifest" href="/manifest.webmanifest">
   {{ range .AlternativeOutputFormats -}}
@@ -49,8 +50,11 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon/goblindegook-32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/icon/goblindegook-16.png">
 	<link rel="apple-touch-icon" href="/icon/goblindegook-180.png">
-  <link rel="webmention" href="https://webmention.io/goblindegook.com/webmention">
+  <link rel="me" href="https://github.com/goblindegook">
+  <link rel="me" href="https://mastodon.social/@goblindegook">
+  <link rel="me" href="https://twitter.com/goblindegook">
   <link rel="pingback" href="https://webmention.io/goblindegook.com/xmlrpc">
+  <link rel="webmention" href="https://webmention.io/goblindegook.com/webmention">
   <script type="application/ld+json">
     {
       "@context": "http:\/\/schema.org",
@@ -72,9 +76,10 @@
       "url": "{{ .Site.BaseURL | safeHTML }}",
       "sameAs": [
         "https:\/\/github.com\/goblindegook",
+        "https:\/\/mastodon.social\/@goblindegook",
+        "https:\/\/twitter.com\/goblindegook",
         "https:\/\/www.instagram.com\/goblindegook\/",
-        "https:\/\/www.linkedin.com\/in\/luispedrorodrigues",
-        "https:\/\/twitter.com\/goblindegook"
+        "https:\/\/www.linkedin.com\/in\/luispedrorodrigues"
       ],
       "@id": "#person",
       "name": "{{ .Site.Params.Author }}",
