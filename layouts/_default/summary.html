@@ -16,6 +16,7 @@
     <figure class="archive-entry-thumbnail-wrapper">
       <a tabindex="-1" href="{{ .Permalink }}" rel="bookmark">
         <img
+          loading="lazy"
           class="archive-entry-thumbnail"
           src="{{ $featured.RelPermalink }}"
           srcset="{{ $featured2x.RelPermalink }} 2x"

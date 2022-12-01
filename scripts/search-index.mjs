@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 import { stemmer } from 'stemmer'
 import { readFileSync, writeFileSync } from 'fs'
 import path from 'path'
