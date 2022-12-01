@@ -8,7 +8,6 @@
     {{ $featured768 := $src.Fit "768x640" }}
     {{ $featured1536 := $src.Fit "1536x640" }}
     <img
-      loading="lazy"
       height="{{ $featured.Height }}"
       width="{{ $featured.Width }}"
       src="{{ $featured.RelPermalink }}"
