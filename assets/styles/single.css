@@ -116,36 +116,8 @@
   }
 
   & a {
-    background-color: transparent;
-    background-image: linear-gradient(
-        var(--body-background-color),
-        var(--body-background-color)
-      ),
-      linear-gradient(
-        var(--body-background-color),
-        var(--body-background-color)
-      ),
-      linear-gradient(var(--link-color), var(--link-color));
-    background-position: 0 85%, 100% 85%, 0 85%;
-    background-repeat: no-repeat, no-repeat, repeat-x;
-    background-size: 1px 1px, 1px 1px, 1px 1px;
-    text-decoration: none;
-    text-shadow: 0.02em 0 var(--body-background-color),
-      -0.02em 0 var(--body-background-color),
-      0 0.02em var(--body-background-color),
-      0 -0.02em var(--body-background-color),
-      0.04em 0 var(--body-background-color),
-      -0.04em 0 var(--body-background-color),
-      0.06em 0 var(--body-background-color),
-      -0.06em 0 var(--body-background-color),
-      0.08em 0 var(--body-background-color),
-      -0.08em 0 var(--body-background-color),
-      0.1em 0 var(--body-background-color),
-      -0.1em 0 var(--body-background-color),
-      0.12em 0 var(--body-background-color),
-      -0.12em 0 var(--body-background-color),
-      0.14em 0 var(--body-background-color),
-      -0.14em 0 var(--body-background-color);
+    text-decoration: underline;
+    text-decoration-color: var(--underline-color);
   }
 
   & h2 + p::first-line,

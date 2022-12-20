@@ -8,6 +8,18 @@ menu:
 
 A list of the talks I have delivered over the years.
 
+## Backwards Compatible API Design
+
+Despite the benefits of agile, iterative software development, public <abbr title="Application Programming Interface">APIs</abbr> are not amenable to trial-and-error approaches. Only incremental changes are safe — and this is assuming they don't change the semantics of the API. In this presentation I enumerate the pitfalls of evolving public interfaces and present a number of strategies to deal with growth and ensure robustness.
+
+- Private event (November 16, 2022)
+
+## Sharing Is Not Caring
+
+Too many software developers are obsessed with keeping their code free from repetition. Too many lift poorly-abstracted, tightly-coupled code into shared libraries used across microservices. In the process, the goal of maintainability is lost, sometimes spectacularly.
+
+- Private event (June 16, 2021)
+
 ## Searching with Bloom Filters
 
 I built a search engine for my sites — it's small, fast, private, and doesn't require a server. Then I tried to explain it to a generalist audience in less than 15 minutes. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html) and the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search).

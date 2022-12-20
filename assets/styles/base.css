@@ -129,18 +129,13 @@ s {
 
 del::after,
 s::after {
-  border-top: 2px solid var(--highlight-color);
+  border-top: 2px solid var(--underline-color);
   bottom: 0;
   content: '';
   height: 50%;
   left: 0;
   position: absolute;
   width: 100%;
-}
-
-del::selection,
-s::selection {
-  background-color: var(--highlight-color);
 }
 
 .hidden {

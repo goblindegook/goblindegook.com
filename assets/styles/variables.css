@@ -11,6 +11,7 @@
   --body-background-alt-color: #f0f0f0;
   --body-color: #333;
   --link-color: #ae8d21;
+  --underline-color: #7e394090;
   --highlight-color: #ae8d21;
   --active-color: #d2b450;
   --ui-text-color: #fafafa;
@@ -46,6 +47,7 @@
   :root {
     --link-color: #be9d31;
     --highlight-color: #be9d31;
+    --underline-color: #ae8d21;
     --ui-active-background-color: #be9d31;
     --body-color: #fafafa;
     --body-background-color: #333;
