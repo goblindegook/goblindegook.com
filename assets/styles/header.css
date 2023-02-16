@@ -5,11 +5,11 @@
   font-size: var(--ms1);
   font-style: normal;
   font-weight: 400;
-  height: 7.5rem;
+  height: 3.5rem;
   margin: 0;
-  padding: 4rem 0 0;
+  padding: 0;
   position: fixed;
-  top: -4rem;
+  top: 0;
   width: 100%;
   z-index: 8;
 }
@@ -19,11 +19,12 @@
   margin: 0.6rem auto;
   display: grid;
   grid-template-columns: auto 10rem;
+  gap: 1rem;
 }
 
 @media (--narrow-viewport) {
   .site-header {
-    height: calc(env(safe-area-inset-top) + 7.5rem);
+    height: calc(env(safe-area-inset-top) + 3.5rem);
   }
 
   .site-header-wrapper {
@@ -47,9 +48,9 @@
 }
 
 .breadcrumb-trail {
-  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: clip;
 }
 
 .trail-items {
@@ -80,12 +81,12 @@
   padding: 0 0.2rem;
 }
 
-.trail-begin {
+.trail-item:first-of-type {
   font-size: var(--ms1);
   padding-left: 0;
 }
 
-.trail-begin::before {
+.trail-item:first-of-type::before {
   font-size: var(--ms0);
   content: '';
   padding: 0;

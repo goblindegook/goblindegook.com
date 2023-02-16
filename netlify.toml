@@ -6,7 +6,7 @@
   command = "yarn build:preview"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.102.3"
+  HUGO_VERSION = "0.110.0"
 
 [context.production.environment]
-  HUGO_VERSION = "0.102.3"
+  HUGO_VERSION = "0.110.0"

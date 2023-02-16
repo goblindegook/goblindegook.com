@@ -1,57 +1,34 @@
-{{ $position := 1 }}
-{{ $current := . }}
-{{ range $index, $element := (seq 1 (len (split .RelPermalink "/"))) }}
-  {{ if $current.Parent }}
-    {{ $current = $current.Parent }}
-    {{ if not ($current.Param "noBreadcrumb") }}
-      {{ $position = (add $position 1) }}
-    {{ end}}
-  {{ end }}
-{{ end }}
-
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
   <ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
-    {{- template "breadcrumbitemlistelement" (dict "current" . "leaf" . "position" $position) -}}
-  </ol>
-</nav>
-
-{{ define "breadcrumbitemlistelement" }}
-  {{ $step := 1 }}
-  {{ if (.current.Param "noBreadcrumb") }}
-    {{ $step = 0 }}
-  {{ end }}
-  {{ if .current.Parent }}
-    {{ template "breadcrumbitemlistelement" (dict "current" .current.Parent "leaf" .leaf "position" (sub .position $step)) }}
-  {{ else if not .current.IsHome }}
-    {{ template "breadcrumbitemlistelement" (dict "current" .current.Site.Home "leaf" .leaf "position" (sub .position $step)) }}
-  {{ end }}
-  {{ if not (.current.Param "noBreadcrumb") }}
+    {{- range .Ancestors.Reverse }}
     <li
       itemprop="itemListElement"
       itemscope
       itemtype="http://schema.org/ListItem"
-      class="trail-item {{ if .current.IsHome }}trail-begin{{ end }} {{ if eq .current .leaf }}trail-end{{ end }}"
+      class="trail-item"
     >
-      {{ if eq .current .leaf }}
-        {{- template "breadcrumbname" (dict "current" .current "leaf" .leaf) -}}
-      {{ else }}
-        <a
-          href="{{ .current.Permalink }}"
-          itemprop="item"
-          itemscope
-          itemtype="https://schema.org/WebPage"
-          itemid="{{ .current.Permalink }}"
-        >
-          {{- template "breadcrumbname" (dict "current" .current "leaf" .leaf) -}}
-        </a>
-      {{ end }}
-      <meta itemprop="position" content="{{ .position }}" />
+      <a
+        href="{{ .RelPermalink }}"
+        itemprop="item"
+        itemscope
+        itemtype="https://schema.org/WebPage"
+        itemid="{{ .RelPermalink }}"
+      >
+        <span itemprop="name">
+          {{- .Param "breadcrumb" | default .Title | markdownify -}}
+        </span>
+      </a>
     </li>
-  {{end}}
-{{ end }}
-
-{{ define "breadcrumbname" }}
-  <span itemprop="name" {{ if eq .current .leaf }}aria-current="page"{{ end }}>
-    {{- .current.Param "breadcrumb" | default .current.Title | markdownify -}}
-  </span>
-{{ end }}
+    {{- end }}
+    <li
+      itemprop="itemListElement"
+      itemscope
+      itemtype="http://schema.org/ListItem"
+      class="trail-item"
+    >
+      <span itemprop="name" aria-current="page">
+        {{- .Param "breadcrumb" | default .Title | markdownify -}}
+      </span>
+    </li>
+  </ol>
+</nav>
