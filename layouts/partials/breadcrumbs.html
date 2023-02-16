@@ -1,6 +1,7 @@
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
   <ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
     {{- range .Ancestors.Reverse }}
+    {{- if not (.Param "noBreadcrumb") }}
     <li
       itemprop="itemListElement"
       itemscope
@@ -19,6 +20,7 @@
         </span>
       </a>
     </li>
+    {{- end }}
     {{- end }}
     <li
       itemprop="itemListElement"
