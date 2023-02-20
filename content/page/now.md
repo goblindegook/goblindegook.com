@@ -7,7 +7,7 @@ draft: false
 ---
 
 - I live in Rome, Italy, where I work remotely as a staff engineer for [NewStore](https://www.newstore.com/).
-- Reading _The Dawn of Everything: A New History of Humanity_ by David Graeber and David Wengrow, _Come ordinare una biblioteca_ by Roberto Calasso, and _The Dragon Griaule_ by Lucius Shepard.
-- Playing [_Destiny 2_](https://www.destinythegame.com) and [_Hades_](https://www.supergiantgames.com/games/hades) on the PlayStation 4 and GeForce Now.
+- Taking lessons and re-learning how to play the piano.
+- Reading _A Factotum in the Book Trade_ by Marius Kociejowski and _The Dawn of Everything: A New History of Humanity_ by David Graeber and David Wengrow.
+- Playing [_Destiny 2_](https://www.destinythegame.com) and [_God of War Ragnarök_](https://godofwar.playstation.com/) on the PlayStation 5.
 - Restoring the [_Fantastic Metropolis_](https://fantasticmetropolis.com/) site archive.
-- Learning photography with a a dummy-level Nikon D3300 DSLR camera.

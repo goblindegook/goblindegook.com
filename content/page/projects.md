@@ -1,6 +1,6 @@
 ---
-title: "Projects"
-author: "Luís Rodrigues"
+title: 'Projects'
+author: 'Luís Rodrigues'
 date: 2017-06-27T12:00:00+01:00
 draft: false
 menu:
@@ -14,7 +14,7 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 : A collection of utilities written in TypeScript and distributed under the [`@pacote` organisation on NPM](https://www.npmjs.com/org/pacote).
 
 [littlefoot](https://www.npmjs.com/package/littlefoot)
-: A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](http://www.bigfootjs.com) for delightful footnotes, as used on this site.[^littlefoot]
+: A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](https://github.com/lemonmade/bigfoot) for delightful footnotes, as used on this site.[^littlefoot]
 
 [Gatsby Starter (TypeScript)](https://github.com/goblindegook/gatsby-starter-typescript)
 : A [Gatsby](https://www.gatsbyjs.org) static site starter using TypeScript with support for offline viewing, local search, responsive images, syntax highlighting, and Markdown content.
