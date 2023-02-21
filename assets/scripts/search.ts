@@ -113,7 +113,7 @@ export function setupSidebarSearch(): void {
   root.innerHTML = `
     <label class="sidebar-search-label">
       <svg class="sidebar-search-icon" title="Search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg>
-      <input class="sidebar-search-input" name="q" placeholder="Enter search terms" type="search" value="" autocomplete="off">
+      <input class="sidebar-search-input" name="q" placeholder="Search terms" type="search" value="" autocomplete="off">
     </label>
     <ul class="sidebar-search-results"></ul>`
 
