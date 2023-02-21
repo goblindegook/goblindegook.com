@@ -128,7 +128,7 @@
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  padding: 0rem;
+  padding: 0;
   vertical-align: middle;
   fill: var(--ui-overlay-background-color);
 }
@@ -221,7 +221,6 @@
   }
 
   .sidebar-search-input {
-    /* transition-property: width; */
     width: 2rem;
   }
 
@@ -236,8 +235,6 @@
     grid-column: span 2;
 
     & .sidebar-search-input {
-      /* transition-duration: 0.2s; */
-      /* transition-timing-function: ease-in; */
       width: 100%;
     }
   }
