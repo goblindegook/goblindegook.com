@@ -101,7 +101,7 @@
                 <li class="trail-item trail-begin">
                   <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
                 </li>
-                <li class="trail-item trail-end">
+                <li class="trail-item trail-tagline trail-end">
                   <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
                 </li>
               </ul>
@@ -110,11 +110,7 @@
             {{ partial "breadcrumbs.html" . }}
           {{ end }}
         </div>
-        <div class="sidebar-search">
-          <input aria-label="Search" class="sidebar-search-input" name="q"
-            placeholder="Enter search terms" type="search" value=""
-            autocomplete="off">
-          <ul class="sidebar-search-results"></ul>
+        <div id="sidebar-search" class="sidebar-search">
         </div>
       </div>
     </header>

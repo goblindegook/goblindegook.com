@@ -12,13 +12,14 @@
   top: 0;
   width: 100%;
   z-index: 8;
+  overflow: hidden;
 }
 
 .site-header-wrapper {
   max-width: var(--body-max-width);
   margin: 0.6rem auto;
   display: grid;
-  grid-template-columns: auto 10rem;
+  grid-template-columns: auto auto;
   gap: 1rem;
 }
 
@@ -29,7 +30,6 @@
 
   .site-header-wrapper {
     padding: env(safe-area-inset-top) 1.25rem 0;
-    grid-template-columns: auto;
   }
 }
 
@@ -90,4 +90,8 @@
   font-size: var(--ms0);
   content: '';
   padding: 0;
+}
+
+.trail-item:last-of-type:not(.trail-tagline) {
+  display: none;
 }

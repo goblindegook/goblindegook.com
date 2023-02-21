@@ -18,7 +18,7 @@ I built this site in 2015, pouring into it over 15 years of experience in web de
 
 Post metadata and UI elements use [Fira Sans][fira], designed by Erik Spiekermann in collaboration with Ralph Carrois. It's used as the system font on Firefox OS and aims to maximise legibility on a wide variety of screens.
 
-Code excerpts use [Fira Mono][fira] by Spiekermann and Carrois. Boasting a crisp, supremely legible light variant at lower point ranges, Fira Mono is one of my favourite fonts on coding and terminal applications.
+Code excerpts use [Fira Mono][fira], also by Spiekermann and Carrois. Boasting a crisp, supremely legible light variant at lower point ranges, Fira Mono is one of my favourite fonts on coding and terminal applications.
 
 [alegreya]: http://www.huertatipografica.com/en/fonts/alegreya-ht-pro
 [fira]: https://mozilla.github.io/Fira/

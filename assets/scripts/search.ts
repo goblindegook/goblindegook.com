@@ -103,17 +103,23 @@ export function setupMainSearch(parent: ParentNode): void {
   })
 }
 
-export function setupSidebarSearch(parent: ParentNode): void {
-  const input = parent.querySelector<HTMLInputElement>('.sidebar-search-input')
-  const container = parent.querySelector<HTMLElement>('.sidebar-search-results')
+export function setupSidebarSearch(): void {
+  const root = document.getElementById('sidebar-search')
 
-  if (!input || !container) {
+  if (!root) {
     return
   }
 
+  root.innerHTML = `
+    <label class="sidebar-search-label">
+      <svg class="sidebar-search-icon" title="Search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg>
+      <input class="sidebar-search-input" name="q" placeholder="Enter search terms" type="search" value="" autocomplete="off">
+    </label>
+    <ul class="sidebar-search-results"></ul>`
+
   setupSearch({
-    input,
-    container,
+    input: root.querySelector('input'),
+    container: root.querySelector('ul'),
     perPage: 5,
     useQueryString: false,
     renderLoading: () =>

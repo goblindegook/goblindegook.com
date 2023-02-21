@@ -27,7 +27,7 @@ const from = (source: Document) => ({
 window.addEventListener('load', () => {
   setupHash()
   setupFonts()
-  setupSidebarSearch(document)
+  setupSidebarSearch()
   setupHeader(document)
   triggerEvent(window, 'scroll')
 
