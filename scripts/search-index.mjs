@@ -6,11 +6,12 @@ import { JSDOM } from 'jsdom'
 import createDOMPurify from 'dompurify'
 import { decode } from 'html-entities'
 import { BloomSearch } from '@pacote/bloom-search'
-
+import { encode } from '@msgpack/msgpack'
 import stopwords from 'stopwords-en' assert { type: 'json' }
+import { mapObjIndexed, pickBy } from 'ramda'
 
 const documentIndexFile = path.join('public', 'document-index.json')
-const searchIndexFile = path.join('public', 'search-index.json')
+const searchIndexFile = path.join('public', 'search-index.msgpack')
 
 const documents = JSON.parse(readFileSync(documentIndexFile, 'utf8'))
 
@@ -31,18 +32,21 @@ const searchIndex = new BloomSearch({
 
 documents.forEach((item) => searchIndex.add(String(item.id), item))
 
-const serializedSearchIndex = JSON.stringify(
-  Object.entries(searchIndex.index).reduce((acc, [ref, entry]) => {
-    acc[ref] = {
-      ...entry,
-      filter: { ...entry.filter, filter: Array.from(entry.filter.filter) },
-    }
-    return acc
-  }, {})
+const serializedSearchIndex = encode(
+  mapObjIndexed(
+    (entry) => ({
+      summary: entry.summary,
+      filter: {
+        ...pickBy((prop) => typeof prop !== 'function', entry.filter),
+        filter: Array.from(entry.filter.filter),
+      },
+    }),
+    searchIndex.index
+  )
 )
 
-writeFileSync(searchIndexFile, serializedSearchIndex, 'utf8')
+writeFileSync(searchIndexFile, serializedSearchIndex)
 
 console.log(
-  `Search index written to ${searchIndexFile} (${serializedSearchIndex.length} bytes).`
+  `Search index written to ${searchIndexFile} (${serializedSearchIndex.byteLength} bytes).`
 )

@@ -35,6 +35,7 @@
     "@types/estimate": "^1.0.0",
     "@types/imagesloaded": "^4.1.1",
     "@types/masonry-layout": "^4.2.2",
+    "@types/ramda": "^0.28.23",
     "@types/webfontloader": "^1.6.29",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
@@ -61,6 +62,7 @@
     "postcss-import": "^15.0.0",
     "postcss-preset-env": "^8.0.1",
     "prettier": "^2.2.0",
+    "ramda": "^0.28.0",
     "stopwords-en": "^0.3.0",
     "stylelint": "^15.1.0",
     "stylelint-config-prettier": "^9.0.3",
@@ -73,6 +75,7 @@
   "dependencies": {
     "@barba/core": "^2.9.7",
     "@barba/prefetch": "^2.1.10",
+    "@msgpack/msgpack": "^2.8.0",
     "@pacote/bloom-search": "^0.7.0",
     "animate.css": "^4.1.0",
     "dompurify": "^2.0.3",
@@ -85,7 +88,6 @@
     "smartypants": "^0.1.1",
     "snarkdown": "^2.0.0",
     "stemmer": "^2.0.0",
-    "unfetch": "^4.2.0",
     "webfontloader": "^1.6.28"
   }
 }

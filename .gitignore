@@ -12,6 +12,7 @@ public/
 resources/
 .rpt2_cache/
 static/search-index.json
+static/search-index.msgpack
 .hugo_build.lock
 
 # Logs

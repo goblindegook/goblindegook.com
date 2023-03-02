@@ -1,8 +1,9 @@
 /* globals Event */
-import fetch from 'unfetch'
 import { safeMarkdown } from './lib/markdown'
 import { createSearchHandler, SearchResult } from './lib/search'
 import { parseQueryString } from './lib/url'
+import { decode } from '@msgpack/msgpack'
+import { DocumentIndex } from '@pacote/bloom-search'
 
 interface SearchOptions {
   input: HTMLInputElement
@@ -39,7 +40,13 @@ function setupSearch({
   renderResult,
 }: SearchOptions): void {
   const searchHandler = createSearchHandler({
-    fetchIndex: () => fetch('/search-index.json').then(({ json }) => json()),
+    fetchIndex: () =>
+      fetch('/search-index.msgpack')
+        .then((response) => response.arrayBuffer())
+        .then(
+          (buffer) =>
+            decode(buffer) as DocumentIndex<SearchResult, keyof SearchResult>
+        ),
     input,
     container,
     perPage,
