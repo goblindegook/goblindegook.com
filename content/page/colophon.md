@@ -45,7 +45,7 @@ Site content and sources are kept under version control on a [public Github repo
 
 {{< small-caps >}}goblindegook{{< /small-caps >}} is hosted by [Netlify] and built using [Hugo], a static site generator written in [Go]. It uses certificates issued by the [Let's Encrypt] Certificate Authority.
 
-[go]: http://php.net
+[go]: https://go.dev
 [hugo]: http://gohugo.io
 [let's encrypt]: https://letsencrypt.org
 [netlify]: https://www.netlify.com
