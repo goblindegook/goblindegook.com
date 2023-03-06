@@ -16,9 +16,6 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 [littlefoot](https://www.npmjs.com/package/littlefoot)
 : A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](https://github.com/lemonmade/bigfoot) for delightful footnotes, as used on this site.[^littlefoot]
 
-[Gatsby Starter (TypeScript)](https://github.com/goblindegook/gatsby-starter-typescript)
-: A [Gatsby](https://www.gatsbyjs.org) static site starter using TypeScript with support for offline viewing, local search, responsive images, syntax highlighting, and Markdown content.
-
 [Scopa](https://github.com/goblindegook/scopa)
 : The Italian card game of [Scopa](https://en.wikipedia.org/wiki/Scopa) in TypeScript and React.
 
