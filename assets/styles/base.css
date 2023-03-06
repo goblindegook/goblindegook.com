@@ -110,6 +110,7 @@ figure {
 figcaption {
   background-color: var(--ui-background-color);
   color: var(--ui-text-color);
+
   @media (--narrow-viewport) {
     padding: 1rem 1.5rem;
   }
