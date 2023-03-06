@@ -23,9 +23,6 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 
 I've moved on from WordPress development, and the following are no longer actively maintained.
 
-[Genesis Starter](https://github.com/goblindegook/genesis-starter)
-: A WordPress starter theme with sophisticated enhancements and tools for custom [Genesis Framework](http://www.studiopress.com)-based projects.
-
 [Syllables](https://packagist.org/packages/goblindegook/syllables)
 : A collection of minimalistic classes and functions to aid WordPress development. Frequently-used code from my WordPress projects is thoroughly groomed and receives 100% test coverage before it ends up here.
 
