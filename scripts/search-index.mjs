@@ -8,7 +8,6 @@ import { decode } from 'html-entities'
 import { BloomSearch } from '@pacote/bloom-search'
 import { encode } from '@msgpack/msgpack'
 import stopwords from 'stopwords-en' assert { type: 'json' }
-import { mapObjIndexed, pickBy } from 'ramda'
 
 const documentIndexFile = path.join('public', 'document-index.json')
 const searchIndexFile = path.join('public', 'search-index.msgpack')
@@ -33,16 +32,7 @@ const searchIndex = new BloomSearch({
 documents.forEach((item) => searchIndex.add(String(item.id), item))
 
 const serializedSearchIndex = encode(
-  mapObjIndexed(
-    (entry) => ({
-      summary: entry.summary,
-      filter: {
-        ...pickBy((prop) => typeof prop !== 'function', entry.filter),
-        filter: Array.from(entry.filter.filter),
-      },
-    }),
-    searchIndex.index
-  )
+  JSON.parse(JSON.stringify(searchIndex.index))
 )
 
 writeFileSync(searchIndexFile, serializedSearchIndex)
