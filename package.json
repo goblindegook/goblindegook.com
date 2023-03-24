@@ -31,7 +31,7 @@
   "devDependencies": {
     "@pacote/eslint-config": "^6.0.0",
     "@pacote/eslint-config-jest": "^3.0.0",
-    "@types/dompurify": "^2.0.1",
+    "@types/dompurify": "^3.0.0",
     "@types/estimate": "^1.0.0",
     "@types/imagesloaded": "^4.1.1",
     "@types/masonry-layout": "^4.2.2",
@@ -76,7 +76,7 @@
     "@msgpack/msgpack": "^3.0.0-beta2",
     "@pacote/bloom-search": "^0.9.1",
     "animate.css": "^4.1.0",
-    "dompurify": "^2.0.3",
+    "dompurify": "^3.0.1",
     "estimate": "^1.0.0",
     "imagesloaded": "^5.0.0",
     "littlefoot": "^4.0.0-9",
