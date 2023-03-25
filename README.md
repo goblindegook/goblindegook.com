@@ -6,24 +6,14 @@ This is my site. There are many like it, but this one is mine.
 
 ## Building the site
 
-Requires [Hugo](https://gohugo.io) 0.65 or greater.
+Requires [Yarn](https://yarnpkg.com) and [Hugo](https://gohugo.io).
 
 ```sh
-$ yarn build
+yarn build
 ```
 
 ## Development mode
 
-For the site content:
-
 ```sh
-$ yarn watch
-```
-
-For the theme:
-
-```sh
-$ cd themes/goblindegook
-$ yarn
-$ yarn watch
+yarn watch
 ```

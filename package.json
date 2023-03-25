@@ -5,16 +5,13 @@
   "license": "CC-BY-NC-4.0",
   "private": true,
   "scripts": {
-    "prebuild": "yarn test run",
-    "postbuild": "yarn build:search",
-    "build": "hugo --gc --minify",
-    "build:preview": "yarn build -- --buildDrafts --buildFuture",
+    "build": "hugo --gc --minify && yarn run build:search",
+    "build:preview": "hugo --gc --minify --buildDrafts --buildFuture && yarn run build:search",
     "build:search": "node --experimental-json-modules scripts/search-index.mjs",
     "lint": "concurrently 'yarn lint:styles' 'yarn lint:scripts'",
     "lint:styles": "stylelint 'assets/**/*.css'",
     "lint:scripts": "eslint '{assets,test}/**/*.ts'",
-    "watch": "concurrently 'yarn test' 'hugo serve --buildDrafts'",
-    "pretest": "yarn lint",
+    "watch": "concurrently 'yarn test' 'hugo serve --buildDrafts --buildFuture'",
     "test": "vitest"
   },
   "jest": {
