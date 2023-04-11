@@ -11,7 +11,7 @@
   --popover-scroll-indicator-color: var(--ui-text-color);
   --popover-width: 22rem;
 
-  @media (max-width: 767px) {
+  @media (width <= 767px) {
     --popover-border-radius: 0;
   }
 }
@@ -33,7 +33,7 @@
     z-index: 20;
   }
 
-  @media (max-width: 767px) {
+  @media (width <= 767px) {
     z-index: 20;
   }
 }
