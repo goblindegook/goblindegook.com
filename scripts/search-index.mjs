@@ -18,19 +18,19 @@ console.log(`Indexing ${documents.length} documents...`)
 
 const DOMPurify = createDOMPurify(new JSDOM().window)
 
-const search = new BloomSearch({
+const content = new BloomSearch({
   errorRate: 0.001,
   fields: { title: 5, description: 3, content: 1 },
   summary: ['url', 'title', 'description'],
   preprocess: (text) =>
     decode(DOMPurify.sanitize(String(text), { ALLOWED_TAGS: ['#text'] })),
-  stopwords: (term) => term.length > 1 && !stopwords.includes(term),
+  stopwords: (term) => term.length > 2 && !stopwords.includes(term),
   stemmer,
 })
 
-documents.forEach((item) => search.add(item.id, item))
+documents.forEach((document) => content.add(document.id, document))
 
-const serializedSearchIndex = encode(JSON.parse(JSON.stringify(search.index)))
+const serializedSearchIndex = encode(JSON.parse(JSON.stringify(content.index)))
 
 writeFileSync(searchIndexFile, serializedSearchIndex)
 
