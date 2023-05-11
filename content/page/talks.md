@@ -8,6 +8,12 @@ menu:
 
 A list of the talks I have delivered over the years.
 
+## The Wastes of Product Engineering
+
+Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
+
+- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023)
+
 ## Backwards Compatible API Design
 
 Despite the benefits of agile, iterative software development, public <abbr title="Application Programming Interface">APIs</abbr> are not amenable to trial-and-error approaches. Only incremental changes are safe — and this is assuming they don't change the semantics of the API. In this presentation I enumerate the pitfalls of evolving public interfaces and present a number of strategies to deal with growth and ensure robustness.
