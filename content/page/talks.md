@@ -12,6 +12,7 @@ A list of the talks I have delivered over the years.
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
+- Private event (May 24, 2023)
 - [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online)
 
 ## Backwards Compatible API Design
@@ -68,6 +69,7 @@ An overview of the benefits of using typed languages when working with React and
 - Pixels Camp (September 30, 2017 · Lisbon, Portugal)
 - change.log (July 26, 2017 · Lisbon, Portugal)
 - require('lx') (June 29, 2017 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=H2hMHgx-OUA))
+- Private event (April 25, 2021 · Amsterdam, Netherlands)
 - Expert Talks (April 18, 2017 · Lisbon, Portugal) ([video](https://www.youtube.com/watch?v=G7LU_4-NQlQ))
 - Microsoft OSCAMP (April 5, 2017 · Lisbon, Portugal) ([video](https://channel9.msdn.com/Events/DXPortugal/OSCAMP-Open-Source-Software-powered-by-Bright-Pixel/More-My-Type-Developing-React-Applications-in-TypeScript))
 
