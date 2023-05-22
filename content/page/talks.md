@@ -12,7 +12,7 @@ A list of the talks I have delivered over the years.
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
-- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023)
+- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online)
 
 ## Backwards Compatible API Design
 
@@ -28,9 +28,10 @@ Too many software developers are obsessed with keeping their code free from repe
 
 ## Searching with Bloom Filters
 
-I built a search engine for my sites — it's small, fast, private, and doesn't require a server. Then I tried to explain it to a generalist audience in less than 15 minutes. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html) and the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search).
+I built a search engine for my sites — it's small, fast, private, and doesn't require a backend. Using Bloom filters at its core, it's presented as an alternative to more sophisticated options using inverted indices that come with a bigger memory footprint. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html), the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search), and a [comparison with popular alternatives](https://goblindegook.github.io/bloom-search-poc/).
 
 - BOLT Talks (March 18, 2021 · Online)
+- Upcoming event (June 21, 2023 · Rome, Italy)
 
 ## @testing-library
 
