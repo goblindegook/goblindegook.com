@@ -13,7 +13,7 @@ A list of the talks I have delivered over the years.
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
 - Private event (May 24, 2023)
-- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online)
+- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online) ([video coming soon](https://www.youtube.com/channel/UC7CUgivJP7KGLSuJrhQ2Exw), [slides](https://goblindegook.com/talks/product-engineering-waste-slides.pdf))
 
 ## Backwards Compatible API Design
 
