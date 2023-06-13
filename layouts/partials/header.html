@@ -11,8 +11,12 @@
     {{ $ogImage = ((.Resources.GetMatch .Params.Image.Src).Fit "768x640").Permalink }}
   {{ end }}
   <meta charset="UTF-8">
-  <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title | safeHTML }}</title>
+  {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
+  <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
+  <link rel="preload" as="style" type="text/css" media="all" href="{{ $css.RelPermalink }}">
+  <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}">
 	<meta name="msapplication-config" content="/browserconfig.xml">
 	<meta name="msapplication-TileColor" content="#BE9D31">
 	<meta name="msapplication-TileImage" content="/icon/goblindegook-144.png">
@@ -32,11 +36,7 @@
   <meta property="og:image" content="{{ $ogImage }}">
   <meta property="og:type" content="website">
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title | safeHTML }}</title>
   <link rel="canonical" href="{{ .Site.BaseURL }}">
-  {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
-  <link rel="preload" as="style" type="text/css" media="all" href="{{ $css.RelPermalink }}">
-  <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <link rel="manifest" href="/manifest.webmanifest">
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
