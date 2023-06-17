@@ -19,7 +19,8 @@ console.log(`Indexing ${documents.length} documents...`)
 const DOMPurify = createDOMPurify(new JSDOM().window)
 
 const content = new BloomSearch({
-  errorRate: 0.0000001,
+  errorRate: 0.0001,
+  minSize: 64,
   fields: { title: 5, description: 3, content: 1 },
   summary: ['url', 'title', 'description'],
   preprocess: (text) =>
