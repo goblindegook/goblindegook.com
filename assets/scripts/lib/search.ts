@@ -40,7 +40,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
   }
 
   const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
-    errorRate: 0.00001,
+    errorRate: 0.0000001,
     fields: [],
     summary: ['title', 'description', 'url'],
     stemmer,

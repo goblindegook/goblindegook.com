@@ -3,7 +3,7 @@ import { safeMarkdown } from './lib/markdown'
 import { createSearchHandler, SearchResult } from './lib/search'
 import { parseQueryString } from './lib/url'
 import { decode } from '@msgpack/msgpack'
-import { DocumentIndex } from '@pacote/bloom-search'
+import { Index } from '@pacote/bloom-search'
 
 interface SearchOptions {
   input: HTMLInputElement
@@ -44,8 +44,7 @@ function setupSearch({
       fetch('/search-index.msgpack')
         .then((response) => response.arrayBuffer())
         .then(
-          (buffer) =>
-            decode(buffer) as DocumentIndex<SearchResult, keyof SearchResult>
+          (buffer) => decode(buffer) as Index<SearchResult, keyof SearchResult>
         ),
     input,
     container,

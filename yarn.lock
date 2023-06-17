@@ -479,7 +479,7 @@
     "@pacote/memoize" "^2.0.2"
     "@pacote/xxhash" "^0.3.1"
 
-"@pacote/bloom-search@^0.16.0":
+"@pacote/bloom-search@^0.16.2":
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.16.2.tgz#a608f6c92d1a59efc97497bcf0923cacf0fe226f"
   integrity sha512-qZbtHcwdxVsY1kTp5ZqNmauHtaHczYf5GvswT/pNaxdystuTtXKeM2vDroudvQid4eajHOz2nmlE8NRQxwaofA==
