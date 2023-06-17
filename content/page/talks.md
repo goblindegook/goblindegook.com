@@ -12,26 +12,27 @@ A list of the talks I have delivered over the years.
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
-- Private event (May 24, 2023)
+- Private event (May 24, 2023 · Online)
 - [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online) ([video coming soon](https://www.youtube.com/channel/UC7CUgivJP7KGLSuJrhQ2Exw), [slides](/talks/product-engineering-waste-slides.pdf))
 
 ## Backwards Compatible API Design
 
 Despite the benefits of agile, iterative software development, public <abbr title="Application Programming Interface">APIs</abbr> are not amenable to trial-and-error approaches. Only incremental changes are safe — and this is assuming they don't change the semantics of the API. In this presentation I enumerate the pitfalls of evolving public interfaces and present a number of strategies to deal with growth and ensure robustness.
 
-- Private event (November 16, 2022)
+- Private event (November 16, 2022 · Online)
 
 ## Sharing Is Not Caring
 
 Too many software developers are obsessed with keeping their code free from repetition. Too many lift poorly-abstracted, tightly-coupled code into shared libraries used across microservices. In the process, the goal of maintainability is lost, sometimes spectacularly.
 
-- Private event (June 16, 2021)
+- Private event (June 16, 2021 · Online)
 
 ## Searching with Bloom Filters
 
 I built a search engine for my sites — it's small, fast, private, and doesn't require a backend. Using Bloom filters at its core, it's presented as an alternative to more sophisticated options using inverted indices that come with a bigger memory footprint. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html), the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search), and a [comparison with popular alternatives](https://goblindegook.github.io/bloom-search-poc/).
 
 - BOLT Talks (March 18, 2021 · Online)
+- Private event (June 14, 2023 · Online)
 - [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy)
 
 ## @testing-library
