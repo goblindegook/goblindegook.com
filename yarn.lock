@@ -479,10 +479,10 @@
     "@pacote/memoize" "^2.0.2"
     "@pacote/xxhash" "^0.3.1"
 
-"@pacote/bloom-search@^0.15.3":
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.15.3.tgz#b21f2170aed5f3784429bc7d9d4967a37bc3820a"
-  integrity sha512-FxrpUfVCmV/HjkSwHVJoWuZQZYTx3NECgL95tkpyMYTZf50ATnhr5xsMl2RJYbMtmn7i4hh0dKJ3rVFLeJi8yg==
+"@pacote/bloom-search@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@pacote/bloom-search/-/bloom-search-0.16.0.tgz#147ed17b3543ea7290e5e351373d19f9a87a23c4"
+  integrity sha512-pbybm9k0gIX0Kx1pFW/Q3W1mklMSylYCM3WtpQbWZMo3YYisCKRs1b+hHM76CQ6y/ioSGp7bvXPQrV63qLzNGg==
   dependencies:
     "@pacote/array" "^0.7.1"
     "@pacote/bloom-filter" "^0.6.3"
