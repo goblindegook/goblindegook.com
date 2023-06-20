@@ -1,0 +1,21 @@
+{
+  "Name": "Milano",
+  "Version": 0.1,
+  "Author": "iA",
+  "ShortDescription": "Dove c'era l'erba ora c'è...",
+  "LongDescription": "...una città.\n- Stylish, elegant, classy\n- Different sizes for headlines\n- Dynamic color background\n- Default white on color\n- Default font: Playfair Display",
+  "Css": "milano.css",
+  "TitleFont": "Playfair Display",
+  "BodyFont": "Playfair Display",
+  "CssClasses": "variable-size-headings",
+  "LayoutExamples":[
+   {
+        "Name": "Title (H1) and Background",
+        "Markdown": "/Theme/image2.jpg\nBackground: true\nfilter: darken\n\n# TITLE\n#### with background",
+   },
+   {
+        "Name": "Title (H2) and Background",
+        "Markdown": "/Theme/image2.jpg\nBackground: true\nfilter: darken\n\n## SUBTITLE\n#### with background",
+   }
+]
+}
