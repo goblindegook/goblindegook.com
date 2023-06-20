@@ -29,11 +29,11 @@ Too many software developers are obsessed with keeping their code free from repe
 
 ## Searching with Bloom Filters
 
-I built a search engine for my sites — it's small, fast, private, and doesn't require a backend. Using Bloom filters at its core, it's presented as an alternative to more sophisticated options using inverted indices that come with a bigger memory footprint. [View the _Searching with Bloom Filters_ talk slides](https://goblindegook.github.io/talks/bloom-search.html), the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search), and a [comparison with popular alternatives](https://goblindegook.github.io/bloom-search-poc/).
+I built a search engine for my sites — it's small, fast, private, and doesn't require a backend. Using Bloom filters at its core, it's presented as an alternative to more sophisticated options using inverted indices that come with a bigger memory footprint. Check the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search), and a [comparison with popular alternatives](https://goblindegook.github.io/bloom-search-poc/).
 
-- BOLT Talks (March 18, 2021 · Online)
+- BOLT Talks (March 18, 2021 · Online) ([slides](https://goblindegook.github.io/talks/bloom-search.html))
 - Private event (June 14, 2023 · Online)
-- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy)
+- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) ([slides](/talks/searching-with-bloom-filters/))
 
 ## @testing-library
 
