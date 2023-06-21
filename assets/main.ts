@@ -48,7 +48,8 @@ window.addEventListener('load', () => {
     schema: {
       prefix: 'data-transition',
     },
-    prevent: ({ href }) => href.endsWith('.pdf'),
+    prevent: ({ el, href }) =>
+      Boolean(el.dataset.preventTransition) || href.endsWith('.pdf'),
     transitions: [defaultTransition, articleTransition],
     views: [
       {
