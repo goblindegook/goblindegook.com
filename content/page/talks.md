@@ -13,7 +13,7 @@ A list of the talks I have delivered over the years.
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
 - Private event (May 24, 2023 · Online)
-- [NewStore TechTalks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online) ([video coming soon](https://www.youtube.com/channel/UC7CUgivJP7KGLSuJrhQ2Exw), [slides](/talks/product-engineering-waste-slides.pdf))
+- [NewStore Tech Talks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online) ([video](https://www.youtube.com/watch?v=wSo4QQW-KhI), [slides](/talks/product-engineering-waste-slides.pdf))
 
 ## Backwards Compatible API Design
 
@@ -33,7 +33,7 @@ I built a search engine for my sites — it's small, fast, private, and doesn't 
 
 - BOLT Talks (March 18, 2021 · Online) ([slides](https://goblindegook.github.io/talks/bloom-search.html))
 - Private event (June 14, 2023 · Online)
-- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) (<a href="/talks/searching-with-bloom-filters/" data-prevent-transition="true">slides</a>)
+- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) ([video](https://www.youtube.com/watch?v=d0p4WWYthfA), <a href="/talks/searching-with-bloom-filters/" data-prevent-transition="true">slides</a>)
 
 ## @testing-library
 
