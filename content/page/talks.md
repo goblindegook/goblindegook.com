@@ -33,7 +33,7 @@ I built a search engine for my sites — it's small, fast, private, and doesn't 
 
 - BOLT Talks (March 18, 2021 · Online) ([slides](https://goblindegook.github.io/talks/bloom-search.html))
 - Private event (June 14, 2023 · Online)
-- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) ([slides](/talks/searching-with-bloom-filters/))
+- [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) (<a href="/talks/searching-with-bloom-filters/" data-barba-prevent>slides</a>)
 
 ## @testing-library
 
