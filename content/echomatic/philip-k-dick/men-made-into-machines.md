@@ -2,7 +2,7 @@
 title: Men Made Into Machines
 author: Philip K. Dick
 tags: []
-date: 2023-06-23T12:00:00+01:00
+date: 2023-06-23T00:00:00+00:00
 draft: false
 ---
 
