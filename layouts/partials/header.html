@@ -36,7 +36,7 @@
   <meta property="og:image" content="{{ $ogImage }}">
   <meta property="og:type" content="website">
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
-  <link rel="canonical" href="{{ .Site.BaseURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
   <link rel="manifest" href="/manifest.webmanifest">
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
