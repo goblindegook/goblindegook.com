@@ -9,7 +9,7 @@
     "build:preview": "hugo --gc --minify --buildDrafts --buildFuture && yarn run build:search",
     "build:search": "node --experimental-json-modules scripts/search-index.mjs",
     "build:site": "hugo --gc --minify",
-    "lint": "echo concurrently 'yarn lint:scripts' 'yarn lint:styles'",
+    "lint": "concurrently 'yarn lint:scripts' # 'yarn lint:styles'",
     "lint:styles": "stylelint 'assets/**/*.css'",
     "lint:scripts": "eslint '{assets,test}/**/*.ts'",
     "watch": "concurrently 'yarn test' 'hugo serve --buildDrafts --buildFuture'",
