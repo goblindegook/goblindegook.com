@@ -57,16 +57,16 @@
     "postcss": "^8.4.23",
     "postcss-cli": "^10.0.0",
     "postcss-import": "^15.0.0",
-    "postcss-preset-env": "^8.3.2",
-    "prettier": "^2.8.8",
+    "postcss-preset-env": "^9.0.0",
+    "prettier": "^3.0.0",
     "stopwords-en": "^0.3.0",
     "stylelint": "^15.6.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^3.0.0",
     "tslib": "^2.0.0",
     "typescript": "^5.0.4",
-    "vitest": "^0.32.2"
+    "vitest": "^0.33.0"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
