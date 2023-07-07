@@ -6,10 +6,10 @@ export function setupProgress(parent: ParentNode) {
 
   if (progressBar) {
     const entryContent = parent.querySelector(
-      '.single-entry-body'
+      '.single-entry-body',
     ) as HTMLElement
     const scrollButton = parent.querySelector(
-      '.button-furthest-read'
+      '.button-furthest-read',
     ) as HTMLElement
 
     const reading = readingProgress(entryContent, (progress, furthest) => {

@@ -14,7 +14,7 @@ export function scrollTo(
   targetPosition: number,
   duration = 1000,
   completion: () => void = () => undefined,
-  easing: EasingFunction = easeInOutCubic
+  easing: EasingFunction = easeInOutCubic,
 ): void {
   const offset = getPageYOffset()
   const change = targetPosition - offset

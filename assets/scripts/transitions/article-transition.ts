@@ -45,8 +45,8 @@ export const articleTransition: ITransitionPage = {
     if (isArticleLink(trigger)) {
       fadeIn(
         next.container.querySelectorAll(
-          '.single-entry-featured-image figcaption, .single-entry-body'
-        )
+          '.single-entry-featured-image figcaption, .single-entry-body',
+        ),
       )
     } else {
       fadeIn(next.container)

@@ -32,8 +32,8 @@ function purge(): Promise<boolean[]> {
     .keys()
     .then((keys) =>
       Promise.all(
-        keys.filter((k) => k !== CACHE_KEY).map((k) => self.caches.delete(k))
-      )
+        keys.filter((k) => k !== CACHE_KEY).map((k) => self.caches.delete(k)),
+      ),
     )
 }
 
@@ -43,7 +43,7 @@ function networkFetchAndCache(request: RequestInfo): Promise<Response> {
       .open(CACHE_KEY)
       .then((cache) => cache.put(request, response.clone()))
       .catch()
-      .then(() => response)
+      .then(() => response),
   )
 }
 
@@ -52,7 +52,7 @@ function offlineFallback(request: RequestInfo): Promise<Response> {
     !response || response.status === 404
       ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         self.caches.match(OFFLINE_URL).then((offline) => offline!)
-      : response
+      : response,
   )
 }
 
@@ -68,8 +68,8 @@ self.addEventListener('fetch', (event: FetchEvent) => {
   if (event.request.method === 'GET') {
     event.respondWith(
       networkFetchAndCache(event.request).catch(() =>
-        offlineFallback(event.request)
-      )
+        offlineFallback(event.request),
+      ),
     )
   }
 })

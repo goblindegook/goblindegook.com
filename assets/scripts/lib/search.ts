@@ -31,7 +31,7 @@ export function createSearchHandler(userOptions: SearchOptions) {
     const target = event.target as HTMLElement
     if (
       [options.container, options.input].every(
-        (element) => !element.contains(target) && element !== target
+        (element) => !element.contains(target) && element !== target,
       )
     ) {
       options.container.classList.remove('search-active')

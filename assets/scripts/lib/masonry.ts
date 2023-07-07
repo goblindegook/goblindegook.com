@@ -39,7 +39,7 @@ export function masonry(container: Element, options = {}): void {
 
     imagesLoaded(container).on(
       'progress',
-      () => instance.layout && instance.layout()
+      () => instance.layout && instance.layout(),
     )
   }
 }

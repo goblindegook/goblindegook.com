@@ -11,7 +11,7 @@ import { scrollTo } from './scrollTo'
 function scrollToTarget(
   target: string | HTMLElement,
   offset: number,
-  complete?: () => void
+  complete?: () => void,
 ): void {
   if (target) {
     const targetEl =
@@ -33,7 +33,7 @@ function scrollToTarget(
  */
 function targetMatchesLocation(
   target: HTMLAnchorElement,
-  location: Location
+  location: Location,
 ): boolean {
   return (
     location.hostname === target.hostname &&

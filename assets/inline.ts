@@ -7,7 +7,7 @@ if (window.sessionStorage.fonts) {
     'body-font-active',
     'small-caps-font-active',
     'ui-font-active',
-    'code-font-active'
+    'code-font-active',
   )
 }
 

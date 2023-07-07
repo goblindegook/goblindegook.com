@@ -6,7 +6,7 @@
  */
 export function triggerEvent(
   element: HTMLElement | Window,
-  type: string
+  type: string,
 ): void {
   if (document.createEvent) {
     const event = document.createEvent('HTMLEvents')

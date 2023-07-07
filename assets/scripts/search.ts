@@ -44,7 +44,7 @@ function setupSearch({
       fetch('/search-index.msgpack')
         .then((response) => response.arrayBuffer())
         .then(
-          (buffer) => decode(buffer) as Index<SearchResult, keyof SearchResult>
+          (buffer) => decode(buffer) as Index<SearchResult, keyof SearchResult>,
         ),
     input,
     container,
@@ -64,7 +64,7 @@ function setupSearch({
     if (q && q.length) {
       input.value = q
       input.dispatchEvent(
-        new Event('change', { bubbles: true, cancelable: true })
+        new Event('change', { bubbles: true, cancelable: true }),
       )
     }
 
@@ -94,12 +94,12 @@ export function setupMainSearch(parent: ParentNode): void {
       <li>
         <article class="search-result-single">
           <h2 class="search-result-title"><a href="${url}">${safeMarkdown(
-      title
-    )}</a></h2>
+            title,
+          )}</a></h2>
           ${
             description
               ? `<p class="search-result-preview">${safeMarkdown(
-                  description
+                  description,
                 )}</p>`
               : ''
           }
@@ -134,7 +134,7 @@ export function setupSidebarSearch(): void {
       `<li class="sidebar-search-result-none">No results found.</li>`,
     renderResult: ({ url, title }) =>
       `<li class="sidebar-search-result-single"><a href="${url}">${safeMarkdown(
-        title
+        title,
       )}</a></li>`,
   })
 }
