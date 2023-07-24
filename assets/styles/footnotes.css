@@ -60,18 +60,32 @@
     ),
     linear-gradient(var(--ui-background-color), var(--ui-background-color)),
     linear-gradient(var(--link-color), var(--link-color));
-  background-position: 0 85%, 100% 85%, 0 85%;
+  background-position:
+    0 85%,
+    100% 85%,
+    0 85%;
   background-repeat: no-repeat, no-repeat, repeat-x;
-  background-size: 1px 1px, 1px 1px, 1px 1px;
+  background-size:
+    1px 1px,
+    1px 1px,
+    1px 1px;
   text-decoration: none;
-  text-shadow: 0.02em 0 var(--ui-background-color),
-    -0.02em 0 var(--ui-background-color), 0 0.02em var(--ui-background-color),
-    0 -0.02em var(--ui-background-color), 0.04em 0 var(--ui-background-color),
-    -0.04em 0 var(--ui-background-color), 0.06em 0 var(--ui-background-color),
-    -0.06em 0 var(--ui-background-color), 0.08em 0 var(--ui-background-color),
-    -0.08em 0 var(--ui-background-color), 0.1em 0 var(--ui-background-color),
-    -0.1em 0 var(--ui-background-color), 0.12em 0 var(--ui-background-color),
-    -0.12em 0 var(--ui-background-color), 0.14em 0 var(--ui-background-color),
+  text-shadow:
+    0.02em 0 var(--ui-background-color),
+    -0.02em 0 var(--ui-background-color),
+    0 0.02em var(--ui-background-color),
+    0 -0.02em var(--ui-background-color),
+    0.04em 0 var(--ui-background-color),
+    -0.04em 0 var(--ui-background-color),
+    0.06em 0 var(--ui-background-color),
+    -0.06em 0 var(--ui-background-color),
+    0.08em 0 var(--ui-background-color),
+    -0.08em 0 var(--ui-background-color),
+    0.1em 0 var(--ui-background-color),
+    -0.1em 0 var(--ui-background-color),
+    0.12em 0 var(--ui-background-color),
+    -0.12em 0 var(--ui-background-color),
+    0.14em 0 var(--ui-background-color),
     -0.14em 0 var(--ui-background-color);
 }
 

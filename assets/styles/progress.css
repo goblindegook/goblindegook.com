@@ -6,7 +6,9 @@ progress {
 
 progress::-moz-progress-bar {
   background-color: var(--active-color);
-  box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
+  box-shadow:
+    0 0 10px var(--shadow-color),
+    0 0 5px var(--shadow-color);
 }
 
 progress::-webkit-progress-bar {
@@ -15,7 +17,9 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   background-color: var(--active-color);
-  box-shadow: 0 0 10px var(--shadow-color), 0 0 5px var(--shadow-color);
+  box-shadow:
+    0 0 10px var(--shadow-color),
+    0 0 5px var(--shadow-color);
 }
 
 .reading-progress {
