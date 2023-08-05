@@ -6,10 +6,11 @@ import { setupHash } from './scripts/hash'
 import { setupHeader } from './scripts/header'
 import { setupMasonry } from './scripts/masonry'
 import { setupProgress } from './scripts/progress'
-import { setupMainSearch, setupSidebarSearch } from './scripts/search'
+import { setupMainSearch } from './scripts/search-main'
 import { triggerEvent } from './scripts/lib/dom/triggerEvent'
 import { defaultTransition } from './scripts/transitions/default-transition'
 import { articleTransition } from './scripts/transitions/article-transition'
+import { setupSidebarSearch } from 'scripts/search-sidebar'
 
 const parser = new DOMParser()
 
