@@ -42,6 +42,7 @@ export const Search = ({
   renderResult,
 }: SearchProps) => {
   const isActive = van.state(false)
+  const isLoading = van.state(true)
   const items = van.state<SearchResult[]>([])
   const search = createSearch()
 
@@ -55,9 +56,11 @@ export const Search = ({
   }
 
   const searchTerms = async (terms: string) => {
-    const isSearching = terms.trim().length > 0
-    items.val = isSearching ? await search(terms) : []
-    isActive.val = isSearching
+    isActive.val = terms.trim().length > 0
+    if (isActive.val) {
+      items.val = await search(terms)
+      isLoading.val = false
+    }
   }
 
   ;(async () => searchTerms(defaultValue))()
@@ -104,7 +107,9 @@ export const Search = ({
           }`,
         },
         isActive.val
-          ? !items.val.length
+          ? isLoading.val
+            ? Loading({ class: classPrefix + 'search-result-none' })
+            : !items.val.length
             ? NoResults({ class: classPrefix + 'search-result-none' })
             : items.val.slice(0, page).map(renderResult)
           : null,

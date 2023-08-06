@@ -8,10 +8,14 @@ export type SearchResult = {
   description?: string
 }
 
-export function createSearch() {
-  let isLoading = false
-  let isReady = false
+type Status = 'idle' | 'loading' | 'ready'
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+export function createSearch() {
+  let status: Status = 'idle'
   const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
     errorRate: 0.0000001,
     fields: [],
@@ -19,21 +23,23 @@ export function createSearch() {
     stemmer,
   })
 
-  return async (terms = '') => {
-    if (!isLoading && !isReady) {
-      isLoading = true
-      bs.load(
-        await fetch('/search-index.msgpack')
-          .then((response) => response.arrayBuffer())
-          .then(
-            (buffer) =>
-              decode(buffer) as Index<SearchResult, keyof SearchResult>,
-          ),
-      )
-      isReady = true
-      isLoading = false
+  return async (terms = ''): Promise<SearchResult[]> => {
+    if (status === 'idle') {
+      status = 'loading'
+      await fetch('/search-index.msgpack')
+        .then((response) => response.arrayBuffer())
+        .then((buffer) => decode(buffer))
+        .then((index: Index<SearchResult, keyof SearchResult>) =>
+          bs.load(index),
+        )
+        .then(() => (status = 'ready'))
+        .catch(() => (status = 'idle'))
     }
 
-    return terms ? bs.search(terms) : []
+    // eslint-disable-next-line no-unmodified-loop-condition
+    while (status !== 'ready') {
+      await sleep(300)
+    }
+    return bs.search(terms)
   }
 }
