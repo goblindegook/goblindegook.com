@@ -2,7 +2,7 @@
 title: There is Nothing Less Material Than Money
 author: Jorge Luis Borges
 tags: []
-date: 2012-04-28T12:00:00+01:00
+date: 2023-08-07T12:00:00+01:00
 draft: false
 ---
 
