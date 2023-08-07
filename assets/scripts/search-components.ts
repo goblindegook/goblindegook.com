@@ -16,11 +16,13 @@ export function Markdown(text: string): HTMLElement {
   return span
 }
 
-export const Loading = (props: { class: string }) =>
-  li({ class: props.class }, 'Loading...')
+type NoResultsProps = {
+  classPrefix?: string
+  text: string
+}
 
-export const NoResults = (props: { class: string }) =>
-  li({ class: props.class }, 'No results found.')
+const NoResults = ({ classPrefix = '', text }: NoResultsProps) =>
+  li({ class: classPrefix + 'search-result-none' }, text)
 
 type SearchProps = {
   autofocus?: boolean
@@ -63,14 +65,14 @@ export const Search = ({
     }
   }
 
-  ;(async () => searchTerms(defaultValue))()
+  searchTerms(defaultValue)
 
   const doSearch = (event: KeyboardEvent) => {
     const terms = (event.target as HTMLInputElement).value
     if (event.key === 'Enter') {
       navigate(terms)
     } else {
-      ;(async () => searchTerms(terms))()
+      searchTerms(terms)
     }
     event.stopPropagation()
   }
@@ -108,9 +110,9 @@ export const Search = ({
         },
         isActive.val
           ? isLoading.val
-            ? Loading({ class: classPrefix + 'search-result-none' })
+            ? NoResults({ classPrefix, text: 'Loading...' })
             : !items.val.length
-            ? NoResults({ class: classPrefix + 'search-result-none' })
+            ? NoResults({ classPrefix, text: 'No results found.' })
             : items.val.slice(0, page).map(renderResult)
           : null,
       ),

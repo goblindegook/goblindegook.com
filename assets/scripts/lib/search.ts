@@ -40,6 +40,7 @@ export function createSearch() {
     while (status !== 'ready') {
       await sleep(300)
     }
+
     return bs.search(terms)
   }
 }
