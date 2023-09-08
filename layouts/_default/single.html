@@ -17,7 +17,7 @@
 		</div>
 		<footer class="single-entry-footer">
       {{ if .GetTerms "categories" }}
-      <svg class="single-entry-categories-icon" title="Filed Under"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-folder"></use></svg>
+      <svg class="single-entry-categories-icon" title="Filed Under"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="#icon-folder"></use></svg>
 			<ul class="single-entry-categories">
         {{ range (.GetTerms "categories") }}
 				<li><a href="{{ .Permalink }}" itemprop="about">{{ .LinkTitle }}</a></li>
