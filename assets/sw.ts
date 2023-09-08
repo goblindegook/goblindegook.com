@@ -9,7 +9,7 @@ const PRECACHE_URLS = [
   '/',
   '/offline/index.html',
   '/index.html',
-  '/search-index.json',
+  '/search-index.msgpack',
 ]
 
 type ExtendableEvent = Event & {
