@@ -1,9 +1,9 @@
 [build]
-  command = "./bun.sh && bun run lint && bun test && bun run build"
+  command = "yarn lint && yarn test run && yarn build"
   publish = "public"
 
 [context.deploy-preview]
-  command = "./bun.sh && bun run lint && bun test && bun run build:preview"
+  command = "yarn lint && yarn test run && yarn build:preview"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.110.0"
