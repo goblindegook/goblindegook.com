@@ -5,26 +5,14 @@
   "license": "CC-BY-NC-4.0",
   "private": true,
   "scripts": {
-    "build": "yarn run build:site && yarn run build:search",
+    "build": "bun run build:site && bun run build:search",
     "build:preview": "hugo --gc --minify --buildDrafts --buildFuture && yarn run build:search",
-    "build:search": "node --experimental-json-modules scripts/search-index.mjs",
+    "build:search": "bun scripts/search-index.mjs",
     "build:site": "hugo --gc --minify",
-    "lint": "concurrently 'yarn lint:scripts' 'yarn lint:styles'",
+    "lint": "concurrently 'bun run lint:scripts' 'bun run lint:styles'",
     "lint:styles": "stylelint 'assets/**/*.css'",
     "lint:scripts": "eslint '{assets,test}/**/*.ts'",
-    "watch": "concurrently 'yarn test' 'hugo serve --buildDrafts --buildFuture'",
-    "test": "vitest"
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
+    "watch": "concurrently 'bun test --watch' 'hugo serve --buildDrafts --buildFuture'"
   },
   "devDependencies": {
     "@pacote/eslint-config": "^6.0.1",
@@ -37,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "autoprefixer": "^10.4.15",
+    "bun-types": "^1.0.1",
     "caniuse-lite": "^1.0.30001527",
     "concurrently": "^8.2.1",
     "css-modularscale": "^1.1.1",
@@ -50,7 +39,6 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-testing-library": "^6.0.1",
-    "eslint-plugin-vitest": "^0.3.1",
     "html-entities": "^2.0.3",
     "jsdom": "^22.1.0",
     "pixrem": "^5.0.0",
@@ -63,10 +51,7 @@
     "stylelint": "^15.10.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-prettier": "^4.0.2",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.3"
+    "stylelint-prettier": "^4.0.2"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
@@ -84,7 +69,7 @@
     "smartypants": "^0.1.1",
     "snarkdown": "^2.0.0",
     "stemmer": "^2.0.0",
-    "vanjs-core": "^1.2.0-rc.0",
+    "vanjs-core": "latest",
     "webfontloader": "^1.6.28"
   }
 }

@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest'
+import { test, expect } from 'bun:test'
 
 test('nothing', () => {
   expect(true).toBe(true)
