@@ -46,8 +46,22 @@
 
 .search-input {
   display: block;
+  font-size: 1.25rem;
   margin: 0 auto 2rem;
+  padding: 0.3rem 0.5rem 0.3rem 2.5rem;
   width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  vertical-align: middle;
+  fill: var(--ui-overlay-background-color);
 }
 
 .search-results {
@@ -116,7 +130,8 @@
   font-family: var(--ui-font);
 }
 
-.sidebar-search-label {
+.sidebar-search-label,
+.search-label {
   position: relative;
   display: block;
 }
