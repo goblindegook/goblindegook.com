@@ -1,7 +1,7 @@
 ---
-title: 'I use...'
-author: 'Luís Rodrigues'
-slug: 'uses'
+title: Using
+author: Luís Rodrigues
+slug: uses
 date: 2023-07-07T00:00:00+01:00
 draft: false
 ---
@@ -11,6 +11,8 @@ draft: false
 I've adopted the [Bullet Journal](https://bulletjournal.com) method in December 2022. I'm still settling on some specifics but it helps me keep track of my tasks and habits, and is very satisfying to use.
 
 I prefer paper books and like to read two or three concurrently. Very often I carry one around with me.
+
+When out and about, I carry my stuff in a [Timbuk2 Classic messenger bag](https://timbuk2bags.eu/products/1108-classic-messenger-bag-europe?variant=44227540484417). It's tough, rain-proof, and spacious without being cumbersome, with loads of pockets and compartments for organisation.
 
 ## Hardware
 
@@ -22,7 +24,7 @@ I always have on me an [iPhone XS Max](https://en.wikipedia.org/wiki/IPhone_XS) 
 
 At home, I make fairly constant use of a couple of [HomePod Mini](https://apple.com/homepod-mini)s and an Ikea [Symfonisk speaker frame](https://www.ikea.com/us/en/p/symfonisk-picture-frame-with-wi-fi-speaker-black-smart-40487320/). I practice piano on an entry-level [Yamaha P-45 digital piano](https://usa.yamaha.com/products/musical_instruments/pianos/p_series/p-45/index.html). Occasionally, I play games on the PlayStation 5 and Nintendo Switch consoles.
 
-Finally, I keep an iPad from 2018 mostly for reading music scores, although I sometimes take it with me for video and reading while traveling.
+Finally, I keep an iPad from 2018 mostly to read music scores, although I sometimes take it with me for video and reading while traveling.
 
 ## Software
 
