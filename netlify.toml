@@ -1,9 +1,9 @@
 [build]
-  command = "yarn lint && yarn test run && yarn build"
+  command = "npm run lint && npm test run && npm run build"
   publish = "public"
 
 [context.deploy-preview]
-  command = "yarn lint && yarn test run && yarn build:preview"
+  command = "npm run lint && npm test run && npm run build:preview"
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.110.0"
