@@ -154,8 +154,9 @@
   }
 
   & th {
-    background: var(--body-background-alt-color);
-    font-weight: 700;
+    background-color: var(--ui-overlay-background-color);
+    color: var(--ui-text-color);
+    font-weight: 400;
     padding: 0.5rem;
     vertical-align: bottom;
   }
