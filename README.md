@@ -6,14 +6,14 @@ This is my site. There are many like it, but this one is mine.
 
 ## Building the site
 
-Requires [Yarn](https://yarnpkg.com) and [Hugo](https://gohugo.io).
+Requires [Hugo](https://gohugo.io).
 
 ```sh
-yarn build
+npm run build
 ```
 
 ## Development mode
 
 ```sh
-yarn watch
+npm run watch
 ```

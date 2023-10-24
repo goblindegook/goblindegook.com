@@ -41,6 +41,7 @@
     "concurrently": "^8.2.2",
     "css-modularscale": "^1.1.1",
     "cssnano": "^6.0.0",
+    "esbuild": "^0.19.5",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.0.0",
