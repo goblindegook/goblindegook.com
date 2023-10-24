@@ -8,6 +8,12 @@ menu:
 
 A list of the talks I have delivered over the years.
 
+## Five Questions About Automated Testing
+
+So you have thought about writing automated tests for your product, but simple questions with not-so-simple answers assail you: _Why should we bother? Who writes these tests? And when? What parts are worth testing?_ And most difficult of all: _How?_ I help teams starting on their testing journey find their own answers to these questions, and point them to Kent Beck's [Test Desiderata](https://kentbeck.github.io/TestDesiderata/) to recognise what a good test looks like.
+
+- Private event (October 25, 2023 · Online)
+
 ## The Wastes of Product Engineering
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
@@ -17,7 +23,7 @@ Product engineering is wasteful, and teams often fail to realise it. Recognising
 
 ## Backwards Compatible API Design
 
-Despite the benefits of agile, iterative software development, public <abbr title="Application Programming Interface">APIs</abbr> are not amenable to trial-and-error approaches. Only incremental changes are safe — and this is assuming they don't change the semantics of the API. In this presentation I enumerate the pitfalls of evolving public interfaces and present a number of strategies to deal with growth and ensure robustness.
+Despite the benefits of agile, iterative software development, public <abbr title="Application Programming Interface">API</abbr>s are not amenable to trial-and-error approaches. Only incremental changes are safe — and this is assuming they don't change the semantics of the API. In this presentation I enumerate the pitfalls of evolving public interfaces and present a number of strategies to deal with growth and ensure robustness.
 
 - Private event (November 16, 2022 · Online)
 
