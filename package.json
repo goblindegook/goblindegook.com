@@ -34,10 +34,10 @@
     "@types/imagesloaded": "^4.1.4",
     "@types/masonry-layout": "^4.2.6",
     "@types/webfontloader": "^1.6.36",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
     "autoprefixer": "^10.4.16",
-    "caniuse-lite": "^1.0.30001553",
+    "caniuse-lite": "^1.0.30001554",
     "concurrently": "^8.2.2",
     "css-modularscale": "^1.1.1",
     "cssnano": "^6.0.0",
@@ -84,7 +84,7 @@
     "smartypants": "^0.1.1",
     "snarkdown": "^2.0.0",
     "stemmer": "^2.0.0",
-    "vanjs-core": "^1.2.3",
+    "vanjs-core": "^1.2.5",
     "webfontloader": "^1.6.28"
   }
 }
