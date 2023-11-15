@@ -14,7 +14,7 @@ So you have thought about writing automated tests for your product, but simple q
 
 - Private event (October 25, 2023 · Online)
 
-## The Wastes of Product Engineering
+## [The Wastes of Product Engineering](/2023/engineering-waste)
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
