@@ -74,7 +74,7 @@ More recently, an eighth waste was added by management experts to describe ineff
 
 When analyzing waste, it's important to understand its role within the broader business context, as an activity that may appear unnecessary at first glance might, in fact, be contributing value to a product.
 
-For example, distilleries produce excess quantities of whiskey that might not be sold for years or even decades. They do not necessarily incur the wastes of overproduction or inventory because these businesses bet on the assumption that aged whiskey will gain commercial value as the years go by.
+For example, distilleries produce excess quantities of whiskey that might not be sold for years or even decades. They do not necessarily incur the wastes of overproduction or inventory because these businesses bet on the assumption that aged whiskey will gain commercial value as the years go by.[^1]
 
 In other cases, there are situations where overprocessing can serve as a significant distinguishing factor. This frequently occurs in markets where the showiness of a product or the apparent intricacy of the production process is what attracts customers.
 
@@ -171,3 +171,5 @@ In my efforts to combat waste, I've come to realize that the strategies my teams
 Beyond being mere complements, agile and lean methodologies reinforce each other. Together, they create a virtuous circle that empowers teams to move faster, while also providing the insight and authority to continuously adapt and adopt even more effective practices.
 
 _This article was originally written for the [NewStore company blog](https://www.newstore.com/articles/the-wastes-of-product-engineering/) and is based on a [talk I delivered in May 2023](https://www.youtube.com/watch?v=wSo4QQW-KhI). Thanks to Amanda McLaughlin, Nuno Silva Pereira, and Carlos Rosão for edits and feedback._
+
+[^1]: Nevertheless it _is_ a bet. Even though booze seems to have perpetual appeal, certain drinks go in and out of fashion. And who knows if in 30 years' time liquor will be heavily regulated --- or even prohibited --- by the government of a major market?
