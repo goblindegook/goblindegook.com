@@ -1,4 +1,3 @@
-import { requestFrame } from './window/requestFrame'
 import { element } from 'estimate'
 
 interface Progress {
@@ -38,7 +37,7 @@ export function readingProgress(
   }
 
   function throttledUpdate() {
-    requestFrame(update)
+    window.requestAnimationFrame(update)
   }
 
   /**
