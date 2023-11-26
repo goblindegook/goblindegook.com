@@ -1,4 +1,3 @@
-import { getPageYOffset } from './window/pageYOffset'
 import { scrollTo } from './scrollTo'
 
 /**
@@ -19,7 +18,9 @@ function scrollToTarget(
 
     if (targetEl && targetEl.getBoundingClientRect) {
       const position =
-        targetEl.getBoundingClientRect().top + getPageYOffset() - offset
+        targetEl.getBoundingClientRect().top +
+        document.documentElement.scrollTop -
+        offset
       scrollTo(position, 1000, complete)
     }
   }

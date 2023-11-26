@@ -7,7 +7,6 @@ import { setupHeader } from './scripts/header'
 import { setupMasonry } from './scripts/masonry'
 import { setupProgress } from './scripts/progress'
 import { setupMainSearch } from './scripts/search-main'
-import { triggerEvent } from './scripts/lib/dom/triggerEvent'
 import { defaultTransition } from './scripts/transitions/default-transition'
 import { articleTransition } from './scripts/transitions/article-transition'
 import { setupSidebarSearch } from 'scripts/search-sidebar'
@@ -30,7 +29,7 @@ window.addEventListener('load', () => {
   setupFonts()
   setupSidebarSearch()
   setupHeader(document)
-  triggerEvent(window, 'scroll')
+  window.dispatchEvent(new Event('scroll'))
 
   barba.use(prefetch)
 
@@ -41,7 +40,7 @@ window.addEventListener('load', () => {
       .replace('navigation')
 
     setupHeader(document)
-    triggerEvent(window, 'scroll')
+    window.dispatchEvent(new Event('scroll'))
   })
 
   barba.init({

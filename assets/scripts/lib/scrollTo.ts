@@ -1,6 +1,4 @@
-import { getPageYOffset, setPageYOffset } from './window/pageYOffset'
-import { requestFrame } from './window/requestFrame'
-import { easeInOutCubic, EasingFunction } from './easings'
+import { EasingFunction, easeInOutCubic } from './easings'
 
 /**
  * Scroll to vertical position.
@@ -16,7 +14,7 @@ export function scrollTo(
   completion: () => void = () => undefined,
   easing: EasingFunction = easeInOutCubic,
 ): void {
-  const offset = getPageYOffset()
+  const offset = document.documentElement.scrollTop
   const change = targetPosition - offset
 
   let start = 0
@@ -28,14 +26,16 @@ export function scrollTo(
 
     const progress = timestamp - start
 
-    setPageYOffset(Math.ceil(offset + change * easing(progress / duration)))
+    document.documentElement.scrollTop = Math.ceil(
+      offset + change * easing(progress / duration),
+    )
 
     if (progress <= duration) {
-      requestFrame(animateScroll)
+      window.requestAnimationFrame(animateScroll)
     } else if (completion && typeof completion === 'function') {
       completion()
     }
   }
 
-  requestFrame(animateScroll)
+  window.requestAnimationFrame(animateScroll)
 }

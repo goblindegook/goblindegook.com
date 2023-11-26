@@ -112,8 +112,8 @@ export const Search = ({
           ? isLoading.val
             ? NoResults({ classPrefix, text: 'Loading...' })
             : !items.val.length
-            ? NoResults({ classPrefix, text: 'No results found.' })
-            : items.val.slice(0, page).map(renderResult)
+              ? NoResults({ classPrefix, text: 'No results found.' })
+              : items.val.slice(0, page).map(renderResult)
           : null,
       ),
   ]
