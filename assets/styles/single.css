@@ -109,7 +109,6 @@
 
 .single-entry-body {
   font-size: var(--ms1);
-  hanging-punctuation: first;
 
   & h2 {
     border-bottom: 1px solid var(--divider-color);

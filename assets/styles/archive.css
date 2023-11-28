@@ -111,7 +111,6 @@
 }
 
 .archive-entry-content {
-  hanging-punctuation: first;
   margin-bottom: -1rem;
 
   & blockquote {

@@ -6,6 +6,7 @@ input[type='search'] {
 }
 
 html {
+  hanging-punctuation: first allow-end last;
   overflow-x: hidden; /* workaround for 100vw overflows */
 }
 
