@@ -12,6 +12,7 @@ A list of the talks I have delivered over the years.
 
 So you have thought about writing automated tests for your product, but simple questions with not-so-simple answers assail you: _Why should we bother? Who writes these tests? And when? What parts are worth testing?_ And most difficult of all: _How?_ I help teams starting on their testing journey find their own answers to these questions, and point them to Kent Beck's [Test Desiderata](https://kentbeck.github.io/TestDesiderata/) to recognise what a good test looks like.
 
+- Private event (February 7, 2024 · Online)
 - Private event (October 25, 2023 · Online)
 
 ## [The Wastes of Product Engineering](/2023/engineering-waste)
