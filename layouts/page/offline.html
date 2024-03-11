@@ -1,13 +1,15 @@
 {{ partial "header.html" . }}
 
-<main id="content" class="content-single" data-transition="container" data-transition-namespace="offline">
+<main id="content" class="content-single offline" data-transition="container" data-transition-namespace="offline">
 	<article class="single-entry">
     <header class="single-entry-header">
       <h1 class="single-entry-title">{{ .Title | markdownify }}</h1>
     </header>
 		<div class="single-entry-body">
-		  <div style="text-align: center">Please reconnect your device to view this page.</div>
+		  <p style="text-align: center">Please reconnect your device to view this page.</p>
+      <p style="text-align: center">The following pages are still available while offline.</p>
 		</div>
+    <div id="available-offline"></div>
 	</article>
 </main>
 

@@ -5,7 +5,7 @@ import { Markdown, Search } from './search-components'
 
 const { li, a, article, h2, p } = van.tags
 
-const Result = ({ url, title, description }: SearchResult) =>
+export const Result = ({ url, title, description }: SearchResult) =>
   li(
     article(
       { class: 'search-result-single' },
@@ -16,13 +16,13 @@ const Result = ({ url, title, description }: SearchResult) =>
     ),
   )
 
-export function setupMainSearch(doc: Document): void {
+export async function setupMainSearch(doc: Document): void {
   const container = doc.getElementById('main-search')
   container.innerHTML = ''
   if (container) {
     van.add(
       container,
-      Search({
+      await Search({
         autofocus: true,
         defaultValue: parseQueryString().q,
         navigate: (terms) => {

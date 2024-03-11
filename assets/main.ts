@@ -10,6 +10,7 @@ import { setupMainSearch } from './scripts/search-main'
 import { defaultTransition } from './scripts/transitions/default-transition'
 import { articleTransition } from './scripts/transitions/article-transition'
 import { setupSidebarSearch } from 'scripts/search-sidebar'
+import { setupOffline } from 'scripts/offline'
 
 const parser = new DOMParser()
 
@@ -24,12 +25,16 @@ const from = (source: Document) => ({
   },
 })
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   setupHash()
   setupFonts()
-  setupSidebarSearch()
+  await setupSidebarSearch()
   setupHeader(document)
   window.dispatchEvent(new Event('scroll'))
+
+  if (document.querySelector('main.offline')) {
+    await setupOffline('goblindegook-offline-v3')
+  }
 
   barba.use(prefetch)
 
@@ -85,8 +90,8 @@ window.addEventListener('load', () => {
       },
       {
         namespace: 'search',
-        beforeEnter() {
-          setupMainSearch(document)
+        async beforeEnter() {
+          await setupMainSearch(document)
         },
       },
     ],

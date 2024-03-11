@@ -10,12 +10,12 @@ const Result = ({ url, title }: SearchResult) =>
     a({ href: url }, Markdown(title)),
   )
 
-export function setupSidebarSearch(): void {
+export async function setupSidebarSearch(): void {
   const container = document.getElementById('sidebar-search')
   if (container) {
     van.add(
       container,
-      Search({
+      await Search({
         classPrefix: 'sidebar-',
         container,
         page: 5,
