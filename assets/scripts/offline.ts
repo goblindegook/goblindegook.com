@@ -38,6 +38,7 @@ export async function setupOffline(cacheKey: string) {
     .filter(
       (url) =>
         url.pathname.endsWith('/') &&
+        url.search.length === 0 &&
         !['/', '/offline/'].includes(url.pathname),
     )
     .sort()
