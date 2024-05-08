@@ -19,7 +19,7 @@ So you have thought about writing automated tests for your product, but simple q
 
 Product engineering is wasteful, and teams often fail to realise it. Recognising how the traditional 8 wastes of Lean Manufacturing manifest themselves in software development is a key first step towards addressing them through continuous improvement, cross-functional team ownership, and agile practices.
 
-- [RomaJS](https://www.meetup.com/romajs/events/300230900/) (April 17, 2024 · Rome, Italy)
+- [RomaJS](https://www.meetup.com/romajs/events/300230900/) (April 17, 2024 · Rome, Italy) ([video](https://www.youtube.com/watch?v=m_vpqpRK9gM))
 - [NewStore Tech Talks](https://www.meetup.com/newstore/events/293465281/) (May 31, 2023 · Online) ([video](https://www.youtube.com/watch?v=wSo4QQW-KhI), [slides](/talks/product-engineering-waste-slides.pdf), [article](https://www.newstore.com/articles/the-wastes-of-product-engineering/))
 - Private event (May 24, 2023 · Online)
 
