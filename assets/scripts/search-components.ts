@@ -5,7 +5,7 @@ import { sanitize } from 'dompurify'
 import { SearchResult, createSearch } from './lib/search'
 
 const { ul, li, label, input } = van.tags
-const { svg, use } = van.tagsNS('http://www.w3.org/2000/svg')
+const { svg, use } = van.tags('http://www.w3.org/2000/svg')
 
 export function Markdown(text: string): HTMLElement {
   const span = document.createElement('span')
