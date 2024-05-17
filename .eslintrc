@@ -1,4 +1,13 @@
 {
-  "plugins": ["testing-library", "vitest"],
-  "extends": ["@pacote/eslint-config"]
+  "extends": ["@pacote/eslint-config"],
+  "plugins": [],
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": false,
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+  },
 }
