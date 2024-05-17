@@ -15,20 +15,8 @@
     "watch": "concurrently 'npm test' 'hugo serve --buildDrafts --buildFuture'",
     "test": "vitest"
   },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
-  },
   "devDependencies": {
     "@pacote/eslint-config": "^6.0.1",
-    "@pacote/eslint-config-jest": "^3.0.2",
     "@types/dompurify": "^3.0.5",
     "@types/estimate": "^1.0.3",
     "@types/imagesloaded": "^4.1.6",

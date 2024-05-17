@@ -4,7 +4,6 @@
   "env": {
     "commonjs": true,
     "es6": true,
-    "jest": false,
   },
   "parserOptions": {
     "ecmaVersion": 2019,
