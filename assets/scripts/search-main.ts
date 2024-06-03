@@ -1,5 +1,5 @@
 import van from 'vanjs-core'
-import { SearchResult } from './lib/search'
+import type { SearchResult } from './lib/search'
 import { parseQueryString } from './lib/url'
 import { Markdown, Search } from './search-components'
 

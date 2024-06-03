@@ -1,8 +1,8 @@
-import van from 'vanjs-core'
-import snarkdown from 'snarkdown'
-import smartypants from 'smartypants'
 import { sanitize } from 'dompurify'
-import { SearchResult, createSearch } from './lib/search'
+import smartypants from 'smartypants'
+import snarkdown from 'snarkdown'
+import van from 'vanjs-core'
+import { type SearchResult, createSearch } from './lib/search'
 
 const { ul, li, label, input } = van.tags
 const { svg, use } = van.tags('http://www.w3.org/2000/svg')
@@ -22,7 +22,7 @@ type NoResultsProps = {
 }
 
 const NoResults = ({ classPrefix = '', text }: NoResultsProps) =>
-  li({ class: classPrefix + 'search-result-none' }, text)
+  li({ class: `${classPrefix}search-result-none` }, text)
 
 type SearchProps = {
   autofocus?: boolean
@@ -79,9 +79,9 @@ export const Search = async ({
 
   return [
     label(
-      { class: classPrefix + 'search-label' },
+      { class: `${classPrefix}search-label` },
       svg(
-        { class: classPrefix + 'search-icon', title: 'Search' },
+        { class: `${classPrefix}search-icon`, title: 'Search' },
         use({
           'xmlns:xlink': 'http://www.w3.org/1999/xlink',
           href: '#icon-search',
@@ -90,7 +90,7 @@ export const Search = async ({
       input({
         autocomplete: 'off',
         autofocus,
-        class: classPrefix + 'search-input',
+        class: `${classPrefix}search-input`,
         name: 'q',
         placeholder: 'Search terms',
         type: 'search',

@@ -1,5 +1,5 @@
 import van from 'vanjs-core'
-import { SearchResult } from './lib/search'
+import type { SearchResult } from './lib/search'
 import { Markdown, Search } from './search-components'
 
 const { li, a } = van.tags
