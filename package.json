@@ -9,15 +9,15 @@
     "build:preview": "hugo --gc --minify --buildDrafts --buildFuture && npm run build:search",
     "build:search": "node --experimental-json-modules scripts/search-index.mjs",
     "build:site": "hugo --gc --minify",
-    "format": "biome check --apply {assets, test}/**/*.ts",
+    "format": "biome check --apply {assets, test}/**.ts",
     "lint": "concurrently 'npm run lint:scripts' 'npm run lint:styles'",
     "lint:styles": "stylelint 'assets/**/*.css'",
-    "lint:scripts": "biome check {assets,test}/**/*.ts",
+    "lint:scripts": "biome check {assets,test}/**.ts",
     "watch": "concurrently 'npm test' 'hugo serve --buildDrafts --buildFuture'",
     "test": "vitest"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.3",
+    "@biomejs/biome": "^1.8.0",
     "@types/dompurify": "^3.0.5",
     "@types/estimate": "^1.0.3",
     "@types/imagesloaded": "^4.1.6",

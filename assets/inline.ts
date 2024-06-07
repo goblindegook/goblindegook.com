@@ -11,7 +11,7 @@ if (window.sessionStorage.fonts) {
   )
 }
 
-if (navigator && navigator.serviceWorker) {
+if (navigator?.serviceWorker) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(console.error)
   })

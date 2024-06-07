@@ -13,7 +13,7 @@ const PRECACHE_URLS = [
 ]
 
 type ExtendableEvent = Event & {
-  waitUntil: (promise: Promise<any>) => Promise<void>
+  waitUntil: (promise: Promise<unknown>) => Promise<void>
 }
 
 type FetchEvent = ExtendableEvent & {
@@ -48,12 +48,13 @@ function networkFetchAndCache(request: RequestInfo): Promise<Response> {
 }
 
 function offlineFallback(request: RequestInfo): Promise<Response> {
-  return self.caches.match(request).then((response) =>
-    !response || response.status === 404
-      ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        self.caches.match(OFFLINE_URL).then((offline) => offline!)
-      : response,
-  )
+  return self.caches
+    .match(request)
+    .then((response) =>
+      !response || response.status === 404
+        ? self.caches.match(OFFLINE_URL).then((offline) => offline)
+        : response,
+    )
 }
 
 self.addEventListener('install', (event: ExtendableEvent) => {

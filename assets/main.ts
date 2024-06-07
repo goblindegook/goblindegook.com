@@ -1,5 +1,7 @@
 import barba from '@barba/core'
 import prefetch from '@barba/prefetch'
+import { setupOffline } from 'scripts/offline'
+import { setupSidebarSearch } from 'scripts/search-sidebar'
 import { setupFonts } from './scripts/fonts'
 import { setupFootnotes } from './scripts/footnotes'
 import { setupHash } from './scripts/hash'
@@ -7,10 +9,8 @@ import { setupHeader } from './scripts/header'
 import { setupMasonry } from './scripts/masonry'
 import { setupProgress } from './scripts/progress'
 import { setupMainSearch } from './scripts/search-main'
-import { defaultTransition } from './scripts/transitions/default-transition'
 import { articleTransition } from './scripts/transitions/article-transition'
-import { setupSidebarSearch } from 'scripts/search-sidebar'
-import { setupOffline } from 'scripts/offline'
+import { defaultTransition } from './scripts/transitions/default-transition'
 
 const parser = new DOMParser()
 
