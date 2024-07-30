@@ -13,7 +13,7 @@ type OfflinePageListProps = {
   urls?: readonly URL[]
 }
 
-export const OfflinePageList = async ({ urls }: OfflinePageListProps) => {
+const OfflinePageList = async ({ urls }: OfflinePageListProps) => {
   const items = van.state<Page[]>([])
 
   for (const url of urls) {

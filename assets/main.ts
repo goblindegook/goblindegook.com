@@ -32,10 +32,6 @@ window.addEventListener('load', async () => {
   setupHeader(document)
   window.dispatchEvent(new Event('scroll'))
 
-  if (document.querySelector('main.offline')) {
-    await setupOffline('goblindegook-offline-v3')
-  }
-
   barba.use(prefetch)
 
   barba.hooks.beforeEnter(({ next }) => {
@@ -92,6 +88,12 @@ window.addEventListener('load', async () => {
         namespace: 'search',
         async beforeEnter() {
           await setupMainSearch(document)
+        },
+      },
+      {
+        namespace: 'offline',
+        async beforeEnter() {
+          await setupOffline('goblindegook-offline-v3')
         },
       },
     ],
