@@ -39,6 +39,7 @@ Too many software developers are obsessed with keeping their code free from repe
 
 I built a search engine for my sites — it's small, fast, private, and doesn't require a backend. Using Bloom filters at its core, it's presented as an alternative to more sophisticated options using inverted indices that come with a bigger memory footprint. Check the [`@pacote/bloom-search` module on NPM](https://www.npmjs.com/package/@pacote/bloom-search), and a [comparison with popular alternatives](https://goblindegook.github.io/bloom-search-poc/).
 
+- Private event (March 12, 2025 · Online)
 - [RomaJS](https://www.meetup.com/romajs/events/293861331/) (June 21, 2023 · Rome, Italy) ([video](https://www.youtube.com/watch?v=d0p4WWYthfA), <a href="/talks/searching-with-bloom-filters/" data-prevent-transition="true">slides</a>)
 - Private event (June 14, 2023 · Online)
 - BOLT Talks (March 18, 2021 · Online) ([slides](https://goblindegook.github.io/talks/bloom-search.html))
