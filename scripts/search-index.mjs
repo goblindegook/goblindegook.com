@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { stemmer } from 'stemmer'
-import createDOMPurify from 'dompurify'
-import { JSDOM } from 'jsdom'
-import { decode } from 'html-entities'
-import { BloomSearch } from '@pacote/bloom-search'
 import { encode } from '@msgpack/msgpack'
-import { readFile } from 'node:fs/promises'
+import { BloomSearch } from '@pacote/bloom-search'
+import createDOMPurify from 'dompurify'
+import { decode } from 'html-entities'
+import { JSDOM } from 'jsdom'
+import { stemmer } from 'stemmer'
 
 const stopwords = JSON.parse(
   await readFile(
@@ -19,7 +18,7 @@ const stopwords = JSON.parse(
 const documentIndexFile = join('public', 'document-index.json')
 const searchIndexFile = join('public', 'search-index.msgpack')
 
-const documents = JSON.parse(readFileSync(documentIndexFile, 'utf8'))
+const documents = JSON.parse(await readFile(documentIndexFile, 'utf8'))
 
 console.log(`Indexing ${documents.length} documents...`)
 
@@ -36,12 +35,14 @@ const content = new BloomSearch({
   stemmer,
 })
 
-documents.forEach((document) => content.add(document.id, document))
+for (const document of documents) {
+  content.add(document.id, document)
+}
 
 const serializedSearchIndex = encode(JSON.parse(JSON.stringify(content.index)))
 
-writeFileSync(searchIndexFile, serializedSearchIndex)
+await writeFile(searchIndexFile, serializedSearchIndex)
 
 console.log(
-  `Search index written to ${searchIndexFile} (${serializedSearchIndex.byteLength} bytes).`
+  `Search index written to ${searchIndexFile} (${serializedSearchIndex.byteLength} bytes).`,
 )
