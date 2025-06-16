@@ -53,10 +53,8 @@
 
 .littlefoot__content a {
   background-color: transparent;
-  background-image: linear-gradient(
-      var(--ui-background-color),
-      var(--ui-background-color)
-    ),
+  background-image:
+    linear-gradient(var(--ui-background-color), var(--ui-background-color)),
     linear-gradient(var(--ui-background-color), var(--ui-background-color)),
     linear-gradient(var(--link-color), var(--link-color));
   background-position:

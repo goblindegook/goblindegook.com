@@ -41,7 +41,8 @@
   margin: 0 0 3rem;
   padding: 2rem;
   position: relative;
-  transition-property: background-color box-shadow height left transform width;
+  transition-property:
+    background-color, box-shadow, height, left, transform, width;
   width: var(--masonry-column-width);
   will-change: left, width;
 }

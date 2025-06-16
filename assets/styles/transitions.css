@@ -8,7 +8,7 @@
   opacity: 0;
   margin-bottom: 0;
   transition-duration: var(--page-transition-duration);
-  transition-property: height margin-bottom opacity;
+  transition-property: height, margin-bottom, opacity;
   transition-timing-function: var(--page-transition-timing-function);
 }
 
@@ -22,7 +22,8 @@
   width: 100vw;
   z-index: 20;
   transition-duration: var(--page-transition-duration);
-  transition-property: background-color box-shadow height left transform width;
+  transition-property:
+    background-color, box-shadow, height, left, transform, width;
   transition-timing-function: var(--page-transition-timing-function);
 }
 
@@ -30,7 +31,7 @@
   font-size: var(--ms3);
   line-height: calc(var(--vr-line-height-rem) * 2);
   transition-duration: var(--page-transition-duration);
-  transition-property: font-size line-height;
+  transition-property: font-size, line-height;
   transition-timing-function: var(--page-transition-timing-function);
 
   & a {

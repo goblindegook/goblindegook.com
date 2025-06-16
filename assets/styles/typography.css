@@ -48,7 +48,6 @@ figcaption h4 {
 .pull-quote-left,
 .pull-quote-right {
   color: var(--highlight-color);
-  display: center;
   font-size: var(--ms2);
   font-style: italic;
   margin: 4rem 3rem;
