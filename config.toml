@@ -6,10 +6,10 @@ pygmentsCodeFences = true
 enableRobotsTXT = true
 
 [permalinks]
-  page      = "/:filename"
+  page      = "/:contentbasename"
   post      = "/:year/:slug"
-  til       = "/til/:year/:month/:day/:filename"
-  echomatic = "/echomatic/:year/:month/:day/:filename"
+  til       = "/til/:year/:month/:day/:contentbasename"
+  echomatic = "/echomatic/:year/:month/:day/:contentbasename"
 
 [params]
   author = "Luís Rodrigues"

@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{{ if not .IsHome }}{{ $title }} &middot; {{ end }}{{ .Site.Title | safeHTML }}</title>
-  {{ $css := resources.Get "main.css"  | resources.PostCSS (dict "inlineImports" true) }}
+  {{ $css := resources.Get "main.css" | css.PostCSS (dict "inlineImports" true) }}
   <link rel="stylesheet" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <link rel="preload" as="style" type="text/css" media="all" href="{{ $css.RelPermalink }}">
   <meta name="description" content="{{ .Page.Description | default .Site.Params.Description }}">

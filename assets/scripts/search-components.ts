@@ -1,18 +1,17 @@
-import { sanitize } from 'dompurify'
+import DOMPurify from 'dompurify'
 import smartypants from 'smartypants'
 import snarkdown from 'snarkdown'
 import van from 'vanjs-core'
-import { type SearchResult, createSearch } from './lib/search'
+import { createSearch, type SearchResult } from './lib/search'
 
 const { ul, li, label, input } = van.tags
 const { svg, use } = van.tags('http://www.w3.org/2000/svg')
 
 export function Markdown(text: string): HTMLElement {
   const span = document.createElement('span')
-  const html = sanitize(smartypants(snarkdown(text), 1))
+  span.innerHTML = DOMPurify.sanitize(smartypants(snarkdown(text), 1))
     .replace(/<\/?p>/gi, '')
     .trim()
-  span.innerHTML = html
   return span
 }
 
