@@ -16,7 +16,7 @@
     "removeComments": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "ES5"
+    "target": "ES2015"
   },
   "include": ["assets/**/*.ts", "assets/sw.ts"],
   "exclude": ["node_modules", "test/**/*.spec.ts"]

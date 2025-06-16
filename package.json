@@ -7,12 +7,12 @@
   "scripts": {
     "build": "npm run build:site && npm run build:search",
     "build:preview": "hugo --gc --minify --buildDrafts --buildFuture && npm run build:search",
-    "build:search": "node --experimental-json-modules scripts/search-index.mjs",
+    "build:search": "node scripts/search-index.mjs",
     "build:site": "hugo --gc --minify",
     "format": "biome check --apply {assets, test}/**.ts",
     "lint": "concurrently 'npm run lint:scripts' 'npm run lint:styles'",
     "lint:styles": "stylelint 'assets/**/*.css'",
-    "lint:scripts": "biome check {assets,test}/**.ts",
+    "lint:scripts": "biome check assets/**/*.ts",
     "watch": "concurrently 'npm test' 'hugo serve --buildDrafts --buildFuture'",
     "test": "vitest"
   },

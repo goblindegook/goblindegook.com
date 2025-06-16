@@ -7,7 +7,14 @@ import { JSDOM } from 'jsdom'
 import { decode } from 'html-entities'
 import { BloomSearch } from '@pacote/bloom-search'
 import { encode } from '@msgpack/msgpack'
-import stopwords from 'stopwords-en' assert { type: 'json' }
+import { readFile } from 'node:fs/promises'
+
+const stopwords = JSON.parse(
+  await readFile(
+    new URL('../node_modules/stopwords-en/stopwords-en.json', import.meta.url),
+    'utf-8',
+  ),
+)
 
 const documentIndexFile = join('public', 'document-index.json')
 const searchIndexFile = join('public', 'search-index.msgpack')

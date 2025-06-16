@@ -2,7 +2,7 @@ import DOMPurify from 'dompurify'
 import smartypants from 'smartypants'
 import snarkdown from 'snarkdown'
 import van from 'vanjs-core'
-import { createSearch, type SearchResult } from './lib/search'
+import { type SearchResult, createSearch } from './lib/search'
 
 const { ul, li, label, input } = van.tags
 const { svg, use } = van.tags('http://www.w3.org/2000/svg')
