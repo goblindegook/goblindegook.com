@@ -9,7 +9,6 @@ import { setupHeader } from './scripts/header'
 import { setupMasonry } from './scripts/masonry'
 import { setupProgress } from './scripts/progress'
 import { setupMainSearch } from './scripts/search-main'
-import { articleTransition } from './scripts/transitions/article-transition'
 import { defaultTransition } from './scripts/transitions/default-transition'
 
 const parser = new DOMParser()
@@ -51,7 +50,7 @@ window.addEventListener('load', async () => {
     },
     prevent: ({ el, href }) =>
       Boolean(el.dataset.preventTransition) || href.endsWith('.pdf'),
-    transitions: [defaultTransition, articleTransition],
+    transitions: [defaultTransition],
     views: [
       {
         namespace: 'home',
