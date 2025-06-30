@@ -19,3 +19,5 @@ static/search-index.msgpack
 
 # Test coverage
 coverage/
+
+.idea/
