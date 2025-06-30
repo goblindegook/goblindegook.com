@@ -71,11 +71,11 @@ We continued. Wrote another test --- this time for clicking the component. As be
 
 One test at a time, we added increasingly complex behaviour. As patterns emerged, we refactored and cleaned up. Extracted functions and subcomponents. The engineer checked the browser less and less. Their confidence grew.
 
-About 2 hours later, we were nearly done. We opened the browser and styled the component. Everything worked fine, just as the tests had confirmed. No surprises. No last-minute debugging marathons.
+About two hours later, we were nearly done. We opened the browser and styled the component. Everything worked fine, just as the tests had confirmed. No surprises. No last-minute debugging marathons.
 
-The final result: 150 lines of tight, clean logic. Written in 2 hours. With tests.
+The final result: 150 lines of tight, clean logic. Written in two hours. With tests.
 
-All by the same engineer who had spent 2 days producing 400 lines of messy, buggy, untested code --- code that would have cost even more to maintain if it had gone to production.
+All by the same engineer who had spent two days producing 400 lines of messy, buggy, untested code --- code that would have cost even more to maintain if it had gone to production.
 
 "I never worked like this before," they said at the end. "I didn't think it would work."
 
