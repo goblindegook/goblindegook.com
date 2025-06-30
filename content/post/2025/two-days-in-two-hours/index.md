@@ -15,7 +15,7 @@ Test-Driven Development (often abbreviated to TDD) is a software practice where 
 
 It may sound counterintuitive, but here's another way to look at it: first you set a small goal for yourself and, when you reach it, you take some time to reflect and tidy up before moving on to the next.
 
-A frequent claim is that working in this way, and especially writing these tests will double the time and effort to implement a feature.
+A frequent claim is that working in this way, and especially writing these tests, will double the time and effort to implement a feature.
 
 Okay. Story time.
 
