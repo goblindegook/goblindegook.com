@@ -23,11 +23,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#333333">
-  <meta name="twitter:site" content="{{ .Site.Params.Twitter }}">
-  <meta name="twitter:title" content="{{ if not .IsHome }}{{ $title }}{{ else }}{{ .Site.Title }}{{ end }}">
-  <meta name="twitter:description" content="{{ .Page.Description | default .Site.Params.Description }}">
-  <meta name="twitter:image" content="{{ $ogImage }}">
-  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ if not .IsHome }}{{ $title }}{{ else }}{{ .Site.Title }}{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
@@ -52,7 +47,7 @@
 	<link rel="apple-touch-icon" href="/icon/goblindegook-180.png">
   <link rel="me" href="https://github.com/goblindegook">
   <link rel="me" href="https://mastodon.social/@goblindegook">
-  <link rel="me" href="https://twitter.com/goblindegook">
+  <link rel="me" href="https://bsky.app/profile/goblindegook.bsky.social">
   <link rel="pingback" href="https://webmention.io/goblindegook.com/xmlrpc">
   <link rel="webmention" href="https://webmention.io/goblindegook.com/webmention">
   <script type="application/ld+json">
@@ -77,8 +72,8 @@
       "sameAs": [
         "https:\/\/github.com\/goblindegook",
         "https:\/\/mastodon.social\/@goblindegook",
-        "https:\/\/twitter.com\/goblindegook",
-        "https:\/\/www.instagram.com\/goblindegook\/",
+        "https:\/\/bsky.app\/profile\/goblindegook.bsky.social",
+        "https:\/\/www.instagram.com\/goblindegook",
         "https:\/\/www.linkedin.com\/in\/luispedrorodrigues"
       ],
       "@id": "#person",

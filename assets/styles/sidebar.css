@@ -25,32 +25,14 @@
 .sidebar-content {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 3fr 1fr;
   margin: 0 auto;
   max-width: var(--body-max-width);
 }
 
-.sidebar-intro {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-
 @media (--narrow-viewport) {
-  .sidebar-intro {
-    grid-column: 1;
-    grid-row: 1;
-  }
-}
-
-.sidebar-navigation {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-@media (--narrow-viewport) {
-  .sidebar-navigation {
-    grid-column: 1;
-    grid-row: 2;
+  .sidebar-content {
+    grid-template-columns: 1fr;
   }
 }
 
