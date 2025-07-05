@@ -11,19 +11,21 @@ draft: false
 
 Every now and then I see people argue that Test-Driven Development slows you down.
 
-Test-Driven Development (often abbreviated to TDD) is a software practice where you write a failing test _before_ writing the code to make it pass. It flips the usual flow[^1]: test first, then code, then refactor.
+Test-Driven Development (abbreviated to TDD) is a software practice where you write an automated test, which should be failing, _before_ writing the code to make it pass. It flips the usual flow[^1]: test first, then code, then refactor.
 
-It may sound counterintuitive, but here's another way to think about it: first, you set a small, clear goal for yourself. When you reach it, you pause to reflect and tidy things up before moving on to the next goal.
+It may sound counterintuitive, but here's another way to think about it: first, you set a small, clear goal for yourself. When you reach it, you pause to reflect and tidy things up before moving on to the next small goal.[^2]
 
-A frequent claim is that this process, and especially writing tests, will double the time and effort needed to ship a feature.
+One of the nicest things about the process is that the tests you write will change roles once satisfied, and go from being _guides_ to being _guardians_. Automation allows them to run periodically, even continuously, to let you know if you ever make a mistake that undoes any previous work. As long as your destination and your goals are sound, you're never in a position where you take a wrong turn that forces you to retrace your steps.
+ 
+But a frequent claim is that this process, and especially writing tests, will double the time and effort needed to ship a feature.
 
 Okay. Story time.
 
-A few years ago, a developer at a company I was consulting for came to me for help. They’d been going in circles trying to implement a fairly complex frontend component.
+A few years ago, a developer at a company I was consulting for came to me for help. They'd been going in circles trying to implement a complex frontend component.
 
 "Can you understand what's wrong?"
 
-I looked at the code. It was completely opaque. I could see the mounting frustration --- 300 or 400 lines of tangled logic and commented-out experiments trying to make the component work in increasingly complicated ways. The length and complexity made it impossible to reason about quickly.
+I looked at the code. It was opaque. I could see the mounting frustration --- 300 or 400 lines of tangled logic and commented-out experiments trying to make the component work in increasingly complicated ways. The length and complexity made it impossible to reason about quickly.
 
 "Okay, where are the tests?" I asked.
 
@@ -33,7 +35,7 @@ I looked at the code. It was completely opaque. I could see the mounting frustra
 
 "A couple of days. I'm out of ideas."
 
-I’d been trying to get engineers at this company to practice TDD, so I had to ask:
+Since I'd been trying to get engineers at this company to practice TDD, I had to ask:
 
 "Have you tried TDD?"
 
@@ -43,15 +45,15 @@ Of course not. Silly me.
 
 I wanted to help, but the only realistic option at this point was a rewrite. I had to make sure they were open to the idea.
 
-"How about we do it together? But I don’t understand this code. Mind if we start from scratch?"
+"How about we do it together? But I don't understand this code. Mind if we start from scratch?"
 
 "Sure!"
 
 So we paired up.
 
-I asked the engineer to take the keyboard. They’d write all the code --- I’d just watch.
+I asked the engineer to take the keyboard. They'd write all the code --- I'd just watch.
 
-We started with the simplest possible behaviour expected from the component. Wrote _one_ test. We saw it fail, which is important because it told us the test actually checked what we cared about, then wrote just enough code to make it pass.
+We started with the simplest possible behaviour expected from the component. Wrote _one_ test. We saw it fail, which is important because it told us the test checked what we cared about, then wrote just enough code to make it pass.
 
 The engineer reached for the browser.
 
@@ -61,9 +63,9 @@ The engineer reached for the browser.
 
 "The test already proves it works. Don't you trust it?"
 
-I explained that if we had to break our flow to manually test every change, we’d waste a lot of time.
+I explained that if we had to break our flow to manually test every change, we'd waste a lot of time.
 
-"Go ahead and check, but we don’t really need the browser until it's time to style the component."
+"Go ahead and check, but we won't need the browser until it's time to style the component."
 
 They opened the browser anyway, and were happy with what they saw.
 
@@ -71,7 +73,7 @@ We continued. Wrote another test --- this time for clicking the component. As be
 
 Test by test, we added increasingly complex behaviour. As patterns emerged, we refactored and cleaned up. Extracted functions and subcomponents. The engineer checked the browser less and less. Their confidence grew.
 
-About two hours later, we were nearly done. We opened the browser and styled the component. Everything worked fine, just as the tests had confirmed. No surprises. No last-minute debugging marathons.
+About two hours later, we were nearly done. We opened the browser and styled the component. Everything worked fine, just as the tests confirmed. No surprises. No last-minute debugging marathons.
 
 The final result: 150 lines of tight, clean logic. With tests. Written in two hours.
 
@@ -88,3 +90,5 @@ I never saw them use TDD again during my time at the company.
 I guess sometimes you've just got to suffer for your art.
 
 [^1]: Assuming you write tests at all.
+
+[^2]: This is called the _red, green, refactor_ cycle. A failing test is red, and it goes green when it passes.
