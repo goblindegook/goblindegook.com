@@ -1,6 +1,6 @@
 ---
 title: Two Days in Two Hours
-description: On moving fast and not breaking anything.
+description: On moving fast and breaking nothing.
 author: Luís Rodrigues
 slug: two-days-two-hours-test-driven-development
 categories: ['Software']
@@ -11,7 +11,7 @@ draft: false
 
 Every now and then I see people argue that Test-Driven Development slows you down.
 
-Test-Driven Development (abbreviated to TDD) is a software practice where you write an automated test, which should be failing, _before_ writing the code to make it pass. It flips the usual flow[^1]: test first, then code, then refactor.
+Test-Driven Development (abbreviated to TDD) is a software engineering practice where you write an automated test, which should be failing, _before_ writing the code to make it pass. It flips the usual flow[^1] of writing code first and only then putting a test in place to check for and prevent undesirable changes.
 
 It may sound counterintuitive, but here's another way to think about it: first, you set a small, clear goal for yourself. When you reach it, you pause to reflect and tidy things up before moving on to the next small goal.[^2]
 
