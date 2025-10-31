@@ -21,3 +21,4 @@ static/search-index.msgpack
 coverage/
 
 .idea/
+/assets/jsconfig.json

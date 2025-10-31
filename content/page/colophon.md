@@ -52,12 +52,11 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in [TypeScript]. [Barba.js], [DOMPurify], [littlefoot], [Masonry], [MessagePack], [smartypants], [snarkdown], [stemmer], and [VanJS] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in [TypeScript]. [DOMPurify], [littlefoot], [Masonry], [MessagePack], [smartypants], [snarkdown], [stemmer], and [VanJS] provide additional features and optimizations.
 
 The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
 [typescript]: http://www.typescriptlang.org
-[barba.js]: https://barba.js.org/
 [dompurify]: https://github.com/cure53/DOMPurify
 [littlefoot]: https://github.com/goblindegook/littlefoot
 [smartypants]: https://www.npmjs.com/package/smartypants
