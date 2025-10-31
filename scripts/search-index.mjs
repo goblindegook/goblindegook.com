@@ -9,10 +9,7 @@ import { JSDOM } from 'jsdom'
 import { stemmer } from 'stemmer'
 
 const stopwords = JSON.parse(
-  await readFile(
-    new URL('../node_modules/stopwords-en/stopwords-en.json', import.meta.url),
-    'utf-8',
-  ),
+  await readFile(new URL('../node_modules/stopwords-en/stopwords-en.json', import.meta.url), 'utf-8'),
 )
 
 const documentIndexFile = join('public', 'document-index.json')
@@ -29,8 +26,7 @@ const content = new BloomSearch({
   minSize: 64,
   fields: { title: 5, description: 3, content: 1 },
   summary: ['url', 'title', 'description'],
-  preprocess: (text) =>
-    decode(DOMPurify.sanitize(String(text), { ALLOWED_TAGS: ['#text'] })),
+  preprocess: (text) => decode(DOMPurify.sanitize(String(text), { ALLOWED_TAGS: ['#text'] })),
   stopwords: (term) => term.length > 2 && !stopwords.includes(term),
   stemmer,
 })
@@ -43,6 +39,4 @@ const serializedSearchIndex = encode(JSON.parse(JSON.stringify(content.index)))
 
 await writeFile(searchIndexFile, serializedSearchIndex)
 
-console.log(
-  `Search index written to ${searchIndexFile} (${serializedSearchIndex.byteLength} bytes).`,
-)
+console.log(`Search index written to ${searchIndexFile} (${serializedSearchIndex.byteLength} bytes).`)

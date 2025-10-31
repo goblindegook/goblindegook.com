@@ -34,7 +34,7 @@ type SearchProps = {
 }
 
 export const Search = async ({
-  autofocus,
+  autofocus = false,
   classPrefix = '',
   container,
   page,

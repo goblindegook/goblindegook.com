@@ -1,7 +1,0 @@
-{
-  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
-  "rules": {
-    "import-notation": "string",
-    "selector-class-pattern": ".+"
-  }
-}

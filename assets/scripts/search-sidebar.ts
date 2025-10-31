@@ -7,7 +7,7 @@ const { li, a } = van.tags
 const Result = ({ url, title }: SearchResult) =>
   li({ class: 'sidebar-search-result-single' }, a({ href: url }, Markdown(title)))
 
-export async function setupSidebarSearch(): void {
+export async function setupSidebarSearch(): Promise<void> {
   const container = document.getElementById('sidebar-search')
   if (container) {
     van.add(
