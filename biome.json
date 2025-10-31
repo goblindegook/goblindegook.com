@@ -30,6 +30,11 @@
     {
       "includes": ["layouts/**"],
       "formatter": { "enabled": false }
+    },
+    {
+      "includes": ["assets/jsconfig.json"],
+      "linter": { "enabled": false },
+      "formatter": { "enabled": false }
     }
   ],
   "javascript": {
