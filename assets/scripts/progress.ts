@@ -5,12 +5,8 @@ export function setupProgress(parent: ParentNode) {
   const progressBar = document.getElementById('reading-progress')
 
   if (progressBar) {
-    const entryContent = parent.querySelector(
-      '.single-entry-body',
-    ) as HTMLElement
-    const scrollButton = parent.querySelector(
-      '.button-furthest-read',
-    ) as HTMLElement
+    const entryContent = parent.querySelector('.single-entry-body') as HTMLElement
+    const scrollButton = parent.querySelector('.button-furthest-read') as HTMLElement
 
     const reading = readingProgress(entryContent, (progress, furthest) => {
       const scrolledBack = progress < furthest && furthest < 100

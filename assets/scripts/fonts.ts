@@ -10,12 +10,7 @@ export function setupFonts() {
 
   WebFont.load({
     custom: {
-      families: [
-        'Alegreya:n4,i4,n7,i7',
-        'Alegreya SC:n4,n7',
-        'Fira Sans:n4,i4',
-        'Fira Mono:n4',
-      ],
+      families: ['Alegreya:n4,i4,n7,i7', 'Alegreya SC:n4,n7', 'Fira Sans:n4,i4', 'Fira Mono:n4'],
     },
     active: () => {
       window.sessionStorage.fonts = true

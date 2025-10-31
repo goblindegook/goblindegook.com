@@ -2,7 +2,7 @@ import DOMPurify from 'dompurify'
 import smartypants from 'smartypants'
 import snarkdown from 'snarkdown'
 import van from 'vanjs-core'
-import { type SearchResult, createSearch } from './lib/search'
+import { createSearch, type SearchResult } from './lib/search'
 
 const { ul, li, label, input } = van.tags
 const { svg, use } = van.tags('http://www.w3.org/2000/svg')
@@ -103,9 +103,7 @@ export const Search = async ({
     () =>
       ul(
         {
-          class: `${classPrefix}search-results ${
-            isActive.val ? 'search-active' : ''
-          }`,
+          class: `${classPrefix}search-results ${isActive.val ? 'search-active' : ''}`,
         },
         isActive.val
           ? isLoading.val

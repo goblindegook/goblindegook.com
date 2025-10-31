@@ -7,7 +7,8 @@ pre {
 
 pre {
   hyphens: none;
-  line-height: 1.6 !important; /* override inline style */
+  /* biome-ignore lint/complexity/noImportantStyles: I know, I know... */
+  line-height: 1.6 !important;
   overflow-wrap: break-word;
   tab-size: 2;
   text-align: left;

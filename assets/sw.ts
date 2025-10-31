@@ -4,13 +4,7 @@ const CACHE_KEY = 'goblindegook-offline-v3'
 
 const OFFLINE_URL = '/offline/'
 
-const PRECACHE_URLS = [
-  OFFLINE_URL,
-  '/',
-  '/offline/index.html',
-  '/index.html',
-  '/search-index.msgpack',
-]
+const PRECACHE_URLS = [OFFLINE_URL, '/', '/offline/index.html', '/index.html', '/search-index.msgpack']
 
 type ExtendableEvent = Event & {
   waitUntil: (promise: Promise<unknown>) => Promise<void>
@@ -22,19 +16,13 @@ type FetchEvent = ExtendableEvent & {
 }
 
 function precache(): Promise<void> {
-  return self.caches
-    .open(CACHE_KEY)
-    .then((cache) => cache.addAll(PRECACHE_URLS))
+  return self.caches.open(CACHE_KEY).then((cache) => cache.addAll(PRECACHE_URLS))
 }
 
 function purge(): Promise<boolean[]> {
   return self.caches
     .keys()
-    .then((keys) =>
-      Promise.all(
-        keys.filter((k) => k !== CACHE_KEY).map((k) => self.caches.delete(k)),
-      ),
-    )
+    .then((keys) => Promise.all(keys.filter((k) => k !== CACHE_KEY).map((k) => self.caches.delete(k))))
 }
 
 function networkFetchAndCache(request: RequestInfo): Promise<Response> {
@@ -51,9 +39,7 @@ function offlineFallback(request: RequestInfo): Promise<Response> {
   return self.caches
     .match(request)
     .then((response) =>
-      !response || response.status === 404
-        ? self.caches.match(OFFLINE_URL).then((offline) => offline)
-        : response,
+      !response || response.status === 404 ? self.caches.match(OFFLINE_URL).then((offline) => offline) : response,
     )
 }
 
@@ -67,10 +53,6 @@ self.addEventListener('activate', (event: ExtendableEvent) => {
 
 self.addEventListener('fetch', (event: FetchEvent) => {
   if (event.request.method === 'GET') {
-    event.respondWith(
-      networkFetchAndCache(event.request).catch(() =>
-        offlineFallback(event.request),
-      ),
-    )
+    event.respondWith(networkFetchAndCache(event.request).catch(() => offlineFallback(event.request)))
   }
 })

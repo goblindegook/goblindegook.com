@@ -1,6 +1,6 @@
-import { BloomSearch, Index } from '@pacote/bloom-search'
-import { stemmer } from 'stemmer'
 import { decode } from '@msgpack/msgpack'
+import { BloomSearch, type Index } from '@pacote/bloom-search'
+import { stemmer } from 'stemmer'
 
 export type SearchResult = {
   url: string
@@ -29,11 +29,13 @@ export function createSearch() {
       await fetch('/search-index.msgpack')
         .then((response) => response.arrayBuffer())
         .then((buffer) => decode(buffer))
-        .then((index: Index<SearchResult, keyof SearchResult>) =>
-          bs.load(index),
-        )
-        .then(() => (status = 'ready'))
-        .catch(() => (status = 'idle'))
+        .then((index: Index<SearchResult, keyof SearchResult>) => bs.load(index))
+        .then(() => {
+          status = 'ready'
+        })
+        .catch(() => {
+          status = 'idle'
+        })
     }
 
     // eslint-disable-next-line no-unmodified-loop-condition

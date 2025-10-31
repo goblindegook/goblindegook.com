@@ -1,4 +1,4 @@
-import { EasingFunction, easeInOutCubic } from './easings'
+import { type EasingFunction, easeInOutCubic } from './easings'
 
 /**
  * Scroll to vertical position.
@@ -26,9 +26,7 @@ export function scrollTo(
 
     const progress = timestamp - start
 
-    document.documentElement.scrollTop = Math.ceil(
-      offset + change * easing(progress / duration),
-    )
+    document.documentElement.scrollTop = Math.ceil(offset + change * easing(progress / duration))
 
     if (progress <= duration) {
       window.requestAnimationFrame(animateScroll)

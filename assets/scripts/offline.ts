@@ -5,7 +5,7 @@ import { Result } from './search-main'
 const { ul } = van.tags
 
 type Page = {
-  title: string
+  title?: string
   url: URL | string
 }
 
@@ -13,7 +13,7 @@ type OfflinePageListProps = {
   urls?: readonly URL[]
 }
 
-const OfflinePageList = async ({ urls }: OfflinePageListProps) => {
+const OfflinePageList = async ({ urls = [] }: OfflinePageListProps) => {
   const items = van.state<Page[]>([])
 
   for (const url of urls) {
@@ -36,16 +36,13 @@ export async function setupOffline(cacheKey: string) {
   const urls = cachedUrls
     .map((url) => new URL(url))
     .filter(
-      (url) =>
-        url.pathname.endsWith('/') &&
-        url.search.length === 0 &&
-        !['/', '/offline/'].includes(url.pathname),
+      (url) => url.pathname.endsWith('/') && url.search.length === 0 && !['/', '/offline/'].includes(url.pathname),
     )
     .sort()
 
   const container = document.getElementById('available-offline')
-  container.innerHTML = ''
   if (container) {
+    container.innerHTML = ''
     van.add(container, await OfflinePageList({ urls }))
   }
 }

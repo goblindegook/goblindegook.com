@@ -8,10 +8,7 @@ export function parseQueryString(): QueryVars {
     const [rawName, rawValue] = pair.split('=')
     const name = decodeURIComponent(rawName)
     const value = decodeURIComponent(rawValue)
-
-    return {
-      ...vars,
-      [name]: value,
-    }
+    vars[name] = value
+    return vars
   }, {})
 }

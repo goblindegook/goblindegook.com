@@ -4,10 +4,10 @@
   font-style: normal;
   font-weight: 400;
   src:
-    local('Alegreya Regular'),
-    local('Alegreya-Regular'),
-    url('/fonts/Alegreya-Regular.woff2') format('woff2'),
-    url('/fonts/Alegreya-Regular.woff') format('woff');
+    local("Alegreya Regular"),
+    local("Alegreya-Regular"),
+    url("/fonts/Alegreya-Regular.woff2") format("woff2"),
+    url("/fonts/Alegreya-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -16,56 +16,56 @@
   font-style: italic;
   font-weight: 400;
   src:
-    local('Alegreya Italic'),
-    local('Alegreya-Italic'),
-    url('/fonts/Alegreya-Italic.woff2') format('woff2'),
-    url('/fonts/Alegreya-Italic.woff') format('woff');
+    local("Alegreya Italic"),
+    local("Alegreya-Italic"),
+    url("/fonts/Alegreya-Italic.woff2") format("woff2"),
+    url("/fonts/Alegreya-Italic.woff") format("woff");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Alegreya SC';
+  font-family: "Alegreya SC";
   font-style: normal;
   font-weight: 400;
   src:
-    local('Alegreya SC Regular'),
-    local('AlegreyaSC-Regular'),
-    url('/fonts/AlegreyaSC-Regular.woff2') format('woff2'),
-    url('/fonts/AlegreyaSC-Regular.woff') format('woff');
+    local("Alegreya SC Regular"),
+    local("AlegreyaSC-Regular"),
+    url("/fonts/AlegreyaSC-Regular.woff2") format("woff2"),
+    url("/fonts/AlegreyaSC-Regular.woff") format("woff");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Fira Sans';
+  font-family: "Fira Sans";
   font-style: normal;
   font-weight: 400;
   src:
-    local('Fira Sans Regular'),
-    local('FiraSans-Regular'),
-    url('/fonts/FiraSans-Regular.woff2') format('woff2'),
-    url('/fonts/FiraSans-Regular.woff') format('woff');
+    local("Fira Sans Regular"),
+    local("FiraSans-Regular"),
+    url("/fonts/FiraSans-Regular.woff2") format("woff2"),
+    url("/fonts/FiraSans-Regular.woff") format("woff");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Fira Sans';
+  font-family: "Fira Sans";
   font-style: italic;
   font-weight: 400;
   src:
-    local('Fira Sans Italic'),
-    local('FiraSans-Italic'),
-    url('/fonts/FiraSans-Italic.woff2') format('woff2'),
-    url('/fonts/FiraSans-Italic.woff') format('woff');
+    local("Fira Sans Italic"),
+    local("FiraSans-Italic"),
+    url("/fonts/FiraSans-Italic.woff2") format("woff2"),
+    url("/fonts/FiraSans-Italic.woff") format("woff");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Fira Mono';
+  font-family: "Fira Mono";
   font-style: normal;
   font-weight: 400;
   src:
-    local('Fira Mono Regular'),
-    local('FiraMono-Regular'),
-    url('/fonts/FiraMono-Regular.woff2') format('woff2'),
-    url('/fonts/FiraMono-Regular.woff') format('woff');
+    local("Fira Mono Regular"),
+    local("FiraMono-Regular"),
+    url("/fonts/FiraMono-Regular.woff2") format("woff2"),
+    url("/fonts/FiraMono-Regular.woff") format("woff");
 }

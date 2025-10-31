@@ -10,9 +10,7 @@ export const Result = ({ url, title, description }: SearchResult) =>
     article(
       { class: 'search-result-single' },
       h2({ class: 'search-result-title' }, a({ href: url }, Markdown(title))),
-      description
-        ? p({ class: 'search-result-preview' }, Markdown(description))
-        : '',
+      description ? p({ class: 'search-result-preview' }, Markdown(description)) : '',
     ),
   )
 
@@ -26,11 +24,7 @@ export async function setupMainSearch(doc: Document): void {
         autofocus: true,
         defaultValue: parseQueryString().q,
         navigate: (terms) => {
-          window.history.pushState(
-            null,
-            '',
-            `${window.location.pathname}?q=${terms}`,
-          )
+          window.history.pushState(null, '', `${window.location.pathname}?q=${terms}`)
         },
         renderResult: Result,
       }),

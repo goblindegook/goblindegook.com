@@ -14,10 +14,7 @@ type UpdateCallback = (progress: number, furthest: number) => void
  * @param  onUpdate Update callback.
  * @return          Reading progress indicator object.
  */
-export function readingProgress(
-  content: HTMLElement,
-  onUpdate: UpdateCallback,
-): Progress {
+export function readingProgress(content: HTMLElement, onUpdate: UpdateCallback): Progress {
   const reading = element(content)
   let furthest = 0
 

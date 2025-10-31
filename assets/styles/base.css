@@ -1,7 +1,7 @@
 *,
 ::after,
 ::before,
-input[type='search'] {
+input[type="search"] {
   box-sizing: border-box;
 }
 
@@ -27,6 +27,47 @@ body {
   padding-top: 5.5rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+@keyframes view-transition-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes view-transition-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@supports (view-transition-name: root) {
+  :root {
+    view-transition-name: root;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-old(root) {
+    animation-name: view-transition-fade-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: view-transition-fade-in;
+  }
 }
 
 .no-js body,
@@ -132,7 +173,7 @@ del::after,
 s::after {
   border-top: 2px solid var(--underline-color);
   bottom: 0;
-  content: '';
+  content: "";
   height: 50%;
   left: 0;
   position: absolute;

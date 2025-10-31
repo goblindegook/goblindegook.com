@@ -7,20 +7,12 @@ import { scrollTo } from './scrollTo'
  * @param offset   Vertical pixel offset.
  * @param complete Completion callback.
  */
-function scrollToTarget(
-  target: string | HTMLElement,
-  offset: number,
-  complete?: () => void,
-): void {
+function scrollToTarget(target: string | HTMLElement, offset: number, complete?: () => void): void {
   if (target) {
-    const targetEl =
-      typeof target === 'string' ? document.querySelector(target) : target
+    const targetEl = typeof target === 'string' ? document.querySelector(target) : target
 
-    if (targetEl && targetEl.getBoundingClientRect) {
-      const position =
-        targetEl.getBoundingClientRect().top +
-        document.documentElement.scrollTop -
-        offset
+    if (typeof targetEl?.getBoundingClientRect === 'function') {
+      const position = targetEl.getBoundingClientRect().top + document.documentElement.scrollTop - offset
       scrollTo(position, 1000, complete)
     }
   }
@@ -32,13 +24,9 @@ function scrollToTarget(
  * @param  location Document location.
  * @return          Whether target and document match.
  */
-function targetMatchesLocation(
-  target: HTMLAnchorElement,
-  location: Location,
-): boolean {
+function targetMatchesLocation(target: HTMLAnchorElement, location: Location): boolean {
   return (
-    location.hostname === target.hostname &&
-    location.pathname.replace(/^\//, '') === target.pathname.replace(/^\//, '')
+    location.hostname === target.hostname && location.pathname.replace(/^\//, '') === target.pathname.replace(/^\//, '')
   )
 }
 

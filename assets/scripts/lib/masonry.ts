@@ -1,5 +1,5 @@
-import Masonry from 'masonry-layout'
 import imagesLoaded from 'imagesloaded'
+import Masonry from 'masonry-layout'
 
 const defaultOptions = {
   columnWidth: '.masonry-column',
@@ -28,18 +28,15 @@ function createStyleHolder(container: Element, classes: string): void {
  * @param options   Masonry options.
  */
 export function masonry(container: Element, options = {}): void {
-  if (container && container.firstElementChild) {
+  if (container?.firstElementChild) {
     createStyleHolder(container.firstElementChild, 'masonry-column')
     createStyleHolder(container.firstElementChild, 'masonry-gutter')
 
-    const instance = new Masonry(container as any, {
+    const instance = new Masonry(container, {
       ...defaultOptions,
       ...options,
     })
 
-    imagesLoaded(container).on(
-      'progress',
-      () => instance.layout && instance.layout(),
-    )
+    imagesLoaded(container).on('progress', () => instance.layout?.())
   }
 }

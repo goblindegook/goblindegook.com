@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: it works */
+
 :root {
   color-scheme: light dark;
 
@@ -24,10 +26,10 @@
   --shadow-color: #0003;
 
   /* Typography */
-  --body-font: 'Alegreya', serif;
-  --small-caps-font: 'Alegreya SC', serif;
-  --ui-font: 'Fira Sans', system-ui, sans-serif;
-  --code-font: 'Fira Mono', monospace;
+  --body-font: "Alegreya", serif;
+  --small-caps-font: "Alegreya SC", serif;
+  --ui-font: "Fira Sans", system-ui, sans-serif;
+  --code-font: "Fira Mono", monospace;
   --fallback-body-font: serif;
   --fallback-small-caps-font: serif;
   --fallback-ui-font: system-ui, sans-serif;
