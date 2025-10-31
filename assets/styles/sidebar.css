@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.site-sidebar a {
+  color: var(--ui-link-color);
+}
+
 .no-js .site-sidebar,
 .ui-font-active .site-sidebar {
   font-family: var(--ui-font);

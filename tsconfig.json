@@ -4,7 +4,10 @@
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "importHelpers": true,
-    "lib": ["DOM", "ESNext"],
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmitHelpers": false,
@@ -16,8 +19,14 @@
     "removeComments": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "ES2015"
+    "target": "ES2019"
   },
-  "include": ["assets/**/*.ts", "assets/sw.ts"],
-  "exclude": ["node_modules", "test/**/*.spec.ts"]
+  "include": [
+    "assets/**/*.ts",
+    "assets/sw.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "test/**/*.spec.ts"
+  ]
 }
