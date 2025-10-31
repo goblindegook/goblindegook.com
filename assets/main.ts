@@ -4,11 +4,7 @@ import { setupHeader } from './scripts/header'
 import { setupSidebarSearch } from './scripts/search-sidebar'
 import { navigateTo, runNamespaceHandlers, shouldInterceptNavigation } from './scripts/transitions'
 
-document.addEventListener('click', (event) => {
-  if (!(event instanceof MouseEvent)) {
-    return
-  }
-
+document.addEventListener('click', (event: PointerEvent) => {
   const anchor = (event.target as Element | null)?.closest('a[href]')
   if (!(anchor instanceof HTMLAnchorElement)) {
     return
@@ -31,17 +27,12 @@ window.addEventListener('popstate', () => {
 window.addEventListener('load', async () => {
   setupHash()
   setupFonts()
-  await setupSidebarSearch()
   setupHeader(document)
+  await setupSidebarSearch()
 
   const container = document.querySelector<HTMLElement>('[data-transition="container"]')
-
+  window.dispatchEvent(new Event('scroll'))
   if (container) {
-    await runNamespaceHandlers({
-      container,
-      namespace: container?.dataset.transitionNamespace,
-      source: document,
-      url: new URL(window.location.href),
-    })
+    await runNamespaceHandlers(container, container?.dataset.transitionNamespace)
   }
 })

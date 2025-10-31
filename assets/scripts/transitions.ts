@@ -1,31 +1,10 @@
 import { setupFootnotes } from './footnotes'
 import { setupHeader } from './header'
+import { replaceFrom } from './lib/dom'
 import { setupMasonry } from './masonry'
 import { setupOffline } from './offline'
 import { setupProgress } from './progress'
 import { setupMainSearch } from './search-main'
-
-let isNavigating = false
-
-const parser = new DOMParser()
-
-const from = (source: Document) => ({
-  replace(name: string) {
-    const element = source.querySelector(`[data-transition="${name}"]`)
-    if (element) {
-      const target = document.querySelector(`[data-transition="${name}"]`)
-      target?.parentNode?.replaceChild(element, target)
-    }
-    return this
-  },
-})
-
-type NavigationContext = {
-  container: HTMLElement
-  namespace?: string
-  source: Document
-  url: URL
-}
 
 const supportsViewTransitions =
   typeof document.startViewTransition === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -48,13 +27,15 @@ export function shouldInterceptNavigation(event: MouseEvent, anchor: HTMLAnchorE
   )
 }
 
+let isNavigating = false
+
 export async function navigateTo(url: URL, { updateHistory = true }: { updateHistory?: boolean } = {}) {
   if (isNavigating) return
   isNavigating = true
 
   try {
-    const doc = await fetchDocument(url)
-    await renderDocument(doc, url)
+    const destination = await fetchDocument(url)
+    await transitionTo(destination, url)
     if (updateHistory) {
       window.history.pushState({ url: url.href }, '', url.href)
     }
@@ -79,24 +60,24 @@ async function fetchDocument(url: URL): Promise<Document> {
   }
 
   const html = await response.text()
+  const parser = new DOMParser()
   return parser.parseFromString(html, 'text/html')
 }
 
-async function renderDocument(doc: Document, url: URL) {
-  const nextContainer = doc.querySelector('[data-transition="container"]') as HTMLElement | null
-  const currentContainer = document.querySelector('[data-transition="container"]') as HTMLElement | null
+async function transitionTo(destination: Document, url: URL) {
+  const current = document.querySelector('[data-transition="container"]') as HTMLElement | null
+  const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
 
-  if (!nextContainer || !currentContainer) {
+  if (!next || !current) {
     window.location.assign(url.href)
     return
   }
 
-  const namespace = nextContainer.dataset.transitionNamespace
-
   const updateDom = () => {
-    document.title = doc.title
-    from(doc).replace('breadcrumbs').replace('navigation')
-    currentContainer.replaceWith(nextContainer)
+    document.title = destination.title
+    replaceFrom(destination, '[data-transition="breadcrumbs"]')
+    replaceFrom(destination, '[data-transition="navigation"]')
+    current.replaceWith(next)
     window.scrollTo(0, 0)
   }
 
@@ -112,17 +93,10 @@ async function renderDocument(doc: Document, url: URL) {
   setupHeader(document)
   window.dispatchEvent(new Event('scroll'))
   window.dispatchEvent(new HashChangeEvent('hashchange'))
-  await runNamespaceHandlers({
-    container: nextContainer,
-    namespace,
-    source: doc,
-    url,
-  })
+  await runNamespaceHandlers(next, next.dataset.transitionNamespace)
 }
 
-export async function runNamespaceHandlers(context: NavigationContext) {
-  const { container, namespace } = context
-
+export async function runNamespaceHandlers(container: HTMLElement, namespace?: string) {
   switch (namespace) {
     case 'home':
     case 'section':
