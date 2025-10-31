@@ -14,10 +14,10 @@ export const Result = ({ url, title, description }: SearchResult) =>
     ),
   )
 
-export async function setupMainSearch(doc: Document): void {
+export async function setupMainSearch(doc: Document): Promise<void> {
   const container = doc.getElementById('main-search')
-  container.innerHTML = ''
   if (container) {
+    container.innerHTML = ''
     van.add(
       container,
       await Search({

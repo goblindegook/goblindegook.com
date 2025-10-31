@@ -29,7 +29,7 @@ export function shouldInterceptNavigation(event: MouseEvent, anchor: HTMLAnchorE
 
 let isNavigating = false
 
-export async function navigateTo(url: URL, { updateHistory = true }: { updateHistory?: boolean } = {}) {
+export async function navigateTo(url: string, { updateHistory = true }: { updateHistory?: boolean } = {}) {
   if (isNavigating) return
   isNavigating = true
 
@@ -37,18 +37,18 @@ export async function navigateTo(url: URL, { updateHistory = true }: { updateHis
     const destination = await fetchDocument(url)
     await transitionTo(destination, url)
     if (updateHistory) {
-      window.history.pushState({ url: url.href }, '', url.href)
+      window.history.pushState({ url }, '', url)
     }
   } catch (error) {
     console.error(error)
-    window.location.assign(url.href)
+    window.location.assign(url)
   } finally {
     isNavigating = false
   }
 }
 
-async function fetchDocument(url: URL): Promise<Document> {
-  const response = await fetch(url.href, {
+async function fetchDocument(url: string): Promise<Document> {
+  const response = await fetch(url, {
     credentials: 'same-origin',
     headers: {
       'X-Requested-With': 'view-transition',
@@ -56,7 +56,7 @@ async function fetchDocument(url: URL): Promise<Document> {
   })
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch ${url.href}: ${response.status}`)
+    throw new Error(`Failed to fetch ${url}: ${response.status}`)
   }
 
   const html = await response.text()
@@ -64,12 +64,12 @@ async function fetchDocument(url: URL): Promise<Document> {
   return parser.parseFromString(html, 'text/html')
 }
 
-async function transitionTo(destination: Document, url: URL) {
+async function transitionTo(destination: Document, url: string) {
   const current = document.querySelector('[data-transition="container"]') as HTMLElement | null
   const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
 
   if (!next || !current) {
-    window.location.assign(url.href)
+    window.location.assign(url)
     return
   }
 

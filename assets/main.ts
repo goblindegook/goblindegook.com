@@ -17,11 +17,11 @@ document.addEventListener('click', (event: PointerEvent) => {
   }
 
   event.preventDefault()
-  navigateTo(url)
+  navigateTo(url.href)
 })
 
 window.addEventListener('popstate', () => {
-  navigateTo(new URL(window.location.href), { updateHistory: false })
+  navigateTo(window.location.href, { updateHistory: false })
 })
 
 window.addEventListener('load', async () => {
