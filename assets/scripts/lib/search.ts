@@ -38,7 +38,6 @@ export function createSearch() {
         })
     }
 
-    // eslint-disable-next-line no-unmodified-loop-condition
     while (status !== 'ready') {
       await sleep(300)
     }

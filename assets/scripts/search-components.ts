@@ -33,7 +33,7 @@ type SearchProps = {
   renderResult: (props: SearchResult) => HTMLElement
 }
 
-export const Search = async ({
+export const Search = ({
   autofocus = false,
   classPrefix = '',
   container,
@@ -64,9 +64,9 @@ export const Search = async ({
     }
   }
 
-  await searchTerms(defaultValue)
+  searchTerms(defaultValue)
 
-  const doSearch = (event: KeyboardEvent) => {
+  const performSearch = (event: KeyboardEvent) => {
     const terms = (event.target as HTMLInputElement).value
     if (event.key === 'Enter') {
       navigate(terms)
@@ -94,9 +94,9 @@ export const Search = async ({
         placeholder: 'Search terms',
         type: 'search',
         value: defaultValue,
-        oninput: doSearch,
-        onfocus: doSearch,
-        onkeyup: doSearch,
+        oninput: performSearch,
+        onfocus: performSearch,
+        onkeyup: performSearch,
       }),
     ),
     () =>

@@ -14,13 +14,13 @@ export const Result = ({ url, title, description }: SearchResult) =>
     ),
   )
 
-export async function setupMainSearch(doc: Document): Promise<void> {
+export function setupMainSearch(doc: Document): void {
   const container = doc.getElementById('main-search')
   if (container) {
     container.innerHTML = ''
     van.add(
       container,
-      await Search({
+      Search({
         autofocus: true,
         defaultValue: parseQueryString().q,
         navigate: (terms) => {

@@ -1,7 +1,14 @@
-import { onFirstLoad } from './scripts/load'
+import { onFirstLoad, type UnloadCallback } from './scripts/load'
 import { navigateTo, shouldSkipTransition } from './scripts/transitions'
 
-document.addEventListener('click', (event: PointerEvent) => {
+let cleanup: UnloadCallback = () => {}
+
+window.addEventListener('load', async () => {
+  const container = document.querySelector<HTMLElement>('[data-transition="container"]')
+  cleanup = onFirstLoad(container, container?.dataset.transitionNamespace)
+})
+
+document.addEventListener('click', async (event: PointerEvent) => {
   const anchor = (event.target as Element | null)?.closest('a[href]')
   if (!(anchor instanceof HTMLAnchorElement)) return
 
@@ -10,14 +17,11 @@ document.addEventListener('click', (event: PointerEvent) => {
   if (shouldSkipTransition(event, anchor, url)) return
 
   event.preventDefault()
-  navigateTo(url.href)
+  cleanup()
+  cleanup = await navigateTo(url.href)
 })
 
-window.addEventListener('popstate', () => {
-  navigateTo(window.location.href, { updateHistory: false })
-})
-
-window.addEventListener('load', async () => {
-  const container = document.querySelector<HTMLElement>('[data-transition="container"]')
-  await onFirstLoad(container, container?.dataset.transitionNamespace)
+window.addEventListener('popstate', async () => {
+  cleanup()
+  cleanup = await navigateTo(window.location.href, { updateHistory: false })
 })

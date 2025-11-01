@@ -31,18 +31,20 @@ const OfflinePageList = async ({ urls = [] }: OfflinePageListProps) => {
   return ul({ class: 'search-results' }, items.val.map(Result))
 }
 
-export async function setupOffline(cacheKey: string) {
-  const cachedUrls = await getCachedUrls(cacheKey)
-  const urls = cachedUrls
-    .map((url) => new URL(url))
-    .filter(
-      (url) => url.pathname.endsWith('/') && url.search.length === 0 && !['/', '/offline/'].includes(url.pathname),
-    )
-    .sort()
+export function setupOffline(cacheKey: string) {
+  ;(async () => {
+    const cachedUrls = await getCachedUrls(cacheKey)
+    const urls = cachedUrls
+      .map((url) => new URL(url))
+      .filter(
+        (url) => url.pathname.endsWith('/') && url.search.length === 0 && !['/', '/offline/'].includes(url.pathname),
+      )
+      .sort()
 
-  const container = document.getElementById('available-offline')
-  if (container) {
-    container.innerHTML = ''
-    van.add(container, await OfflinePageList({ urls }))
-  }
+    const container = document.getElementById('available-offline')
+    if (container) {
+      container.innerHTML = ''
+      van.add(container, await OfflinePageList({ urls }))
+    }
+  })()
 }

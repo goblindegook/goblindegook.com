@@ -1,5 +1,5 @@
 import { replaceFrom } from './lib/dom'
-import { onLoad } from './load'
+import { onLoad, type UnloadCallback } from './load'
 
 const supportsViewTransitions =
   typeof document.startViewTransition === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -24,23 +24,28 @@ export function shouldSkipTransition(event: MouseEvent, anchor: HTMLAnchorElemen
 
 let isNavigating = false
 
-export async function navigateTo(url: string, { updateHistory = true }: { updateHistory?: boolean } = {}) {
-  if (isNavigating) return
+export async function navigateTo(
+  url: string,
+  { updateHistory = true }: { updateHistory?: boolean } = {},
+): Promise<UnloadCallback> {
+  if (isNavigating) return () => {}
   isNavigating = true
 
   try {
-    await transitionTo(url)
+    const cleanup = await transitionTo(url)
     if (updateHistory) {
       window.history.pushState({ url }, '', url)
     }
+    return cleanup
   } catch {
     window.location.assign(url)
   } finally {
     isNavigating = false
   }
+  return () => {}
 }
 
-async function transitionTo(url: string): Promise<void> {
+async function transitionTo(url: string): Promise<UnloadCallback> {
   const current = document.querySelector('[data-transition="container"]') as HTMLElement | null
   if (!current) throw new Error('no view to transition from')
 
@@ -49,22 +54,26 @@ async function transitionTo(url: string): Promise<void> {
   const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
   if (!next) throw new Error('no view to transition to')
 
-  const performTransition = async () => {
+  let cleanup: UnloadCallback = () => {}
+
+  const performTransition = () => {
     document.title = destination.title
     replaceFrom(destination, '[data-transition="breadcrumbs"]')
     replaceFrom(destination, '[data-transition="navigation"]')
     current.replaceWith(next)
     window.scrollTo(0, 0)
     // TODO: Unmount previous event listeners
-    await onLoad(next, next.dataset.transitionNamespace)
+    cleanup = onLoad(next, next.dataset.transitionNamespace)
   }
 
   if (supportsViewTransitions) {
     const transition = document.startViewTransition(performTransition)
     await transition.finished
   } else {
-    await performTransition()
+    performTransition()
   }
+
+  return cleanup
 }
 
 async function fetchDocument(url: string): Promise<Document> {

@@ -8,14 +8,18 @@ import { setupProgress } from './progress'
 import { setupMainSearch } from './search-main'
 import { setupSidebarSearch } from './search-sidebar'
 
-export async function onFirstLoad(container: HTMLElement | null, namespace?: string) {
+export type UnloadCallback = () => void
+
+export function onFirstLoad(container: HTMLElement | null, namespace?: string): UnloadCallback {
   setupHash()
   setupFonts()
-  await setupSidebarSearch()
-  await onLoad(container, namespace)
+  setupSidebarSearch()
+  return onLoad(container, namespace)
 }
 
-export async function onLoad(container: HTMLElement | null, namespace?: string) {
+export function onLoad(container: HTMLElement | null, namespace?: string): UnloadCallback {
+  const callbacks: UnloadCallback[] = []
+
   setupHeader(document)
 
   switch (namespace) {
@@ -26,14 +30,14 @@ export async function onLoad(container: HTMLElement | null, namespace?: string) 
       setupMasonry(container)
       break
     case 'page':
-      setupProgress(document)
-      setupFootnotes()
+      callbacks.push(setupProgress(document))
+      callbacks.push(setupFootnotes())
       break
     case 'search':
-      await setupMainSearch(document)
+      setupMainSearch(document)
       break
     case 'offline':
-      await setupOffline('goblindegook-offline-v3')
+      setupOffline('goblindegook-offline-v3')
       break
     default:
       break
@@ -41,4 +45,10 @@ export async function onLoad(container: HTMLElement | null, namespace?: string) 
 
   window.dispatchEvent(new Event('scroll')) // trigger progress bar updates
   window.dispatchEvent(new HashChangeEvent('hashchange')) // trigger scroll to target
+
+  return () => {
+    for (const callback of callbacks) {
+      callback()
+    }
+  }
 }
