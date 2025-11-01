@@ -1,16 +1,11 @@
-import { setupFootnotes } from './footnotes'
-import { setupHeader } from './header'
 import { replaceFrom } from './lib/dom'
-import { setupMasonry } from './masonry'
-import { setupOffline } from './offline'
-import { setupProgress } from './progress'
-import { setupMainSearch } from './search-main'
+import { onLoad } from './load'
 
 const supportsViewTransitions =
   typeof document.startViewTransition === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-export function shouldInterceptNavigation(event: MouseEvent, anchor: HTMLAnchorElement, url: URL): boolean {
-  return !(
+export function shouldSkipTransition(event: MouseEvent, anchor: HTMLAnchorElement, url: URL): boolean {
+  return (
     event.defaultPrevented ||
     event.button !== 0 ||
     event.metaKey ||
@@ -23,7 +18,7 @@ export function shouldInterceptNavigation(event: MouseEvent, anchor: HTMLAnchorE
     url.origin !== window.location.origin ||
     url.pathname.endsWith('.pdf') ||
     url.href === window.location.href ||
-    (url.pathname === window.location.pathname && url.search === window.location.search && url.hash)
+    (url.pathname === window.location.pathname && url.search === window.location.search && url.hash.length > 0)
   )
 }
 
@@ -90,31 +85,6 @@ async function transitionTo(destination: Document, url: string) {
     updateDom()
   }
 
-  setupHeader(document)
-  window.dispatchEvent(new Event('scroll'))
   window.dispatchEvent(new HashChangeEvent('hashchange'))
-  await runNamespaceHandlers(next, next.dataset.transitionNamespace)
-}
-
-export async function runNamespaceHandlers(container: HTMLElement, namespace?: string) {
-  switch (namespace) {
-    case 'home':
-    case 'section':
-    case 'taxonomy':
-    case 'term':
-      setupMasonry(container)
-      break
-    case 'page':
-      setupProgress(document)
-      setupFootnotes()
-      break
-    case 'search':
-      await setupMainSearch(document)
-      break
-    case 'offline':
-      await setupOffline('goblindegook-offline-v3')
-      break
-    default:
-      break
-  }
+  await onLoad(next, next.dataset.transitionNamespace)
 }

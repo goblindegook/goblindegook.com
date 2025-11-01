@@ -1,20 +1,13 @@
-import { setupFonts } from './scripts/fonts'
-import { setupHash } from './scripts/hash'
-import { setupHeader } from './scripts/header'
-import { setupSidebarSearch } from './scripts/search-sidebar'
-import { navigateTo, runNamespaceHandlers, shouldInterceptNavigation } from './scripts/transitions'
+import { onFirstLoad } from './scripts/load'
+import { navigateTo, shouldSkipTransition } from './scripts/transitions'
 
 document.addEventListener('click', (event: PointerEvent) => {
   const anchor = (event.target as Element | null)?.closest('a[href]')
-  if (!(anchor instanceof HTMLAnchorElement)) {
-    return
-  }
+  if (!(anchor instanceof HTMLAnchorElement)) return
 
   const url = new URL(anchor.href, window.location.href)
 
-  if (!shouldInterceptNavigation(event, anchor, url)) {
-    return
-  }
+  if (shouldSkipTransition(event, anchor, url)) return
 
   event.preventDefault()
   navigateTo(url.href)
@@ -25,14 +18,6 @@ window.addEventListener('popstate', () => {
 })
 
 window.addEventListener('load', async () => {
-  setupHash()
-  setupFonts()
-  setupHeader(document)
-  await setupSidebarSearch()
-
   const container = document.querySelector<HTMLElement>('[data-transition="container"]')
-  window.dispatchEvent(new Event('scroll'))
-  if (container) {
-    await runNamespaceHandlers(container, container?.dataset.transitionNamespace)
-  }
+  await onFirstLoad(container, container?.dataset.transitionNamespace)
 })
