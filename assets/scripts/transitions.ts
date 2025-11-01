@@ -29,44 +29,25 @@ export async function navigateTo(url: string, { updateHistory = true }: { update
   isNavigating = true
 
   try {
-    const destination = await fetchDocument(url)
-    await transitionTo(destination, url)
+    await transitionTo(url)
     if (updateHistory) {
       window.history.pushState({ url }, '', url)
     }
-  } catch (error) {
-    console.error(error)
+  } catch {
     window.location.assign(url)
   } finally {
     isNavigating = false
   }
 }
 
-async function fetchDocument(url: string): Promise<Document> {
-  const response = await fetch(url, {
-    credentials: 'same-origin',
-    headers: {
-      'X-Requested-With': 'view-transition',
-    },
-  })
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}: ${response.status}`)
-  }
-
-  const html = await response.text()
-  const parser = new DOMParser()
-  return parser.parseFromString(html, 'text/html')
-}
-
-async function transitionTo(destination: Document, url: string) {
+async function transitionTo(url: string): Promise<void> {
   const current = document.querySelector('[data-transition="container"]') as HTMLElement | null
-  const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
+  if (!current) throw new Error('no view to transition from')
 
-  if (!next || !current) {
-    window.location.assign(url)
-    return
-  }
+  const destination = await fetchDocument(url)
+
+  const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
+  if (!next) throw new Error('no view to transition to')
 
   const updateDom = () => {
     document.title = destination.title
@@ -85,6 +66,22 @@ async function transitionTo(destination: Document, url: string) {
     updateDom()
   }
 
-  window.dispatchEvent(new HashChangeEvent('hashchange'))
   await onLoad(next, next.dataset.transitionNamespace)
+}
+
+async function fetchDocument(url: string): Promise<Document> {
+  const response = await fetch(url, {
+    credentials: 'same-origin',
+    headers: {
+      'X-Requested-With': 'view-transition',
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status}`)
+  }
+
+  const html = await response.text()
+  const parser = new DOMParser()
+  return parser.parseFromString(html, 'text/html')
 }

@@ -8,7 +8,7 @@ interface Progress {
 type UpdateCallback = (progress: number, furthest: number) => void
 
 /**
- * Reading progress factory.
+ * Reading progress.
  *
  * @param  content  Content element.
  * @param  onUpdate Update callback.
@@ -16,21 +16,29 @@ type UpdateCallback = (progress: number, furthest: number) => void
  */
 export function readingProgress(content: HTMLElement, onUpdate: UpdateCallback): Progress {
   const reading = element(content)
+  const baseline = reading.progress
   let furthest = 0
 
-  /**
-   * Handles scroll and resize events.
-   */
+  function normalize(progress: number) {
+    const range = Math.max(100 - baseline, Number.EPSILON)
+    const normalized = ((progress - baseline) / range) * 100
+    return Math.min(100, Math.max(0, normalized))
+  }
+
   function update() {
     reading.update()
 
-    if (onUpdate) {
-      onUpdate(reading.progress, furthest)
-    }
+    const normalizedProgress = normalize(reading.progress)
+    let normalizedFurthest = normalize(furthest)
 
     if (reading.progress > furthest) {
+      normalizedFurthest = normalizedProgress
       furthest = reading.progress
     }
+
+    console.log(normalizedProgress, normalizedFurthest)
+
+    onUpdate(normalizedProgress, normalizedFurthest)
   }
 
   function throttledUpdate() {

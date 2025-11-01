@@ -23,7 +23,7 @@ export async function onLoad(container: HTMLElement | null, namespace?: string) 
     case 'section':
     case 'taxonomy':
     case 'term':
-      if (container) setupMasonry(container)
+      setupMasonry(container)
       break
     case 'page':
       setupProgress(document)
@@ -38,4 +38,7 @@ export async function onLoad(container: HTMLElement | null, namespace?: string) 
     default:
       break
   }
+
+  window.dispatchEvent(new Event('scroll')) // trigger progress bar updates
+  window.dispatchEvent(new HashChangeEvent('hashchange')) // trigger scroll to target
 }

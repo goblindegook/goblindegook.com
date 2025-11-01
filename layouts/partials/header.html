@@ -85,27 +85,25 @@
 <body itemscope itemtype="https://schema.org/WebPage">
   {{ partial "icons.svg" }}
   <a href="#content" class="screen-reader">Skip to content</a>
-
-  <div data-transition="wrapper">
-    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-      <div class="site-header-wrapper">
-        <div data-transition="breadcrumbs">
-          {{ if .IsHome }}
-            <nav class="breadcrumb-trail breadcrumbs">
-              <ul class="trail-items">
-                <li class="trail-item trail-begin">
-                  <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
-                </li>
-                <li class="trail-item trail-tagline trail-end">
-                  <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
-                </li>
-              </ul>
-            </nav>
-          {{ else }}
-            {{ partial "breadcrumbs.html" . }}
-          {{ end }}
-        </div>
-        <div id="sidebar-search" class="sidebar-search">
-        </div>
+  <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+    <div class="site-header-wrapper">
+      <div data-transition="breadcrumbs">
+        {{ if .IsHome }}
+          <nav class="breadcrumb-trail breadcrumbs">
+            <ul class="trail-items">
+              <li class="trail-item trail-begin">
+                <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+              </li>
+              <li class="trail-item trail-tagline trail-end">
+                <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
+              </li>
+            </ul>
+          </nav>
+        {{ else }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
       </div>
-    </header>
+      <div id="sidebar-search" class="sidebar-search">
+      </div>
+    </div>
+  </header>
