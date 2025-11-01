@@ -1,28 +1,29 @@
-import { readingProgress } from './lib/readingProgress'
+import { readingProgress, type UnmountCallback } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
 
-export function setupProgress(parent: ParentNode) {
+export function setupProgress(parent: ParentNode): UnmountCallback {
   const progressBar = document.getElementById('reading-progress')
+  if (!progressBar) return () => {}
 
-  if (progressBar) {
-    const entryContent = parent.querySelector('.single-entry-body') as HTMLElement
-    const scrollButton = parent.querySelector('.button-furthest-read') as HTMLElement
+  const entryContent = parent.querySelector<HTMLElement>('.single-entry-body')
+  if (!entryContent) return () => {}
 
-    const reading = readingProgress(entryContent, (progress, furthest) => {
-      const scrolledBack = progress < furthest && furthest < 100
-      if (scrolledBack) {
-        scrollButton.classList.remove('invisible')
-      }
-      scrollButton.classList.toggle('animate__fadeOut', !scrolledBack)
-      scrollButton.classList.toggle('animate__bounceInUp', scrolledBack)
-      progressBar.setAttribute('value', `${progress}`)
-    })
+  const scrollButton = parent.querySelector<HTMLElement>('.button-furthest-read')
 
-    scrollButton.addEventListener('click', (): void => {
-      scrollButton.blur()
-      scrollTo(reading.getFurthestRead())
-    })
+  const reading = readingProgress(entryContent, (progress, furthest) => {
+    const scrolledBack = progress < furthest && furthest < 100
+    if (scrolledBack) {
+      scrollButton?.classList.remove('invisible')
+    }
+    scrollButton?.classList.toggle('animate__fadeOut', !scrolledBack)
+    scrollButton?.classList.toggle('animate__bounceInUp', scrolledBack)
+    progressBar.setAttribute('value', `${progress}`)
+  })
 
-    reading.start()
-  }
+  scrollButton?.addEventListener('click', (): void => {
+    scrollButton?.blur()
+    scrollTo(reading.getFurthestRead())
+  })
+
+  return reading.start()
 }

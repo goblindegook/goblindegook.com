@@ -49,34 +49,26 @@ async function transitionTo(url: string): Promise<void> {
   const next = destination.querySelector('[data-transition="container"]') as HTMLElement | null
   if (!next) throw new Error('no view to transition to')
 
-  const updateDom = () => {
+  const performTransition = async () => {
     document.title = destination.title
     replaceFrom(destination, '[data-transition="breadcrumbs"]')
     replaceFrom(destination, '[data-transition="navigation"]')
     current.replaceWith(next)
     window.scrollTo(0, 0)
+    // TODO: Unmount previous event listeners
+    await onLoad(next, next.dataset.transitionNamespace)
   }
 
   if (supportsViewTransitions) {
-    const transition = document.startViewTransition(async () => {
-      updateDom()
-      await onLoad(next, next.dataset.transitionNamespace)
-    })
+    const transition = document.startViewTransition(performTransition)
     await transition.finished
   } else {
-    updateDom()
-    await onLoad(next, next.dataset.transitionNamespace)
+    await performTransition()
   }
 }
 
 async function fetchDocument(url: string): Promise<Document> {
-  const response = await fetch(url, {
-    credentials: 'same-origin',
-    headers: {
-      'X-Requested-With': 'view-transition',
-    },
-  })
-
+  const response = await fetch(url, { credentials: 'same-origin' })
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status}`)
   }

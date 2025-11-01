@@ -11,10 +11,6 @@
     "public": true
   },
   "files.associations": {
-      "*.html": "gohtml"
-  },
-  "deno.enable": false,
-  "prettier.disableLanguages": [
-    "gohtml"
-  ]
+    "*.html": "gohtml"
+  }
 }

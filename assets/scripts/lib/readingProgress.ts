@@ -1,11 +1,12 @@
 import { element } from 'estimate'
 
-interface Progress {
+export type Progress = {
+  start: () => UnmountCallback
   getFurthestRead: () => number
-  start: () => void
 }
 
-type UpdateCallback = (progress: number, furthest: number) => void
+export type UpdateCallback = (progress: number, furthest: number) => void
+export type UnmountCallback = () => void
 
 /**
  * Reading progress.
@@ -16,53 +17,60 @@ type UpdateCallback = (progress: number, furthest: number) => void
  */
 export function readingProgress(content: HTMLElement, onUpdate: UpdateCallback): Progress {
   const reading = element(content)
-  const baseline = reading.progress
+  const normalize = normalizeRelativeTo(content, reading.progress)
   let furthest = 0
-
-  function normalize(progress: number) {
-    const range = Math.max(100 - baseline, Number.EPSILON)
-    const normalized = ((progress - baseline) / range) * 100
-    return Math.min(100, Math.max(0, normalized))
-  }
 
   function update() {
     reading.update()
 
     const normalizedProgress = normalize(reading.progress)
-    let normalizedFurthest = normalize(furthest)
+    const normalizedFurthest = normalize(furthest)
 
-    if (reading.progress > furthest) {
-      normalizedFurthest = normalizedProgress
+    if (normalizedProgress > normalizedFurthest) {
+      onUpdate(normalizedProgress, normalizedProgress)
       furthest = reading.progress
+    } else {
+      onUpdate(normalizedProgress, normalizedFurthest)
     }
-
-    onUpdate(normalizedProgress, normalizedFurthest)
   }
 
   function throttledUpdate() {
     window.requestAnimationFrame(update)
   }
 
-  /**
-   * Initialize reading progress updates.
-   */
-  function start() {
-    window.addEventListener('scroll', throttledUpdate)
-    window.addEventListener('resize', throttledUpdate)
-    window.addEventListener('orientationchange', throttledUpdate)
-  }
-
-  /**
-   * Get the furthest Y point read in the document.
-   */
-  function getFurthestRead() {
-    const rect = content.getBoundingClientRect()
-    const offset = content.offsetTop - window.innerHeight / 2
-    return (rect.height * furthest) / 100 + offset
-  }
-
   return {
-    getFurthestRead,
-    start,
+    start() {
+      const controller = new AbortController()
+      window.addEventListener('scroll', throttledUpdate, { signal: controller.signal })
+      window.addEventListener('resize', throttledUpdate, { signal: controller.signal })
+      window.addEventListener('orientationchange', throttledUpdate, { signal: controller.signal })
+      return () => controller.abort()
+    },
+
+    getFurthestRead() {
+      const rect = content.getBoundingClientRect()
+      const offset = content.offsetTop - window.innerHeight / 2
+      return (rect.height * furthest) / 100 + offset
+    },
   }
+}
+
+function normalizeRelativeTo(content: HTMLElement, baseline: number) {
+  return (progress: number) => {
+    if (content.offsetHeight <= 0) return 100
+    const normalized = ((progress - baseline) / maxReachable(content, baseline)) * 100
+    return clamp(normalized, 0, 100)
+  }
+}
+
+function clamp(value: number, lowest: number, highest: number): number {
+  return Math.max(lowest, Math.min(highest, value))
+}
+
+function maxReachable(content: HTMLElement, baseline: number): number {
+  const scrollingElement = document.scrollingElement ?? document.documentElement
+  const maxScroll = Math.max(0, scrollingElement.scrollHeight - window.innerHeight)
+  const maxDiffTop = maxScroll - content.offsetTop + window.innerHeight / 2
+  const scaledMax = (maxDiffTop / content.offsetHeight) * 100
+  return clamp(scaledMax, baseline + Number.EPSILON, 100) - baseline
 }
