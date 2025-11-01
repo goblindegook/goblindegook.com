@@ -1,40 +1,20 @@
-@keyframes view-transition-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes view-transition-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+@view-transition {
+  navigation: auto;
 }
 
 @supports (view-transition-name: root) {
-  :root {
-    view-transition-name: root;
-  }
-
   ::view-transition-old(root),
   ::view-transition-new(root) {
-    animation-duration: 250ms;
+    animation-duration: 0.25s;
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
   }
 
   ::view-transition-old(root) {
-    animation-name: view-transition-fade-out;
+    animation-name: fadeOut;
   }
 
   ::view-transition-new(root) {
-    animation-name: view-transition-fade-in;
+    animation-name: fadeIn;
   }
 }

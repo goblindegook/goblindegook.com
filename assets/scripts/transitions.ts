@@ -58,15 +58,15 @@ async function transitionTo(url: string): Promise<void> {
   }
 
   if (supportsViewTransitions) {
-    const transition = document.startViewTransition(() => {
+    const transition = document.startViewTransition(async () => {
       updateDom()
+      await onLoad(next, next.dataset.transitionNamespace)
     })
     await transition.finished
   } else {
     updateDom()
+    await onLoad(next, next.dataset.transitionNamespace)
   }
-
-  await onLoad(next, next.dataset.transitionNamespace)
 }
 
 async function fetchDocument(url: string): Promise<Document> {
