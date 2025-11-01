@@ -23,16 +23,16 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 
 I've moved on from WordPress development, and the following are no longer actively maintained.
 
-[Syllables](https://packagist.org/packages/goblindegook/syllables)
-: A collection of minimalistic classes and functions to aid WordPress development. Frequently-used code from my WordPress projects is thoroughly groomed and receives 100% test coverage before it ends up here.
-
 [Cassava CAS Server](https://wordpress.org/plugins/wp-cas-server/)
 : Cassava turns WordPress into a single sign-on authenticator for the [Central Authentication Service (CAS)](https://www.apereo.org/projects/cas) protocol. The plugin authenticates site members at the request of different CAS-enabled applications with just one password that never leaves the server.
+
+[Network Restricted Members](https://wordpress.org/plugins/network-restricted-members/)
+: This WordPress plugin restricts members on a multisite install to the sites they belong to. I made it for log's private [P2](http://p2theme.com) network, which is open to all employees but allows only limited access for clients and contractors.
 
 [Post Glue](https://wordpress.org/plugins/post-glue/)
 : WordPress sticky posts are great, but sometimes they stick to the bottom of your shoe. This plugin takes care of several issues found with the core implementation.
 
-[Network Restricted Members](https://wordpress.org/plugins/network-restricted-members/)
-: This WordPress plugin restricts members on a multisite install to the sites they belong to. I made it for log's private [P2](http://p2theme.com) network, which is open to all employees but allows only limited access for clients and contractors.
+[Syllables](https://packagist.org/packages/goblindegook/syllables)
+: A collection of minimalistic classes and functions to aid WordPress development. Frequently-used code from my WordPress projects is thoroughly groomed and receives 100% test coverage before it ends up here.
 
 [^littlefoot]: Hello, world!
