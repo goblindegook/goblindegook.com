@@ -36,8 +36,6 @@ export function readingProgress(content: HTMLElement, onUpdate: UpdateCallback):
       furthest = reading.progress
     }
 
-    console.log(normalizedProgress, normalizedFurthest)
-
     onUpdate(normalizedProgress, normalizedFurthest)
   }
 
