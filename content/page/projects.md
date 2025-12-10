@@ -19,7 +19,7 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 [`@pacote/bloom-search`](https://www.npmjs.com/package/@pacote/bloom-search)
 : The centerpiece of my `@pacote` project, this module uses Bloom filters to implement the lightweight full-text, client-side, offline-first search engine that I use on this site. Try out the [demo](https://goblindegook.github.io/bloom-search-poc/) to explore the concept and compare with the alternatives.
 
-[Musarrif](https://goblindegook.github.io/musarrif/)
+[Muṣarrif](https://goblindegook.github.io/musarrif/)
 : An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, with precise rules determining how verb forms are derived from their root letters, and this is an exploration of how full conjugation tables can be constructed from a minimal set of data.
 
 [Scopa](https://scopa.netlify.app/)
