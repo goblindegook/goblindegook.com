@@ -1,7 +1,10 @@
 <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
   <ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">
+    {{- $scratch := newScratch -}}
+    {{- $scratch.Set "position" 1 -}}
     {{- range .Ancestors.Reverse }}
     {{- if not (.Param "noBreadcrumb") }}
+    {{- $position := $scratch.Get "position" -}}
     <li
       itemprop="itemListElement"
       itemscope
@@ -19,9 +22,12 @@
           {{- .Param "breadcrumb" | default .Title | markdownify -}}
         </span>
       </a>
+      <meta itemprop="position" content="{{ $position }}">
     </li>
+    {{- $scratch.Add "position" 1 -}}
     {{- end }}
     {{- end }}
+    {{- $position := $scratch.Get "position" -}}
     <li
       itemprop="itemListElement"
       itemscope
@@ -31,6 +37,7 @@
       <span itemprop="name" aria-current="page">
         {{- .Param "breadcrumb" | default .Title | markdownify -}}
       </span>
+      <meta itemprop="position" content="{{ $position }}">
     </li>
   </ol>
 </nav>
