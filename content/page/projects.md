@@ -10,13 +10,19 @@ menu:
 
 Most of my open source endeavours revolve around the web, using TypeScript or just plain old JavaScript. The list below is only a selection of projects that I started --- you are welcome to visit [my profile page on Github](https://github.com/goblindegook/) for a fuller picture of my work and interests.
 
+[littlefoot](https://littlefoot.js.org/)
+: A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](https://github.com/lemonmade/bigfoot) for delightful footnotes, as used on this site.[^littlefoot]
+
 [`@pacote/*`](https://github.com/PacoteJS/pacote)
 : A collection of utilities written in TypeScript and distributed under the [`@pacote` organisation on NPM](https://www.npmjs.com/org/pacote).
 
-[littlefoot](https://www.npmjs.com/package/littlefoot)
-: A jQuery-free rewrite of Chris Sauvé's [Bigfoot.js](https://github.com/lemonmade/bigfoot) for delightful footnotes, as used on this site.[^littlefoot]
+[`@pacote/bloom-search`](https://www.npmjs.com/package/@pacote/bloom-search)
+: The centerpiece of my `@pacote` project, this module uses Bloom filters to implement the lightweight full-text, client-side, offline-first search engine that I use on this site. Try out the [demo](https://goblindegook.github.io/bloom-search-poc/) to explore the concept and compare with the alternatives.
 
-[Scopa](https://github.com/goblindegook/scopa)
+[Musarrif](https://goblindegook.github.io/musarrif/)
+: An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, with precise rules determining how verb forms are derived from their root letters, and this is an exploration of how full conjugation tables can be constructed from a minimal set of data.
+
+[Scopa](https://scopa.netlify.app/)
 : The Italian card game of [Scopa](https://en.wikipedia.org/wiki/Scopa) in TypeScript and React.
 
 ## WordPress
