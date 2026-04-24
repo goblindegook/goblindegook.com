@@ -44,6 +44,7 @@ export const Search = ({
 }: SearchProps) => {
   const isActive = van.state(false)
   const isLoading = van.state(true)
+  const searchTermsText = van.state('')
   const items = van.state<SearchResult[]>([])
   const search = createSearch()
 
@@ -57,8 +58,10 @@ export const Search = ({
   }
 
   const searchTerms = async (terms: string) => {
+    searchTermsText.val = terms.trim()
     isActive.val = terms.trim().length > 0
     if (isActive.val) {
+      isLoading.val = true
       items.val = await search(terms)
       isLoading.val = false
     }
@@ -91,7 +94,7 @@ export const Search = ({
         autofocus,
         class: `${classPrefix}search-input`,
         name: 'q',
-        placeholder: 'Search terms',
+        placeholder: 'Search this site',
         type: 'search',
         value: defaultValue,
         oninput: performSearch,
@@ -103,12 +106,18 @@ export const Search = ({
       ul(
         {
           class: `${classPrefix}search-results ${isActive.val ? 'search-active' : ''}`,
+          'aria-live': 'polite',
+          'aria-atomic': 'true',
+          role: 'status',
         },
         isActive.val
           ? isLoading.val
-            ? NoResults({ classPrefix, text: 'Loading...' })
+            ? NoResults({ classPrefix, text: 'Searching the site...' })
             : !items.val.length
-              ? NoResults({ classPrefix, text: 'No results found.' })
+              ? NoResults({
+                  classPrefix,
+                  text: `No results for "${searchTermsText.val}". Try a different search.`,
+                })
               : items.val.slice(0, page).map(renderResult)
           : null,
       ),
