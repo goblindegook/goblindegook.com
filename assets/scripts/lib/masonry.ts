@@ -7,16 +7,8 @@ const defaultOptions = {
   percentPosition: true,
 }
 
-/**
- * Add an element holding style definitions for retrieval by Masonry.
- *
- * See: http://masonry.desandro.com/options.html#element-sizing
- *
- * @param container Parent element for the new element.
- * @param classes   Element classes.
- */
-function createStyleHolder(container: Element, classes: string): void {
-  container.insertAdjacentHTML('beforebegin', `<div class="${classes}"></div>`)
+function hasStyleHolder(container: Element, className: string): boolean {
+  return container.getElementsByClassName(className).length > 0
 }
 
 /**
@@ -29,8 +21,13 @@ function createStyleHolder(container: Element, classes: string): void {
  */
 export function masonry(container: Element, options = {}): void {
   if (container?.firstElementChild) {
-    createStyleHolder(container.firstElementChild, 'masonry-column')
-    createStyleHolder(container.firstElementChild, 'masonry-gutter')
+    // Some templates already include sizing elements; avoid duplicating them.
+    if (!hasStyleHolder(container, 'masonry-column')) {
+      container.insertAdjacentHTML('afterbegin', '<div class="masonry-column"></div>')
+    }
+    if (!hasStyleHolder(container, 'masonry-gutter')) {
+      container.insertAdjacentHTML('afterbegin', '<div class="masonry-gutter"></div>')
+    }
 
     const instance = new Masonry(container, {
       ...defaultOptions,
