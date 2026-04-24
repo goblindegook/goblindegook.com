@@ -10,12 +10,9 @@ export type SearchResult = {
 
 type Status = 'idle' | 'loading' | 'ready'
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
 export function createSearch() {
   let status: Status = 'idle'
+  let loadPromise: Promise<void> | null = null
   const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
     errorRate: 0.0000001,
     fields: [],
@@ -23,10 +20,11 @@ export function createSearch() {
     stemmer,
   })
 
-  return async (terms = ''): Promise<SearchResult[]> => {
-    if (status === 'idle') {
+  const loadIndex = async (): Promise<void> => {
+    if (status === 'ready') return
+    if (!loadPromise) {
       status = 'loading'
-      await fetch('/search-index.msgpack')
+      loadPromise = fetch('/search-index.msgpack')
         .then((response) => response.arrayBuffer())
         .then((buffer) => decode(buffer))
         .then((index: Index<SearchResult, keyof SearchResult>) => bs.load(index))
@@ -35,13 +33,23 @@ export function createSearch() {
         })
         .catch(() => {
           status = 'idle'
+          loadPromise = null
         })
     }
 
-    while (status !== 'ready') {
-      await sleep(300)
+    await loadPromise
+  }
+
+  return async (terms = ''): Promise<SearchResult[]> => {
+    const query = terms.trim()
+    if (!query) return []
+
+    if (status === 'idle') {
+      await loadIndex()
     }
 
-    return bs.search(terms)
+    if (status !== 'ready') return []
+
+    return bs.search(query)
   }
 }

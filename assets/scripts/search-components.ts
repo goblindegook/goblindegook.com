@@ -47,6 +47,9 @@ export const Search = ({
   const searchTermsText = van.state('')
   const items = van.state<SearchResult[]>([])
   const search = createSearch()
+  let searchTimer: number | null = null
+  let lastRequestedTerms = ''
+  let requestId = 0
 
   if (container) {
     window.addEventListener('click', (event: MouseEvent) => {
@@ -58,23 +61,45 @@ export const Search = ({
   }
 
   const searchTerms = async (terms: string) => {
-    searchTermsText.val = terms.trim()
-    isActive.val = terms.trim().length > 0
-    if (isActive.val) {
-      isLoading.val = true
-      items.val = await search(terms)
+    const trimmedTerms = terms.trim()
+    searchTermsText.val = trimmedTerms
+    isActive.val = trimmedTerms.length > 0
+    if (!isActive.val) {
+      items.val = []
       isLoading.val = false
+      lastRequestedTerms = ''
+      return
     }
+
+    if (trimmedTerms === lastRequestedTerms) return
+    lastRequestedTerms = trimmedTerms
+
+    if (searchTimer != null) {
+      window.clearTimeout(searchTimer)
+    }
+
+    searchTimer = window.setTimeout(async () => {
+      const currentRequestId = ++requestId
+      isLoading.val = true
+      const result = await search(trimmedTerms)
+      if (currentRequestId !== requestId) return
+      items.val = result
+      isLoading.val = false
+    }, 120)
   }
 
   searchTerms(defaultValue)
 
-  const performSearch = (event: KeyboardEvent) => {
+  const handleSearchInput = (event: Event) => {
+    const terms = (event.target as HTMLInputElement).value
+    searchTerms(terms)
+    event.stopPropagation()
+  }
+
+  const handleSearchKeydown = (event: KeyboardEvent) => {
     const terms = (event.target as HTMLInputElement).value
     if (event.key === 'Enter') {
       navigate(terms)
-    } else {
-      searchTerms(terms)
     }
     event.stopPropagation()
   }
@@ -97,9 +122,8 @@ export const Search = ({
         placeholder: 'Search this site',
         type: 'search',
         value: defaultValue,
-        oninput: performSearch,
-        onfocus: performSearch,
-        onkeyup: performSearch,
+        oninput: handleSearchInput,
+        onkeydown: handleSearchKeydown,
       }),
     ),
     () =>
