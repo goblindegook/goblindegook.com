@@ -20,7 +20,7 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 : The centerpiece of my `@pacote` project, this module uses Bloom filters to implement the lightweight full-text, client-side, offline-first search engine that I use on this site. Try out the [demo](https://goblindegook.github.io/bloom-search-poc/) to explore the concept and compare with the alternatives.
 
 [Muṣarrif](https://musarrif.com/)
-: An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, with precise rules determining how verb forms are derived from their root letters, and this is an exploration of how full conjugation tables can be algorithmically derived from a small set of data.
+: An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, and this is an exploration of how full conjugation tables can be algorithmically derived from a small set of data.
 
 [Scopa](https://scopa.netlify.app/)
 : The Italian card game of [Scopa](https://en.wikipedia.org/wiki/Scopa) in TypeScript and React.
