@@ -6,9 +6,8 @@
   </header>
 
   <div class="content-list">
-    <div class="masonry-gutter"></div>
     <div class="masonry-column"></div>
-
+    <div class="masonry-column"></div>
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
     {{ range $paginator.Pages }}
       {{ .Render "summary" }}

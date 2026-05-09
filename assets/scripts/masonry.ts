@@ -1,9 +1,11 @@
 import { masonry } from './lib/masonry'
 
-export function setupMasonry(container: HTMLElement | null) {
-  const contentList = container?.querySelector('.content-list')
+export function setupMasonry(container: HTMLElement | null): () => void {
+  const contentList = container?.querySelector<HTMLElement>('.content-list')
 
-  if (contentList) {
-    masonry(contentList, { itemSelector: '.archive-entry' })
+  if (!contentList?.querySelector('.archive-entry')) {
+    return () => {}
   }
+
+  return masonry(contentList)
 }
