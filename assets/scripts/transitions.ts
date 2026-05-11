@@ -67,8 +67,25 @@ async function transitionTo(url: string): Promise<UnloadCallback> {
   }
 
   if (supportsViewTransitions) {
-    const transition = document.startViewTransition(performTransition)
+    const transition = document.startViewTransition(() => {
+      performTransition()
+      const body = next.querySelector<HTMLElement>('.single-entry-body')
+      if (body) body.style.opacity = '0'
+    })
     await transition.finished
+
+    const body = document.querySelector<HTMLElement>('.single-entry-body')
+    if (body) {
+      body.style.transition = 'opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+      body.style.opacity = '1'
+      body.addEventListener(
+        'transitionend',
+        () => {
+          body.style.cssText = ''
+        },
+        { once: true },
+      )
+    }
   } else {
     performTransition()
   }

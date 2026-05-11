@@ -1,4 +1,4 @@
-<figure class="single-entry-featured-image">
+<figure class="single-entry-featured-image" style="view-transition-name: post-image-{{ .File.UniqueID }}">
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
     {{ $featured := div $src.Width 2 | printf "%dx320" | $src.Fit }}

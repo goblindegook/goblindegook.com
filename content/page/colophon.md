@@ -31,13 +31,11 @@ The site's [favicon] was taken from [_Die Radiolarien_](http://caliban.mpiz-koel
 
 ## Technology
 
-The tools I use to create and maintain this site include the [Visual Studio Code] editor, [nvALT] for note-taking, and the [Hugo] static site generator. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
+The tools I use to create and maintain this site include the [Visual Studio Code] editor and the [Hugo] static site generator. Testing and debugging are possible and made easy thanks to [Chrome DevTools].
 
 Site content and sources are kept under version control on a [public Github repository][goblindegook/goblindegook.com] from which the site is deployed whenever updated.
 
 [chrome devtools]: https://developer.chrome.com/devtools/
-[hugo]: http://gohugo.io
-[nvalt]: http://brettterpstra.com/projects/nvalt/
 [visual studio code]: https://code.visualstudio.com
 [goblindegook/goblindegook.com]: https://github.com/goblindegook/goblindegook.com
 

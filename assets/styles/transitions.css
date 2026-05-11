@@ -3,6 +3,11 @@
 }
 
 @supports (view-transition-name: root) {
+  ::view-transition-group(*) {
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation-duration: 0.25s;
@@ -16,5 +21,13 @@
 
   ::view-transition-new(root) {
     animation-name: fadeIn;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms;
   }
 }

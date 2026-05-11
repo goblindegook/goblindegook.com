@@ -6,12 +6,12 @@
     <button class="button-furthest-read animate__animated invisible" title="Scroll to furthest place read">Resume reading</button>
     <header class="single-entry-header">
       <meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02" }}">
-      <time class="single-entry-date">{{ .Date.Format "January 2, 2006" }}</time>
-      <h1 itemprop="name" class="single-entry-title">{{ .Title | markdownify }}</h1>
-      {{ if .Params.Image.Src }}
-        {{ partial "featured-image.html" . }}
-      {{ end }}
+      <time class="single-entry-date" style="view-transition-name: post-date-{{ .File.UniqueID }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <h1 itemprop="name" class="single-entry-title" style="view-transition-name: post-title-{{ .File.UniqueID }}">{{ .Title | markdownify }}</h1>
     </header>
+    {{ if .Params.Image.Src }}
+      {{ partial "featured-image.html" . }}
+    {{ end }}
 		<div class="single-entry-body">
 			{{ .Content }}
 		</div>
