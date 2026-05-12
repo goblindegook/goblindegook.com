@@ -29,7 +29,15 @@
   <meta property="og:description" content="{{ .Page.Description | default .Site.Params.Description }}">
   {{ with .Site.Language }}<meta property="og:locale" content="{{ .Lang }}">{{ end }}
   <meta property="og:image" content="{{ $ogImage }}">
+  {{ if eq .Kind "page" }}
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
+  {{ range .GetTerms "tags" }}<meta property="article:tag" content="{{ .LinkTitle }}">
+  {{ end }}
+  {{ else }}
   <meta property="og:type" content="website">
+  {{ end }}
   <meta name="p:domain_verify" content="6ad693461ee7e22b7e5db843167b25c0">
   <link rel="canonical" href="{{ if .Params.Canonical }}{{ .Params.Canonical }}{{ else }}{{ .Permalink }}{{ end }}">
   <link rel="manifest" href="/manifest.webmanifest">
@@ -64,6 +72,21 @@
       }
     }
   </script>
+  {{ if eq .Kind "page" }}
+  <script type="application/ld+json">
+    {
+      "@context": "https:\/\/schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ .Title | markdownify | plainify | jsonify }},
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "description": {{ (.Description | default .Site.Params.Description) | jsonify }},
+      "url": "{{ .Permalink }}",
+      "image": "{{ $ogImage }}",
+      "author": { "@type": "Person", "@id": "#person" }
+    }
+  </script>
+  {{ end }}
   <script type="application/ld+json">
     {
       "@context": "http:\/\/schema.org",

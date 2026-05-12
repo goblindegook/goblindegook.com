@@ -1,5 +1,6 @@
 ---
 title: Conference Kit
+description: Biography and portrait of Luís Rodrigues for conference organisers.
 noToc: true
 ---
 

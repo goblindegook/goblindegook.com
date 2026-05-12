@@ -1,5 +1,6 @@
 ---
 title: Now
+description: What Luís Rodrigues is doing now — where he lives, what he's reading, working on, and playing.
 author: Luís Rodrigues
 slug: now
 date: 2026-03-09T00:00:00+01:00

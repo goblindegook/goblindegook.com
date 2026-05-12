@@ -1,5 +1,6 @@
 ---
 title: Projects
+description: Open source projects by Luís Rodrigues, including littlefoot, bloom-search, Muṣarrif, and other TypeScript and JavaScript libraries.
 author: Luís Rodrigues
 date: 2017-06-27T12:00:00+01:00
 draft: false

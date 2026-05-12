@@ -1,5 +1,6 @@
 ---
 title: 'Colophon'
+description: "The making of goblindegook: typography choices, technology stack, and tools used to build and maintain the site."
 author: 'Luís Rodrigues'
 date: 2017-06-27T12:00:00+01:00
 draft: false

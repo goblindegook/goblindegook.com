@@ -30,7 +30,7 @@ enableRobotsTXT = true
   weight = -100
 
 [outputs]
-  home = [ "HTML", "RSS" ]
+  home = ["HTML", "RSS", "Sitemap"]
 
 [imaging]
   quality = 90

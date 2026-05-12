@@ -1,5 +1,6 @@
 ---
 title: Using
+description: The hardware, software, and analogue tools I use daily.
 author: Luís Rodrigues
 slug: uses
 date: 2026-03-09T00:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 title: Talks
+description: A list of talks delivered by Luís Rodrigues on software engineering, testing, React, TypeScript, and more.
 noToc: true
 menu:
   main:
