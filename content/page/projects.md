@@ -23,7 +23,7 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 [Muṣarrif](https://musarrif.com/)
 : An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, and this is an exploration of how full conjugation tables can be algorithmically derived from a small set of data.
 
-[Now We Try It My Way](https://now-we-try-it-my-way.netlify.app/)
+[Now We Try It My Way](https://nowwetry.it/)
 : My personal recipe collection. It has a few features I find useful while in the kitchen, like multiple persistent timers and the ability to scale ingredients to the servings I want. But best of all, it has none of the SEO fluff you find in most cooking sites.
 
 [Scopa](https://scopa.netlify.app/)
