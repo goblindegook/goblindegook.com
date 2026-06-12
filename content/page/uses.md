@@ -35,6 +35,6 @@ I regularly keep the Notes app open for general notes. It's not perfect, and I c
 
 [TickTick](https://ticktick.com/) has kept me organised for several years now and I've found the experience of using it mostly frictionless, although I'm starting to prefer the analogue bullet journal for most tasks. TickTick is still great for shopping lists, keeping track of friends' birthdays[^1], and anything that needs to have a reminder attached.
 
-Most of the applications I use for work, I use out of necessity. I wouldn't recommend a lot of them. When programming, I do enjoy using [Visual Studio Code](https://code.visualstudio.com), [Wez's Terminal Emulator](https://wezterm.org) is my preferred terminal (with the Z shell and [`tmux`](https://github.com/tmux/tmux/wiki)), and I'm liking [Tuple](https://tuple.app) for screensharing and pair programming.
+Most of the applications I use for work, I use out of necessity. I wouldn't recommend a lot of them. When programming, I do enjoy using [Visual Studio Code](https://code.visualstudio.com), [Ghostty](https://ghostty.org) is my preferred terminal (with the Z shell and [`tmux`](https://github.com/tmux/tmux/wiki)), and I'm liking [Tuple](https://tuple.app) for screensharing and pair programming.
 
 [^1]: I don't have Facebook.
