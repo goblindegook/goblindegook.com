@@ -14,7 +14,7 @@ export function createSearch() {
   let status: Status = 'idle'
   let loadPromise: Promise<void> | null = null
   const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
-    errorRate: 0.0000001,
+    errorRate: 0.0001,
     fields: [],
     summary: ['title', 'description', 'url'],
     stemmer,
