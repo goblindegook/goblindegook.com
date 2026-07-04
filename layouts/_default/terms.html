@@ -6,7 +6,7 @@
   </header>
 
   <ul class="terms-list">
-    {{ range .Pages.ByTitle }}
+    {{ range (where .Pages "Draft" false).ByTitle }}
       <li class="terms-list-item"><a href="{{ .Permalink }}" class="term-link">{{ .Title }}</a></li>
     {{ end }}
   </ul>

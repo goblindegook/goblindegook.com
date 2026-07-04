@@ -12,7 +12,7 @@
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ range first 10 (where .Site.RegularPages "Type" "in" (slice "post" "til")) }}
+    {{ range first 10 (where (where .Site.RegularPages "Type" "in" (slice "post" "til")) "Draft" false) }}
     <item>
       <title>{{ .Title | markdownify | html }}</title>
       <link>{{ .Permalink }}</link>
