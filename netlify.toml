@@ -2,6 +2,12 @@
   command = "npm run lint && npm test run && npm run build"
   publish = "public"
 
+[dev]
+  command = "hugo server"
+  targetPort = 1313
+  publish = "public"
+  framework = "hugo"
+
 [context.deploy-preview]
   command = "npm run lint && npm test run && npm run build:preview"
 
