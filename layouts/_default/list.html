@@ -8,7 +8,7 @@
   <div class="content-list">
     <div class="masonry-column"></div>
     <div class="masonry-column"></div>
-    {{ $paginator := .Paginate (where (where .RegularPages "Type" "in" site.Params.mainSections) "Draft" false) }}
+    {{ $paginator := .Paginate (where .RegularPages "Type" "in" site.Params.mainSections) }}
     {{ range $paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}

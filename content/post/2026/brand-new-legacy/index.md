@@ -5,7 +5,7 @@ author: Luís Rodrigues
 slug: brand-new-legacy
 categories: ['Software']
 tags: ['work', 'artificial intelligence', 'understanding']
-date: 2026-07-04T12:00:00+01:00
+date: 2026-07-15T12:00:00+01:00
 image:
   src: feynman-blackboard.png
   caption: Richard Feynman's final blackboard at CalTech, preserved from 1988 to this day.
@@ -21,7 +21,7 @@ When Richard Feynman died in 1988, he left behind a couple of sentences scrawled
 What I cannot create I do not understand.
 {{% /pull-quote %}}
 
-Below, he exhorted his students to ‘Learn how to solve every problem that has been solved.’
+Below, he exhorted his students to ‘Know how to solve every problem that has been solved.’
 
 I’m particularly interested in the first statement, though. It is written like a personal motto, and as far as mottos go, this one resonates with me and my learning style more than any call to action.
 
