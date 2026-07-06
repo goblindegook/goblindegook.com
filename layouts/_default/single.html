@@ -21,7 +21,7 @@
       <svg class="single-entry-categories-icon" title="Filed Under"><use xmlns:xlink="http://www.w3.org/1999/xlink" href="#icon-folder"></use></svg>
 			<ul class="single-entry-categories">
         {{ range (.GetTerms "categories") }}
-				<li><a href="{{ .Permalink }}" itemprop="about">{{ .LinkTitle }}</a></li>
+				<li><a href="{{ .RelPermalink }}" itemprop="about">{{ .LinkTitle }}</a></li>
 				{{ end }}
       </ul>
       {{ end }}
