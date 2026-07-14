@@ -15,7 +15,7 @@ draft: true
 
 _This is a work in progress._
 
-When Richard Feynman died in 1988, he left behind a couple of sentences scrawled on a blackboard at CalTech where he taught. The first one read:
+When Richard Feynman died in 1988, he left behind a couple of sentences scrawled on a blackboard at the California Institute of Technology where he taught. The first one read:
 
 {{% pull-quote center %}}
 What I cannot create I do not understand.
@@ -23,38 +23,70 @@ What I cannot create I do not understand.
 
 Below, he exhorted his students to ‘Know how to solve every problem that has been solved.’
 
-I’m particularly interested in the first statement, though. It is written like a personal motto, and as far as mottos go, this one resonates with me and my learning style more than any call to action.
+It’s the first statement that interests me the most, though. It reads like a personal motto, and as far as mottos go, this one resonates with me and my learning style more than any call to action.
 
-It seems to carry a contradiction at its core. Since he obviously did not create any universes, could this mean he did not understand the world and the laws of physics that govern it? What? World-renowned physicist Richard Feynman, gifted communicator who made brain-breaking topics like quantum electrodynamics accessible to the layperson? Surely you’re joking, Mr. Feynman!
+It seems to carry a contradiction at its core. Since it’s obvious that Feynman did not create any universes, could this mean he did not understand the world and the laws of physics that govern it? What? World-renowned physicist Richard Feynman, gifted communicator who made brain-breaking topics like quantum electrodynamics feel within reach even to the layperson? Surely you’re joking, Mr. Feynman!
 
-There might be an admission of humility in there somewhere, of course. A recognition that universe-building is serious stuff indeed, that not even Feynman himself could fully grasp the motions in those first few nanoseconds in the life of what eventually became the universe around us.
+There might be an admission of humility in there somewhere. A recognition that universe-building is serious stuff indeed, that not even Feynman himself could grasp the motions in those first few nanoseconds of what eventually became the universe around us.
 
-But I’d say the most interesting thing at work in this sentence is the implication that _knowledge is not enough_. To be a passive receiver of a professor’s teachings just won’t cut it. That understanding any complex topic demands engagement. Developing an internal mental model of how things work is an act of creation in itself, one that brings with it the understanding of _why_ things are the way they are.[^1]
+But the most interesting thing at work in the sentence is the implication that _knowledge is not enough_. To be a passive receiver of a professor’s teachings won’t cut it. That understanding any complex topic demands engagement. Developing an internal mental model of how things work is an act of creation in itself, one that brings with it the understanding of _why_ things are the way they are.[^1]
 
-[^1]: If not the ‘why’ of intention, which might not be there, definitely the ‘why’ of causality.
+[^1]: If not the _why_ of intention, which might not be there, definitely the _why_ of causality.
 
-Feynman’s sentence has been on my mind a lot recently, and it is because of generative artificial intelligence.
+---
+
+Feynman’s quote has been on my mind a lot recently, and it is because of generative artificial intelligence.
 
 Artificial intelligence has gone mainstream. It has left the research labs and engineering rooms and science fiction stories where it gestated for decades and has everybody in its grip right now.
 
-<!-- TODO: Some practical applications of AI, like putting people out of work and generally making us lose our minds over it. Some of it is arguably useful. Some seems to have been made to solve problems nobody has, or solve problems created by artificial intelligence itself. -->
+As with many technological innovations, artificial intelligence will also solve problems you don’t even have. It just doesn’t appear to help as much with the verifiable problems it is creating.
 
-The people peddling artificial intelligence say it’s inevitable.  Nobody wants to be, or appear to be, last in the race.
+But the people peddling artificial intelligence say its coming is inevitable. No business or internet influencer wants to be, or appear to be, last in the race.
+
+---
 
 The most popular AI systems of today, like Large Language Models for text and Latent Diffusion Models for images and video, are based on a statistical concept called the neural network.
 
-Neural networks are nothing new, their mathematical backbone has existed for centuries since Carl Friedrich Gauss developed it to predict the movement of planets.
+Neural networks are nothing new. Their mathematical backbone has existed for centuries since Carl Friedrich Gauss developed it to predict the movement of planets.
 
-The inspiration comes from the structure of the brain and its interconnected neurons. Each one of these artificial neurons is nothing but a mathematical function: numbers go in, numbers come out. Because these functions are interconnected like neurons, results are fed from functions into other functions, and on and on they go until a transformed result drops out of the model.
+The inspiration comes from the structure of the brain and its interconnected neurons. Each one of the artificial neurons in the network is nothing but a mathematical function: numbers go in, numbers come out. Because these functions are interconnected like neurons, results are fed from functions into other functions, and on and on they go until a transformed result drops out of the model.
 
-What changed in recent years is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. New ‘attention’ mechanisms with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of data degradation.
+If neural networks are nothing new, then what changed?
+
+What changed is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. New ‘attention’ mechanisms with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of data degradation.
 
 These functions and parameters are the real secret sauce.
 
-And I do mean _secret_. Any sufficiently complex neural network is probabilistically trained from samples of existing data[^2] rather than handcrafted, so _nobody truly knows_ what the functions are doing, only that they work.[^3]
+And I do mean _secret_. Any complex neural network is probabilistically trained from bodies of existing data[^2] rather than crafted by hand, and because of that _nobody knows_ what the functions are doing, only that they work.[^3]
 
-[^2]: Training a model calls for absurd amounts of data, and the hunger of AI companies for _more_ cannot be sated. Most of it was taken without consent. And a lot is now the slop generated by previous artificial intelligence models, which is exactly as great as it sounds.
+[^2]: Training a model calls for absurd amounts of sampling data, and the hunger of AI companies for _more_ cannot be sated. Most has been taken without consent. And now a lot of it is the slop generated by previous artificial intelligence models, which is exactly as great as it sounds.
 
 [^3]: Most of the time.
+
+Compared to previous attempts, the behaviour of a Large Language Model feels like it owes more to _magic_ than it does to statistics, even to someone who is tech-savvy. AI systems are able to recombine the sampled data embedded in their models into a convincing reproduction of what a person might create, or (terrifyingly) what one might sound or look like. The fact that these complex models are not wholly understood contributes to their mystique.
+
+This incomplete knowledge extends to the effects of AI’s frenzied adoption. We are only beginning to see the breadth and depth of its impact on society, from an individual level to entire economies and political structures.
+
+Each of these topics deserves extended debate, but today I would like to focus on how it impacts my work and the work of software product engineers in general.
+
+---
+
+In computing circles we frequently have to deal with something we call ‘legacy systems.’
+
+As with many of our terms of art, the definitions are as precise as they are varied. Often, when people talk about legacy systems, they simply mean something outdated that is still being used.
+
+But being outdated doesn’t tell the whole story. A system does not have to rely on modern technology to work reliably and be amenable to change. Which is why some engineers would clarify saying that ‘legacy’ means that a system is hard to maintain.
+
+Some will point at the lack of automated tests as an indication that a codebase is ‘legacy.’ The absence of tests in any complex codebase means that even a change made with the best of intentions can have unexpected, disastrous consequences. People tread carefully around it, and as a result progress is slow: fixes and features will take longer to land and business might miss deadlines and opportunities because of it.
+
+This too can be correct, but it still leaves out the root causes of why a system is hard to maintain.
+
+Fingers tend to get pointed at the people who originally created the system, and who probably already left the company by now. It’s easy for the sod who has to support a seemingly incomprehensible mess to blame their predecessors’ incompetence, but hindsight is not 20/20. More often than not we are unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
+
+Frequently there is no written record of these decisions, and we trust code to document itself. Someone in the company would always know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
+
+For all its benefits, automated testing does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and document the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But even the best test is not enough to explain _why_ a design decision was taken.
+
+My own definition is that a legacy system is any system you have to maintain that _you do not understand_.
 
 _Continues..._
