@@ -81,7 +81,7 @@ Some, like Michael Feathers in his book _Working Effectively with Legacy Code_, 
 
 This too is correct, but it still leaves out the root causes of why a system is hard to maintain. While the absence of well-written tests undermines confidence[^4], their presence does not improve your understanding of why the product exists the way it does.
 
-[^4] As does the presence of bad tests. Poorly designed tests can be worse than no tests at all.
+[^4]: As does the presence of bad tests. Poorly designed tests can be worse than no tests at all.
 
 Fingers tend to get pointed at the people who originally created the system, and who probably are no longer with the company. It’s easy for the sod who has to support a seemingly incomprehensible mess to blame their predecessors’ incompetence, but hindsight is not 20/20. More often than not we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Maybe the right tool, or the right idea, did not yet exist. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
 
@@ -89,7 +89,7 @@ Frequently there is no written record of these decisions, software engineers ten
 
 Intention also has a tendency to diffuse with the accretion of complexity in any long-lived system. Even if the original design was recorded, its evolution might not have been.
 
-And for all its benefits, test automation does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and validate the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But the best tests document _what_ the system does, and they are not enough to explain _why_ any design decision was taken.
+And for all its benefits, test automation does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and validate the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But the best tests document _what_ the system does, they are not enough to explain _why_ any design decision was taken.
 
 My own definition is that a legacy system is any system you have to maintain that _you do not understand_.
 
@@ -109,7 +109,7 @@ Succinctly, data describes raw units of cognition. These are measurements and ob
 
 This is why we rely on information, which connects the dots and introduces structure to the raw data. It describes _what_, _when_, _who_, and _where_. The structure conveys meaning but, mind you, it does not necessarily convey truthfulness, no matter how solidly your data is anchored in fact. Whether through malice or negligence of the people and systems supplying information, it can deceive just as easily as it can enlighten.
 
-To decode information, you go one rung up the ladder, where knowledge sits. Knowledge is about grasping _how_ something functions, the. This includes how information was structured, and how data was gathered in the first place.
+To decode information, you go one rung up the ladder, where knowledge sits. Knowledge is about grasping _how_ something functions. This includes how information was structured, and how data was gathered in the first place.
 
 But we’re only halfway into the hierarchy.
 
@@ -121,19 +121,21 @@ Then comes a gap, sometimes even a gulf. And that is the distance between knowin
 
 Together with wisdom, which is the ability to conceptualise how things ought to be, understanding is the other pillar allowing you to be _effective_. To go beyond doing a thing right, and start doing the right thing.
 
+You can have information and knowledge supplied to you in myriad ways, but no one can give you understanding. With or without outside help, you have to build it yourself.
+
 ---
 
 The gap between knowledge and understanding is not new. Neither are legacy computer systems.
 
-Traditionally understanding was lost due to a combination of structural deficiencies and the inevitable buildup of complexity. All of the bad practices compounded slowly
+In the past, understanding deteriorated through a mix of structural problems and the inevitable buildup of complexity. All of the bad engineering practices and organisational dysfunctions compounded slowly.
 
-Then artificial intelligence entered the software development lifecycle, and everything went on overdrive.
+Then artificial intelligence entered the software development lifecycle, and everything went into overdrive.
 
 These days, any person can fire up an AI coding harness and ask it to generate an application top-to-bottom in minutes, without any clue of how it works internally.
 
 Unless you specify the technology, more often than not, the LLM behind the harness will generate a React application in JavaScript, largely because its training data skewed towards technologies that were popular at the time.
 
-While you could argue that a React application is not necessarily a bad choice, my argument is that this was not a choice at all. It was the roll of a loaded die masquerading as intention. And this is only the first of hundreds of such decisions that will remain opaque to the person driving the harness.
+While you could argue that a React application is not necessarily a bad choice from the LLM agent, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the harness.
 
 The widespread use of AI tools compressed the implementation timelines to a point where understanding is sacrificed.
 
@@ -141,16 +143,16 @@ Offloading cognition to an AI is not a problem if you intend to create a throwaw
 
 The problem is only relevant when you decide to use it to create a one-of-a-kind system you commit to maintain in perpetuity, one that is so complex it requires a team of specialists to help you along.
 
-Outsourcing the responsibility for select components of a system is nothing new. These are the tradeoffs teams evaluate whenever they have to make _buy-vs-build_ decisions. Few would agree that building your own database or authentication system from scratch is the responsible thing to do when your core business is, say, selling goods online.
+Outsourcing the responsibility for select components of a system is nothing new. There are tradeoffs teams evaluate whenever they have to make _buy vs. build_ decisions. Few would agree that building your own database or authentication system from scratch is the responsible thing to do when your core business is, say, selling second-hand books online.
 
 So you pick your vendors carefully, knowing the particular problem they address has been so thoroughly solved you don’t need to worry about solving it yourself and risk doing a poor job of it.
 
-It’s one thing to know how to drive a car if you only care about using it to get to work. You don’t have to understand the functioning of its engine, or how torque and rotations per minute translate to speed.[^6]
+It’s one thing to own a car that you only use to get to work or drive casually around. You are under no obligation to understand the functioning of its engine, or how torque and rotations per minute translate to speed.[^6] When things break, you are not expected to make any repairs, or manufacture replacement parts. The world is full of people who can do it for you.
 
 [^6]: Which, to be honest, I don’t.
 
-It’s quite another to be the person responsible for maintaining that engine. These are the core parts of your system, the pulsing heart of your business. The non-fungible components that (hopefully) other people will pay good money for you to provide.
+The situation changes when we start talking about the core parts of your system, the pulsing heart of your business, the non-fungible components that (I hope) other people already pay good money for you to provide.
 
-If your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, _you_ are the one responsible for getting it back on the road.
+When your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, _you_ will be the one getting the call to put the car back on the road.
 
 _Continues..._
