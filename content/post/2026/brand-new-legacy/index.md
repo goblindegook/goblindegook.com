@@ -77,16 +77,44 @@ As with many of our terms of art, the definitions are as precise as they are var
 
 But being outdated doesn’t tell the whole story. A system does not have to rely on modern technology to work reliably and be amenable to change. Which is why some engineers would clarify saying that ‘legacy’ means that a system is hard to maintain.
 
-Some will point at the lack of automated tests as an indication that a codebase is ‘legacy.’ The absence of tests in any complex codebase means that even a change made with the best of intentions can have unexpected, disastrous consequences. People tread carefully around it, and as a result progress is slow: fixes and features will take longer to land and business might miss deadlines and opportunities because of it.
+Some, like Michael Feathers in his book _Working Effectively with Legacy Code_, will point at the lack of automated tests as an indication that a codebase is legacy. The absence of tests in any complex codebase means that even a change made with the best of intentions can have unexpected, disastrous consequences. People tread carefully around it, and as a result progress is slow: fixes and features will take longer to land and business might miss deadlines and opportunities because of it.
 
-This too can be correct, but it still leaves out the root causes of why a system is hard to maintain.
+This too is correct, but it still leaves out the root causes of why a system is hard to maintain. While the absence of well-written tests undermines confidence[^4], their presence does not improve your understanding of why the product exists the way it does.
 
-Fingers tend to get pointed at the people who originally created the system, and who probably already left the company by now. It’s easy for the sod who has to support a seemingly incomprehensible mess to blame their predecessors’ incompetence, but hindsight is not 20/20. More often than not we are unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
+[^5] As does the presence of bad tests. Poorly designed tests can be worse than no tests at all.
 
-Frequently there is no written record of these decisions, and we trust code to document itself. Someone in the company would always know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
+Fingers tend to get pointed at the people who originally created the system, and who probably are no longer with the company. It’s easy for the sod who has to support a seemingly incomprehensible mess to blame their predecessors’ incompetence, but hindsight is not 20/20. More often than not we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Maybe the right tool, or the right idea, did not yet exist. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
 
-For all its benefits, automated testing does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and document the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But even the best test is not enough to explain _why_ a design decision was taken.
+Frequently there is no written record of these decisions, software engineers tend to trust code to speak for itself. Someone in the company would usually know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
+
+Intention also has a tendency to diffuse with the accretion of complexity in any long-lived system. Even if the original design was recorded, its evolution might not have been.
+
+And for all its benefits, test automation does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and validate the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But the best tests document _what_ the system does, and they are not enough to explain _why_ any design decision was taken.
 
 My own definition is that a legacy system is any system you have to maintain that _you do not understand_.
+
+---
+
+Systems thinking pioneer Russell L. Ackoff used to say that ’An ounce of understanding is worth a pound of knowledge.’
+
+Among his many insights and achievements in the field of systems thinking, Ackoff developed a hierarchy of cognition, abbreviated DIKUW, that went like this:
+
+{{% pull-quote center %}}
+Data &lt; Information &lt; Knowledge &lt; Understanding &lt; Wisdom
+{{% /pull-quote %}}
+
+The idea wasn’t entirely novel, it built on the observations of Nicholas Henry, who formalised the first half, and Milan Zeleny, who introduced the wisdom element.
+
+Succinctly, data describes raw units of cognition. But having data usually means nothing unless you can make sense of it.
+
+This is why we rely on information, which introduces structure to the raw data. It describes _what_, _when_, _who_, and _where_. The structure conveys meaning but, mind you, it does not necessarily convey truthfulness. No matter how solidly your data is anchored in fact. Whether through malice or negligence of the people and systems supplying information, it can deceive just as easily as it can enlighten.
+
+To decode information, you go one rung up the ladder, where knowledge sits. Knowledge is about grasping _how_ something functions. This includes how information was structured, and how data was gathered in the first place.
+
+So far we covered the components that Ackoff would say are essential to being _efficient_ --- that is, to do something confidently and correctly.
+
+Then comes a gap, sometimes even a gulf. And that is the distance between knowing how something works and understanding _why_ it works the way it does.
+
+Together with wisdom, which is the ability to conceptualise how things ought to be, understanding is the other pillar allowing you to be _effective_. To go beyond doing a thing right, and do the right thing.
 
 _Continues..._
