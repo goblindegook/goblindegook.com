@@ -25,7 +25,7 @@
     "css-modularscale": "^1.1.1",
     "cssnano": "^7.1.7",
     "dompurify": "^3.4.12",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.1",
     "html-entities": "^2.0.3",
     "jsdom": "^29.0.2",
     "pixrem": "^5.0.0",
