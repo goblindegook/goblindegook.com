@@ -1,11 +1,11 @@
 ---
 title: Brand New Legacy
-description: TBD
+description: On fighting artificial intelligence slop.
 author: Luís Rodrigues
 slug: brand-new-legacy
 categories: ['Software']
 tags: ['work', 'artificial intelligence', 'understanding']
-date: 2026-07-15T12:00:00+01:00
+date: 2026-08-10T12:00:00+01:00
 image:
   src: feynman-blackboard.png
   caption: Richard Feynman's final blackboard at CalTech, preserved from 1988 to this day.
@@ -67,7 +67,7 @@ Compared to previous attempts, the behaviour of a Large Language Model feels lik
 
 This incomplete knowledge extends to the effects of AI’s frenzied adoption. We are only beginning to see the breadth and depth of its impact on society, from an individual level to entire economies and political structures.
 
-Each of these topics deserves extended debate, but today I would like to focus on how it impacts my work and the work of software product engineers in general.
+Each of these topics deserves extended debate, but today I would like to focus on Large Language Models and how they impact my work and the work of software product engineers in general.
 
 ---
 
@@ -77,23 +77,23 @@ As with many of our terms of art, the definitions are as precise as they are var
 
 But being outdated is not a convincing argument. A system does not have to rely on modern technology to work reliably and be amenable to change.[^stroustrup] Indeed, the reason for the staying power of legacy systems is that they work, and therefore have value, and their value is expensive to recreate.
 
-[^stroustrup]: [Bjarne Stroustrup says](https://www.stroustrup.com/bs_faq.html#legacy) that ‘legacy code’ is often used pejoratively by people promoting a replacement for commercial or political motives.
+[^stroustrup]: [Bjarne Stroustrup says](https://www.stroustrup.com/bs_faq.html#legacy) that often ‘legacy code’ is used pejoratively by people promoting a replacement for commercial or political motives.
 
 A better way to think about these is as systems that are hard to maintain.
 
 In his book _Working Effectively with Legacy Code_, Michael Feathers points at the lack of automated tests as an indication that a codebase is legacy. The absence of tests in any complex codebase means that even a change made with the best of intentions can have unexpected, disastrous consequences. People tread carefully around it, and as a result progress is slow: fixes and features will take longer to land and business might miss deadlines and opportunities because of it.
 
-This too is correct, but it still leaves out the root causes of why a system is hard to maintain. While the absence of well-written tests undermines confidence[^confidence], their presence does not improve your understanding of why the product exists the way it does.
+This too is correct, but it leaves out the root causes of why a system is hard to maintain. While the absence of well-written tests undermines confidence[^confidence], their presence does not improve your understanding of why the product exists the way it does.
 
 [^confidence]: As does the presence of bad tests. Poorly designed tests can be worse than no tests at all.
 
-Fingers tend to get pointed at the people who created the system, and who probably are no longer with the company. It’s easy for the sod who has to support an incomprehensible ball of mud to blame their predecessors’ incompetence, but hindsight is not 20/20. Frequently we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Perhaps the right tool, or the right idea, did not yet exist. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
+Fingers tend to get pointed at the people who created the system, and who probably are no longer with the company. It’s easy for the sod who has to support an incomprehensible ball of mud to blame their predecessors’ incompetence, but hindsight is not 20/20. Frequently we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Perhaps the right tool, or the right idea, did not exist yet. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
 
-Too often there is no written record of these decisions, software engineers tend to trust code to speak for itself. Someone in the company would know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
+Too often there is no written record of these decisions since software engineers tend to trust code to speak for itself. Someone in the company would know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
 
 Intention also has a tendency to diffuse with the accretion of complexity in any long-lived system. Even if the original design was recorded, its evolution might not have been.
 
-And for all its benefits, test automation does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and validate the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But the best tests document _what_ the system does, they are not enough to explain _why_ any design decision was taken.
+And for all the benefits of test automation, and they are significant, it does not prevent legacy systems from appearing. Automated tests are invaluable in that they encode and validate the system’s behaviour: they will stop you in your tracks if a change made naïvely breaks functionality. But the best tests document _what_ the system does. They are not enough to explain _why_ a design decision was taken.
 
 My own definition is that a legacy system is any system you have to maintain but are afraid to touch. You have to maintain it because the system is valuable. And the reason you fear touching it is because _you do not understand it_.
 
@@ -105,9 +105,9 @@ Among his many insights and achievements, Ackoff developed a hierarchy of cognit
 
 <p class="align-center">Data &lt; Information &lt; Knowledge &lt; Understanding &lt; Wisdom</p>
 
-The idea wasn’t entirely novel, it built on the observations of Nicholas Henry, who formalised the first half, and Milan Zeleny, who introduced the wisdom element.[^ah]
+The idea wasn’t novel, it built on the observations of Nicholas Henry, who formalised the first half, and Milan Zeleny, who introduced the wisdom element.[^ah]
 
-[^ah]: A couple of decades earlier Jens Rasmussen formulated an Abstraction Hierarchy which almost cleanly maps to Ackoff’s structure, although I could not find evidence of the two ever encountering each others’ work.
+[^ah]: A couple of decades earlier Jens Rasmussen formulated an Abstraction Hierarchy which almost cleanly follows Ackoff’s structure, although I could not find evidence of the two ever encountering each others’ work.
 
 Succinctly, data describes raw units of cognition. These are measurements and observations devoid of order, context, or meaning.
 
@@ -115,13 +115,13 @@ This is why we rely on information, which connects the dots and introduces struc
 
 To decode information, you go one rung up the ladder, where knowledge sits. Knowledge is about grasping _how_ something functions. This includes how information was structured, and how data was gathered in the first place.
 
-But we’re only halfway into the hierarchy.
+But we’re only halfway up the hierarchy.
 
 So far we covered the components that Ackoff would say are essential to being _efficient_ --- that is, to do something confidently and correctly.
 
 These levels are currently well supported by software tooling, with artificial intelligence operating mainly on the knowledge layer.
 
-Then comes a gap, sometimes even a gulf. And that is the distance between knowing how something works and understanding _why_ it works the way it does. It’s where you stop following a process and start making decisions.
+Then comes a gap, sometimes even a gulf. And that is the distance between knowing how something works and understanding _why_ it works the way it does. It’s where you stop following a map and start charting your own course.
 
 Together with wisdom, which is the ability to conceptualise how things ought to be, understanding is the other pillar allowing you to be _effective_. To go beyond doing a thing right, and start doing the right thing.
 
@@ -129,66 +129,102 @@ You can have information and knowledge supplied to you in myriad ways, but nothi
 
 ---
 
-The gap between knowledge and understanding is not new. Neither are legacy computer systems.
+The gap between knowledge and understanding is an age-old problem. And legacy computer systems have existed for almost as long as the field of computing itself.
 
 In the past, understanding deteriorated through a mix of structural problems and the inevitable buildup of complexity. All of the bad engineering practices and organisational dysfunctions compounded slowly.
 
 Then artificial intelligence entered the software development lifecycle, and everything went into overdrive.
 
-These days, any person can fire up an AI coding harness and ask it to generate an application top-to-bottom in minutes, without any clue of how it works internally.
+These days, any person can fire up an AI coding harness and ask it to generate an application top-to-bottom in minutes, without any clue of how it works. The sausage factory is erected, they see the pigs go in and sausages come out, and are satisfied with the results without any notion of the nasty business conducted within its walls.
 
-Unless you specify the technology, the LLM behind the harness will likely generate a React application in JavaScript. This is because its training data skewed towards technologies that were popular at the time.
+Unless you specify the technology, the LLM attached to the harness will likely [generate a React application in TypeScript](https://alphathena.com/llm-framework-selection-why-react-wins-by-default/). This is purely because training data skewed towards technologies that were popular at the time the model was developed.
 
-While you could argue that a React application is not a bad choice from the LLM agent, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the harness.
+While you could argue that a React application is not a bad choice from the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the harness.
 
-The widespread use of AI tools compressed the implementation timelines to a point where understanding is sacrificed.
+Thanks to the speed at which they churn out code, widespread use of AI tools compressed implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
 
 Offloading cognition to an AI is not a problem if you intend to create a throwaway application, something that solves a concrete problem, or to demonstrate that a particular component can be built.
 
 The problem is only relevant when you decide to use it to create a one-of-a-kind system you commit to maintain in perpetuity, one that is so complex it requires a team of specialists to help you along.
 
-Outsourcing the responsibility for select components of a system is nothing new. There are tradeoffs teams evaluate whenever they have to make _buy vs. build_ decisions. Few would agree that building your own database or authentication system from scratch is the responsible thing to do when your core business is, say, selling second-hand books online.
+Outsourcing the responsibility for select components of a system is a common thing. Teams evaluate these tradeoffs every time they have to make _buy vs. build_ decisions. Few would agree that building your own database or authentication system from scratch is the responsible thing to do when your core business is, say, selling second-hand books online.
 
 So you pick your vendors carefully, knowing the particular problem they address has been so thoroughly solved you don’t need to worry about solving it yourself and risk doing a poor job of it.
 
-It’s one thing to own a car that you only use to get to work or drive casually around. You are under no obligation to understand the functioning of its engine, or how torque and rotations per minute translate to speed.[^engine] When things break, you are not expected to make any repairs, or manufacture replacement parts. The world is full of people who can do it for you.
+It’s one thing to own a car that you bought and use to get to work or drive casually around. You are under no obligation to understand the functioning of its engine, or how torque and rotations per minute translate to speed.[^engine] When things break, you are not expected to make any repairs, or manufacture replacement parts. The world is full of people who can do it for you.
 
 [^engine]: Which, to be honest, I don’t.
 
-The situation changes when we start talking about the core parts of your system, the pulsing heart of your business, the non-fungible components that (I hope) other people already pay good money for you to provide.
+The situation changes when we start talking about the core parts of your system, the pulsing heart of your business, the non-fungible components that (I hope) other people already pay good money for you to provide. In this scenario, you are not a consumer who can reach out to a supplier when things break down --- you _are_ the maker.
 
-When your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, _you_ will be the one getting the call to put the car back on the road.
+So when your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, it is _you_ who will be the one getting the call to put the car back on the road.
 
-So, ask yourself, how confident are you maintaining the code written by an artificial intelligence? Can you explain how it works and why?
+Ask yourself, how confidently can you maintain the code written by an artificial intelligence? Can you explain how it works and why?
 
 ---
 
-_Who cares?_ says the vibe coder. _I don’t even need to look at code when I have an AI to write it for me._
+_Who cares?_ says the vibe coder, averting their eyes from the sausage factory, ears plugged against the squealing. _I don’t even need to look at code when I have an AI to write it for me._
 
-I already mentioned that cognitive offloading is not a problem when the stakes are low.[^lowstakes]
+I mentioned that cognitive offloading is not a problem when the stakes are low.[^lowstakes]
 
-[^lowstakes]: Even if it is, it’s not a problem I care about.
+[^lowstakes]: Even if it is a problem, it’s not one that I care about.
 
-My argument is focused on the long-lived, specialised, complex systems you are accountable for. About these I say that making their maintenance depend on AI is a risk.
+My argument focuses on the long-lived, specialised, complex systems that software engineers like me are accountable for. On this topic I say: making their maintenance depend on AI is a risk.
 
 LLMs are most effective when dealing with small contexts. This context is the amount of text (split into short word ’tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
 
 This means that the more code you have --- and an AI will write _a lot_ of it --- the faster this context will fill up. Complex code means the LLM will also struggle to deliver the necessary change, much like a human would.
 
-Because LLMs are not accountable for incidents, and have no fear of breaking the codebase, they will present a solution that might _appear_ correct but that, once tested, reveals other problems. You now enter a cycle of prompting the agent to fix issues until you are satisfied with the result.
+Because LLMs are not accountable for incidents, and have no fear of breaking the codebase, they will present a solution that might _appear_ correct but that, once tested, reveals other problems. You enter a cycle of prompting the agent to fix issues until, eventually, you are satisfied with the result.
 
-But here’s something the people who never look at the code don’t realise. For example, when confronted with an issue, coding agents will _almost never_ remove the obviously incorrect change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all agents and all providers.
+But here’s something the people who never look at the code don’t realise. For example, when confronted with an issue, coding agents will _almost never_ remove the obviously incorrect change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all models, from all providers.
 
 This misbehaviour alone means problems will accrue invisibly, the functioning of the system will become ever more opaque, and context sizes will grow and deteriorate agentic reasoning.
 
-Until technology evolves to a point where mature LLMs are commonplace and running on your own computer, it is good to remember that we are not simply relying on a piece of technology. We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter.
+Until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and running on your own computer, it is good to remember that we are not relying on a simple piece of technology. We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter.
 
-Exchanging more tokens means you get a bigger bill. Your subscription quotas will not last as long, and you will have to pay extra to continue using the coding agent.
+Exchanging more tokens with the LLM means you get a bigger bill. Your subscription quotas will not last as long, and you will have to pay extra to continue using the coding agent.
 
-The price per token being paid by subscribers today is nowhere near their actual cost. It has been subsidised by investors and kept low by AI companies intent on making themselves indispensable.
+The price per token being paid by subscribers today is nowhere near their true cost. That price has been subsidised by investors and kept low by AI companies intent on making themselves indispensable.
 
-While the raw cost of generating tokens is low, it does not include the expenses that go into infrastructure, salaries, or research. The data centres everyone wants to build nowadays aren’t cheap either.
+While the raw cost of generating a million tokens is negligible, the rest isn’t. With LLMs there are no economies of scale like you would have with normal Software-as-a-Service. This is not software you build once then host for a fixed cost with capacity to spare, meaning you could serve thousands of customers for the price of catering to a single one. With AI models, increased usage requires a commensurate level of compute: _more customers always cost more_. This on top of the expenditure that goes into salaries, rapidly-evolving infrastructure, and cutting-edge research. The data centres everyone wants to build these days aren’t cheap either.
 
-What happens when you can no longer afford the cost of having an AI maintain a complex codebase?
+With rising subscription costs and competitive open-weight models not being quite in reach (yet), what happens when you stop being able to afford AI agents to maintain your complex codebase?
+
+---
+
+There is a benefit to using artificial tools, but we should also be mindful of the risks, the first of which being misunderstanding its value.
+
+A lot of companies these days are taking part in what I can only call productivity theatre. Hype pressures people to point to token spend, features delivered, or lines of code generated as if they’re indicative of anything useful being done. Pushed by leaders desperate to demonstrate they’re doing something with AI, many engage in the asinine, wasteful practice known as [‘tokenmaxxing’](https://zapier.com/blog/tokenmaxxing/), a textbook example of Goodhart’s law if I ever saw one.[^tokenmaxxing]
+
+[^tokenmaxxing]: And a name almost as stupid as the thing it describes.
+
+Goodhart’s law states that when a metric becomes the target, it stops being a good metric. Superficial measurements of activity, such as money spent or code churn, should not be mistaken for value. And like a drunk man after a long night partying with his friends, some are now [staring groggily at the bill](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/).
+
+What research is telling us is that none of this frenzy has _automatically_ made things better.
+
+[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like code changes increased by almost a factor of 10, critical outcomes like stability fell off a cliff: monthly incidents up by 57%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: the number of defects per developer went from 9% in 2025 to 54% in 2026.
+
+Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster either. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result work is stalled for longer now than before. Time spent reviewing code has doubled on average and senior engineers are burning out, allowing more defects through.
+
+Fortunately, it doesn’t have to be this way. For example, [Intercom has reported double the code changes accompanied by a _reduction_ in defects](https://ideas.fin.ai/p/2x-nine-months-later). This is because _how_ they work matters.
+
+AI acts as a multiplier. It multiplies the consequences of both good and bad habits, and I consider healthy engineering practices to be a prerequisite for successful AI adoption.
+
+The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience, with engineering discipline allowing higher quality and speed, and teams better attuned to the products they build and the customers they serve overall making better decisions.
+
+I should note that this multiplication effect is wildly _asymmetrical_. With poor engineering practices, AI yields exponentially worse results. Good engineering practices gives you comparatively modest improvements (but improvements nonetheless).
+
+---
+
+[Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming), a collection of software development practices designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value this much.
+
+The understanding talk with which I opened this piece is relevant here too, as I’ve learned through observation that adopting these practices like a kind of cargo cult, without understanding what you should be getting out of them, can be a terrible, alienating move.
+
+Much like AI, none of these practices will build understanding for you. They are aids.
+
+Kent Beck, who developed Extreme Programming and co-signed the Agile Manifesto, shared his own experiences with [augmented coding](https://newsletter.kentbeck.com/p/augmented-coding-beyond-the-vibes) and reports that while AI can take on much of the mechanical work, you still need to be an engaged participant.
+
+While I’ve had success with XP, it may not work for everyone or every project. It _can_ be an answer, but you have to ask the right questions first.
 
 _Continues..._
