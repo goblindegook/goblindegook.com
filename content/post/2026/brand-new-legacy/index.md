@@ -118,11 +118,11 @@ To decode information, you go one rung up the ladder, where knowledge sits. Know
 
 But we’re only halfway up the hierarchy.
 
-Ackoff would say the lower rungs are what's essential to being _efficient_ --- that is, to do something confidently and correctly.
+Ackoff says the lower rungs are essential to being _efficient_ --- that is, to do something confidently and correctly.
 
 These levels are currently well supported by software tooling, with artificial intelligence operating mainly on the knowledge layer.
 
-Then comes a gap, sometimes even a gulf. And that is the distance between knowing how something works and understanding _why_ it works the way it does. It’s where you stop following a map and start charting your own course.
+Then comes a gap, sometimes a gulf. And that is the distance between knowing how something works and understanding _why_ it works the way it does. It’s where you stop following a map and start charting your own course.
 
 Together with wisdom, which is the ability to conceptualise how things ought to be, understanding is the other pillar allowing you to be _effective_. To go beyond doing a thing right, and start doing the right thing.
 
@@ -215,7 +215,9 @@ Goodhart’s law states that when a metric becomes the target, it stops being a 
 
 Now research is telling us that none of this frenzy has _automatically_ made things better. Don't be surprised to find you've paid a fortune and got even more problems in return.
 
-[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like ‘tasks completed’ increased by one-third, critical outcomes like stability fell off a cliff: monthly incidents up by 57.9%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: defect rate per developer increased by 9% in 2025 and by 54% in 2026. Code churn, a measure of wasteful rework, increased by almost a factor of 10. That's efficiency and effectiveness moving in opposite directions.
+[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like ‘tasks completed’ increased by one-third, critical outcomes like stability fell off a cliff: monthly incidents up by 57.9%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: defect rate per developer increased by 9% in 2025 and by 54% in 2026. Code churn, a measure of wasteful rework, increased by almost a factor of 10.
+
+That's efficiency and effectiveness moving in opposite directions.
 
 Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has tripled on average and senior engineers are burning out, allowing more defects through.
 
@@ -231,13 +233,13 @@ The DORA report notes that this multiplication effect is wildly _asymmetrical_. 
 
 A great example of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
-Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write a test and establish the success conditions for a single change _before_ any code is even written. It can be a useful tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
+Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write an automated test or specification and establish the success conditions for a single change _before_ any code is even written. It can be a useful tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
 
 The idea of writing a specification beforehand is not an eccentricity, it’s to give you pause and force you to decompose the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow everything down more than having no tests will.
 
 And refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
 
-While I’ve had success with Extreme Programming, it may not work for everyone or every project. It _can_ be an answer, but you need to ask the right questions first. You will need to adjust the practices to your specific constraints rather than blindly take them on. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
+While I’ve had success with Extreme Programming, it may not work for everyone or every project. It _can_ be an answer, but you need to ask the right questions first. You will need to adjust the practices to your specific constraints. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
 
 Kent Beck, who developed Extreme Programming and co-signed the Agile Manifesto, shared his own experiences with [augmented coding](https://newsletter.kentbeck.com/p/augmented-coding-beyond-the-vibes) and reports that while AI can take on much of the mechanical work, you still need to be an engaged participant.
 
