@@ -46,7 +46,7 @@ But the people peddling artificial intelligence say its coming is inevitable. No
 
 The most popular AI systems of today, like Large Language Models for text and Latent Diffusion Models for images and video, are based on a statistical concept called the neural network.
 
-Neural networks are nothing new. Their mathematical backbone has existed for a couple of centuries since Carl Friedrich Gauss developed it to predict the movement of planets.
+Neural networks are nothing new. Their mathematical seed has existed for a couple of centuries since Carl Friedrich Gauss developed least squares to predict the movement of planets.
 
 The inspiration comes from the structure of the brain and its interconnected neurons. Each one of the artificial neurons in the network is nothing but a mathematical function: numbers go in, numbers come out. Because these functions are interconnected like neurons, results are fed from one into the next, on and on until a transformed result drops out of the model.
 
@@ -136,11 +136,11 @@ In the past, understanding deteriorated through a mix of structural problems and
 
 Then artificial intelligence entered the software development lifecycle, and everything went into overdrive.
 
-These days, any person can fire up an AI coding harness and ask it to generate an application top-to-bottom in minutes, without any clue of how it works. The sausage factory is erected, they see the pigs go in and sausages come out, and are satisfied with the results without any notion of the nasty business conducted within its walls.
+These days, any person can fire up an AI coding agent and ask it to generate an application top-to-bottom in minutes, without any clue of how it works. The sausage factory is erected, they see the pigs go in and sausages come out, and are satisfied with the results without any notion of the nasty business conducted within its walls.
 
-For example, unless you specify the technology, the LLM attached to the harness will likely [generate a React application in TypeScript](https://alphathena.com/llm-framework-selection-why-react-wins-by-default/). This is purely because training data skewed towards technologies that were popular at the time the model was developed.
+For example, unless you specify the technology, the LLM will likely [generate a React application in TypeScript](https://alphathena.com/llm-framework-selection-why-react-wins-by-default/). This is purely because training data skewed towards technologies that were popular at the time the model was developed.
 
-While you could argue that a React application is not a bad choice by the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the harness.
+While you could argue that a React application is not a bad choice by the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the agent.
 
 Thanks to the speed at which they churn out code, widespread use of AI tools compresses implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
 
@@ -205,7 +205,7 @@ With rising subscription costs and competitive open-weight models not being quit
 
 ---
 
-There is a benefit to using artificial intelligence tools, but we should also be mindful of the risks, the first of which is misunderstanding their value.
+There is a benefit to using artificial intelligence tools, but we should also be mindful of the risks, the biggest of which is misunderstanding their value.
 
 A lot of companies these days are taking part in what I can only call productivity theatre. Hype pressures people to point to token spend, features delivered, or lines of code generated as if they’re indicative of anything useful being done. Pushed by leaders desperate to demonstrate they’re doing something with AI, many engage in the wasteful practice known as [‘tokenmaxxing’](https://zapier.com/blog/tokenmaxxing/), a textbook example of Goodhart’s law if I ever saw one.[^tokenmaxxing]
 
@@ -219,21 +219,21 @@ Now research is telling us that none of this frenzy has _automatically_ made thi
 
 Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has tripled on average and senior engineers are burning out, allowing more defects through.
 
-It doesn’t have to be this way. For example, [Intercom has reported double the code changes accompanied by a _reduction_ in defects](https://ideas.fin.ai/p/2x-nine-months-later).
+It doesn’t have to be this way. For example, [Intercom has reported double the code changes accompanied by a _reduction_ in defects](https://ideas.fin.ai/p/2x-nine-months-later), and they explain how they were able to achieve it.
 
-This is because _how_ they work matters.
+Turns out that _how_ they work matters.
 
 AI acts as a multiplier. It inflates the consequences of both good and bad habits, and I consider healthy engineering practices to be a prerequisite for successful AI adoption.
 
-The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience. It shows that engineering discipline enables higher quality and speed, and that teams who are better attuned to the products they build and the customers they serve make better decisions overall.
+The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience. It shows that AI, when paired with engineering discipline, enables higher quality and speed, and that teams who are better attuned to the products they build and the customers they serve make better decisions overall.
 
-I should note that research on this multiplication effect shows it’s wildly _asymmetrical_. With poor engineering discipline, AI yields far worse results. Good engineering practices, on the other hand, give you comparatively modest improvements (but improvements nonetheless).
+The DORA report notes that this multiplication effect is wildly _asymmetrical_. Combined with poor engineering discipline, AI yields far worse results. Good engineering practices, on the other hand, allow only for comparatively modest improvements (but improvements nonetheless).
 
-One of these is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
+One of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
 Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write a test and establish the success conditions for a single change _before_ any code is even written. It can be an effective tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
 
-The idea of writing tests beforehand is not an eccentricity, it’s to stop you and force you to engage with the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, you cannot have them all at the same time. What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow you down more than having no tests will.
+The idea of writing tests beforehand is not an eccentricity, it’s to stop you and force you to engage with the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow you down more than having no tests will.
 
 And refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
 
@@ -245,10 +245,10 @@ Will you stand by without a care while incomprehensible slop accumulates in your
 
 I wish I had better news for the lazy, but _human in the loop_ is the only sensible default when using AI. It is a significant risk to hand over maintenance of your product to a thing you do not control, with no hope of maintaining it yourself because the cost of understanding it became too steep to pay.
 
-No tools or practices, however sophisticated, will build that understanding for you. They are aids and they will not reward passive participation the way many people hope they will.
+Artificial intelligence is an aid, but one that will not reward passive participation the way many people hope it will. No tools or practices, however sophisticated, will build that understanding for you. This is inevitable because they operate at least one level below of where the engineering value is.
 
-The best way I know is still to be involved in the process of creation. If you miss the opportunity, you can still rebuild the system in your head, or materially by rewriting its parts.[^rewrite]
+The best antidote I know is still to be involved in the process of creation. If you miss the opportunity, you can still rebuild the system in your head, or materially by rewriting its parts.[^rewrite]
 
 [^rewrite]: Or, if you're looking to take even bigger risks, [rewriting the whole](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/).
 
-I'm afraid you'll just have to put in the work.
+So I'm afraid you'll just have to put in the work.
