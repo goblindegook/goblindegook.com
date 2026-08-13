@@ -188,7 +188,7 @@ Because LLMs are not accountable for incidents, and have no fear of breaking the
 {{< figure
   alt=“A computer can never be held accountable therefore a computer must never make a management decision.”
   class="align-center"
-  src=“machine-accountability.wepbp
+  src=“machine-accountability.wepbp"
   title=“An IBM statement from 1979.”
 >}}
 
