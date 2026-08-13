@@ -193,7 +193,7 @@ This misbehaviour alone means problems will accrue invisibly, the functioning of
   title="An IBM statement from 1979."
 >}}
 
-We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter. That will not change until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and able to run on your own computer, remember that we are not relying on a simple piece of technology.
+We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter. That will not change until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and able to run on your own computer.
 
 Exchanging more tokens with the LLM means you get a bigger bill. Your subscription quotas will not last as long, and you will have to pay extra to continue using the coding agent.
 
@@ -231,13 +231,13 @@ The DORA report notes that this multiplication effect is wildly _asymmetrical_. 
 
 A great example of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
-Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write a test and establish the success conditions for a single change _before_ any code is even written. It can be an effective tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
+Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write a test and establish the success conditions for a single change _before_ any code is even written. It can be a useful tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
 
-The idea of writing tests beforehand is not an eccentricity, it’s to give you pause and force you to decompose the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow you down more than having no tests will.
+The idea of writing a specification beforehand is not an eccentricity, it’s to give you pause and force you to decompose the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow everything down more than having no tests will.
 
 And refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
 
-While I’ve had success with Extreme Programming, it may not work for everyone or every project. It _can_ be an answer, but you need to ask the right questions first. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
+While I’ve had success with Extreme Programming, it may not work for everyone or every project. It _can_ be an answer, but you need to ask the right questions first. You will need to adjust the practices to your specific constraints rather than blindly take them on. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
 
 Kent Beck, who developed Extreme Programming and co-signed the Agile Manifesto, shared his own experiences with [augmented coding](https://newsletter.kentbeck.com/p/augmented-coding-beyond-the-vibes) and reports that while AI can take on much of the mechanical work, you still need to be an engaged participant.
 
