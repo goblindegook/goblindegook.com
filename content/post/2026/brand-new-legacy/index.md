@@ -118,7 +118,7 @@ To decode information, you go one rung up the ladder, where knowledge sits. Know
 
 But we’re only halfway up the hierarchy.
 
-So far we've covered the components that Ackoff would say are essential to being _efficient_ --- that is, to do something confidently and correctly.
+Ackoff would say the lower rungs are what's essential to being _efficient_ --- that is, to do something confidently and correctly.
 
 These levels are currently well supported by software tooling, with artificial intelligence operating mainly on the knowledge layer.
 
@@ -142,7 +142,7 @@ For example, unless you specify the technology, the LLM will likely [generate a 
 
 While you could argue that a React application is not a bad choice by the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the agent.
 
-Thanks to the speed at which they churn out code, widespread use of AI tools compresses implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
+Thanks to the speed at which AI tools churn out code, widespread use compresses implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
 
 We are [automating away learning in the name of efficiency](https://www.theatlantic.com/magazine/archive/2013/11/the-great-forgetting/309516/). The lasting impact of this on employee skills and satisfaction, or on the health of the job market and the companies themselves, is yet to be appreciated in full. But without the proper safeguards, one thing is becoming apparent: LLMs produce code that becomes legacy, not in a matter of years, but within months or even weeks of shipping.
 
@@ -160,7 +160,7 @@ It’s one thing to buy a car that you only use to get to work or drive casually
 
 The situation changes when we start talking about the core parts of your system, the pulsing heart of your business, the non-fungible components that (I hope) other people already pay good money for you to provide. In this scenario, you are not a consumer who can reach out to a supplier when things break down --- you _are_ the maker.
 
-So when your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, it is _you_ who will be getting the call to come over and put the car back on the road.
+So when your one-of-a-kind car with your one-of-a-kind engine breaks down in the middle of nowhere, with not a soul in sight, and no mechanic to call, it is _you_ who will have to put it back on the road.
 
 Ask yourself, how confidently can you maintain the code written by an artificial intelligence? Can you explain how it works and why?
 
@@ -172,13 +172,13 @@ I mentioned that cognitive offloading is not a problem when the stakes are low.[
 
 [^lowstakes]: Even if it is a problem, it’s not one that I care about.
 
-My argument focuses on the long-lived, specialised, complex systems that software engineers like me are accountable for. Architectural soundness can only truly be proven weeks or months into the future when new requirements and changes come in.
+My argument focuses on the long-lived, specialised, complex systems that software engineers like me are accountable for. These differ because while initial speed and early feedback are valuable, they still cannot tell you whether you got it right: architectural soundness can only truly be proven weeks or months into the future when new requirements and changes come in.
 
 Trusting AI to fully maintain critical parts of your system is a risk.
 
-LLMs are most effective when dealing with small contexts. This context is the amount of text (split into short word ‘tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
+LLMs are most capable when dealing with small contexts. This context is the amount of text (split into short word ‘tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
 
-This means that the more code you have --- and an AI will write _a lot_ of it --- the faster this context will fill up. Complex code means the LLM will also struggle to deliver the necessary change, much like a human would.
+This means that the more code you have --- and an AI will write _a lot_ of it --- the faster this context will fill up. Complex code means the LLM will also struggle to deliver the necessary change.
 
 Because LLMs are not accountable for incidents, and have no fear of breaking the codebase, they will present a solution that might _appear_ correct but that, once tested, surfaces other problems. You enter a cycle of prompting the agent to fix issues until, eventually, you are satisfied with the apparent result.
 
@@ -193,7 +193,7 @@ This misbehaviour alone means problems will accrue invisibly, the functioning of
   title="An IBM statement from 1979."
 >}}
 
-Until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and able to run on your own computer, remember that we are not relying on a simple piece of technology. We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter.
+We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter. That will not change until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and able to run on your own computer, remember that we are not relying on a simple piece of technology.
 
 Exchanging more tokens with the LLM means you get a bigger bill. Your subscription quotas will not last as long, and you will have to pay extra to continue using the coding agent.
 
@@ -205,7 +205,7 @@ With rising subscription costs and competitive open-weight models not being quit
 
 ---
 
-There is a benefit to using artificial intelligence tools, but we should also be mindful of the risks, the biggest of which is misunderstanding their value.
+There is a benefit to using artificial intelligence tools, but we should also be mindful of the risks, one of which is misunderstanding their value.
 
 A lot of companies these days are taking part in what I can only call productivity theatre. Hype pressures people to point to token spend, features delivered, or lines of code generated as if they’re indicative of anything useful being done. Pushed by leaders desperate to demonstrate they’re doing something with AI, many engage in the wasteful practice known as [‘tokenmaxxing’](https://zapier.com/blog/tokenmaxxing/), a textbook example of Goodhart’s law if I ever saw one.[^tokenmaxxing]
 
@@ -213,9 +213,9 @@ A lot of companies these days are taking part in what I can only call productivi
 
 Goodhart’s law states that when a metric becomes the target, it stops being a good metric. Superficial measurements of activity, such as money spent or lines of code produced, should not be mistaken for value. And like someone at the end of a long night boozing themselves to near-coma, companies are now [staring groggily at a huge bill](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/). The party is ending.
 
-Now research is telling us that none of this frenzy has _automatically_ made things better either.
+Now research is telling us that none of this frenzy has _automatically_ made things better. Don't be surprised to find you've paid a fortune and got even more problems in return.
 
-[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like ‘tasks completed’ increased by one-third, critical outcomes like stability fell off a cliff: monthly incidents up by 57.9%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: defect rate per developer increased by 9% in 2025 and by 54% in 2026. Code churn, a measure of wasteful rework, increased by almost a factor of 10.
+[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like ‘tasks completed’ increased by one-third, critical outcomes like stability fell off a cliff: monthly incidents up by 57.9%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: defect rate per developer increased by 9% in 2025 and by 54% in 2026. Code churn, a measure of wasteful rework, increased by almost a factor of 10. That's efficiency and effectiveness moving in opposite directions.
 
 Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has tripled on average and senior engineers are burning out, allowing more defects through.
 
@@ -229,11 +229,11 @@ The [DORA 2025 State of AI-Assisted Software Development report](https://dora.de
 
 The DORA report notes that this multiplication effect is wildly _asymmetrical_. Combined with poor engineering discipline, AI yields far worse results. Good engineering practices, on the other hand, allow for comparatively modest improvements (but improvements nonetheless).
 
-One of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
+A great example of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
 Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write a test and establish the success conditions for a single change _before_ any code is even written. It can be an effective tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
 
-The idea of writing tests beforehand is not an eccentricity, it’s to stop you and force you to engage with the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow you down more than having no tests will.
+The idea of writing tests beforehand is not an eccentricity, it’s to give you pause and force you to decompose the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow you down more than having no tests will.
 
 And refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
 
