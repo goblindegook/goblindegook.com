@@ -5,7 +5,7 @@ author: Luís Rodrigues
 slug: brand-new-legacy
 categories: ['Software']
 tags: ['work', 'artificial intelligence', 'understanding']
-date: 2026-08-10T12:00:00+01:00
+date: 2026-08-13T12:00:00+01:00
 image:
   src: feynman-blackboard.png
   caption: Richard Feynman's final blackboard at Caltech, preserved from 1988 to this day.
