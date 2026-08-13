@@ -11,8 +11,8 @@
   </header>
   {{ if .Params.Image.Src }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
-    {{ $featured := $src.Fit "340x160" }}
-    {{ $featured2x := $src.Fit "680x320" }}
+    {{ $featured := $src.Fill "342x224 Center" }}
+    {{ $featured2x := $src.Fill "684x448 Center" }}
     <figure class="archive-entry-thumbnail-wrapper" style="view-transition-name: post-image-{{ .File.UniqueID }}">
       <a tabindex="-1" href="{{ .RelPermalink }}" rel="bookmark">
         <img

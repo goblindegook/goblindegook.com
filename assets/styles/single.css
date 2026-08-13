@@ -1,10 +1,10 @@
 :root {
-  --single-featured-image-height: 20rem;
+  --single-featured-image-height: 28rem;
 }
 
 @media (--narrow-viewport) {
   :root {
-    --single-featured-image-height: 14rem;
+    --single-featured-image-height: 18rem;
   }
 }
 

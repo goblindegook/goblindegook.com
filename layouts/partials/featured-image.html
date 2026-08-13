@@ -1,12 +1,12 @@
 <figure class="single-entry-featured-image" style="view-transition-name: post-image-{{ .File.UniqueID }}">
   {{ if .Params.Image.Link }}<a href="{{ . }}">{{ end }}
     {{ $src := .Resources.GetMatch .Params.Image.Src }}
-    {{ $featured := div $src.Width 2 | printf "%dx320" | $src.Fit }}
-    {{ $featured2x := printf "%dx640" $src.Width | $src.Fit }}
-    {{ $featured340 := $src.Fit "340x224" }}
-    {{ $featured680 := $src.Fit "680x224" }}
-    {{ $featured768 := $src.Fit "768x640" }}
-    {{ $featured1536 := $src.Fit "1536x640" }}
+    {{ $featured := div $src.Width 2 | printf "%dx448" | $src.Fit }}
+    {{ $featured2x := printf "%dx896" $src.Width | $src.Fit }}
+    {{ $featured340 := $src.Fit "340x288" }}
+    {{ $featured680 := $src.Fit "680x576" }}
+    {{ $featured768 := $src.Fit "768x896" }}
+    {{ $featured1536 := $src.Fit "1536x896" }}
     <img
       height="{{ $featured.Height }}"
       width="{{ $featured.Width }}"
