@@ -186,10 +186,10 @@ This means that the more code you have --- and an AI will write _a lot_ of it --
 Because LLMs are not accountable for incidents, and have no fear of breaking the codebase, they will present a solution that might _appear_ correct but that, once tested, surfaces other problems. You enter a cycle of prompting the agent to fix issues until, eventually, you are satisfied with the apparent result.
 
 {{< figure
-  alt=“A computer can never be held accountable therefore a computer must never make a management decision.”
+  alt="A computer can never be held accountable therefore a computer must never make a management decision."
   class="align-center"
-  src=“machine-accountability.wepbp"
-  title=“An IBM statement from 1979.”
+  src="machine-accountability.wepbp"
+  title="An IBM statement from 1979."
 >}}
 
 But here’s something the people who never look at the code don’t realise. For example, when confronted with a problem that persists or was made worse by their attempt to fix it, coding agents will _almost never_ revert the incorrect and ineffective change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all models, from all providers.
