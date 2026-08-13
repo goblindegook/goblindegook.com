@@ -10,7 +10,6 @@ image:
   src: feynman-blackboard.png
   caption: Richard Feynman's final blackboard at Caltech, preserved from 1988 to this day.
   alt: "Two sentences written on a blackboard: 'What I cannot create I do not understand,' and 'Know how to solve every problem that has been solved.'"
-draft: true
 ---
 
 _This is a work in progress._
@@ -39,9 +38,9 @@ Feynman’s quote has been on my mind a lot recently, and it is because of gener
 
 Artificial intelligence has gone mainstream. It has left the research labs and engineering rooms and science fiction stories where it gestated for decades and has everybody in its grip right now.
 
-<!-- TODO: Some practical applications of AI, like putting people out of work and generally making us lose our minds over it. Some of it is probably useful. -->
+There are reasons to be excited about it. An artificial intelligence can efficiently flag cancer cells in medical imaging for human review, and can efficiently summarise all the work emails your colleagues generated with it.
 
-As with many technological innovations, artificial intelligence will also solve problems you don’t even have. It just doesn’t appear to help as much with the verifiable problems it is creating.
+As with many technological innovations, artificial intelligence promises to solve problems you don’t even have. It just doesn’t appear to be doing much with the verifiable problems it is creating.
 
 But the people peddling artificial intelligence say its coming is inevitable. No business or internet influencer wants to be, or appear to be, last in the race.
 
@@ -49,13 +48,13 @@ But the people peddling artificial intelligence say its coming is inevitable. No
 
 The most popular AI systems of today, like Large Language Models for text and Latent Diffusion Models for images and video, are based on a statistical concept called the neural network.
 
-Neural networks are nothing new. Their mathematical backbone has existed for centuries since Carl Friedrich Gauss developed it to predict the movement of planets.
+Neural networks are nothing new. Their mathematical backbone has existed for a couple of centuries since Carl Friedrich Gauss developed it to predict the movement of planets.
 
 The inspiration comes from the structure of the brain and its interconnected neurons. Each one of the artificial neurons in the network is nothing but a mathematical function: numbers go in, numbers come out. Because these functions are interconnected like neurons, results are fed from one into the next, on and on until a transformed result drops out of the model.
 
 If neural networks are nothing new, then what changed?
 
-What changed is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. New ‘attention’ mechanisms with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of data degradation.
+What changed is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. ‘Attention’ mechanisms with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of data degradation.
 
 These functions and parameters are the secret sauce.
 
@@ -103,7 +102,7 @@ Legacy code is code whose intent has been lost.
 
 ---
 
-Systems thinking pioneer Russell L. Ackoff used to say that ’An ounce of understanding is worth a pound of knowledge.’
+Systems thinking pioneer Russell L. Ackoff used to say that ‘An ounce of understanding is worth a pound of knowledge.’
 
 Among his many insights and achievements, Ackoff developed a hierarchy of cognition, abbreviated DIKUW, that went like this:
 
@@ -179,7 +178,7 @@ My argument focuses on the long-lived, specialised, complex systems that softwar
 
 On this topic I say: making their maintenance depend on AI is a risk.
 
-LLMs are most effective when dealing with small contexts. This context is the amount of text (split into short word ’tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
+LLMs are most effective when dealing with small contexts. This context is the amount of text (split into short word ‘tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
 
 This means that the more code you have --- and an AI will write _a lot_ of it --- the faster this context will fill up. Complex code means the LLM will also struggle to deliver the necessary change, much like a human would.
 
@@ -188,7 +187,7 @@ Because LLMs are not accountable for incidents, and have no fear of breaking the
 {{< figure
   alt="A computer can never be held accountable therefore a computer must never make a management decision."
   class="align-center"
-  src="machine-accountability.wepbp"
+  src="machine-accountability.webp"
   title="An IBM statement from 1979."
 >}}
 
@@ -208,19 +207,19 @@ With rising subscription costs and competitive open-weight models not being quit
 
 ---
 
-There is a benefit to using artificial tools, but we should also be mindful of the risks, the first of which is misunderstanding its value.
+There is a benefit to using artificial intelligence tools, but we should also be mindful of the risks, the first of which is misunderstanding its value.
 
 A lot of companies these days are taking part in what I can only call productivity theatre. Hype pressures people to point to token spend, features delivered, or lines of code generated as if they’re indicative of anything useful being done. Pushed by leaders desperate to demonstrate they’re doing something with AI, many engage in the wasteful practice known as [‘tokenmaxxing’](https://zapier.com/blog/tokenmaxxing/), a textbook example of Goodhart’s law if I ever saw one.[^tokenmaxxing]
 
 [^tokenmaxxing]: And a name almost as stupid as the thing it describes.
 
-Goodhart’s law states that when a metric becomes the target, it stops being a good metric. Superficial measurements of activity, such as money spent or code churn, should not be mistaken for value. And like someone at the end of a long night boozing themselves to near-coma, they are now [staring groggily at the huge bill](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/). The party is ending.
+Goodhart’s law states that when a metric becomes the target, it stops being a good metric. Superficial measurements of activity, such as money spent or lines of code produced, should not be mistaken for value. And like someone at the end of a long night boozing themselves to near-coma, companies are now [staring groggily at a huge bill](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/). The party is ending.
 
-Earlier I said that LLMs are producing code that is legacy almost as soon as it’s out of the gate. This is not a matter of opinion: research is telling us that none of this frenzy has _automatically_ made things better.
+Now research is telling us that none of this frenzy has _automatically_ made things better either.
 
-[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like code changes increased by almost a factor of 10, critical outcomes like stability fell off a cliff: monthly incidents up by 57%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: the number of defects per developer went from 9% in 2025 to 54% in 2026.
+[Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like ‘tasks completed’ increased by one-third, critical outcomes like stability fell off a cliff: monthly incidents up by 57.9%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: defect rate per developer increased by 9% in 2025 and by 54% in 2026. Code churn, a measure of wasteful rework, increased by almost a factor of 10.
 
-Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster either. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has doubled on average and senior engineers are burning out, allowing more defects through.
+Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has tripled on average and senior engineers are burning out, allowing more defects through.
 
 It doesn’t have to be this way. For example, [Intercom has reported double the code changes accompanied by a _reduction_ in defects](https://ideas.fin.ai/p/2x-nine-months-later).
 
@@ -228,9 +227,9 @@ This is because _how_ they work matters.
 
 AI acts as a multiplier. It multiplies the consequences of both good and bad habits, and I consider healthy engineering practices to be a prerequisite for successful AI adoption.
 
-The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience, with engineering discipline allowing higher quality and speed, and teams better attuned to the products they build and the customers they serve overall making better decisions.
+The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience. It shows that engineering discipline allows higher quality and speed, and that teams who are better attuned to the products they build and the customers they serve make better decisions overall.
 
-I should note that research on this multiplication effect shows it’s wildly _asymmetrical_. With poor engineering practices, AI yields exponentially worse results. Good engineering practices give you comparatively modest improvements (but improvements nonetheless).
+I should note that research on this multiplication effect shows it’s wildly _asymmetrical_. With poor engineering practices, AI yields far worse results. Good engineering practices, on the other hand, give you comparatively modest improvements (but improvements nonetheless).
 
 ---
 
