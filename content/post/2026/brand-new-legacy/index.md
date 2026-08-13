@@ -52,7 +52,7 @@ The inspiration comes from the structure of the brain and its interconnected neu
 
 If neural networks are nothing new, then what changed?
 
-What changed is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. ‘Attention’ mechanisms with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of losing the plot.
+What changed is the scale and complexity of the neural networks and the hardware that makes it possible to handle them. ‘Attention’ mechanisms on models with billions of controlling parameters push your prompts through dozens of neuron layers with less chance of losing the plot.
 
 These functions and parameters are the secret sauce.
 
@@ -227,7 +227,7 @@ AI acts as a multiplier. It inflates the consequences of both good and bad habit
 
 The [DORA 2025 State of AI-Assisted Software Development report](https://dora.dev/research/2025/dora-report/) backs my personal experience. It shows that AI, when paired with engineering discipline, enables higher quality and speed, and that teams who are better attuned to the products they build and the customers they serve make better decisions overall.
 
-The DORA report notes that this multiplication effect is wildly _asymmetrical_. Combined with poor engineering discipline, AI yields far worse results. Good engineering practices, on the other hand, allow only for comparatively modest improvements (but improvements nonetheless).
+The DORA report notes that this multiplication effect is wildly _asymmetrical_. Combined with poor engineering discipline, AI yields far worse results. Good engineering practices, on the other hand, allow for comparatively modest improvements (but improvements nonetheless).
 
 One of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
@@ -245,7 +245,7 @@ Will you stand by without a care while incomprehensible slop accumulates in your
 
 I wish I had better news for the lazy, but _human in the loop_ is the only sensible default when using AI. It is a significant risk to hand over maintenance of your product to a thing you do not control, with no hope of maintaining it yourself because the cost of understanding it became too steep to pay.
 
-Artificial intelligence is an aid, but one that will not reward passive participation the way many people hope it will. No tools or practices, however sophisticated, will build that understanding for you. This is inevitable because they operate at least one level below of where the engineering value is.
+Artificial intelligence is an aid, but one that will not reward passive participation the way many people hope it will. No tools, however sophisticated, will build that understanding for you. This is inevitable because they operate at least one level below where the engineering value is.
 
 The best antidote I know is still to be involved in the process of creation. If you miss the opportunity, you can still rebuild the system in your head, or materially by rewriting its parts.[^rewrite]
 
