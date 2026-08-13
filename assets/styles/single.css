@@ -83,7 +83,7 @@
     bottom: 0;
     padding: 0;
     position: absolute;
-    text-align: left;
+    text-align: start;
     width: 100%;
     z-index: 3;
 
@@ -169,6 +169,10 @@
   & .align-center {
     margin: 3rem 0;
     text-align: center;
+
+    & figcaption {
+      text-align: start;
+    }
   }
 
   & .align-left {
