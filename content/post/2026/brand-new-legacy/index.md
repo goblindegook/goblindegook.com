@@ -8,7 +8,7 @@ tags: ['work', 'artificial intelligence', 'understanding']
 date: 2026-08-10T12:00:00+01:00
 image:
   src: feynman-blackboard.png
-  caption: Richard Feynman's final blackboard at CalTech, preserved from 1988 to this day.
+  caption: Richard Feynman's final blackboard at Caltech, preserved from 1988 to this day.
   alt: "Two sentences written on a blackboard: 'What I cannot create I do not understand,' and 'Know how to solve every problem that has been solved.'"
 draft: true
 ---
@@ -91,7 +91,7 @@ This too is correct, but it leaves out the root causes of why a system is hard t
 
 Fingers tend to get pointed at the people who created the system, and who probably are no longer with the company. It’s easy for the sod who has to support an incomprehensible ball of mud to blame their predecessors’ incompetence, but hindsight is not 20/20. Frequently we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Perhaps the right tool, or the right idea, did not exist yet. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
 
-Too often there is no written record of these decisions since software engineers tend to trust code to speak for itself. Someone in the company would know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holidays, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
+Too often there is no written record of these decisions since software engineers tend to trust code to speak for itself. Someone in the company would know how the system worked anyway, and just as crucially _why_ it worked the way it did. People accept this until these people go on holiday, or leave the company, or get unexpectedly laid off, or are promoted to a position where they do not have to remember those things anymore.
 
 Intention also has a tendency to diffuse with the accretion of complexity in any long-lived system. Even if the original design was recorded, its evolution might not have been.
 
@@ -111,7 +111,7 @@ Among his many insights and achievements, Ackoff developed a hierarchy of cognit
 
 The idea wasn’t novel, it built on the observations of Nicholas Henry, who formalised the first half, and Milan Zeleny, who introduced the wisdom element.[^ah]
 
-[^ah]: A couple of decades earlier Jens Rasmussen formulated an Abstraction Hierarchy which almost cleanly follows Ackoff’s structure, although I could not find evidence of the two ever encountering each others’ work.
+[^ah]: A couple of decades earlier Jens Rasmussen formulated an Abstraction Hierarchy which almost cleanly follows Ackoff’s structure, although I could not find evidence of the two ever encountering each other’s work.
 
 Succinctly, data describes raw units of cognition. These are measurements and observations devoid of order, context, or meaning.
 
@@ -192,7 +192,7 @@ Because LLMs are not accountable for incidents, and have no fear of breaking the
   title="An IBM statement from 1979."
 >}}
 
-But here’s something the people who never look at the code don’t realise. For example, when confronted with a problem that persists or was made worse by their attempt to fix it, coding agents will _almost never_ revert the incorrect and ineffective change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all models, from all providers.
+But here’s something the people who never look at the code don’t realise. When confronted with a problem that persists or was made worse by their attempt to fix it, coding agents will _almost never_ revert the incorrect and ineffective change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all models, from all providers.
 
 This misbehaviour alone means problems will accrue invisibly, the functioning of the system will become ever more opaque, and context sizes will grow and degrade agentic reasoning.
 
@@ -202,13 +202,13 @@ Exchanging more tokens with the LLM means you get a bigger bill. Your subscripti
 
 The price per token being paid by subscribers today is [nowhere near their true cost](https://www.theverge.com/ai-artificial-intelligence/917380/ai-monetization-anthropic-openai-token-economics-revenue). That price has been subsidised by investors and kept low by AI companies intent on making themselves indispensable.
 
-While the raw cost of generating a million tokens may be negligible, the rest isn’t. With LLMs there are no economies of scale like you would have with normal Software-as-a-Service. This is not software you build once then host for a fixed cost with capacity to spare, meaning you could serve thousands of customers for the price of catering to a single one. With AI models, increased usage requires a commensurate level of compute: _more customers always cost more_. This on top of the expenditure that goes into salaries, rapidly-evolving infrastructure, and cutting-edge research. The data centres everyone wants to build these days aren’t cheap either.
+While the raw cost of generating a million tokens may be negligible, the rest isn’t. With LLMs there are no economies of scale like you would have with normal Software-as-a-Service. This is not software you build once then host for a fixed cost with capacity to spare, meaning you could serve thousands of customers for the price of catering to a single one. With AI models, increased usage requires a commensurate level of compute: _more customers always cost more_. This is on top of the expenditure that goes into salaries, rapidly-evolving infrastructure, and cutting-edge research. The data centres everyone wants to build these days aren’t cheap either.
 
 With rising subscription costs and competitive open-weight models not being quite in reach (yet), what happens when you stop being able to afford AI agents to maintain your complex codebase?
 
 ---
 
-There is a benefit to using artificial tools, but we should also be mindful of the risks, the first of which being misunderstanding its value.
+There is a benefit to using artificial tools, but we should also be mindful of the risks, the first of which is misunderstanding its value.
 
 A lot of companies these days are taking part in what I can only call productivity theatre. Hype pressures people to point to token spend, features delivered, or lines of code generated as if they’re indicative of anything useful being done. Pushed by leaders desperate to demonstrate they’re doing something with AI, many engage in the wasteful practice known as [‘tokenmaxxing’](https://zapier.com/blog/tokenmaxxing/), a textbook example of Goodhart’s law if I ever saw one.[^tokenmaxxing]
 
@@ -216,11 +216,11 @@ A lot of companies these days are taking part in what I can only call productivi
 
 Goodhart’s law states that when a metric becomes the target, it stops being a good metric. Superficial measurements of activity, such as money spent or code churn, should not be mistaken for value. And like someone at the end of a long night boozing themselves to near-coma, they are now [staring groggily at the huge bill](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/). The party is ending.
 
-Before I said that LLMs are producing code that is legacy almost as soon as it’s out of the gate. This is not a matter of opinion: research is telling us is that none of this frenzy has _automatically_ made things better.
+Earlier I said that LLMs are producing code that is legacy almost as soon as it’s out of the gate. This is not a matter of opinion: research is telling us that none of this frenzy has _automatically_ made things better.
 
 [Faros AI digested two years of telemetry](https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways) and concluded that while a superficial measure of productivity like code changes increased by almost a factor of 10, critical outcomes like stability fell off a cliff: monthly incidents up by 57%, and incidents-to-pull-request ratio up by 242%. And the problem is intensifying: the number of defects per developer went from 9% in 2025 to 54% in 2026.
 
-Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster either. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result work is stalled for longer now than before. Time spent reviewing code has doubled on average and senior engineers are burning out, allowing more defects through.
+Once you take out the time wasted fixing [all the gratuitous mess](https://stackgen.com/state-of-reliability-2026/report), the remaining work is not moving much faster either. Agents generate code at an unprecedented rate, but vetting this code still hits human limits. As a result, work is stalled for longer now than before. Time spent reviewing code has doubled on average and senior engineers are burning out, allowing more defects through.
 
 It doesn’t have to be this way. For example, [Intercom has reported double the code changes accompanied by a _reduction_ in defects](https://ideas.fin.ai/p/2x-nine-months-later).
 
