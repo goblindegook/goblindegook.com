@@ -1,6 +1,6 @@
 ---
 title: Brand New Legacy
-description: On fighting artificial intelligence slop.
+description: On pushing against the slop.
 author: Luís Rodrigues
 slug: brand-new-legacy
 categories: ['Software']
