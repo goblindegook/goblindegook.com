@@ -142,6 +142,13 @@ For example, unless you specify the technology, the LLM will likely [generate a 
 
 While you could argue that a React application is not a bad choice by the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the agent.
 
+{{< figure
+  alt="A computer can never be held accountable therefore a computer must never make a management decision."
+  class="align-center"
+  src="machine-accountability.webp"
+  title="An IBM statement from 1979."
+>}}
+
 Thanks to the speed at which AI tools churn out code, widespread use compresses implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
 
 We are [automating away learning in the name of efficiency](https://www.theatlantic.com/magazine/archive/2013/11/the-great-forgetting/309516/). The lasting impact of this on employee skills and satisfaction, or on the health of the job market and the companies themselves, is yet to be appreciated in full. But without the proper safeguards, one thing is becoming apparent: LLMs produce code that becomes legacy, not in a matter of years, but within months or even weeks of shipping.
@@ -174,7 +181,7 @@ I mentioned that cognitive offloading is not a problem when the stakes are low.[
 
 My argument focuses on the long-lived, specialised, complex systems that software engineers like me are accountable for. These differ because while initial speed and early feedback are valuable, they still cannot tell you whether you got it right: architectural soundness can only truly be proven weeks or months into the future when new requirements and changes come in.
 
-Trusting AI to fully maintain critical parts of your system is a risk.
+In this scenario, trusting AI to fully maintain critical parts of your system is a risk.
 
 LLMs are most capable when dealing with small contexts. This context is the amount of text (split into short word ‘tokens’) that an agent keeps in memory, and which must include both the thing being worked on (in this case, all of the relevant code) and your prompt for the task it needs to carry out. It also includes all the internal reasoning performed by the model as it works through the problem.
 
@@ -185,13 +192,6 @@ Because LLMs are not accountable for incidents, and have no fear of breaking the
 But here’s something the people who never look at the code don’t realise. When confronted with a problem that persists or was made worse by their attempt to fix it, coding agents will _almost never_ revert the incorrect and ineffective change. Instead, they will overlay a different attempt on top of the previous one, causing complexity to explode without ever addressing the root causes of the problem. I’ve seen this countless times from all models, from all providers.
 
 This misbehaviour alone means problems will accrue invisibly, the functioning of the system will become ever more opaque, and context sizes will grow and degrade agentic reasoning.
-
-{{< figure
-  alt="A computer can never be held accountable therefore a computer must never make a management decision."
-  class="align-center"
-  src="machine-accountability.webp"
-  title="An IBM statement from 1979."
->}}
 
 We are handing over the ability to maintain our systems to an industry that runs both the models _and_ the meter. That will not change until technology evolves to [a point where mature open-weight LLMs are commonplace](https://newsletter.semianalysis.com/p/google-we-have-no-moat-and-neither) and able to run on your own computer.
 
@@ -233,24 +233,26 @@ The DORA report notes that this multiplication effect is wildly _asymmetrical_. 
 
 A great example of these practices is [Extreme Programming (XP)](https://en.wikipedia.org/wiki/Extreme_programming). It is a collection of software development techniques designed to improve quality and responsiveness of teams to an unpredictable environment. It has been around since the 1990s, and while I’ve been an enthusiastic practitioner for the last _\<depressing number\>_ years, even I did not expect to see artificial intelligence help prove its value so much in this new age. I also did not expect to see the latent value of some of these practices come to the fore so much.
 
-Take, for instance, [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write an automated test or specification and establish the success conditions for a single change _before_ any code is even written. It can be a useful tool towards clarifying and documenting intent. It also provides a deterministic way to check whether the correct behaviour came out of the agentic loop.
+Take, for instance, refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
 
-The idea of writing a specification beforehand is not an eccentricity, it’s to give you pause and force you to decompose the problem before you attempt to solve it. Writing the test itself requires careful deliberation and discipline, because while automated tests offer a number of benefits, [you cannot have them all at the same time](https://testdesiderata.com). What’s more, bad tests --- tests that overreach, are ineffective, or fail for the wrong reasons --- will slow everything down more than having no tests will.
+And [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write an automated specification or test and establish the success conditions for a single change _before_ any code is even written. It can be a useful tool towards clarifying and documenting intent.
 
-And refactoring, the continuous act of rewriting code to ostensibly ‘make it better’, can also be interpreted as a way to _rebuild understanding through recreation_, the same thing Richard Feynman’s blackboard quote alluded to.
+The idea of writing a test beforehand is not an eccentricity, it’s done to give you pause and force you to decompose the problem before you attempt to solve it. You set expectations so you do only what is needed, no more, no less. This looks good in theory, but relying on an LLM agent to sustain a test-driven development loop end-to-end can be pointless, even harmful.
 
-While I’ve had success with Extreme Programming, it may not work for everyone or every project. It _can_ be an answer, but you need to ask the right questions first. You will need to adjust the practices to your specific constraints. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
+Yes, test-first does help because it gives the agent a deterministic way to check whether the job is done. But what about enabling reflection and design? Writing the test itself demands discipline and careful deliberation, in part because [you cannot have all the benefits of testing at the same time](https://testdesiderata.com). What’s more, bad tests --- ones that overreach, are ineffective, or fail for the wrong reasons --- will slow everything down more than having no tests will. TDD requires the ability to make decisions, and agents excel at extrapolation, not intention. TDD is valuable, but to _humans_ more than machines.
+
+So while I’ve had success with Extreme Programming, beware of applying it indiscriminately to an AI-supported workflow because benefits do not translate cleanly. XP _can_ be an answer, but you need to ask the right questions first. You will need to adjust the techniques to your specific constraints. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
 
 Kent Beck, who developed Extreme Programming and co-signed the Agile Manifesto, shared his own experiences with [augmented coding](https://newsletter.kentbeck.com/p/augmented-coding-beyond-the-vibes) and reports that while AI can take on much of the mechanical work, you still need to be an engaged participant.
 
 Will you stand by without a care while incomprehensible slop accumulates in your code repositories? Are you prepared to pay the rising token costs? Do you have a plan for when your agent blacks out, as it has done in the past, [stalling whole teams around the world](https://www.linkedin.com/pulse/claudes-outages-show-dark-side-ai-productivity-total-system-lam-osbjc/)?
 
-I wish I had better news for the lazy, but _human in the loop_ is the only sensible default when using AI. It is a significant risk to hand over maintenance of your product to a thing you do not control, with no hope of maintaining it yourself because the cost of understanding it became too steep to pay.
+I wish I had better news for the lazy, but _human in the loop_ is the only sensible default when using AI. It is a significant risk to hand over maintenance of your product to a thing you do not control, with no hope of maintaining it yourself once the cost of understanding it becomes too steep to pay.
 
-Artificial intelligence is an aid, but one that will not reward passive participation the way many people hope it will. No tools, however sophisticated, will build that understanding for you. This is inevitable because they operate at least one level below where the engineering value is.
+Artificial intelligence is a useful tool, but one that will not reward passive participation the way many people hope it will. No tools, however sophisticated, will build that understanding for you. This is inevitable because they operate at least one level below where the engineering value is.
 
 The best antidote I know is still to be involved in the process of creation. If you miss the opportunity, you can still rebuild the system in your head, or materially by rewriting its parts.[^rewrite]
 
-[^rewrite]: Or, if you're looking to take even bigger risks, [rewriting the whole](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/).
+[^rewrite]: And if you're looking to take even bigger risks, [rewriting the whole](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/).
 
 So I'm afraid you'll just have to put in the work.
