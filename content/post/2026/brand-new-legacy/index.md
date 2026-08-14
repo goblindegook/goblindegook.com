@@ -253,6 +253,6 @@ Artificial intelligence is a useful tool, but one that will not reward passive p
 
 The best antidote I know is still to be involved in the process of creation. If you miss the opportunity, you can still rebuild the system in your head, or materially by rewriting its parts.[^rewrite]
 
-[^rewrite]: And if you're looking to take even bigger risks, [rewriting the whole](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/).
+[^rewrite]: If you're looking to take even bigger risks, [you could rewrite the whole](https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/).
 
 So I'm afraid you'll just have to put in the work.
