@@ -70,13 +70,13 @@ Each of these topics deserves extended debate, but today I would like to focus o
 
 ---
 
-In computing circles we frequently have to deal with something we call ‘legacy systems.’
+In computing circles we frequently have to deal with something we call ‘legacy systems’.
 
-As with many of our terms of art, the definitions are as precise as they are varied. Often, when people talk about legacy systems, they mean something outdated, and therefore ‘bad.’
+As with many of our terms of art, the definitions are as precise as they are varied. Often, when people talk about legacy systems, they mean something outdated, and therefore ‘bad’.
 
 But being outdated is not a convincing argument. A system does not have to rely on modern technology to work reliably and be amenable to change.[^stroustrup] Indeed, the reason for the staying power of legacy systems is that they work, and therefore have value, and their value is expensive to recreate.
 
-[^stroustrup]: [Bjarne Stroustrup says](https://www.stroustrup.com/bs_faq.html#legacy) that often ‘legacy code’ is used pejoratively by people promoting a replacement for commercial or political motives.
+[^stroustrup]: [Bjarne Stroustrup says](https://www.stroustrup.com/bs_faq.html#legacy) that ‘legacy code’ is often used pejoratively by people promoting a replacement for commercial or political motives.
 
 A better way to think about these is as systems that are hard to maintain.
 
@@ -84,7 +84,7 @@ In his book _Working Effectively with Legacy Code_, Michael Feathers points at t
 
 This too is correct, but it leaves out the root causes of why a system is hard to maintain. While the absence of well-written tests undermines confidence[^confidence], their presence does not improve your understanding of why the product exists the way it does.
 
-[^confidence]: As does the presence of bad tests. Poorly designed tests can be worse than no tests at all.
+[^confidence]: As does the presence of bad tests.
 
 Fingers tend to get pointed at the people who created the system, and who probably are no longer with the company. It’s easy for the sod who has to support an incomprehensible ball of mud to blame their predecessors’ incompetence, but hindsight is not 20/20. Frequently we remain unaware of the constraints they were working under, whether it was time, money, knowledge, or skill. Perhaps the right tool, or the right idea, did not exist yet. Decisions were made and the reasons were lost. Who knows, they might even have made sense at the time.
 
@@ -237,9 +237,9 @@ Take, for instance, refactoring, the continuous act of rewriting code to ostensi
 
 Another important technique is [Test-Driven Development](/2025/two-days-two-hours-test-driven-development/), where you write an automated specification or test and establish the success conditions for a single change _before_ any code is even written.
 
-The idea of writing a test beforehand is not an eccentricity, it’s done to give you pause and force you to decompose the problem before you attempt to solve it. You set expectations so you do only what is needed, no more, no less. This looks good in theory, but relying on an LLM agent to sustain a test-driven development loop end-to-end can be pointless, even harmful.
+The idea of writing a test beforehand is not an eccentricity, it’s done to give you pause and force you to decompose the problem before you attempt to solve it. You set expectations so you do only what is needed, no more, no less. This looks good in theory, but relying on an LLM agent to sustain a test-driven development loop end-to-end can be pointless, wasteful, even harmful. Poorly designed tests --- ones that overreach, are muddled, or fail for the wrong reasons --- can be worse than no tests at all.
 
-Yes, test-first does help because it gives the agent a deterministic way to check whether the job is done. But what about enabling reflection and design? Writing a test that documents intent clearly requires discipline and careful deliberation, in part because [you cannot have all the benefits of testing at the same time](https://testdesiderata.com). What’s more, bad tests --- ones that overreach, are muddled, ineffective, or fail for the wrong reasons --- will slow everything down more than having no tests at all. TDD requires the ability to make decisions, yet agents excel at extrapolation, not intention. TDD is valuable, but to _humans_ more than machines.
+Yes, test-first does help because it gives the agent a deterministic way to check whether the job is done. But what about enabling reflection and design? Writing a test that documents intent clearly requires discipline and careful deliberation, in part because [you cannot have all the benefits of testing at the same time](https://testdesiderata.com). TDD requires the ability to make decisions, yet agents excel at extrapolation, not intention. TDD is valuable, but to _humans_ more than machines.
 
 So while I’ve had success with Extreme Programming, beware of applying it indiscriminately to an AI-supported workflow because benefits do not translate cleanly. XP _can_ be an answer, but you need to ask the right questions first. You will need to adjust the techniques to your specific constraints. I’ve learned through observation that adopting these practices like a kind of cargo cult, without an appreciation of what you should be getting out of them, can be a terrible, alienating move.
 
