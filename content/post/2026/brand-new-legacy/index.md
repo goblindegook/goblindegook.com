@@ -26,7 +26,7 @@ It seems to carry a contradiction at its core. Since it’s obvious that Feynman
 
 There might be an admission of humility in there somewhere. A recognition that universe-building is serious stuff indeed, that not even Feynman himself could grasp the motions in those first few nanoseconds of what eventually became the universe around us.
 
-But the most interesting thing at work in the sentence is the implication that _knowledge is not enough_. To be a passive receiver of a professor’s teachings won’t cut it. That understanding any complex topic demands engagement. Developing an internal mental model of how things work is an act of creation in itself, one that brings with it the understanding of _why_ things are the way they are.[^why]
+But the most interesting thing at work in the sentence is the implication that _knowledge is not enough_. To be a passive receiver of a professor’s teachings won’t cut it. That understanding any complex topic demands engagement. Developing a mental model of how things work is an act of creation in itself, one that brings with it the understanding of _why_ things are the way they are.[^why]
 
 [^why]: If not the _why_ of intention, which might not be there, definitely the _why_ of causality.
 
