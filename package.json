@@ -24,7 +24,7 @@
     "concurrently": "^9.2.4",
     "css-modularscale": "^1.1.1",
     "cssnano": "^7.1.7",
-    "dompurify": "^3.4.12",
+    "dompurify": "^3.4.13",
     "esbuild": "^0.28.0",
     "html-entities": "^2.0.3",
     "jsdom": "^29.1.1",
