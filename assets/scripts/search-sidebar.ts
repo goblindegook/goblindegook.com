@@ -16,6 +16,7 @@ export function setupSidebarSearch(): void {
         classPrefix: 'sidebar-',
         container,
         page: 5,
+        placeholder: 'Search',
         navigate: (terms) => window.location.replace(`/search/?q=${terms}`),
         renderResult: Result,
       }),

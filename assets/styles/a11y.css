@@ -6,3 +6,22 @@
   position: absolute;
   width: 1px;
 }
+
+.screen-reader:focus {
+  background-color: var(--ui-background-color);
+  clip: auto;
+  color: var(--ui-text-color);
+  font-family: var(--fallback-ui-font);
+  font-size: var(--ms0);
+  height: auto;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  top: 1rem;
+  width: auto;
+  z-index: 20;
+}
+
+:focus-visible {
+  outline: 2px solid var(--highlight-color);
+  outline-offset: 2px;
+}

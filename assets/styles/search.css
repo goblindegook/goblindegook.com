@@ -230,24 +230,11 @@
 }
 
 @media (--narrow-viewport) {
-  .sidebar-search-input {
-    width: 2rem;
-    padding-left: 1.5rem;
+  .sidebar-search {
+    width: 7.5rem;
   }
 
   .sidebar-search-results {
     display: none;
-  }
-
-  .sidebar-search:focus-within {
-    display: block;
-    width: 100%;
-    grid-row: 1;
-    grid-column: span 2;
-
-    & .sidebar-search-input {
-      padding-left: 2rem;
-      width: 100%;
-    }
   }
 }

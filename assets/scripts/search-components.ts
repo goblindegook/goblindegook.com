@@ -29,6 +29,7 @@ type SearchProps = {
   container?: HTMLElement
   defaultValue?: string
   page?: number
+  placeholder?: string
   navigate: (terms: string) => void
   renderResult: (props: SearchResult) => HTMLElement
 }
@@ -39,6 +40,7 @@ export const Search = ({
   container,
   page,
   defaultValue = '',
+  placeholder = 'Search this site',
   navigate,
   renderResult,
 }: SearchProps) => {
@@ -115,11 +117,12 @@ export const Search = ({
         }),
       ),
       input({
+        'aria-label': 'Search',
         autocomplete: 'off',
         autofocus,
         class: `${classPrefix}search-input`,
         name: 'q',
-        placeholder: 'Search this site',
+        placeholder,
         type: 'search',
         value: defaultValue,
         oninput: handleSearchInput,

@@ -1,11 +1,12 @@
 import { scrollTo } from './lib/scrollTo'
 
 export function setupHeader(parent: ParentNode) {
-  const headerElements = parent.querySelectorAll(
-    '.site-header .trail-end, .site-header .site-title, .site-header .site-tagline',
-  )
+  const link = parent.querySelector<HTMLAnchorElement>('.site-header .site-title a')
 
-  for (const element of Array.from(headerElements)) {
-    element.addEventListener('click', () => scrollTo(0))
-  }
+  link?.addEventListener('click', (event) => {
+    if (link.pathname === window.location.pathname) {
+      event.preventDefault()
+      scrollTo(0)
+    }
+  })
 }

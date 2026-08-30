@@ -19,7 +19,7 @@
   max-width: var(--body-max-width);
   margin: 0.6rem auto;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem;
 }
 
@@ -51,6 +51,10 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: clip;
+}
+
+.site-title a {
+  text-decoration: none;
 }
 
 .trail-items {

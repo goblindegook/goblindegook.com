@@ -115,7 +115,9 @@
           <nav class="breadcrumb-trail breadcrumbs">
             <ul class="trail-items">
               <li class="trail-item trail-begin">
-                <h1 class="site-title" itemprop="headline">{{ .Site.Title }}</h1>
+                <h1 class="site-title" itemprop="headline">
+                  <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+                </h1>
               </li>
               <li class="trail-item trail-tagline trail-end">
                 <span class="site-tagline" itemprop="description">{{ .Site.Params.Tagline }}</span>
