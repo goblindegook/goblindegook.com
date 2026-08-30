@@ -15,10 +15,10 @@ I'm a software product engineer with a particular interest in distributed system
 
 I write and deliver [talks](/talks/) on programming, test automation, and design at conferences and meetup events. Open source [projects](/projects/) available [GitHub](https://github.com/goblindegook/).
 
-## Software Engineering
+## Software Product Engineering
 
 **May 2021---Present · Staff Engineer · [NewStore](https://www.newstore.com/)**
-: _Rome, Italy (remote)._ Helped Inventory, Catalog, and Checkout teams escape "support request hell" and cut delivery time within 3--6 months, through DDD, TDD, test automation, and root-cause analysis. Drove platform rearchitecture towards modules, agent-optimised headless APIs, and device-first mobile applications.
+: _Rome, Italy (remote)._ Helped Inventory, Catalog, and Checkout teams escape "support request hell" and cut delivery time within 3--6 months, through DDD, TDD, test automation, and root-cause analysis. Drove AI-augmented coding and platform rearchitecture towards modules, agent-optimised headless APIs, and device-first mobile applications.
 
 **July 2020---April 2021 · Senior Software Engineer · [Springer Nature](https://www.springernature.com/)**
 : _Lisbon, Portugal (remote)._ Built author-facing submission, payments, and rights flow applications in Content Acquisition.
@@ -49,4 +49,4 @@ I write and deliver [talks](/talks/) on programming, test automation, and design
 ## Education
 
 **1997---2007 · Licentiate degree (pre-Bologna), Computer Engineering · Instituto Superior Técnico**
-: Concentration in Artificial Intelligence. Final year project: _Personal Biographer_, a modular, multi-platform application to monitor system usage and user habits in order to feed personal knowledge managers and desktop search engines, gathering data on process and file operations, WWW and email activity, and calendar events, as well as the relationships between these items.
+: Concentration in Artificial Intelligence. Final year project: _Personal Biographer_, a modular, multi-platform application to monitor system usage and user habits in order to feed personal knowledge managers and desktop search engines, gathering data on process and file operations, web and email activity, and calendar events, as well as the relationships between these items.
