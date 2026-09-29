@@ -36,7 +36,7 @@
     "stopwords-en": "^0.3.0",
     "tslib": "^2.6.2",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.11"
   },
   "dependencies": {
     "@msgpack/msgpack": "^3.1.3",
