@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: Open source projects by Luís Rodrigues, including littlefoot, bloom-search, Muṣarrif, and other TypeScript and JavaScript libraries.
+description: Open source projects by Luís Rodrigues, including littlefoot, signature search, Muṣarrif, and other TypeScript and JavaScript libraries.
 author: Luís Rodrigues
 date: 2017-06-27T12:00:00+01:00
 draft: false
@@ -17,8 +17,8 @@ Most of my open source endeavours revolve around the web, using TypeScript or ju
 [`@pacote/*`](https://github.com/PacoteJS/pacote)
 : A collection of utilities written in TypeScript and distributed under the [`@pacote` organisation on NPM](https://www.npmjs.com/org/pacote).
 
-[`@pacote/bloom-search`](https://www.npmjs.com/package/@pacote/bloom-search)
-: The centerpiece of my `@pacote` project, this module uses Bloom filters to implement the lightweight full-text, client-side, offline-first search engine that I use on this site. Try out the [demo](https://bloom-search.goblindegook.com/) to explore the concept and compare with the alternatives.
+[`@pacote/signature-search`](https://www.npmjs.com/package/@pacote/signature-search)
+: The centerpiece of my `@pacote` project, which grew out of my experiments with Bloom filters but now uses ribbon filters to implement the lightweight full-text, client-side, offline-first search engine that I use on this site. Try out the [demo](https://signature-search.goblindegook.com/) to explore the concept and compare with the alternatives.
 
 [Muṣarrif](https://musarrif.com/)
 : An Arabic language verb conjugator, or مُصَرِّف. Arabic is an extraordinarily logical language, and this is an exploration of how full conjugation tables can be algorithmically derived from a small set of data.
