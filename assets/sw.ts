@@ -4,7 +4,7 @@ const CACHE_KEY = 'goblindegook-offline-v3'
 
 const OFFLINE_URL = '/offline/'
 
-const PRECACHE_URLS = [OFFLINE_URL, '/', '/offline/index.html', '/index.html', '/search-index.msgpack']
+const PRECACHE_URLS = [OFFLINE_URL, '/', '/offline/index.html', '/index.html', '/search-index.json']
 
 type ExtendableEvent = Event & {
   waitUntil: (promise: Promise<unknown>) => Promise<void>

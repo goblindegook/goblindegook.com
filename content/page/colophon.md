@@ -51,18 +51,18 @@ Site content and sources are kept under version control on a [public Github repo
 
 ### Client-Side
 
-The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in [TypeScript]. [Colcade], [DOMPurify], [littlefoot], [MessagePack], [smartypants], [snarkdown], [stemmer], and [VanJS] provide additional features and optimizations.
+The parts of {{< small-caps >}}goblindegook{{< /small-caps >}} that run on your browser were written in [TypeScript]. [Colcade], [DOMPurify], [littlefoot], [Signature Search], [smartypants], [snarkdown], [stemmer], and [VanJS] provide additional features and optimizations.
 
 The site's stylesheet is [generated from CSS sources][postcss-preset-env] and includes [animate.css] for high-performance animations.
 
-[typescript]: http://www.typescriptlang.org
+[animate.css]: https://daneden.github.io/animate.css
+[Colcade]: https://github.com/desandro/colcade
 [dompurify]: https://github.com/cure53/DOMPurify
 [littlefoot]: https://github.com/goblindegook/littlefoot
+[postcss-preset-env]: https://preset-env.cssdb.org/
+[Signature Search]: https://signature-search.goblindegook.com/
 [smartypants]: https://www.npmjs.com/package/smartypants
 [snarkdown]: https://www.npmjs.com/package/snarkdown
-[Colcade]: https://github.com/desandro/colcade
-[MessagePack]: https://msgpack.org
 [stemmer]: https://github.com/words/stemmer
+[typescript]: http://www.typescriptlang.org
 [VanJS]: https://vanjs.org/
-[postcss-preset-env]: https://preset-env.cssdb.org/
-[animate.css]: https://daneden.github.io/animate.css

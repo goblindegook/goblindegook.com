@@ -1,5 +1,4 @@
-import { decode } from '@msgpack/msgpack'
-import { BloomSearch, type Index } from '@pacote/bloom-search'
+import { type Index, SignatureSearch } from '@pacote/signature-search'
 import { stemmer } from 'stemmer'
 
 export type SearchResult = {
@@ -13,7 +12,7 @@ type Status = 'idle' | 'loading' | 'ready'
 export function createSearch() {
   let status: Status = 'idle'
   let loadPromise: Promise<void> | null = null
-  const bs = new BloomSearch<SearchResult, keyof SearchResult, never>({
+  const bs = new SignatureSearch<SearchResult, keyof SearchResult, never>({
     errorRate: 0.0001,
     fields: [],
     summary: ['title', 'description', 'url'],
@@ -24,9 +23,8 @@ export function createSearch() {
     if (status === 'ready') return
     if (!loadPromise) {
       status = 'loading'
-      loadPromise = fetch('/search-index.msgpack')
-        .then((response) => response.arrayBuffer())
-        .then((buffer) => decode(buffer))
+      loadPromise = fetch('/search-index.json')
+        .then((response) => response.json())
         .then((index: Index<SearchResult, keyof SearchResult>) => bs.load(index))
         .then(() => {
           status = 'ready'

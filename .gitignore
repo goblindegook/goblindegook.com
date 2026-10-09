@@ -11,7 +11,7 @@ node_modules/
 public/
 resources/
 .rpt2_cache/
-static/search-index.msgpack
+static/search-index.json
 .hugo_build.lock
 
 # Logs
