@@ -10,6 +10,7 @@ image:
   src: model-g-warp-break-stop.jpg
   caption: Detail of the warp break auto stop of the Toyoda Model G Automatic Loom in the Toyota Commemorative Museum of Industry and Technology, Nagoya, Japan. Christoph Roser at [AllAboutLean.com](https://www.allaboutlean.com/), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
   alt: Detail of the warp break auto stop of the Toyoda Model G Automatic Loom.
+canonical: https://newstoretech.substack.com/p/the-wastes-of-product-engineering
 draft: false
 ---
 
