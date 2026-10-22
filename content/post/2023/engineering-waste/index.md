@@ -10,7 +10,6 @@ image:
   src: model-g-warp-break-stop.jpg
   caption: Detail of the warp break auto stop of the Toyoda Model G Automatic Loom in the Toyota Commemorative Museum of Industry and Technology, Nagoya, Japan. Christoph Roser at [AllAboutLean.com](https://www.allaboutlean.com/), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
   alt: Detail of the warp break auto stop of the Toyoda Model G Automatic Loom.
-canonical: https://www.newstore.com/articles/the-wastes-of-product-engineering/
 draft: false
 ---
 
@@ -170,6 +169,6 @@ In my efforts to combat waste, I've come to realize that the strategies my teams
 
 Beyond being mere complements, agile and lean methodologies reinforce each other. Together, they create a virtuous circle that empowers teams to move faster, while also providing the insight and authority to continuously adapt and adopt even more effective practices.
 
-_This article was originally written for the [NewStore company blog](https://www.newstore.com/articles/the-wastes-of-product-engineering/) and is based on a [talk I delivered in May 2023](https://www.youtube.com/watch?v=wSo4QQW-KhI). Thanks to Amanda McLaughlin, Nuno Silva Pereira, and Carlos Rosão for edits and feedback._
+_This article was originally written for the [NewStore](https://www.newstore.com/) company blog and is based on a [talk I delivered in May 2023](https://www.youtube.com/watch?v=wSo4QQW-KhI). Thanks to Amanda McLaughlin, Nuno Silva Pereira, and Carlos Rosão for edits and feedback._
 
 [^1]: Nevertheless it _is_ a bet. Even though booze seems to have perpetual appeal, certain drinks go in and out of fashion. And who knows if in 30 years' time liquor will be heavily regulated --- or even prohibited --- by the government of a major market?
