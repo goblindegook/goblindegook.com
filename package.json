@@ -35,7 +35,7 @@
     "stopwords-en": "^0.3.0",
     "tslib": "^2.6.2",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   },
   "dependencies": {
     "@pacote/signature-search": "^0.2.0",
