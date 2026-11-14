@@ -1,5 +1,5 @@
+import { setupArchive } from './archive'
 import { setupHeader } from './header'
-import { setupMasonry } from './masonry'
 import { setupOffline } from './offline'
 import { setupPage } from './page'
 import { setupSearch } from './search'
@@ -16,7 +16,7 @@ export function onLoad(container: HTMLElement | null, namespace?: string): Unloa
     case 'section':
     case 'taxonomy':
     case 'term':
-      setupMasonry(container)
+      setupArchive(container)
       break
     case 'page':
       callbacks.push(setupPage(document))
