@@ -1,6 +1,6 @@
 import { createEvent, screen } from '@testing-library/dom'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
-import { hashClickHandler } from '../assets/scripts/lib/hash'
+import { hashClickHandler } from '../../assets/scripts/lib/hash'
 
 beforeEach(() => {
   vi.useFakeTimers()

@@ -1,19 +1,12 @@
-/* globals self */
+export {}
+
+declare const self: ServiceWorkerGlobalScope
 
 const CACHE_KEY = 'goblindegook-offline-v3'
 
 const OFFLINE_URL = '/offline/'
 
 const PRECACHE_URLS = [OFFLINE_URL, '/', '/offline/index.html', '/index.html', '/search-index.json']
-
-type ExtendableEvent = Event & {
-  waitUntil: (promise: Promise<unknown>) => Promise<void>
-}
-
-type FetchEvent = ExtendableEvent & {
-  request: Request
-  respondWith: (response: Promise<Response>) => Promise<void>
-}
 
 function precache(): Promise<void> {
   return self.caches.open(CACHE_KEY).then((cache) => cache.addAll(PRECACHE_URLS))
@@ -39,7 +32,9 @@ function offlineFallback(request: RequestInfo): Promise<Response> {
   return self.caches
     .match(request)
     .then((response) =>
-      !response || response.status === 404 ? self.caches.match(OFFLINE_URL).then((offline) => offline) : response,
+      !response || response.status === 404
+        ? self.caches.match(OFFLINE_URL).then((offline) => offline ?? Response.error())
+        : response,
     )
 }
 

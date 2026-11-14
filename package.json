@@ -14,7 +14,8 @@
     "lint": "biome check .",
     "watch": "concurrently 'npm run test:watch' 'npm run build:watch'",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.worker.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.7",

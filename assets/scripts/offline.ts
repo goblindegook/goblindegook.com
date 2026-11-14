@@ -1,20 +1,16 @@
 import van from 'vanjs-core'
 import { getCachedUrls } from './lib/offline'
+import type { SearchResult } from './lib/search'
 import { Result } from './search-main'
 
 const { ul } = van.tags
-
-type Page = {
-  title?: string
-  url: URL | string
-}
 
 type OfflinePageListProps = {
   urls?: readonly URL[]
 }
 
 const OfflinePageList = async ({ urls = [] }: OfflinePageListProps) => {
-  const items = van.state<Page[]>([])
+  const items = van.state<SearchResult[]>([])
 
   for (const url of urls) {
     const response = await fetch(url)
@@ -22,8 +18,8 @@ const OfflinePageList = async ({ urls = [] }: OfflinePageListProps) => {
       const content = await response.text()
       const container = document.createElement('div')
       container.innerHTML = content
-      const title = container.querySelector('title')?.innerHTML
-      items.val.push({ title, url })
+      const title = container.querySelector('title')?.innerHTML ?? url.pathname
+      items.val.push({ title, url: url.href })
       container.remove()
     }
   }

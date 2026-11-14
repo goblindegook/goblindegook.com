@@ -3,7 +3,7 @@ import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
 import { stemmer } from 'stemmer'
 import { afterAll, afterEach, beforeAll, expect, test } from 'vitest'
-import { createSearch, type SearchResult } from '../assets/scripts/lib/search'
+import { createSearch, type SearchResult } from '../../assets/scripts/lib/search'
 
 const articles: SearchResult[] = [
   { url: '/design/', title: 'Designing software', description: 'Interfaces for humans' },

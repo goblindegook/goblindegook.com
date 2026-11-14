@@ -1,4 +1,5 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["./**/*.ts"]
+  "include": ["./**/*.ts"],
+  "references": [{ "path": "../tsconfig.worker.json" }]
 }

@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/dom'
 import { afterEach, beforeEach, expect, test } from 'vitest'
-import { masonry } from '../assets/scripts/lib/masonry'
+import { masonry } from '../../assets/scripts/lib/masonry'
 
 let dispose: (() => void) | undefined
 

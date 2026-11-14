@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
-import { readingProgress } from '../assets/scripts/lib/readingProgress'
+import { readingProgress } from '../../assets/scripts/lib/readingProgress'
 
 const cleanups: (() => void)[] = []
 

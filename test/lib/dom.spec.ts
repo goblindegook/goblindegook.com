@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom'
 import { afterEach, expect, test } from 'vitest'
-import { replaceFrom } from '../assets/scripts/lib/dom'
+import { replaceFrom } from '../../assets/scripts/lib/dom'
 
 afterEach(() => {
   document.body.innerHTML = ''

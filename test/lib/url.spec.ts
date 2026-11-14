@@ -1,5 +1,5 @@
 import { afterEach, expect, test } from 'vitest'
-import { parseQueryString } from '../assets/scripts/lib/url'
+import { parseQueryString } from '../../assets/scripts/lib/url'
 
 afterEach(() => window.history.replaceState({}, '', '/'))
 

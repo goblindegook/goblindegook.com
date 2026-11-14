@@ -11,6 +11,7 @@ node_modules/
 /static/search-index.json
 .hugo_build.lock
 .rpt2_cache/
+*.tsbuildinfo
 
 # Logs
 *.log

@@ -1,5 +1,5 @@
 import { afterEach, expect, test, vi } from 'vitest'
-import { getCachedUrls } from '../assets/scripts/lib/offline'
+import { getCachedUrls } from '../../assets/scripts/lib/offline'
 
 afterEach(() => vi.unstubAllGlobals())
 
