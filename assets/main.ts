@@ -1,12 +1,17 @@
-import { onFirstLoad, type UnloadCallback } from './scripts/load'
+import { onLoad, type UnloadCallback } from './scripts/load'
+import { setup } from './scripts/site'
 import { navigateTo, shouldSkipTransition } from './scripts/transitions'
 
 let cleanup: UnloadCallback = () => {}
 
-window.addEventListener('load', async () => {
+function initialize() {
   const container = document.querySelector<HTMLElement>('[data-transition="container"]')
-  cleanup = onFirstLoad(container, container?.dataset.transitionNamespace)
-})
+  setup()
+  cleanup = onLoad(container, container?.dataset.transitionNamespace)
+}
+
+if (document.readyState === 'complete') initialize()
+else window.addEventListener('load', initialize, { once: true })
 
 document.addEventListener('click', async (event: PointerEvent) => {
   const anchor = (event.target as Element | null)?.closest('a[href]')

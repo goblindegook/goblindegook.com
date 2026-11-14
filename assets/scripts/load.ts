@@ -3,14 +3,8 @@ import { setupMasonry } from './masonry'
 import { setupOffline } from './offline'
 import { setupPage } from './page'
 import { setupSearch } from './search'
-import { setup } from './site'
 
 export type UnloadCallback = () => void
-
-export function onFirstLoad(container: HTMLElement | null, namespace?: string): UnloadCallback {
-  setup()
-  return onLoad(container, namespace)
-}
 
 export function onLoad(container: HTMLElement | null, namespace?: string): UnloadCallback {
   const callbacks: UnloadCallback[] = []
@@ -28,7 +22,7 @@ export function onLoad(container: HTMLElement | null, namespace?: string): Unloa
       callbacks.push(setupPage(document))
       break
     case 'search':
-      setupSearch(document)
+      setupSearch(document, 'main')
       break
     case 'offline':
       setupOffline('goblindegook-offline-v3')
