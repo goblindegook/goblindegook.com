@@ -16,7 +16,7 @@ enableRobotsTXT = true
   tagline = "Full of IT."
   description = "Luís Rodrigues writing about software development, design, and literature."
   intro = "My name is Luís Rodrigues and this site collects my writing.\n\nI'm <a href=\"https://mastodon.social/@goblindegook\" rel=\"me\">@goblindegook@mastodon.social</a> on Mastodon and <a href=\"https://bsky.app/profile/goblindegook.bsky.social\" rel=\"me\">@goblindegook.bsky.social</a> on Bluesky. Come by and say hello."
-  disclaimer = "Opinions my own, unless borrowed."
+  disclaimer = "100% human slop."
   bluesky = "@goblindegook.bsky.social"
   mastodon = "@goblindegook@mastodon.social"
   searchPrefill = "Search goblindegook"
