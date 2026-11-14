@@ -1,7 +1,25 @@
+import littlefoot from 'littlefoot'
 import { readingProgress, type UnmountCallback } from './lib/readingProgress'
 import { scrollTo } from './lib/scrollTo'
+import type { UnloadCallback } from './load'
 
-export function setupProgress(parent: ParentNode): UnmountCallback {
+export function setupPage(parent: ParentNode): UnloadCallback {
+  const unmountProgress = setupProgress(parent)
+  const unmountFootnotes = setupFootnotes()
+
+  return () => {
+    unmountProgress()
+    unmountFootnotes()
+  }
+}
+
+function setupFootnotes(): UnloadCallback {
+  return littlefoot({
+    allowDuplicates: true,
+  }).unmount
+}
+
+function setupProgress(parent: ParentNode): UnmountCallback {
   const progressBar = document.getElementById('reading-progress')
   if (!progressBar) return () => {}
 

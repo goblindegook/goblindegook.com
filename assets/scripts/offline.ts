@@ -1,7 +1,7 @@
 import van from 'vanjs-core'
 import { getCachedUrls } from './lib/offline'
 import type { SearchResult } from './lib/search'
-import { Result } from './search-main'
+import { Result } from './search'
 
 const { ul } = van.tags
 

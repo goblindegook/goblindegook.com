@@ -1,19 +1,14 @@
-import { setupFonts } from './fonts'
-import { setupFootnotes } from './footnotes'
-import { setupHash } from './hash'
 import { setupHeader } from './header'
 import { setupMasonry } from './masonry'
 import { setupOffline } from './offline'
-import { setupProgress } from './progress'
-import { setupMainSearch } from './search-main'
-import { setupSidebarSearch } from './search-sidebar'
+import { setupPage } from './page'
+import { setupSearch } from './search'
+import { setup } from './site'
 
 export type UnloadCallback = () => void
 
 export function onFirstLoad(container: HTMLElement | null, namespace?: string): UnloadCallback {
-  setupHash()
-  setupFonts()
-  setupSidebarSearch()
+  setup()
   return onLoad(container, namespace)
 }
 
@@ -30,11 +25,10 @@ export function onLoad(container: HTMLElement | null, namespace?: string): Unloa
       setupMasonry(container)
       break
     case 'page':
-      callbacks.push(setupProgress(document))
-      callbacks.push(setupFootnotes())
+      callbacks.push(setupPage(document))
       break
     case 'search':
-      setupMainSearch(document)
+      setupSearch(document)
       break
     case 'offline':
       setupOffline('goblindegook-offline-v3')
