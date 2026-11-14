@@ -24,10 +24,22 @@
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .single-entry-body {
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .single-entry-body.transition-entering {
+    opacity: 0;
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation-duration: 0.01ms;
+    animation-delay: 0s;
   }
 }
