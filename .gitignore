@@ -1,24 +1,22 @@
-# macOS system files
+# System files
 .DS_Store
 
 # Node dependencies
 node_modules/
 
-# DAT
-.dat/
-
 # Build files
-public/
-resources/
-.rpt2_cache/
-static/search-index.json
+/assets/jsconfig.json
+/public/
+/resources/
+/static/search-index.json
 .hugo_build.lock
+.rpt2_cache/
 
 # Logs
 *.log
 
-# Test coverage
-coverage/
-
+# Tooling
 .idea/
-/assets/jsconfig.json
+.impact/
+/coverage/
+/palace.yaml

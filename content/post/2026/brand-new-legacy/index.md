@@ -142,12 +142,7 @@ For example, unless you specify the technology, the LLM will likely [generate a 
 
 While you could argue that a React application is not a bad choice by the LLM, my argument is that this is not a choice at all. It’s the roll of a loaded die masquerading as intention. And this is only the first of hundreds or thousands of such ‘decisions’ that will remain opaque to the person driving the agent.
 
-{{< figure
-  alt="A computer can never be held accountable therefore a computer must never make a management decision."
-  class="align-center"
-  src="machine-accountability.webp"
-  title="An IBM statement from 1979."
->}}
+{{< figure alt="A computer can never be held accountable therefore a computer must never make a management decision." class="align-center" src="machine-accountability.webp" title="An IBM statement from 1979." >}}
 
 Thanks to the speed at which AI tools churn out code, widespread use compresses implementation timelines. Everything happens faster, so much so that people now struggle to keep up with the changes. And by making design decisions from a probability pool rather than careful consideration of the problem, they prevent understanding from even forming.
 

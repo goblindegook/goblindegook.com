@@ -69,8 +69,8 @@ However, for a long time not much consideration was given to the relationship be
 
 Consider the following two passwords:
 
-* `PrXyc.N7#L!eVfp9`
-* `Wc16............`
+- `PrXyc.N7#L!eVfp9`
+- `Wc16............`
 
 Which would you say is easier to remember? Which would you say is more secure?
 
@@ -107,12 +107,7 @@ Speaking of life-ruining experiences, I love playing _Destiny_. I’m hopelessly
 
 _Destiny_ is a science fiction videogame made by a company named Bungie. In it, you play a super soldier who has to fight invading aliens until the Solar System is safe or Bungie stops making money from the game, whichever happens first.
 
-{{< figure
-  alt="Destiny character selection screen showing my Warlock character."
-  class="align-center"
-  src="destiny-bob.jpg"
-  title="This is my character. His name is Bob."
->}}
+{{< figure alt="Destiny character selection screen showing my Warlock character." class="align-center" src="destiny-bob.jpg" title="This is my character. His name is Bob." >}}
 
 So you venture out in your spaceship and give those aliens what for, and at the end of every mission — especially the hardest, most pulse-pounding missions — there’s a chance you’ll earn a cool reward. The best rewards usually come in yellow packages, which you have to take back to base so that a blue-skinned man who lives there can convert them into random weapons or pieces of armour.
 
@@ -132,11 +127,7 @@ You see, we humans have a peculiar way to look at randomness, and by ‘peculiar
 
 Artificial intelligence guru Peter Norvig has an article on [biases in experiment design and interpretation](http://norvig.com/experiment-design.html) where he presents the following trio of charts, one of which is random while the others’ results have been skewed:
 
-{{< figure
-  alt="Three plots, one of which contains random data."
-  class="align-center"
-  src="norvig-experiment.png"
->}}
+{{< figure alt="Three plots, one of which contains random data." class="align-center" src="norvig-experiment.png" >}}
 
 Can you guess which of the three is the randomly generated plot?
 

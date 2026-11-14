@@ -16,7 +16,7 @@ Test-Driven Development (abbreviated to TDD) is a software engineering practice 
 It may sound counterintuitive, but here's another way to think about it: first, you set a small, clear goal for yourself. When you reach it, you pause to reflect and tidy things up before moving on to the next small goal.[^2]
 
 One of the nicest things about the process is that the tests you write will change roles once satisfied, and go from being _guides_ to being _guardians_. Automation allows them to run periodically, even continuously, to let you know if you ever make a mistake that undoes any previous work. As long as your destination and your goals are sound, you're never in a position where you take a wrong turn that forces you to retrace your steps.
- 
+
 But a frequent claim is that this process, and especially writing tests, will double the time and effort needed to ship a feature.
 
 Okay. Story time.

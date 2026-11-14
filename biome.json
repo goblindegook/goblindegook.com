@@ -1,5 +1,23 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.7/schema.json",
+  "files": {
+    "includes": [
+      "assets/**",
+      "scripts/**",
+      "test/**",
+      "**/*.md",
+      "!**/node_modules",
+      "!public",
+      "!resources",
+      "!.git",
+      "!.impact"
+    ]
+  },
+  "markdown": {
+    "parser": { "frontmatter": true },
+    "formatter": { "enabled": false, "formatEmbeds": false },
+    "linter": { "enabled": true }
+  },
   "assist": {
     "actions": {
       "source": {
@@ -16,7 +34,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "correctness": {
         "noUnknownMediaFeatureName": "off",
         "noUnknownTypeSelector": "off"

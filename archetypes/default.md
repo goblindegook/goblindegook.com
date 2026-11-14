@@ -4,4 +4,3 @@ author: "Luís Rodrigues"
 date: {{ .Date }}
 draft: true
 ---
-

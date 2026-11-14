@@ -32,7 +32,13 @@ enableRobotsTXT = true
 [outputs]
   home = ["HTML", "RSS", "Sitemap"]
 
-[imaging]
+[imaging.jpeg]
+  quality = 90
+
+[imaging.webp]
+  quality = 90
+
+[imaging.avif]
   quality = 90
 
 [mediaTypes]
